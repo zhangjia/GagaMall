@@ -42,44 +42,46 @@ html,body{
 	border:1px solid #dbdbdb;
 	width:440px;
 	height: 310px;
+	border-radius:10px;
 }
-.reg form{
+.reg form {
 	width:480px;
 	height: 490px;
+	border:1px solid #dbdbdb;
+	border-radius:10px;
 	background: #fff;
+	padding: 20px 70px;
 }
+/*log*/
 .reg form h1,.login form h1{
-	border-bottom:1px solid #dbdbdb;
+	/*border-bottom:1px solid #dbdbdb;*/
 	padding-bottom: 20px;
 }
-.reg form p,.login form p{
-	margin-top:15px;
-}
-.reg form a.off,.login form a.off{
-	position: absolute;
-	right: 20px;
-	top:20px;
-}
+
+/*
 .reg form input,.login form input{
 	width:270px;
 	height:40px;
 	border-radius: 3px;
+	margin: 20px;
 }
-.reg form input[type="text"],.login form input[type="text"]{
+*/
+
+/*.reg form input[type="text"],.login form input[type="text"]{
 	border:1px solid #dbdbdb;
 	font-size: 20px;
 	padding-left:10px;
 }
-.reg input[type="submit"],.login input[type="submit"]{
+/*.reg input[type="submit"],.login input[type="submit"]{
 	width:280px;
 	background: #C10000;
 	font-size: 20px;
 	border:none;
 	color:#fff;
-}
-div.reg form input.code{
+}*/
+/*div.reg form input.code{
 	width:150px;
-}
+}*/
 div.reg form p.txtL{
 	text-align: left;
 }
@@ -96,7 +98,7 @@ div.reg form p.txtL a{
 	margin:10px auto 0;
 	text-align: right;
 }
-.reg p.txt a,.login p.txt a,{
+.reg p.txt a,.login p.txt a{
 	color:#666;
 	text-decoration: underline;
 }
@@ -104,3 +106,18 @@ div.login form p.txt a{
 	margin-left:20px;
 	cursor: pointer;
 }
+
+
+.form-control {
+    /*width:270px !important;*/
+    height:40px !important;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom:  5px;
+}
+.btn-block {
+    display: block;
+
+    margin: 0 auto;
+}
+

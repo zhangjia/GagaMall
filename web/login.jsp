@@ -4,22 +4,86 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>登录</title>
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<%--		<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css"/>--%>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/login.css"/>
+<%--		<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/login.js"></script>--%>
+		<script type="text/javascript">
+			$(function () {
+				$(":submit").click(function () {
+					//将表单序列化
+					var data = $("form").serialize();
+					//发起请求，完成登录
+					$.ajax({
+						url:"${pageContext.request.contextPath}/login",
+						type:"post",
+						data:data,
+						success:function (res) {
+							console.log(res);
+							if(res.result){
+								//成功，跳转到index.jsp
+								if(res.uri){
+									location = res.uri;
+								}else{
+									location = "${pageContext.request.contextPath}/index.jsp";
+								}
+
+							}else{
+								//失败
+								if(res.error === "密码错误"){
+									$("input[name='userPassword']").addClass("is-invalid");
+									$("input[name='userPassword']").next("span").addClass("text-danger").text(res.error);
+								}else if(res.error === "用户名不存在"){
+									$("input[name='account']").addClass("is-invalid");
+									$("input[name='account']").next("span").addClass("text-danger").text(res.error);
+								}
+							}
+						}
+					});
+					return false;
+				});
+
+
+				$("input[type=text]").focus(function () {
+
+					$("input[type=text]").attr("class","form-control");
+					$("input[type=text]").next("span").hide();
+
+
+				});
+
+				$("input[type=text]").blur(function () {
+
+
+					$("input[type=text]").next("span").show().text("");
+
+
+				});
+			});
+		</script>
 	</head>
-	<body>
+	<body >
+
 		<!-------------------login-------------------------->
 		<div class="login">
-			<form action="#" method="post">
-				<h1><a href="index.html"><img src="${pageContext.request.contextPath}/static/img/temp/logo.png"></a></h1>
-				<p></p>
-				<div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>
-				<p><input type="text" name="" value="" placeholder="昵称/邮箱/手机号"></p>
-				<p><input type="text" name="" value="" placeholder="密码"></p>
-				<p><input type="submit" name="" value="登  录"></p>
-				<p class="txt"><a class="" href="reg.html">免费注册</a><a href="forget.html">忘记密码？</a></p>
+			<form role="form" action="${pageContext.request.contextPath}/login" method="post">
+				<h1><a href="index.jsp"><img src="${pageContext.request.contextPath}/static/img/temp/logo.png"></a></h1>
+
+<%--				<div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>--%>
+				<div  class="form-group ">
+					<input class="form-control " type="text" name="account" value="" placeholder="用户名/邮箱/手机号">
+					<span></span>
+				</div>
+				<div  class="form-group">
+				<input class="form-control"  type="password" name="userPassword" value="" placeholder="密码"><span></span>
+
+				</div>
+				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="登  录">
+				<p class="txt"><a class="" href="reg.jsp">免费注册</a><a href="forget.html">忘记密码？</a></p>
 			</form>
 		</div>
-		
+
 	</body>
 </html>

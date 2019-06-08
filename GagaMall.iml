@@ -24,6 +24,6 @@
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="ojdbc6" level="project" />
     <orderEntry type="library" name="standard" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.41" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat" level="application_server_libraries" />
   </component>
 </module>

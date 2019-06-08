@@ -18,6 +18,6 @@ public class Test {
                 ,"baidu.com"));*/
 
         UserService us = new UserServiceImpl();
-        System.out.println(us.login("luffy","2"));
+        System.out.println(us.login("luffy","1"));
     }
 }
