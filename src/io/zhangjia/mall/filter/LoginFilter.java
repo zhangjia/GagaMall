@@ -1,4 +1,3 @@
-/*
 package io.zhangjia.mall.filter;
 
 import com.alibaba.fastjson.JSON;
@@ -16,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/list", "/form", "/delete", "/saveOrUpdate"})
+@WebFilter(urlPatterns = {"/mygxin.jsp"})
 public class LoginFilter extends HttpFilter {
 
     @Override
@@ -56,4 +55,3 @@ public class LoginFilter extends HttpFilter {
 
 
 }
-*/

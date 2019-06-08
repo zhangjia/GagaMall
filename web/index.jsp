@@ -6,93 +6,35 @@
 		<title>最家</title>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/index.css" />
+
+
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+
+		<script src="${pageContext.request.contextPath}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${pageContext.request.contextPath}/static/js/nav.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				$('#home_slider').flexslider({
+					animation: 'slide',
+					controlNav: true,
+					directionNav: true,
+					animationLoop: true,
+					slideshow: true,
+					slideshowSpeed:2000,
+					useCSS: false
+				});
+
+			});
+		</script>
+
 	</head>
 	<body>
-		<!------------------------------head------------------------------>
-		<div class="head">
-			<div class="wrapper clearfix">
-				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="${pageContext.request.contextPath}/static/img/logo.png"/></a></h1>
-					<div class="fr clearfix" id="top1">
-						<p class="fl">
-							<a href="login.jsp" id="login">登录</a>
-							<a href="reg.jsp" id="reg">注册</a>
-						</p>
-						<form action="#" method="get" class="fl">
-							<input type="text" placeholder="热门搜索：干花花瓶" />
-							<input type="button" />
-						</form>
-						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="${pageContext.request.contextPath}/static/img/grzx.png"/></a>
-							<a href="#" class="er1"><img src="${pageContext.request.contextPath}/static/img/ewm.png"/></a>
-							<a href="cart.html"><img src="${pageContext.request.contextPath}/static/img/gwc.png"/></a>
-							<p><a href="#"><img src="${pageContext.request.contextPath}/static/img/smewm.png"/></a></p>
-						</div>
-					</div>
-				</div>
-				<ul class="clearfix" id="bott">
-					<li><a href="index.html">首页</a></li>
-					<li>
-						<a href="#">所有商品</a>
-						<div class="sList">
-							<div class="wrapper  clearfix">
-								<a href="paint.html">
-									<dl>
-										<dt><img src="${pageContext.request.contextPath}/static/img/nav1.jpg"/></dt>
-										<dd>浓情欧式</dd>
-									</dl>
-								</a>
-								<a href="paint.html">
-									<dl>
-										<dt><img src="${pageContext.request.contextPath}/static/img/nav2.jpg"/></dt>
-										<dd>浪漫美式</dd>
-									</dl>
-								</a>
-								<a href="paint.html">
-									<dl>
-										<dt><img src="${pageContext.request.contextPath}/static/img/nav3.jpg"/></dt>
-										<dd>雅致中式</dd>
-									</dl>
-								</a>
-								<a href="paint.html">
-									<dl>
-										<dt><img src="${pageContext.request.contextPath}/static/img/nav6.jpg"/></dt>
-										<dd>简约现代</dd>
-									</dl>
-								</a>
-								<a href="paint.html">
-									<dl>
-										<dt><img src="${pageContext.request.contextPath}/static/img/nav7.jpg"/></dt>
-										<dd>创意装饰</dd>
-									</dl>
-								</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="flowerDer.html">装饰摆件</a>
-						<div class="sList2">
-							<div class="clearfix">
-								<a href="proList.html">干花花艺</a>
-								<a href="vase_proList.html">花瓶花器</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="decoration.html">布艺软饰</a>
-						<div class="sList2">
-							<div class="clearfix">
-								<a href="zbproList.html">桌布罩件</a>
-								<a href="bzproList.html">抱枕靠垫</a>
-							</div>
-						</div>
-					</li>
-					<li><a href="paint.html">墙式壁挂</a></li>
-					<li><a href="perfume.html">蜡艺香薰</a></li>
-					<li><a href="idea.html">创意家居</a></li>
-				</ul>
-			</div>
-		</div>
+<%--		<%@ include file="head.jsp"%>--%>
+
+			<jsp:include page="head.jsp" />
+
 		<!-------------------------banner--------------------------->
 		<div class="block_home_slider">
 			<div id="home_slider" class="flexslider">
@@ -112,31 +54,31 @@
 		</div>
 		
 		<!------------------------------thImg------------------------------>
-		<div class="thImg">
-			<div class="clearfix">
-				<a href="vase_proList.html"><img src="${pageContext.request.contextPath}/static/img/i1.jpg"/></a>
-				<a href="proList.html"><img src="${pageContext.request.contextPath}/static/img/i2.jpg"/></a>
+		<%--<div class="thImg">
+			<%--<div class="clearfix">
+				<a href="vase_proList.jsp"><img src="${pageContext.request.contextPath}/static/img/i1.jpg"/></a>
+				<a href="proList.jsp"><img src="${pageContext.request.contextPath}/static/img/i2.jpg"/></a>
 				<a href="#2"><img src="${pageContext.request.contextPath}/static/img/i3.jpg"/></a>
 			</div>
-		</div>
+		</div>--%>
 		
 		<!------------------------------news------------------------------>
 		<div class="news">
 			<div class="wrapper">
 				<h2><img src="${pageContext.request.contextPath}/static/img/ih1.jpg"/></h2>
 				<div class="top clearfix">
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n1.jpg"/><p></p></a>
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n2.jpg"/><p></p></a>
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n3.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n1.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n2.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n3.jpg"/><p></p></a>
 				</div>
 				<div class="bott clearfix">
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n4.jpg"/><p></p></a>
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n5.jpg"/><p></p></a>
-					<a href="proDetail.html"><img src="${pageContext.request.contextPath}/static/img/n6.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n4.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n5.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n6.jpg"/><p></p></a>
 				</div>
 				<h2><img src="${pageContext.request.contextPath}/static/img/ih2.jpg"/></h2>
 				<div class="flower clearfix tran">
-					<a href="proDetail.html" class="clearfix">
+					<a href="proDetail.jsp" class="clearfix">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -147,7 +89,7 @@
 							<dd><span>¥ 79.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -158,7 +100,7 @@
 							<dd><span>¥ 79.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -171,7 +113,7 @@
 					</a>
 				</div>
 				<div class="flower clearfix tran">
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -182,7 +124,7 @@
 							<dd><span>¥ 79.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -193,7 +135,7 @@
 							<dd><span>¥ 79.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -216,7 +158,7 @@
 			<div class="wrapper">
 				<h2><img src="${pageContext.request.contextPath}/static/img/ih3.jpg"/></h2>
 				<div class="pList clearfix tran">
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -227,7 +169,7 @@
 							<dd><span>￥688.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -238,7 +180,7 @@
 							<dd><span>￥188.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -249,7 +191,7 @@
 							<dd><span>￥599.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -262,7 +204,7 @@
 					</a>
 				</div>
 				<div class="pList clearfix tran">
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -273,7 +215,7 @@
 							<dd><span>￥228.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -284,7 +226,7 @@
 							<dd><span>￥199.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -295,7 +237,7 @@
 							<dd><span>￥666.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -308,7 +250,7 @@
 					</a>
 				</div>
 				<div class="pList clearfix tran">
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -319,7 +261,7 @@
 							<dd><span>￥800.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -330,7 +272,7 @@
 							<dd><span>￥189.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -341,7 +283,7 @@
 							<dd><span>￥148.00</span></dd>
 						</dl>
 					</a>
-					<a href="proDetail.html">
+					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
@@ -357,7 +299,7 @@
 		</div>
 		<!--返回顶部-->
 		<div class="gotop">
-			<a href="cart.html">
+			<a href="cart.jsp">
 			<dl>
 				<dt><img src="${pageContext.request.contextPath}/static/img/gt1.png"/></dt>
 				<dd>去购<br />物车</dd>
@@ -369,7 +311,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="mygxin.jsp">
 			<dl>
 				<dt><img src="${pageContext.request.contextPath}/static/img/gt3.png"/></dt>
 				<dd>个人<br />中心</dd>
@@ -410,26 +352,7 @@
 			<p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br />
 			违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
 		</div>
-		
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			$(function() {
-				$('#home_slider').flexslider({
-					animation: 'slide',
-					controlNav: true,
-					directionNav: true,
-					animationLoop: true,
-					slideshow: true,
-					slideshowSpeed:2000,
-					useCSS: false
-				});
 
-			});
-		</script>
-		
 		
 	</body>
 </html>

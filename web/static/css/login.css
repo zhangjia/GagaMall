@@ -43,6 +43,7 @@ html,body{
 	width:440px;
 	height: 310px;
 	border-radius:10px;
+	padding: 20px 70px;
 }
 .reg form {
 	width:480px;

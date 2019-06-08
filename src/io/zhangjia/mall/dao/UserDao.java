@@ -22,11 +22,9 @@ public interface UserDao {
     User queryByUsername(String userName);
 
     /**
-     * 根据用户名和密码添加用户
-     * @param userName 用户名
-     * @param userPassword 密码
+     *根据用户名和密码添加用户
+     * @param user 要添加的用户
      * @return 添加是否成功，成功返回1，不成功返回0
      */
-    int doInsert(String userName, String userPassword, String userPayPassword,
-                                    String userTel, String userMail, String userGender, Date userBirthday, String userAvatar);
+    int doInsert(User user);
 }

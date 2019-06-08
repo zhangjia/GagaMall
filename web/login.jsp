@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,6 +10,7 @@
 <%--		<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css"/>--%>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/login.css"/>
+		<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
 <%--		<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/login.js"></script>--%>
 		<script type="text/javascript">
 			$(function () {
@@ -23,12 +25,16 @@
 						success:function (res) {
 							console.log(res);
 							if(res.result){
+								var c = layer.msg('登录成功',{time:1000,anim: 2,icon: 6},function () {
+									if(res.uri){
+										location = res.uri;
+									}else{
+										location = "${pageContext.request.contextPath}/index.jsp";
+									}
+								});
+								console.log(c);
 								//成功，跳转到index.jsp
-								if(res.uri){
-									location = res.uri;
-								}else{
-									location = "${pageContext.request.contextPath}/index.jsp";
-								}
+
 
 							}else{
 								//失败
@@ -72,6 +78,9 @@
 				<h1><a href="index.jsp"><img src="${pageContext.request.contextPath}/static/img/temp/logo.png"></a></h1>
 
 <%--				<div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>--%>
+				<c:if test="${param.uri != null}">
+					<input type="hidden" name="uri" value="${param.uri}">
+				</c:if>
 				<div  class="form-group ">
 					<input class="form-control " type="text" name="account" value="" placeholder="用户名/邮箱/手机号">
 					<span></span>
@@ -81,7 +90,7 @@
 
 				</div>
 				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="登  录">
-				<p class="txt"><a class="" href="reg.jsp">免费注册</a><a href="forget.html">忘记密码？</a></p>
+				<p class="txt"><a class="" href="register.jsp">免费注册</a><a href="forget.html">忘记密码？</a></p>
 			</form>
 		</div>
 

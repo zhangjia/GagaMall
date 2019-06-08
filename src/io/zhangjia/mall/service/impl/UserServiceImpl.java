@@ -32,10 +32,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int register(String userName, String userPassword, String userPayPassword, String userTel, String userMail, String userGender, Date userBirthday, String userAvatar) {
-		int result = userDao.doInsert(userName,userPassword, userPayPassword,
-				userTel, userMail, userGender, userBirthday, userAvatar);
-		return result;
+	public Map<String, Object>register(User user) {
+		User user2 = userDao.queryByUsername(user.getUserName());
+		Map<String,Object> map = new HashMap<>();
+		if(user2 == null) {
+			int i = userDao.doInsert(user);
+			if(i == 1) {
+				map.put("user",user);
+			} else {
+				map.put("error","注册失败");
+			}
+		} else {
+			map.put("error","用户名已存在");
+		}
+
+		return map;
 	}
 
 

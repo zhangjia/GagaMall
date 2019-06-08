@@ -1,5 +1,7 @@
 package io.zhangjia.mall.service;
 
+import io.zhangjia.mall.entity.User;
+
 import java.sql.Date;
 import java.util.Map;
 
@@ -18,16 +20,8 @@ public interface UserService {
 
 	/**
 	 * 用户注册
-	 * @param userName 用户名
-	 * @param userPassword 用户密码
-	 * @param userPayPassword 用户支付密码
-	 * @param userTel 用户手机号
-	 * @param userMail 用户邮箱
-	 * @param userGender 用户性别
-	 * @param userBirthday 用户生日
-	 * @param userAvatar 用户头像
+	 * @param user 要注册的用户
 	 * @return 注册结果
 	 */
-	int register(String userName, String userPassword, String userPayPassword,
-					 String userTel, String userMail, String userGender, Date userBirthday, String userAvatar);
+	Map<String, Object> register(User user);
 }

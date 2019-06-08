@@ -1,6 +1,7 @@
 package io.zhangjia.mall.servlet;
 
 import com.alibaba.fastjson.JSON;
+import io.zhangjia.mall.entity.User;
 import io.zhangjia.mall.service.UserService;
 import io.zhangjia.mall.service.impl.UserServiceImpl;
 
@@ -26,7 +27,8 @@ public class RegisterServlet extends HttpServlet {
         String username = req.getParameter("account");
         String password = req.getParameter("userPassword");
         String uri = req.getParameter("uri");
-        Map<String, Object> map = userService.login(username, password);
+        User user = new User(username,password,null,null,null,null,null,null,null,null,null,null);
+        Map<String, Object> map = userService.register(user);
         Map<String,Object> json = new HashMap<>();
         if(map.containsKey("user")){
             //登录成功，将用户信息存入session

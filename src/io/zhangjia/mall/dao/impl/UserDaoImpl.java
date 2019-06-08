@@ -17,10 +17,11 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 	}
 
 	@Override
-	public int doInsert(String userName, String userPassword, String userPayPassword,
-						String userTel, String userMail, String userGender, Date userBirthday, String userAvatar) {
+	public int doInsert(User user) {
 		String sql = "INSERT INTO users VALUES(seq_users.nextval,?,?,?,sysdate,?,?,?,?,?,?,0,1)";
-		int i = executeUpdate(sql, userName, userPassword,userPayPassword,userTel,userMail,userName,userGender,userBirthday,userAvatar);
+		int i = executeUpdate(sql, user.getUserName(), user.getUserPassword(),user.getUserPayPassword(),
+				user.getUserTel(),user.getUserMail(),user.getUserName(),user.getUserGender(),
+				user.getUserBirthday(),user.getUserAvatar());
 		return i ;
 	}
 
