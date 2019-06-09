@@ -7,27 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="528fa89f-9d1d-4918-82cc-cd10cbb2bddc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/TS/flowerDer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/head.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/idea.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/mygxin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/paint.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/proDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/proList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/LoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/reg.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/public.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/idea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/idea.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,28 +24,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java">
+        <entry file="file://$PROJECT_DIR$/web/head.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="2872">
+              <caret line="210" column="10" lean-forward="true" selection-start-line="210" selection-start-column="10" selection-end-line="210" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -71,47 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/mygxin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/idea.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="388" column="14" lean-forward="true" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/LoginFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="17" selection-start-line="17" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/head.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="264">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -178,13 +103,13 @@
         <option value="$PROJECT_DIR$/web/paint.jsp" />
         <option value="$PROJECT_DIR$/web/flowerDer.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/head.jsp" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/LoginFilter.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/mygxin.jsp" />
         <option value="$PROJECT_DIR$/web/TS/flowerDer.jsp" />
         <option value="$PROJECT_DIR$/web/idea.jsp" />
+        <option value="$PROJECT_DIR$/web/head.jsp" />
       </list>
     </option>
   </component>
@@ -234,18 +159,12 @@
               <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
               <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
@@ -449,7 +368,7 @@
       <option name="presentableId" value="Default" />
       <updated>1559880897487</updated>
       <workItem from="1559880902665" duration="14693000" />
-      <workItem from="1559911090824" duration="38263000" />
+      <workItem from="1559911090824" duration="41645000" />
     </task>
     <task id="LOCAL-00001" summary="搭建好开发环境">
       <created>1559882139539</created>
@@ -479,11 +398,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559956819039</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="登录、注册v1.1">
+      <created>1560003169657</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560003169657</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52956000" />
+    <option name="totallyTimeSpent" value="56338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -618,7 +544,8 @@
     <MESSAGE value="搭建好登录注册页面" />
     <MESSAGE value="登录注册功能后端v1.0" />
     <MESSAGE value="登录功能前端v1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录功能前端v1.0" />
+    <MESSAGE value="登录、注册v1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录、注册v1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -834,7 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/paint.jsp">
+    <entry file="file://$PROJECT_DIR$/web/TS/paint.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="11" column="122" selection-start-line="11" selection-start-column="122" selection-end-line="11" selection-end-column="122" />
@@ -844,13 +771,6 @@
     <entry file="file://$PROJECT_DIR$/web/proDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/proList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
@@ -883,13 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/head.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -899,15 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="374">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -921,13 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/mygxin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/LoginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -938,17 +837,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/idea.jsp">
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="388" column="14" lean-forward="true" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/proList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="220">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-902">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/mygxin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/idea.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/head.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2872">
+          <caret line="210" column="10" lean-forward="true" selection-start-line="210" selection-start-column="10" selection-end-line="210" selection-end-column="10" />
         </state>
       </provider>
     </entry>
