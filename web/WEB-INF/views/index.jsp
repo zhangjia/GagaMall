@@ -1,18 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>最家</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/index.css" />
+		<title>嘎嘎商城|家庭必需品</title>
+
+		<%-------------------------------------------------------其他页面导入----------------------------------------------%>
+		<jsp:include page="public-static-file.jsp" />
+<%--		<%@ include file="public-static-file.jsp"%>--%>
+<%--		-----------------------------------------------------css----------------------------------------------%>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/index.css" />
 
 
-		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+		<%-------------------------------------------------------js----------------------------------------------%>
+
 		<script src="https://cdn.bootcss.com/flexslider/2.7.2/jquery.flexslider-min.js"></script>
 
-		<script src="${pageContext.request.contextPath}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${pageContext.request.contextPath}/static/js/nav.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript">
 			$(function() {
@@ -32,8 +38,8 @@
 	</head>
 	<body>
 <%--		<%@ include file="head.jsp"%>--%>
+		<jsp:include page="head.jsp" />
 
-			<jsp:include page="head.jsp" />
 
 		<!-------------------------banner--------------------------->
 		<div class="block_home_slider">
@@ -41,12 +47,12 @@
 				<ul class="slides">
 					<li>
 						<div class="slide">
-							<img src="${pageContext.request.contextPath}/static/img/banner2.jpg"/>
+							<img src="https://zhangjia.oss-cn-qingdao.aliyuncs.com/img/web/banner1.png"/>
 						</div>
 					</li>
 					<li>
 						<div class="slide">
-							<img src="${pageContext.request.contextPath}/static/img/banner1.jpg"/>
+							<img src="https://zhangjia.oss-cn-qingdao.aliyuncs.com/img/web/banner3.png"/>
 						</div>
 					</li>
 				</ul>
@@ -56,33 +62,44 @@
 		<!------------------------------thImg------------------------------>
 		<%--<div class="thImg">
 			<%--<div class="clearfix">
-				<a href="vase_proList.jsp"><img src="${pageContext.request.contextPath}/static/img/i1.jpg"/></a>
-				<a href="proList.jsp"><img src="${pageContext.request.contextPath}/static/img/i2.jpg"/></a>
-				<a href="#2"><img src="${pageContext.request.contextPath}/static/img/i3.jpg"/></a>
+				<a href="vase_proList.jsp"><img src="${path}/static/img/i1.jpg"/></a>
+				<a href="proList.jsp"><img src="${path}/static/img/i2.jpg"/></a>
+				<a href="#2"><img src="${path}/static/img/i3.jpg"/></a>
 			</div>
 		</div>--%>
 		
 		<!------------------------------news------------------------------>
 		<div class="news">
 			<div class="wrapper">
-				<h2><img src="${pageContext.request.contextPath}/static/img/ih1.jpg"/></h2>
+				<h2><img src="${path}/static/img/ih1.jpg"/></h2>
 				<div class="top clearfix">
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n1.jpg"/><p></p></a>
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n2.jpg"/><p></p></a>
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n3.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n1.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n2.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n3.jpg"/><p></p></a>
 				</div>
 				<div class="bott clearfix">
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n4.jpg"/><p></p></a>
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n5.jpg"/><p></p></a>
-					<a href="proDetail.jsp"><img src="${pageContext.request.contextPath}/static/img/n6.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n4.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n5.jpg"/><p></p></a>
+					<a href="proDetail.jsp"><img src="${path}/static/img/n6.jpg"/><p></p></a>
 				</div>
-				<h2><img src="${pageContext.request.contextPath}/static/img/ih2.jpg"/></h2>
+				<h2><img src="${path}/static/img/ih2.jpg"/></h2>
 				<div class="flower clearfix tran">
 					<a href="proDetail.jsp" class="clearfix">
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo1.jpg"/>
+								<img src="${path}/static/img/flo1.jpg"/>
+								<spa class="abr"></spa>
+							</dt>
+							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
+							<dd><span>¥ 79.00</span></dd>
+						</dl>
+					</a>
+					<a href="proDetail.jsp">
+						<dl>
+							<dt>
+								<span class="abl"></span>
+								<img src="${path}/static/img/flo2.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -93,18 +110,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo2.jpg"/>
-								<span class="abr"></span>
-							</dt>
-							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
-							<dd><span>¥ 79.00</span></dd>
-						</dl>
-					</a>
-					<a href="proDetail.jsp">
-						<dl>
-							<dt>
-								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo3.jpg"/>
+								<img src="${path}/static/img/flo3.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -117,7 +123,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo4.jpg"/>
+								<img src="${path}/static/img/flo4.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -128,7 +134,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo5.jpg"/>
+								<img src="${path}/static/img/flo5.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -139,7 +145,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/flo6.jpg"/>
+								<img src="${path}/static/img/flo6.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【花艺】七头美丽玫瑰仿真花束</dd>
@@ -151,18 +157,18 @@
 		</div>
 		
 		<!------------------------------ad------------------------------>
-		<a href="#" class="ad"><img src="${pageContext.request.contextPath}/static/img/ib1.jpg"/></a>
+		<a href="#" class="ad"><img src="${path}/static/img/ib1.jpg"/></a>
 		
 		<!------------------------------people------------------------------>
 		<div class="people">
 			<div class="wrapper">
-				<h2><img src="${pageContext.request.contextPath}/static/img/ih3.jpg"/></h2>
+				<h2><img src="${path}/static/img/ih3.jpg"/></h2>
 				<div class="pList clearfix tran">
 					<a href="proDetail.jsp">
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s7.jpg"/>
+								<img src="${path}/static/img/s7.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】不锈钢壁饰墙饰软装</dd>
@@ -173,7 +179,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s10.jpg"/>
+								<img src="${path}/static/img/s10.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -184,7 +190,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s4.jpg"/>
+								<img src="${path}/static/img/s4.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】玄关假山水壁饰背景墙饰挂件创意</dd>
@@ -195,7 +201,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s9.jpg"/>
+								<img src="${path}/static/img/s9.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】金属树枝壁饰铜鸟装饰品</dd>
@@ -208,7 +214,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s6.jpg"/>
+								<img src="${path}/static/img/s6.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】金属壁饰创意背景墙面挂件创意</dd>
@@ -219,7 +225,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s8.jpg"/>
+								<img src="${path}/static/img/s8.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -230,7 +236,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s12.jpg"/>
+								<img src="${path}/static/img/s12.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】欧式复古挂钟创意餐厅钟表家居挂件</dd>
@@ -241,7 +247,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s1.jpg"/>
+								<img src="${path}/static/img/s1.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】客厅地中海欧式现代相片墙创意</dd>
@@ -254,7 +260,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s5.jpg"/>
+								<img src="${path}/static/img/s5.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】铁艺荷叶壁挂软装背景墙上装饰品</dd>
@@ -265,7 +271,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s3.jpg"/>
+								<img src="${path}/static/img/s3.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】欧式照片墙 创意组合结婚礼物</dd>
@@ -276,7 +282,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s2.jpg"/>
+								<img src="${path}/static/img/s2.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】欧式钟表相框墙挂墙创意组合</dd>
@@ -287,7 +293,7 @@
 						<dl>
 							<dt>
 								<span class="abl"></span>
-								<img src="${pageContext.request.contextPath}/static/img/s11.jpg"/>
+								<img src="${path}/static/img/s11.jpg"/>
 								<span class="abr"></span>
 							</dt>
 							<dd>【最家】小城动物木板画壁挂北欧</dd>
@@ -301,25 +307,25 @@
 		<div class="gotop">
 			<a href="cart.jsp">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt1.png"/></dt>
+				<dt><img src="${path}/static/img/gt1.png"/></dt>
 				<dd>去购<br />物车</dd>
 			</dl>
 			</a>
 			<a href="#" class="dh">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt2.png"/></dt>
+				<dt><img src="${path}/static/img/gt2.png"/></dt>
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
 			<a href="mygxin.jsp">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt3.png"/></dt>
+				<dt><img src="${path}/static/img/gt3.png"/></dt>
 				<dd>个人<br />中心</dd>
 			</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt4.png"/></dt>
+				<dt><img src="${path}/static/img/gt4.png"/></dt>
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
@@ -332,19 +338,19 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot1.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot1.png"/></a>
 						<span class="fl">7天无理由退货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot2.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot2.png"/></a>
 						<span class="fl">15天免费换货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot3.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot3.png"/></a>
 						<span class="fl">满599包邮</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot4.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot4.png"/></a>
 						<span class="fl">手机特色服务</span>
 					</div>
 				</div>

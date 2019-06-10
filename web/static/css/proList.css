@@ -900,3 +900,20 @@ ul.sch li h4,ul.sch li a{
 ul.sch li a{
 	color:#666;
 }
+
+
+/*-------------------------------------------自己加的------------------------------*/
+.proList > li dl dd {
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.proList > li div {
+	 width: 268px;
+	 height: 268px;
+
+ }
+.proList > li img {
+	object-fit: cover;
+
+}

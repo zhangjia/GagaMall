@@ -6,8 +6,8 @@
 	<head lang="en">
 		<meta charset="utf-8" />
 		<title>个人信息</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/mygxin.css" />
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
 	</head>
 	<body>
 	<jsp:include page="head.jsp" />
@@ -25,7 +25,7 @@
 			<div class="wrapper clearfix">
 				<div class="zuo fl">
 					<h3>
-						<a href="#"><img src="${pageContext.request.contextPath}/static/img/tx.png"/></a>
+						<a href="#"><img src="${path}/static/img/tx.png"/></a>
 						<p class="clearfix"><span class="fl">[${sessionScope.user.userName}]</span><span class="fr"><a href="${path}/logout">[退出登录]</a></span></p>
 					</h3>
 					<div>
@@ -50,32 +50,32 @@
 				<div class="you fl">
 					<div class="tx clearfix">
 						<div class="fl clearfix">
-							<a href="#" class="fl"><img src="${pageContext.request.contextPath}/static/img/tx.png"/></a>
+							<a href="#" class="fl"><img src="${path}/static/img/tx.png"/></a>
 							<p class="fl"><span>${sessionScope.user.userName}</span><a href="mygrxx.jsp">修改个人信息></a></p>
 						</div>
 						<div class="fr">绑定邮箱：12****4@**.com</div>
 					</div>
 					<div class="bott">
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="${pageContext.request.contextPath}/static/img/gxin1.jpg"/></a>
+							<a href="#" class="fl"><img src="${path}/static/img/gxin1.jpg"/></a>
 							<p class="fl"><span>待支付的订单：<strong>0</strong></span>
 								<a href="myorderq.jsp">查看待支付订单></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="${pageContext.request.contextPath}/static/img/gxin2.jpg"/></a>
+							<a href="#" class="fl"><img src="${path}/static/img/gxin2.jpg"/></a>
 							<p class="fl"><span>待收货的订单：<strong>0</strong></span>
 								<a href="myorderq.jsp">查看待收货订单></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="${pageContext.request.contextPath}/static/img/gxin3.jpg"/></a>
+							<a href="#" class="fl"><img src="${path}/static/img/gxin3.jpg"/></a>
 							<p class="fl"><span>待评价的订单：<strong>0</strong></span>
 								<a href="myprod.jsp">查看待评价订单></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="${pageContext.request.contextPath}/static/img/gxin4.jpg"/></a>
+							<a href="#" class="fl"><img src="${path}/static/img/gxin4.jpg"/></a>
 							<p class="fl"><span>喜欢的商品：<strong>0</strong></span>
 								<a href="#">查看喜欢的商品></a>
 							</p>
@@ -91,25 +91,25 @@
 		<div class="gotop">
 			<a href="cart.jsp">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt1.png"/></dt>
+				<dt><img src="${path}/static/img/gt1.png"/></dt>
 				<dd>去购<br />物车</dd>
 			</dl>
 			</a>
 			<a href="#" class="dh">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt2.png"/></dt>
+				<dt><img src="${path}/static/img/gt2.png"/></dt>
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
 			<a href="mygxin.jsp">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt3.png"/></dt>
+				<dt><img src="${path}/static/img/gt3.png"/></dt>
 				<dd>个人<br />中心</dd>
 			</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none">
 			<dl>
-				<dt><img src="${pageContext.request.contextPath}/static/img/gt4.png"/></dt>
+				<dt><img src="${path}/static/img/gt4.png"/></dt>
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
@@ -119,19 +119,19 @@
 			<div class="top">
 				<div class="wrapper">
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot1.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot1.png"/></a>
 						<span class="fl">7天无理由退货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot2.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot2.png"/></a>
 						<span class="fl">15天免费换货</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot3.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot3.png"/></a>
 						<span class="fl">满599包邮</span>
 					</div>
 					<div class="clearfix">
-						<a href="#2" class="fl"><img src="${pageContext.request.contextPath}/static/img/foot4.png"/></a>
+						<a href="#2" class="fl"><img src="${path}/static/img/foot4.png"/></a>
 						<span class="fl">手机特色服务</span>
 					</div>
 				</div>
@@ -139,9 +139,9 @@
 			<p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br />
 			违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
 		</div>
-		<script src="${pageContext.request.contextPath}/static/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${pageContext.request.contextPath}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${pageContext.request.contextPath}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${path}/static/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${path}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${path}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
 		
 	</body>
 </html>

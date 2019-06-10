@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,11 +8,11 @@
 		<title>登录</title>
 		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 		<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<%--		<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css"/>--%>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/login.css"/>
+<%--		<link rel="stylesheet" href="${path}/static/css/bootstrap.min.css"/>--%>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/login.css"/>
 		<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
-<%--		<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/login.js"></script>--%>
+<%--		<script type="text/javascript" src="${path}/static/js/login.js"></script>--%>
 		<script type="text/javascript">
 			$(function () {
 				$(":submit").click(function () {
@@ -19,7 +20,7 @@
 					var data = $("form").serialize();
 					//发起请求，完成登录
 					$.ajax({
-						url:"${pageContext.request.contextPath}/login",
+						url:"${path}/login",
 						type:"post",
 						data:data,
 						success:function (res) {
@@ -29,7 +30,7 @@
 									if(res.uri){
 										location = res.uri;
 									}else{
-										location = "${pageContext.request.contextPath}/index.jsp";
+										location = "${path}/index";
 									}
 								});
 								console.log(c);
@@ -74,8 +75,8 @@
 
 		<!-------------------login-------------------------->
 		<div class="login">
-			<form role="form" action="${pageContext.request.contextPath}/login" method="post">
-				<h1><a href="index.jsp"><img src="${pageContext.request.contextPath}/static/img/temp/logo.png"></a></h1>
+			<form role="form" action="${path}/login" method="post">
+				<h1><a href="index.jsp"><img src="${path}/static/img/temp/logo.png"></a></h1>
 
 <%--				<div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>--%>
 				<c:if test="${param.uri != null}">

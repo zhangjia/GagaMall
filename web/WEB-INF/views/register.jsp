@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,8 +16,8 @@
 		<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
 		<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="${path}/static/css/login.css"/>
 <%------------------------------------资源引入结束-----------------------------------%>
 		<script>
 			$(function () {
@@ -26,7 +28,7 @@
 					var data = $("form").serialize();
 					//发起请求，完成登录
 					$.ajax({
-						url:"${pageContext.request.contextPath}/register",
+						url:"${path}/register",
 						type:"post",
 						data:data,
 						success:function (res) {
@@ -38,7 +40,7 @@
 									if(res.uri){
 										location = res.uri;
 									}else{
-										location = "${pageContext.request.contextPath}/index.jsp";
+										location = "index.jsp";
 									}
 								})
 
@@ -92,7 +94,7 @@
 			<form   method="post">
 
 
-				<h1><a href="index.html"><img src="${pageContext.request.contextPath}/static/img/temp/logo.png"></a></h1>
+				<h1><a href="index.html"><img src="${path}/static/img/temp/logo.png"></a></h1>
 
 				<div  class="form-group input-group">
 
@@ -118,7 +120,7 @@
 					<input class="form-control " type="text"  value="" placeholder="确认密码">
 					<span></span>
 				</div>
-<%--				<p class="txtL txt"><input class="code" type="text" name="" value="" placeholder="验证码"><img src="${pageContext.request.contextPath}/static/img/temp/code.jpg"></p>--%>
+<%--				<p class="txtL txt"><input class="code" type="text" name="" value="" placeholder="验证码"><img src="${path}/static/img/temp/code.jpg"></p>--%>
 				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="注  册">
 				<p class="txtL txt">完成此注册，即表明您同意了我们的<a href="#">使用条款和隐私策略</a></p>
 				<p class="txt"><a href="login.jsp"><span></span>已有账号登录</a></p>

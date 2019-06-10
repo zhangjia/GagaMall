@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/proList.css"/>
 	</head>
 	<body>
-	<jsp:include page="../head.jsp" />
+	<jsp:include page="../WEB-INF/views/head.jsp" />
 		<!------------------------------banner------------------------------>
 		<div class="banner">
 			<a href="#"><img src="${pageContext.request.contextPath}/static/img/temp/banner1.jpg"/></a>
@@ -16,7 +16,7 @@
 		<!-----------------address------------------------------->
 		<div class="address">
 			<div class="wrapper clearfix">
-				<a href="../index.jsp">首页</a>
+				<a href="../WEB-INF/views/index.jsp">首页</a>
 				<span>/</span>
 				<a href="flowerDer.jsp" class="on">装饰摆件</a>
 			</div>
@@ -40,7 +40,7 @@
 		<!----------------proList------------------------->
 		<ul class="proList wrapper clearfix">
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro01.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -49,7 +49,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro02.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -58,7 +58,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro03.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -67,7 +67,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase01.jpg"></dt>
 						<dd>【最家】创意现代简约白瓷干花花瓶摆件</dd>
@@ -76,7 +76,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase02.jpg"></dt>
 						<dd>【最家】现代简约白色条纹干花花瓶摆件</dd>
@@ -85,7 +85,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase03.jpg"></dt>
 						<dd>【最家】北欧现代陶瓷花瓶摆件</dd>
@@ -94,7 +94,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase04.jpg"></dt>
 						<dd>【最家】现代简约客厅茶几白色陶瓷花瓶摆件 </dd>
@@ -103,7 +103,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase05.jpg"></dt>
 						<dd>【最家】仿木纹漆金裂纹台面花瓶系列套装</dd>
@@ -112,7 +112,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/vase06.jpg"></dt>
 						<dd>【最家】仿木竖条纹雅致台面花瓶</dd>
@@ -121,7 +121,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro04.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -130,7 +130,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro05.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -139,7 +139,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro06.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -148,7 +148,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro07.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -157,7 +157,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro08.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -166,7 +166,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro01.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -175,7 +175,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro02.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -184,7 +184,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro03.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -193,7 +193,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro04.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -202,7 +202,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro05.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -211,7 +211,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro06.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -220,7 +220,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro07.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -229,7 +229,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../proDetail.jsp">
+				<a href="../WEB-INF/views/proDetail.jsp">
 					<dl>
 						<dt><img src="${pageContext.request.contextPath}/static/img/temp/pro08.jpg"></dt>
 						<dd>【最家】跳舞兰仿真花干花</dd>
@@ -280,7 +280,7 @@
 					</div>
 				</div>
 			</div>
-			<a class="more" href="../proDetail.jsp">查看更多细节</a>
+			<a class="more" href="../WEB-INF/views/proDetail.jsp">查看更多细节</a>
 		</div>
 		<!--返回顶部-->
 		<div class="gotop">
@@ -297,7 +297,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="../mygxin.jsp">
+			<a href="../WEB-INF/views/mygxin.jsp">
 			<dl>
 				<dt><img src="${pageContext.request.contextPath}/static/img/gt3.png"/></dt>
 				<dd>个人<br />中心</dd>
