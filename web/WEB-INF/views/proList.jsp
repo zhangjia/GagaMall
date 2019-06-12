@@ -8,8 +8,48 @@
 		<meta charset="utf-8" />
 		<title>全部商品</title>
 		<%@ include file="public-static-file.jsp"%>
-		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css"/>
+
+		<script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${path}/static/js/cart.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+
+		<script>
+
+			$(function (){
+
+
+
+
+				$(".lipp").click(function () {
+					if(${param.page == 1}) {
+						layer.alert("已经是第一页了")
+					} else {
+
+					location = "${path}/list?page=${(param.page)-1}";
+					}
+
+				});
+				$(".linp").click(function () {
+					if(${param.page == requestScope.commoditiesCount}) {
+						layer.alert("已经是最后一页了")
+					} else {
+
+						location = "${path}/list?page=${(param.page)+1}";
+					}
+
+				});
+
+					$(".page-item").click(function () {
+
+					$(this).addClass("active");
+
+				});
+			})
+
+
+		</script>
+
 	</head>
 	<body>
 	<jsp:include page="head.jsp" />
@@ -77,141 +117,7 @@
 				</li>
 			</c:forEach>
 
-			<%--<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro02.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro03.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro04.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro05.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro06.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro07.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro08.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro01.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro02.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro03.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro04.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro05.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro06.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro07.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-				<a href="proDetail.jsp">
-					<dl>
-						<dt><img src="${path}/static/img/temp/pro08.jpg"></dt>
-						<dd>【最家】跳舞兰仿真花干花</dd>
-						<dd>￥17.90</dd>
-					</dl>
-				</a>
-			</li>--%>
+
 		</ul>
 		<!----------------mask------------------->
 		<div class="mask"></div>
@@ -287,6 +193,21 @@
 			<p>400-800-8200</p>
 		</div>
 		<div class="msk"></div>
+
+	<div class="page">
+		<ul class="pagination">
+
+			<li class="page-item"><a class="page-link" href="${path}/list?page=1">首页</a></li>
+
+				<li class="page-item lipp"><a class="page-link  pp" href="javascript:;">上一页</a></li>
+                    <c:forEach begin="1" var="i" end="${requestScope.commoditiesCount}">
+						<li class="page-item"><a class="page-link" href="${path}/list?page=${i}">${i}</a></li>
+                    </c:forEach>
+				<li class="page-item linp"><a class="page-link np" href="javascript:;">下一页</a></li>
+
+			<li class="page-item"><a class="page-link" href="${path}/list?page=${requestScope.commoditiesCount}">尾页</a></li>
+		</ul>
+	</div>
 		<!--footer-->
 		<div class="footer">
 			<div class="top">
@@ -312,10 +233,6 @@
 			<p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br />
 			违法和不良信息举报电话：188-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
 		</div>
-		<script src="${path}/static/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${path}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${path}/static/js/nav.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
-		<script src="${path}/static/js/cart.js" type="text/javascript" charset="utf-8"></script>
+
 	</body>
 </html>

@@ -1,5 +1,7 @@
 package io.zhangjia.mall.servlet;
 
+import com.alibaba.fastjson.JSON;
+import io.zhangjia.mall.entity.FirstMenu;
 import io.zhangjia.mall.service.NavService;
 import io.zhangjia.mall.service.impl.NavServiceImpl;
 
@@ -18,16 +20,9 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Map<String,Object>> firstNav = navService.getFirstNav();
-        List<Map<String,Object>> secNav = navService.getSecNav();
-        System.out.println(firstNav);
-        System.out.println(secNav);
-//        req.getSession().setAttribute("nav",nav);
-//        req.getSession().setAttribute("nav2",1);
-        req.setAttribute("firstNav",firstNav);
-        req.setAttribute("secNav",secNav);
-        req.setAttribute("nav2",1);
+        List<FirstMenu> nav = navService.getNav();
+
+        req.setAttribute("nav",nav);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
-//        req.getRequestDispatcher("index.jsp").forward(req,resp);
     }
 }

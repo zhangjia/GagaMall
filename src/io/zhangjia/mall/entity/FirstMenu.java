@@ -1,16 +1,32 @@
 package io.zhangjia.mall.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class FirstMenu {
-    private Integer firstMenuId;
+    private BigDecimal firstMenuId;
     private String firstMenuChineseName;
     private String firstMenuEnglishName;
     private String firstMenuAbout;
     private Date firstMenuCreateTime;
     private Integer firstMenuIsDel;
 
+//------------------------------------//
+    //存二级菜单
+    private List<Map<String,Object>> secMenu;
+
+    public List<Map<String, Object>> getSecMenu() {
+        return secMenu;
+    }
+
+    public void setSecMenu(List<Map<String, Object>> secMenu) {
+        this.secMenu = secMenu;
+    }
+
+    //------------------------------------//
     public FirstMenu() {
     }
 
@@ -22,7 +38,7 @@ public class FirstMenu {
         this.firstMenuIsDel = firstMenuIsDel;
     }
 
-    public FirstMenu(Integer firstMenuId, String firstMenuChineseName, String firstMenuEnglishName, String firstMenuAbout, Date firstMenuCreateTime, Integer firstMenuIsDel) {
+    public FirstMenu(BigDecimal firstMenuId, String firstMenuChineseName, String firstMenuEnglishName, String firstMenuAbout, Date firstMenuCreateTime, Integer firstMenuIsDel) {
         this.firstMenuId = firstMenuId;
         this.firstMenuChineseName = firstMenuChineseName;
         this.firstMenuEnglishName = firstMenuEnglishName;
@@ -31,11 +47,11 @@ public class FirstMenu {
         this.firstMenuIsDel = firstMenuIsDel;
     }
 
-    public Integer getFirstMenuId() {
+    public BigDecimal getFirstMenuId() {
         return firstMenuId;
     }
 
-    public void setFirstMenuId(Integer firstMenuId) {
+    public void setFirstMenuId(BigDecimal firstMenuId) {
         this.firstMenuId = firstMenuId;
     }
 

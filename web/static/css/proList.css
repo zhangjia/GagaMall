@@ -917,3 +917,41 @@ ul.sch li a{
 	object-fit: cover;
 
 }
+/*----------------------分页样式开始---------------------------------*/
+.pagination {
+	display: -ms-flexbox;
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	border-radius: 0.25rem;
+	justify-content: center;
+}
+dl, ol, ul {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+.page-item:first-child .page-link {
+	margin-left: 0;
+	border-top-left-radius: .25rem;
+	border-bottom-left-radius: .25rem;
+}
+.page-link:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+.page-link {
+	position: relative;
+	display: block;
+	padding: .5rem .75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #007bff;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
+}
+
+.page-item.active .page-link {
+	z-index: 1;
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
+}

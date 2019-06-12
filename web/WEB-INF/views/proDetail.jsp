@@ -6,8 +6,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>详情页</title>
-		<link rel="stylesheet" type="text/css" href=${path}/static/css/public.css"/>
-		<link rel="stylesheet" type="text/css" href=${path}/static/css/proList.css"/>
+<%--		<link rel="stylesheet" type="text/css" href=${path}/static/css/public.css"/>--%>
+<%--		<link rel="stylesheet" type="text/css" href=${path}/static/css/proList.css"/>--%>
+		<jsp:include page="public-static-file.jsp" />
 	</head>
 	<body>
 	<jsp:include page="head.jsp" />

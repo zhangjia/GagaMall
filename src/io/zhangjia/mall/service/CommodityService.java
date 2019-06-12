@@ -2,6 +2,7 @@ package io.zhangjia.mall.service;
 
 import io.zhangjia.mall.entity.Commodity;
 import io.zhangjia.mall.entity.User;
+import org.omg.CORBA.INTERNAL;
 
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
  *
  */
 public interface CommodityService {
-	List<Commodity> queryCommodities(String name,Integer firstMenuId,Integer secMenuId);
+	List<Commodity> queryCommodities(String name,String page,String firstMenuId,String secMenuId);
 //	List<Commodity> queryCommodities(String name);
+	Integer queryPagesCount(String firstMenuId, String secMenuId);
 }

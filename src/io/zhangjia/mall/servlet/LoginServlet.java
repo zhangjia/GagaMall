@@ -48,4 +48,10 @@ public class LoginServlet extends HttpServlet {
         writer.close();
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
+//        req.getRequestDispatcher("/WEB-INF/views/zhangjia.jsp").forward(req,resp);
+    }
 }
