@@ -20,31 +20,160 @@
 
 
 
-
+				 /************************************点击上一页**********************************/
 				$(".lipp").click(function () {
+					//如果page = 1，说明已经是第一页了
 					if(${param.page == 1}) {
 						layer.alert("已经是第一页了")
 					} else {
 
-					location = "${path}/list?page=${(param.page)-1}";
+						//如果是直接打开的页面，参数中就没有order
+						if(${param.order == null}) {
+							var lo = location.toString();
+							//将当前页数减一
+							lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=${(param.page)-1}");
+							location = lo;
+						} else {
+							// 如果是在排序页面，点击上一页，则进入这里
+							var lo = location.toString();
+							//将当前页数减一
+							lo = lo.replace(lo.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=${(param.page)-1}");
+							//将之前的order和值都删除
+							// lo = lo.replace(lo.slice(lo.indexOf("&order")),"");
+							<%--location =  lo+ "&order=${param.order}";--%>
+							location =  lo;
+						}
+
 					}
 
 				});
+
+				/************************************点击下一页**********************************/
 				$(".linp").click(function () {
+					//如果page = 总页数，说明已经是最后一页了
 					if(${param.page == requestScope.commoditiesCount}) {
 						layer.alert("已经是最后一页了")
 					} else {
-
-						location = "${path}/list?page=${(param.page)+1}";
+						//如果是直接打开的页面，参数中就没有order
+						if(${param.order == null}) {
+							var lo = location.toString();
+							lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=${(param.page)+1}");
+							location = lo;
+						} else {
+							// 如果是在排序页面，点击下一页，则进入这里
+							var lo = location.toString();
+							lo = lo.replace(lo.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=${(param.page)+1}");
+							// lo = lo.replace(lo.slice(lo.indexOf("&order")),"");
+							<%--location =  lo+ "&order=${param.order}";--%>
+							location = lo;
+						}
 					}
 
 				});
+				/************************************点击尾页**********************************/
+				$(".endp").click(function () {
 
-					$(".page-item").click(function () {
+					//如果是直接打开的页面，参数中就没有order
+						if(${param.order == null}) {
+							var lo = location.toString();
 
-					$(this).addClass("active");
+							lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=${requestScope.commoditiesCount}");
+							location = lo;
+						} else {
+							// 如果是在排序页面，点击尾页，则进入这里
+							var lo = location.toString();
+							lo = lo.replace(lo.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=${requestScope.commoditiesCount}");
+							// lo = lo.replace(lo.slice(lo.indexOf("&order")),"");
+							<%--location =  lo+ "&order=${param.order}";--%>
+							location = lo;
+						}
+
+
+				})
+
+
+				/************************************点击按照时间排序**********************************/
+				$(".order-by-time").click(function () {
+					var lo = location.toString();
+
+
+					if(lo.indexOf("&order") == -1) {
+						// 直接访问列表时，不带order参数，如果此时点击排序，则进入这里
+						var lo = location.toString();
+						//只要是点击排序，就回到第一页
+						lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=1");
+						location = lo + "&order=5";
+					} else {
+						//如果已经点了排序，则url中带order参数，此时再次点击排序，则进入这里
+						var nowlocaion = lo.replace(lo.slice(lo.indexOf("&order")),"");
+						nowlocaion = nowlocaion.replace(nowlocaion.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=1");
+						location =  nowlocaion+ "&order=5";
+					}
 
 				});
+				/************************************点击按照价格排序**********************************/
+				$(".order-by-price").click(function () {
+					var lo = location.toString();
+					if(lo.indexOf("&order") == -1) {
+						var lo = location.toString();
+						lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=1");
+						location = lo + "&order=3";
+					} else {
+
+						var nowlocaion = lo.replace(lo.slice(lo.indexOf("&order")),"");
+						nowlocaion = nowlocaion.replace(nowlocaion.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=1");
+						location =  nowlocaion+ "&order=3";
+					}
+				});
+
+				/************************************点击按照价格降序排序**********************************/
+				$(".order-by-price-desc").click(function () {
+					var lo = location.toString();
+					if(lo.indexOf("&order") == -1) {
+						var lo = location.toString();
+						lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=1");
+						location = lo + "&order=4";
+					} else {
+
+						var nowlocaion = lo.replace(lo.slice(lo.indexOf("&order")),"");
+						nowlocaion = nowlocaion.replace(nowlocaion.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=1");
+						location =  nowlocaion+ "&order=4";
+					}
+				});
+
+				/************************************点击按照销量排序**********************************/
+				$(".order-by-sales").click(function () {
+
+					var lo = location.toString();
+					if(lo.indexOf("&order") == -1) {
+						var lo = location.toString();
+						lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=1");
+						location = lo + "&order=1";
+					} else {
+
+						var nowlocaion = lo.replace(lo.slice(lo.indexOf("&order")),"");
+						nowlocaion = nowlocaion.replace(nowlocaion.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=1");
+						location =  nowlocaion+ "&order=1";
+					}
+				});
+				/************************************点击按照销量降序排序**********************************/
+				$(".order-by-sales-desc").click(function () {
+					var lo = location.toString();
+					if(lo.indexOf("&order") == -1) {
+						var lo = location.toString();
+						lo = lo.replace(lo.slice(lo.indexOf("page=")),"page=1");
+						location = lo + "&order=2";
+					} else {
+
+						var nowlocaion = lo.replace(lo.slice(lo.indexOf("&order")),"");
+						//切换排序方式的时候，回到第一页开始展示
+						nowlocaion = nowlocaion.replace(nowlocaion.slice(lo.indexOf("page="),lo.indexOf(("&order"))),"page=1");
+						location =  nowlocaion+ "&order=2";
+					}
+				});
+
+
+
 			})
 
 
@@ -55,30 +184,69 @@
 	<jsp:include page="head.jsp" />
 		<!------------------------------banner------------------------------>
 		<div class="banner">
-			<a href="#"><img src="${path}/static/img/temp/banner1.jpg"/></a>
+<%--			<a href="#"><img src="${path}/static/img/temp/banner1.jpg"/></a>--%>
+<%--			<a href="#"><img src=""></a>--%>
 		</div>
 		<!-----------------address------------------------------->
-	<%--	<div class="address">
-			<div class="wrapper clearfix">
-				<a href="index.jsp">首页</a>
-				<span>/</span>
-				<a href="TS/flowerDer.jsp">装饰摆件</a>
-				<span>/</span>
-				<a href="proList.html" class="on">干花花艺</a>
+		<c:if test="${param.firstMenuId != null || param.secMenuId != null}">
+			<div class="address">
+				<div class="wrapper clearfix">
+					<a href="${path}/index">首页</a>
+					<span>/</span>
+					<a href="${path}/list?firstMenuId=${requestScope.commodities[0].firstMenuId}&page=1">${requestScope.commodities[0].firstMenuChineseName}</a>
+
+					<c:if test="${param.firstMenuId == null}">
+						<span>/</span>
+						<a href="${path}/list?firstMenuId=${requestScope.commodities[0].secMenuId}&page=1">${requestScope.commodities[0].secMenuChineseName}</a>
+					</c:if>
+				</div>
 			</div>
-		</div>--%>
+		</c:if>
 		<!-------------------current---------------------->
 		<div class="current">
 			<div class="wrapper clearfix">
-				<h3 class="fl">全部商品</h3>
+				<c:if test="${param.firstMenuId != null}">
+					<h3 class="fl">${requestScope.commodities[0].firstMenuChineseName}</h3>
+				</c:if>
+
+				<c:if test="${param.secMenuId != null}">
+					<h3 class="fl">${requestScope.commodities[0].secMenuChineseName}</h3>
+				</c:if>
+				<c:if test="${param.firstMenuId == null && param.secMenuId == null }">
+					<h3 class="fl">全部商品</h3>
+				</c:if>
+
+
 				<div class="fr choice">
-					<p class="default">排序方式</p>
+
+						<c:choose>
+							<c:when test="${param.order == null}">
+								<p class="default">排序方式</p>
+							</c:when>
+							<c:when test="${param.order == 5}">
+								<p class="default">新品上市</p>
+							</c:when>
+							<c:when test="${param.order == 2}">
+								<p class="default">>销量从高到低</p>
+							</c:when>
+							<c:when test="${param.order == 1}">
+								<p class="default">>销量从低到高</p>
+							</c:when>
+							<c:when test="${param.order == 4}">
+								<p class="default">>价格从高到低</p>
+							</c:when>
+							<c:when test="${param.order == 3}">
+								<p class="default">>价格从低到高</p>
+							</c:when>
+						</c:choose>
+
+
 					<ul class="select">
-						<li>新品上市</li>
-						<li>销量从高到低</li>
-						<li>销量从低到高</li>
-						<li>价格从高到低</li>
-						<li>价格从低到高</li>
+						<li class="order-by-time">新品上市</li>
+						<li class="order-by-sales-desc">>销量从高到低</li>
+						<li class="order-by-sales">>销量从低到高</li>
+						<li class="order-by-price-desc">>价格从高到低</li>
+						<li class="order-by-price">>价格从低到高</li>
 					</ul>
 				</div>
 			</div>
@@ -97,7 +265,7 @@
 
 			<c:forEach items="${requestScope.commodities}" var="commodity">
 				<li>
-					<a href="proDetail.jsp">
+					<a href="${path}/commodityDetail?commodityId=${commodity.commodityId}">
 						<dl>
 							<dt>
 								<div>
@@ -111,7 +279,11 @@
 								</div>
 							</dt>
 							<dd>${commodity.commodityName}</dd>
-							<dd>￥${commodity.commodityPresentPrice}</dd>
+
+								<span class="pro-price">￥${commodity.commodityPresentPrice}</span>
+								<span class="pro-sales">销量：${commodity.commoditySales}件</span>
+
+
 						</dl>
 					</a>
 				</li>
@@ -199,13 +371,58 @@
 
 			<li class="page-item"><a class="page-link" href="${path}/list?page=1">首页</a></li>
 
-				<li class="page-item lipp"><a class="page-link  pp" href="javascript:;">上一页</a></li>
+				<li class="page-item lipp }"><a class="page-link  pp" href="javascript:;">上一页</a></li>
                     <c:forEach begin="1" var="i" end="${requestScope.commoditiesCount}">
-						<li class="page-item"><a class="page-link" href="${path}/list?page=${i}">${i}</a></li>
+<%--						<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?page=${i}">${i}</a></li>--%>
+						<%--查询全部页的12345……--%>
+						<c:if test="${param.firstMenuId == null && param.secMenuId == null}">
+
+						<%--如果没有排序就直接查--%>
+							<c:if test="${param.order == null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?page=${i}">${i}</a></li>
+
+							</c:if>
+
+							<c:if test="${param.order != null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?page=${i}&order=${param.order}">${i}</a></li>
+
+							</c:if>
+
+
+
+						</c:if>
+
+						<c:if test="${param.firstMenuId != null && param.secMenuId == null}">
+
+							<%--如果没有排序就直接查--%>
+							<c:if test="${param.order == null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?firstMenuId=${param.firstMenuId}&page=${i}">${i}</a></li>
+							</c:if>
+
+							<c:if test="${param.order != null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?firstMenuId=${param.firstMenuId}&page=${i}&order=${param.order}">${i}</a></li>
+							</c:if>
+
+						</c:if>
+
+
+						<c:if test="${param.firstMenuId == null && param.secMenuId != null}">
+
+							<%--如果没有排序就直接查--%>
+							<c:if test="${param.order == null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?secMenuId=${param.secMenuId}&page=${i}">${i}</a></li>
+							</c:if>
+
+							<c:if test="${param.order != null}">
+								<li class="page-item ${param.page == i ? "active":""}" ><a class="page-link" href="${path}/list?secMenuId=${param.secMenuId}&page=${i}&order=${param.order}">${i}</a></li>
+							</c:if>
+
+						</c:if>
+
                     </c:forEach>
 				<li class="page-item linp"><a class="page-link np" href="javascript:;">下一页</a></li>
 
-			<li class="page-item"><a class="page-link" href="${path}/list?page=${requestScope.commoditiesCount}">尾页</a></li>
+			<li class="page-item endp"><a class="page-link" href="javascript:;">尾页</a></li>
 		</ul>
 	</div>
 		<!--footer-->

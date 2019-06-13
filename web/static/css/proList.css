@@ -251,8 +251,8 @@ a.more{
 	width:500px;
 }
 .detCon .intro .title h4{
-	height:50px;
-	line-height:50px;
+	/*height:50px;*/
+	line-height:35px;
 	font-weight:normal;
 	font-size: 22px;
 }
@@ -913,9 +913,9 @@ ul.sch li a{
 	 height: 268px;
 
  }
+/*自适应*/
 .proList > li img {
 	object-fit: cover;
-
 }
 /*----------------------分页样式开始---------------------------------*/
 .pagination {
@@ -954,4 +954,35 @@ dl, ol, ul {
 	color: #fff;
 	background-color: #007bff;
 	border-color: #007bff;
+}
+/*----------------------分页样式结束---------------------------------*/
+
+/*商品详情页图片自适应*/
+.det{
+	object-fit: cover;
+}
+.zj{
+	width: 950px;
+	height: auto;
+}
+/*!*销量和库存*!*/
+/*.proIntro > p span {*/
+/*	margin-right: 100px;*/
+/*}*/
+
+/*销量和价格商品列表页*/
+.pro-price{
+	color: red;
+	float:left;
+	margin-top: 10px;
+	font-size: 16px;
+}
+.pro-sales {
+	/*color: red;*/
+	float:right;
+	margin-top: 10px;
+	padding-right: 20px;
+	bottom: -2px;
+	position: relative;
+	/*font-size: 16px;*/
 }

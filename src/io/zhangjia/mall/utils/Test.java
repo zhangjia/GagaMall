@@ -18,9 +18,9 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
 
-/*
-        NavService n = new NavServiceImpl();
-        n.getSecNav2();*/
+
+        CommodityDao c = new CommodityDaoImpl();
+//        System.out.println(c.queryCommodity(1));
 
     }
 }

@@ -14,20 +14,38 @@ public class Commodity {
     private Integer commoditySales;
     private Date commodityCreateTime;
     private Integer commodityViews;
-    private Integer commodityFirstMenuId;
-    private Integer commoditySecMenuId;
+    private Integer firstMenuId;
+    private Integer secMenuId;
     private Integer commodityIsDel;
 
 //    ----------------------------------------
 
     private List<Map<String, Object>> commodityImg;
     private List<Map<String, Object>> commodityDetails;
+    private String firstMenuChineseName;
+    private String secMenuChineseName;
 
+
+    public String getFirstMenuChineseName() {
+        return firstMenuChineseName;
+    }
+
+    public void setFirstMenuChineseName(String firsMenuChineseName) {
+        this.firstMenuChineseName = firsMenuChineseName;
+    }
+
+    public String getSecMenuChineseName() {
+        return secMenuChineseName;
+    }
+
+    public void setSecMenuChineseName(String secMenuChineseName) {
+        this.secMenuChineseName = secMenuChineseName;
+    }
 
     public Commodity() {
     }
 
-    public Commodity(String commodityName, Double commodityOriginalPrice, Double commodityPresentPrice, Integer commodityInventor, Integer commoditySales, Date commodityCreateTime, Integer commodityViews, Integer commodityFirstMenuId, Integer commoditySecMenuId, Integer commodityIsDel) {
+    public Commodity(String commodityName, Double commodityOriginalPrice, Double commodityPresentPrice, Integer commodityInventor, Integer commoditySales, Date commodityCreateTime, Integer commodityViews, Integer firstMenuId, Integer secMenuId, Integer commodityIsDel) {
         this.commodityName = commodityName;
         this.commodityOriginalPrice = commodityOriginalPrice;
         this.commodityPresentPrice = commodityPresentPrice;
@@ -35,12 +53,12 @@ public class Commodity {
         this.commoditySales = commoditySales;
         this.commodityCreateTime = commodityCreateTime;
         this.commodityViews = commodityViews;
-        this.commodityFirstMenuId = commodityFirstMenuId;
-        this.commoditySecMenuId = commoditySecMenuId;
+        this.firstMenuId = firstMenuId;
+        this.secMenuId = secMenuId;
         this.commodityIsDel = commodityIsDel;
     }
 
-    public Commodity(Integer commodityId, String commodityName, Double commodityOriginalPrice, Double commodityPresentPrice, Integer commodityInventor, Integer commoditySales, Date commodityCreateTime, Integer commodityViews, Integer commodityFirstMenuId, Integer commoditySecMenuId, Integer commodityIsDel) {
+    public Commodity(Integer commodityId, String commodityName, Double commodityOriginalPrice, Double commodityPresentPrice, Integer commodityInventor, Integer commoditySales, Date commodityCreateTime, Integer commodityViews, Integer firstMenuId, Integer secMenuId, Integer commodityIsDel) {
         this.commodityId = commodityId;
         this.commodityName = commodityName;
         this.commodityOriginalPrice = commodityOriginalPrice;
@@ -49,8 +67,8 @@ public class Commodity {
         this.commoditySales = commoditySales;
         this.commodityCreateTime = commodityCreateTime;
         this.commodityViews = commodityViews;
-        this.commodityFirstMenuId = commodityFirstMenuId;
-        this.commoditySecMenuId = commoditySecMenuId;
+        this.firstMenuId = firstMenuId;
+        this.secMenuId = secMenuId;
         this.commodityIsDel = commodityIsDel;
     }
 
@@ -70,6 +88,13 @@ public class Commodity {
         this.commodityDetails = commodityDetails;
     }
 
+    public void setFirstMenuId(Integer firstMenuId) {
+        this.firstMenuId = firstMenuId;
+    }
+
+    public void setSecMenuId(Integer secMenuId) {
+        this.secMenuId = secMenuId;
+    }
     public Integer getCommodityId() {
         return commodityId;
     }
@@ -102,13 +127,7 @@ public class Commodity {
         return commodityViews;
     }
 
-    public Integer getCommodityFirstMenuId() {
-        return commodityFirstMenuId;
-    }
 
-    public Integer getCommoditySecMenuId() {
-        return commoditySecMenuId;
-    }
 
     public Integer getCommodityIsDel() {
         return commodityIsDel;
@@ -146,12 +165,12 @@ public class Commodity {
         this.commodityViews = commodityViews;
     }
 
-    public void setCommodityFirstMenuId(Integer commodityFirstMenuId) {
-        this.commodityFirstMenuId = commodityFirstMenuId;
+    public Integer getFirstMenuId() {
+        return firstMenuId;
     }
 
-    public void setCommoditySecMenuId(Integer commoditySecMenuId) {
-        this.commoditySecMenuId = commoditySecMenuId;
+    public Integer getSecMenuId() {
+        return secMenuId;
     }
 
     public void setCommodityIsDel(Integer commodityIsDel) {
@@ -171,14 +190,14 @@ public class Commodity {
                 Objects.equals(commoditySales, commodity.commoditySales) &&
                 Objects.equals(commodityCreateTime, commodity.commodityCreateTime) &&
                 Objects.equals(commodityViews, commodity.commodityViews) &&
-                Objects.equals(commodityFirstMenuId, commodity.commodityFirstMenuId) &&
-                Objects.equals(commoditySecMenuId, commodity.commoditySecMenuId) &&
+                Objects.equals(firstMenuId, commodity.firstMenuId) &&
+                Objects.equals(secMenuId, commodity.secMenuId) &&
                 Objects.equals(commodityIsDel, commodity.commodityIsDel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commodityId, commodityName, commodityOriginalPrice, commodityPresentPrice, commodityInventor, commoditySales, commodityCreateTime, commodityViews, commodityFirstMenuId, commoditySecMenuId, commodityIsDel);
+        return Objects.hash(commodityId, commodityName, commodityOriginalPrice, commodityPresentPrice, commodityInventor, commoditySales, commodityCreateTime, commodityViews, firstMenuId, secMenuId, commodityIsDel);
     }
 
     @Override
@@ -192,11 +211,13 @@ public class Commodity {
                 ", commoditySales=" + commoditySales +
                 ", commodityCreateTime=" + commodityCreateTime +
                 ", commodityViews=" + commodityViews +
-                ", commodityFirstMenuId=" + commodityFirstMenuId +
-                ", commoditySecMenuId=" + commoditySecMenuId +
+                ", firstMenuId=" + firstMenuId +
+                ", secMenuId=" + secMenuId +
                 ", commodityIsDel=" + commodityIsDel +
                 ", commodityImg=" + commodityImg +
                 ", commodityDetails=" + commodityDetails +
+                ", firsMenuChineseName='" + firstMenuChineseName + '\'' +
+                ", secMenuChineseName='" + secMenuChineseName + '\'' +
                 '}';
     }
 }

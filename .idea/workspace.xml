@@ -7,31 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="528fa89f-9d1d-4918-82cc-cd10cbb2bddc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/mygxin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/zhangjia.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImgServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CommodityDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/orderxq.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/insert.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Test.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/public-static-file.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/public-static-file.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/css/proList.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/proList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/nav.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,35 +71,54 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2332">
+              <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/js/nav.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/js/pro.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="118" column="34" lean-forward="true" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/js/public.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="50" column="111" selection-start-line="50" selection-start-column="111" selection-end-line="50" selection-end-column="111" />
+            <state relative-caret-position="-2693">
+              <caret line="80" column="156" selection-start-line="80" selection-start-column="156" selection-end-line="80" selection-end-column="156" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#queryCommodityImgs#0;class#CommodityDaoImpl#0" />
+                <element signature="n#!!doc;n#queryAll#0;n#CommodityDaoImpl#0" />
+                <element signature="method#queryLike#0;class#CommodityDaoImpl#0" />
+                <element signature="method#queryCommodity#0;class#CommodityDaoImpl#0" />
               </folding>
             </state>
           </provider>
@@ -144,6 +160,9 @@
       <find>个人中心</find>
       <find>nav</find>
       <find>list</find>
+      <find>det</find>
+      <find>msgImgs</find>
+      <find>proDet.jpg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,17 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java" />
-        <option value="$PROJECT_DIR$/web/TS/flowerDer.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/Commodity.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/Commodity.java" />
-        <option value="$PROJECT_DIR$/web/test2.jsp" />
-        <option value="$PROJECT_DIR$/web/headCssAndJS.jsp" />
-        <option value="$PROJECT_DIR$/web/public-static-file.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/FirstMenu.java" />
-        <option value="$PROJECT_DIR$/web/head.jsp" />
-        <option value="$PROJECT_DIR$/web/idea.jsp" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/mygxin.jsp" />
         <option value="$PROJECT_DIR$/web/proDetail.jsp" />
@@ -178,31 +186,42 @@
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_3.sql" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/zhangjia.jsp" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" />
-        <option value="$PROJECT_DIR$/web/Test.jsp" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/list2Servlet.java" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/List2Servlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/public-static-file.jsp" />
         <option value="$PROJECT_DIR$/web/static/css/public.css" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_4.sql" />
-        <option value="$PROJECT_DIR$/web/static/css/proList.css" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/head.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" />
+        <option value="$PROJECT_DIR$/web/static/js/pro.js" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CommodityDetail.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/insert/Menu.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImg.java" />
+        <option value="$PROJECT_DIR$/web/Test.jsp" />
+        <option value="$PROJECT_DIR$/web/insert.jsp" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImgServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/cart.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_5.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_4.sql" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_6.sql" />
         <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/static/css/proList.css" />
+        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/web/static/js/nav.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" />
       </list>
     </option>
   </component>
@@ -220,7 +239,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-133" />
+    <option name="x" value="-135" />
     <option name="y" value="70" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
@@ -238,7 +257,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -291,6 +309,24 @@
               <item name="mall" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
+              <item name="mall" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
+              <item name="mall" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
@@ -356,13 +392,6 @@
               <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,6 +402,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,7 +412,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -392,15 +422,14 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF\views" />
       <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web" />
-      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\static\css" />
+      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\TS" />
       <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF\lib" />
-      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\src\io\zhangjia\mall" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.zhangjia.mall.dao.impl" />
@@ -409,11 +438,12 @@
       <recent name="io.zhangjia.mall.service" />
       <recent name="io.zhangjia.mall.servlet" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF\views" />
       <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web" />
-      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\TS" />
-      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF\lib" />
+      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\static" />
+      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\static\img\temp" />
+      <recent name="E:\Java\IDEA_Project\JavaWeb\GagaMall\web\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -429,6 +459,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
+    <configuration name="InsertImg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.zhangjia.mall.insert.InsertImg" />
+      <module name="GagaMall" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.zhangjia.mall.insert.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.zhangjia.mall.utils.Test" />
       <module name="GagaMall" />
@@ -577,11 +620,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.InsertImg" />
+      <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InsertImg" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -597,7 +642,9 @@
       <option name="presentableId" value="Default" />
       <updated>1559880897487</updated>
       <workItem from="1559880902665" duration="14693000" />
-      <workItem from="1559911090824" duration="145847000" />
+      <workItem from="1559911090824" duration="164501000" />
+      <workItem from="1560348599392" duration="16455000" />
+      <workItem from="1560405945156" duration="15112000" />
     </task>
     <task id="LOCAL-00001" summary="搭建好开发环境">
       <created>1559882139539</created>
@@ -648,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560180608621</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="商品分页v1.0">
+      <created>1560321013216</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560321013216</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160540000" />
+    <option name="totallyTimeSpent" value="210761000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -665,76 +719,77 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25938338" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9223744" weight="0.33378017" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" sideWeight="0.69437" weight="0.40642458" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.3058659" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.476257" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32960895" />
+      <window_info id="Web" order="7" sideWeight="0.07762557" side_tool="true" weight="0.33378017" />
+      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.5797587" weight="0.041899443" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49798927" weight="0.041899443" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32960895" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49865952" weight="0.29986054" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.30563003" side_tool="true" weight="0.40642458" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.35335195" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.18435754" />
-      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32960895" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.04032258" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4202413" side_tool="true" weight="0.041899443" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.18435754" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32960895" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.35335195" />
+      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49932975" weight="0.56703913" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.30726257" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.02010724" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Module Dependencies" order="5" weight="0.3297587" />
-      <window_info anchor="right" id="Database" order="6" weight="0.24262735" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="8" weight="0.13941018" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.02010724" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2600536" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9223744" visible="true" weight="0.33378017" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.69437" weight="0.40642458" />
+      <window_info id="Web" order="7" sideWeight="0.07762557" side_tool="true" weight="0.33378017" />
+      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.5797587" weight="0.041899443" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49865952" visible="true" weight="0.041899443" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49798927" visible="true" weight="0.041899443" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32960895" />
-      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.476257" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32960895" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.30563003" side_tool="true" weight="0.40642458" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.35335195" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.18435754" />
-      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32960895" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.04032258" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49865952" weight="0.29986054" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4202413" side_tool="true" weight="0.041899443" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.18435754" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32960895" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.35335195" />
+      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49932975" weight="0.56703913" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.30726257" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" visible="true" weight="0.02010724" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.02010724" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Module Dependencies" order="5" weight="0.3297587" />
-      <window_info anchor="right" id="Database" order="6" weight="0.24262735" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="8" weight="0.13941018" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.02010724" />
     </layout-to-restore>
   </component>
@@ -800,7 +855,8 @@
     <MESSAGE value="登录、注册v1.1" />
     <MESSAGE value="登录、注册v1.2" />
     <MESSAGE value="查询商品v1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="查询商品v1.0" />
+    <MESSAGE value="商品分页v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品分页v1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -812,12 +868,6 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java</url>
           <line>25</line>
           <properties />
@@ -825,13 +875,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp</url>
-          <line>219</line>
+          <line>436</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java</url>
-          <line>67</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -845,7 +895,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java</url>
-          <line>13</line>
+          <line>14</line>
           <properties class="io.zhangjia.mall.dao.impl.CommodityDaoImpl" method="queryCommodityImgs">
             <option name="EMULATED" value="true" />
           </properties>
@@ -859,104 +909,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/static/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/TS/jquery.flexslider-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="500" column="11" lean-forward="true" selection-start-line="500" selection-start-column="11" selection-end-line="500" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/FirstMenuDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://a49eb43f-51ab-4ee0-b996-a04c4f7ad116/schema/GAGAMALL/table/COMMODITIES">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e4acb4c0-90b1-41a4-966b-f26ab5dc67f1">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -971,16 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -992,16 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1025,16 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/SecMenuDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1046,13 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="139" column="28" lean-forward="true" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1073,105 +988,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/FirstMenuDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="342" column="73" selection-start-line="342" selection-start-column="73" selection-end-line="342" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="76" column="9" selection-start-line="76" selection-start-column="7" selection-end-line="81" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2520#2521#0" expanded="true" />
-            <element signature="e#2555#2556#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2740#2741#0" expanded="true" />
-            <element signature="e#2779#2780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-354">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/List2Servlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/List2Servlet.java" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/idea.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
           <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/public-static-file.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="557" selection-start-line="557" selection-end-line="557" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_4.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="60" selection-start-column="60" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -1185,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/proList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="948" column="29" selection-start-line="948" selection-start-column="29" selection-end-line="948" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -1199,54 +1013,258 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/head.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp">
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/CharacterEncodingFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="200" lean-forward="true" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="-19">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java">
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/FirstMenuDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        <state relative-caret-position="132">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java">
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/FirstMenuDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="557" selection-start-line="557" selection-end-line="557" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/insert/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="47" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/insert.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="403" column="42" lean-forward="true" selection-start-line="403" selection-start-column="42" selection-end-line="403" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#3836#3842#1#HTML" expanded="true" />
+            <element signature="e#3842#3848#0#HTML" expanded="true" />
+            <element signature="e#3848#3854#0#HTML" expanded="true" />
+            <element signature="e#3854#3860#0#HTML" expanded="true" />
+            <element signature="e#3860#3866#0#HTML" expanded="true" />
+            <element signature="e#3866#3872#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImgServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="95" lean-forward="true" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/public-static-file.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_4.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2222">
+          <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CommodityDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/head.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="41" column="68" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/css/proList.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="986" column="24" lean-forward="true" selection-start-line="986" selection-start-column="24" selection-end-line="986" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1255,18 +1273,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="248">
+          <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/pro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="118" column="34" lean-forward="true" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/public.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="50" column="111" selection-start-line="50" selection-start-column="111" selection-end-line="50" selection-end-column="111" />
+        <state relative-caret-position="-2693">
+          <caret line="80" column="156" selection-start-line="80" selection-start-column="156" selection-end-line="80" selection-end-column="156" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#queryCommodityImgs#0;class#CommodityDaoImpl#0" />
+            <element signature="n#!!doc;n#queryAll#0;n#CommodityDaoImpl#0" />
+            <element signature="method#queryLike#0;class#CommodityDaoImpl#0" />
+            <element signature="method#queryCommodity#0;class#CommodityDaoImpl#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2332">
+          <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
         </state>
       </provider>
     </entry>

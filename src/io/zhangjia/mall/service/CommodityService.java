@@ -12,7 +12,9 @@ import java.util.Map;
  *
  */
 public interface CommodityService {
-	List<Commodity> queryCommodities(String name,String page,String firstMenuId,String secMenuId);
+	List<Commodity> queryCommodities(String name,String page,String firstMenuId,String secMenuId,String order);
 //	List<Commodity> queryCommodities(String name);
 	Integer queryPagesCount(String firstMenuId, String secMenuId);
+
+	Commodity queryCommodity(String firstMenuId);
 }

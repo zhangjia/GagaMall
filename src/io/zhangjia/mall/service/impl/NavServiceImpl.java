@@ -77,9 +77,9 @@ public class NavServiceImpl implements NavService {
        /* System.out.println(maps);
 
 
-        System.out.println(firstMenus);
+        System.out.println(firstMenus);*/
 
-        System.out.println(JSON.toJSONString(firstMenus));*/
+        System.out.println(JSON.toJSONString(firstMenus));
         return firstMenus;
 
     }

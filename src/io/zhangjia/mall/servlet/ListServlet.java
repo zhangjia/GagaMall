@@ -36,7 +36,9 @@ public class ListServlet extends HttpServlet {
 
         String page = req.getParameter("page");
 
-        List<Commodity> commodities = commodityService.queryCommodities(name,page,firstMenuId,secMenuId);
+        String orders = req.getParameter("order");
+
+        List<Commodity> commodities = commodityService.queryCommodities(name,page,firstMenuId,secMenuId,orders);
 
 
         req.setAttribute("commodities",commodities);

@@ -12,52 +12,36 @@ import java.util.List;
 public class CommodityServiceImpl implements CommodityService {
 
 	private CommodityDao commodityDao = new CommodityDaoImpl();
-	private int pageSize = 1;
+	private int pageSize = 2;
 	@Override
 	public List<Commodity> queryCommodities(String name,String page,
-											String firstMenuId,String secMenuId) {
+											String firstMenuId,String secMenuId,String orders) {
 		int pages= 0;
+		int order = 0;
 
+		if(orders == null || "".equals(orders)){
+			order = 0;
+		} else {
+			order = Integer.parseInt(orders);
+		}
 		if(page != null) {
 			pages = Integer.parseInt(page);
 		}
-
-
-		/*if(name == null && firstMenuId == null && secMenuId == null) {
-			System.out.println("进入1");
-			return commodityDao.queryAll((pages-1) * pageSize,pageSize * pages);
-		} else 	if (name !=null){
-			System.out.println("进入2");
-			return commodityDao.queryLike(name);
-		} else {
-			System.out.println("进入3");
-			if(firstMenuId != null && (!"".equals(firstMenuId))) {
-
-				return commodityDao.queryMenuId(Integer.parseInt(firstMenuId),null);
-
-			}
-			if(secMenuId != null && (!"".equals(secMenuId))) {
-
-				return commodityDao.queryMenuId(null,Integer.parseInt(secMenuId));
-
-			}
-			return null;
-		}*/
 
 		if(name != null) {
 			return commodityDao.queryLike(name);
 		} else {
 			if(firstMenuId == null && secMenuId == null) {
-				return commodityDao.queryAll(null,null,(pages-1) * pageSize,pageSize * pages);
+				return commodityDao.queryAll(null,null,(pages-1) * pageSize,pageSize * pages,order);
 			}
 			if(firstMenuId != null && secMenuId == null) {
 				if(!"".equals(firstMenuId)) {
-					return commodityDao.queryAll(Integer.parseInt(firstMenuId), null, (pages - 1) * pageSize, pageSize * pages);
+					return commodityDao.queryAll(Integer.parseInt(firstMenuId), null, (pages - 1) * pageSize, pageSize * pages,order);
 				}
 			}
 			if(firstMenuId == null && secMenuId != null) {
 				if(!"".equals(secMenuId)) {
-					return commodityDao.queryAll(null,Integer.parseInt(secMenuId),(pages-1) * pageSize,pageSize * pages);
+					return commodityDao.queryAll(null,Integer.parseInt(secMenuId),(pages-1) * pageSize,pageSize * pages,order);
 				}
 
 			}
@@ -70,21 +54,27 @@ public class CommodityServiceImpl implements CommodityService {
 	@Override
 	public Integer queryPagesCount(String firstMenuId, String secMenuId) {
 		if(firstMenuId != null && (!"".equals(firstMenuId))) {
-
-			return commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId),null)/ pageSize;
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null) / (pageSize * 1.0));
+			return (int)ceil;
 
 		}
 		if(secMenuId != null && (!"".equals(secMenuId))) {
-
-			return commodityDao.queryCommodityCount(null,Integer.parseInt(secMenuId))/ pageSize;
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(null,Integer.parseInt(secMenuId))/ (pageSize * 1.0));
+			return (int)ceil;
 
 		}
 
 		if(secMenuId == null && firstMenuId==null) {
-			return commodityDao.queryCommodityCount(null, null) / pageSize;
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(null, null) / (pageSize * 1.0));
+			return (int)ceil;
 		}
 
 		return -1;
+	}
+
+	@Override
+	public Commodity queryCommodity(String firstMenuId) {
+		return commodityDao.queryCommodity(firstMenuId);
 	}
 
 
