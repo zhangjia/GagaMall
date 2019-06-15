@@ -8,8 +8,8 @@ import java.util.Map;
 public interface CommodityDao {
     List<Commodity> queryCommodityImgs(List<Commodity> commodities);
     List<Commodity> queryAll(Integer firstMenuId,Integer secMenuId,int page,int pageSize,int order);
-    List<Commodity> queryLike(String name);
-    Integer queryCommodityCount(Integer firstMenuId,Integer secMenuId);
+    List<Commodity> queryLike(String name,int page,int pageSize,int order);
+    Integer queryCommodityCount(Integer firstMenuId,Integer secMenuId,String name);
     Commodity queryCommodity(String commodityId);
-    List<Commodity> queryAllByOrder();
+
 }

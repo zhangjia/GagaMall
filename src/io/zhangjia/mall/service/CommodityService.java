@@ -14,7 +14,7 @@ import java.util.Map;
 public interface CommodityService {
 	List<Commodity> queryCommodities(String name,String page,String firstMenuId,String secMenuId,String order);
 //	List<Commodity> queryCommodities(String name);
-	Integer queryPagesCount(String firstMenuId, String secMenuId);
+	Integer queryPagesCount(String firstMenuId, String secMenuId,String name);
 
 	Commodity queryCommodity(String firstMenuId);
 }

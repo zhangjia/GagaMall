@@ -22,13 +22,15 @@
                                             </p>
                 </c:if>
                 <form action="${path}/list" method="get" class="fl">
+
                     <input type="text" name="name" value="${param.name}" placeholder="搜索"/>
-                    <input type="submit" value="" />
+                    <input type="hidden" name="page" value="1">
+                    <input class="ssimg" type="submit" value="" />
                 </form>
                 <div class="btn fl clearfix">
                     <a href="mygxin.jsp"><img src="${path}/static/img/grzx.png"/></a>
                     <a href="#" class="er1"><img src="${path}/static/img/ewm.png"/></a>
-                    <a href="cart.jsp"><img src="${path}/static/img/gwc.png"/></a>
+                    <a href="${path}/cart"><img src="${path}/static/img/gwc.png"/></a>
                     <p><a href="#"><img src="${path}/static/img/smewm.png"/></a></p>
                 </div>
             </div>

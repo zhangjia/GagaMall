@@ -106,6 +106,7 @@ public class CommonDao extends JDBCUtils {
                 for (int i = 0; i < params.length; i++) {
                     // 设置占位符
                     pstm.setObject(i + 1, params[i]);
+                    System.out.println("i"+ (i + 1) + "param = " + params[i]);
                 }
             }
             // 执行SQL语句

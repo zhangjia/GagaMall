@@ -43,7 +43,7 @@ public class ListServlet extends HttpServlet {
 
         req.setAttribute("commodities",commodities);
 
-        req.setAttribute("commoditiesCount",commodityService.queryPagesCount(firstMenuId,secMenuId));
+        req.setAttribute("commoditiesCount",commodityService.queryPagesCount(firstMenuId,secMenuId,name));
 //
         req.getRequestDispatcher("/WEB-INF/views/proList.jsp").forward(req,resp);
 //        req.getRequestDispatcher("proList.jsp").forward(req,resp);

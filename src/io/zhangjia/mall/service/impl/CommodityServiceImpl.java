@@ -29,7 +29,7 @@ public class CommodityServiceImpl implements CommodityService {
 		}
 
 		if(name != null) {
-			return commodityDao.queryLike(name);
+			return commodityDao.queryLike(name,(pages-1) * pageSize,pageSize * pages,order);
 		} else {
 			if(firstMenuId == null && secMenuId == null) {
 				return commodityDao.queryAll(null,null,(pages-1) * pageSize,pageSize * pages,order);
@@ -52,20 +52,20 @@ public class CommodityServiceImpl implements CommodityService {
 	}
 
 	@Override
-	public Integer queryPagesCount(String firstMenuId, String secMenuId) {
+	public Integer queryPagesCount(String firstMenuId, String secMenuId,String name) {
 		if(firstMenuId != null && (!"".equals(firstMenuId))) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null) / (pageSize * 1.0));
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null,name) / (pageSize * 1.0));
 			return (int)ceil;
 
 		}
 		if(secMenuId != null && (!"".equals(secMenuId))) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(null,Integer.parseInt(secMenuId))/ (pageSize * 1.0));
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(null,Integer.parseInt(secMenuId),name)/ (pageSize * 1.0));
 			return (int)ceil;
 
 		}
 
 		if(secMenuId == null && firstMenuId==null) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(null, null) / (pageSize * 1.0));
+			double ceil = Math.ceil(commodityDao.queryCommodityCount(null, null,name) / (pageSize * 1.0));
 			return (int)ceil;
 		}
 
