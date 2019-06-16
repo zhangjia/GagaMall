@@ -48,4 +48,6 @@ public class ListServlet extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/views/proList.jsp").forward(req,resp);
 //        req.getRequestDispatcher("proList.jsp").forward(req,resp);
     }
+
+
 }

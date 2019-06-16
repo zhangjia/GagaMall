@@ -29,16 +29,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 
 
 
-//	@Override
-//	public List<Commodity> queryAll(Integer firstMenuId,Integer secMenuId,int page,int pageSize) {
-//		//查出来所有的商品
-//		String sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM COMMODITY) WHERE rn > ? AND rn <= ?";
-////		List<Commodity> commodities = query4BeanList(sql, Commodity.class,"0","2");
-//		List<Commodity> commodities = query4BeanList(sql, Commodity.class,page,pageSize);
-//		System.out.println(page + " -- " + pageSize);
-//		queryCommodityImgs(commodities);
-//		return commodities;
-//	}
 	@Override
 	public List<Commodity> queryAll(Integer firstMenuId,Integer secMenuId,int page,int pageSize,int order) {
 		String sql = "";
@@ -57,8 +47,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 			* */
 			switch (order){
 				case 0:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -84,8 +72,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"  AND rn <= ?";
 					break;
 				case 1:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -110,8 +96,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 2:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES DESC) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -136,8 +120,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 3:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -162,8 +144,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 4:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE DESC) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -188,8 +168,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 5:
-//					sql="SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_CREATE_TIME DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_CREATE_TIME DESC) c) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -232,8 +210,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 			 * */
 			switch (order){
 				case 0:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM COMMODITY WHERE SEC_MENU_ID = ? ) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -263,8 +239,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 1:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND SEC_MENU_ID = ? ORDER BY COMMODITY_SALES) COMMODITY) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID ORDER BY COMMODITY_SALES) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -294,8 +268,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 2:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND SEC_MENU_ID = ? ORDER BY COMMODITY_SALES DESC) COMMODITY) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID ORDER BY COMMODITY_SALES DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -325,8 +297,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 3:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND SEC_MENU_ID = ? ORDER BY COMMODITY_PRESENT_PRICE) COMMODITY) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -356,8 +326,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 4:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND SEC_MENU_ID = ? ORDER BY COMMODITY_PRESENT_PRICE DESC) COMMODITY) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -387,8 +355,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 5:
-//					sql="SELECT r.*,f.FIRST_MENU_CHINESE_NAME,s.SEC_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND SEC_MENU_ID = ? ORDER BY COMMODITY_CREATE_TIME DESC) COMMODITY) r,FIRST_MENU f,SEC_MENU s WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID AND r.SEC_MENU_ID = s.SEC_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,s.SEC_MENU_CHINESE_NAME FROM COMMODITY c,SEC_MENU s WHERE c.SEC_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.SEC_MENU_ID = s.SEC_MENU_ID ORDER BY COMMODITY_CREATE_TIME DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -439,9 +405,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 			 * */
 			switch (order){
 				case 0:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM COMMODITY WHERE FIRST_MENU_ID =? ) r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -470,9 +433,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 1:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND FIRST_MENU_ID = ? ORDER BY COMMODITY_SALES) COMMODITY ) r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_SALES ) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_SALES) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -503,9 +463,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"  AND rn <= ?";
 					break;
 				case 2:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND FIRST_MENU_ID = ? ORDER BY COMMODITY_SALES DESC) COMMODITY ) r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_SALES DESC) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_SALES DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -535,9 +492,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 3:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND FIRST_MENU_ID = ? ORDER BY COMMODITY_PRESENT_PRICE) COMMODITY )r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -567,9 +521,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 4:
-//					sql = "SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND FIRST_MENU_ID = ? ORDER BY COMMODITY_PRESENT_PRICE DESC) COMMODITY )r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE DESC) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_PRESENT_PRICE DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -599,9 +550,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 							"WHERE rn > ? AND rn <= ?";
 					break;
 				case 5:
-//					sql="SELECT r.*,f.FIRST_MENU_CHINESE_NAME FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 AND FIRST_MENU_ID = ? ORDER BY COMMODITY_CREATE_TIME DESC) COMMODITY )r,FIRST_MENU f WHERE COMMODITY_IS_DEL = 1 AND rn > ? AND rn <= ? AND r.FIRST_MENU_ID = f.FIRST_MENU_ID";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_CREATE_TIME DESC) WHERE rn > ? AND rn <= ?";
-//                    sql = "SELECT * FROM (SELECT ROWNUM rn,c2.* FROM (SELECT c.*,f.FIRST_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f WHERE c.FIRST_MENU_ID =? AND COMMODITY_IS_DEL = 1 AND c.FIRST_MENU_ID = f.FIRST_MENU_ID ORDER BY COMMODITY_CREATE_TIME DESC) c2) WHERE rn > ? AND rn <= ?";
 					sql = "SELECT *\n" +
 							"FROM (\n" +
 							"         SELECT ROWNUM rn, c.*\n" +
@@ -653,8 +601,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 		String sql = "";
 		switch (order){
 			case 0:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1) c) WHERE rn > ? AND rn <= ?";
 				 sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -677,8 +623,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 						"                    AND UPPER(t1.COMMODITY_NAME) LIKE UPPER(?)) c) WHERE rn > ? AND rn <= ?";
 				break;
 			case 1:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES) c) WHERE rn > ? AND rn <= ?";
 				sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -701,8 +645,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 						"                    AND UPPER(t1.COMMODITY_NAME) LIKE UPPER(?) ORDER BY COMMODITY_SALES) c) WHERE rn > ? AND rn <= ? ";
 				break;
 			case 2:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES DESC) c) WHERE rn > ? AND rn <= ?";
 				sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -725,8 +667,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 						"                    AND UPPER(t1.COMMODITY_NAME) LIKE UPPER(?) ORDER BY COMMODITY_SALES DESC) c) WHERE rn > ? AND rn <= ? ";
 				break;
 			case 3:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE) c) WHERE rn > ? AND rn <= ?";
 				sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -749,8 +689,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 						"                    AND UPPER(t1.COMMODITY_NAME) LIKE UPPER(?) ORDER BY COMMODITY_MAX_PRESENT_PRICE) c) WHERE rn > ? AND rn <= ? ";
 				break;
 			case 4:
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_PRESENT_PRICE DESC) c) WHERE rn > ? AND rn <= ?";
 				sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -773,8 +711,6 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 						"                    AND UPPER(t1.COMMODITY_NAME) LIKE UPPER(?) ORDER BY COMMODITY_MAX_PRESENT_PRICE DESC) c) WHERE rn > ? AND rn <= ? ";
 				break;
 			case 5:
-//					sql="SELECT * FROM (SELECT ROWNUM rn,COMMODITY.* FROM (SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_CREATE_TIME DESC) COMMODITY) WHERE rn > ? AND rn <= ?";
-//					sql = "SELECT * FROM (SELECT ROWNUM rn,c.* FROM(SELECT * FROM COMMODITY WHERE COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_CREATE_TIME DESC) c) WHERE rn > ? AND rn <= ?";
 				sql = "SELECT *\n" +
 						"FROM (\n" +
 						"         SELECT ROWNUM rn, c.*\n" +
@@ -831,12 +767,48 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 
 	@Override
 	public Commodity queryCommodity(String commodityId) {
-//		String sql = "SELECT c.*,FIRST_MENU_CHINESE_NAME,SEC_MENU_CHINESE_NAME FROM COMMODITY c,FIRST_MENU f,SEC_MENU s WHERE  c.SEC_MENU_ID = s.SEC_MENU_ID AND c.FIRST_MENU_ID = f.FIRST_MENU_ID AND COMMODITY_ID = ? AND COMMODITY_IS_DEL = 1";
-		String sql = "";
+		String sql = "SELECT *\n" +
+				"FROM (\n" +
+				"         SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME,t4.SEC_MENU_CHINESE_NAME\n" +
+				"         FROM COMMODITY t1,\n" +
+				"              (SELECT COMMODITY_ID                            cid,\n" +
+				"                      SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
+				"                      SUM(SPU_INVENTOR)                       COMMODITY_INVENTOR,\n" +
+				"                      MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+				"                      MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+				"                      MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+				"                      MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+				"                      MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+				"               FROM SPU\n" +
+				"               WHERE SPU_IS_DEL = 1\n" +
+				"               GROUP BY COMMODITY_ID) t2,\n" +
+				"               FIRST_MENU t3,\n" +
+				"            SEC_MENU t4\n" +
+				"         WHERE t1.COMMODITY_ID = t2.cid\n" +
+				"           AND t1.COMMODITY_IS_DEL = 1\n" +
+				"           AND t3.FIRST_MENU_IS_DEL = 1\n" +
+				"           AND t4.SEC_MENU_IS_DEL = 1\n" +
+				"           AND t1.FIRST_MENU_ID = t3.FIRST_MENU_ID\n" +
+				"           AND t1.SEC_MENU_ID = t4.SEC_MENU_ID\n" +
+				"           AND t1.COMMODITY_ID = ?\n" +
+				"     )";
 		List<Commodity> c = new ArrayList<>();
 		c.add(query4Bean(sql, Commodity.class, commodityId));
 		List<Commodity> commodities = queryCommodityImgs(c);
 		return  commodities.get(0);
+	}
+
+	@Override
+	public List<Map<String, Object>> querySPEC(Integer commodityId) {
+//		String sql = "SELECT SPU_VALUE,COMMODITY_ID   FROM SPU  WHERE COMMODITY_ID = 1 AND SPU_IS_DEL = ?";
+		String sql = "SELECT COMMODITY_ATTRIBUTES,COMMODITY_ID FROM COMMODITY WHERE COMMODITY_ID = ?";
+		return query4MapList(sql,commodityId);
+	}
+
+	@Override
+	public List<Map<String, Object>> querySPU(String spuValue) {
+		String sql = "SELECT * FROM SPU WHERE SPU_VALUE = ? AND SPU_IS_DEL = 1";
+		return query4MapList(sql,spuValue);
 	}
 
 }

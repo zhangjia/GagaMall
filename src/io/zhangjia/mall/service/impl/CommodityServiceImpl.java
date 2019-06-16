@@ -1,13 +1,15 @@
 package io.zhangjia.mall.service.impl;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import io.zhangjia.mall.dao.CommodityDao;
 import io.zhangjia.mall.dao.impl.CommodityDaoImpl;
 import io.zhangjia.mall.entity.Commodity;
 import io.zhangjia.mall.service.CommodityService;
 import org.omg.PortableInterceptor.INACTIVE;
 
-import java.util.List;
+import java.util.*;
 
 public class CommodityServiceImpl implements CommodityService {
 
@@ -75,6 +77,54 @@ public class CommodityServiceImpl implements CommodityService {
 	@Override
 	public Commodity queryCommodity(String firstMenuId) {
 		return commodityDao.queryCommodity(firstMenuId);
+	}
+
+	@Override
+//	public List<Map<String, Object>> queryCommoditySPEC(String commodityId) {
+/*
+Map<String,List<String>> spu = null;
+		List<Map<String,List<String>>> spus = null;
+		Set<String> key = new HashSet<>();
+		Set<String> value = new HashSet<>();
+        Map<String,String> z = new HashMap<>();
+ cid = Integer.parseInt(commodityId);
+    List<Map<String, Object>> maps = commodityDao.querySPEC(cid);
+    //遍历所有的记录，每次遍历生成一个：
+			for (Map<String,Object> map: maps) {
+        //获取SPU表中的JSON字符串
+        String spuValue = (String)map.get("SPU_VALUE");
+        //将其转换为Java对象
+        JSONObject jsonObject = JSON.parseObject(spuValue);
+        //获取所有的key
+        Set<String> strings = jsonObject.keySet();
+        //遍历所有的key，将其存入set，防止重复
+        for (String str : strings) {
+            //取出当前记录下的单个规格的值
+            z.put(str,(String)jsonObject.get(str));
+        }
+
+        System.out.println(key);
+    }*/
+
+    public String queryCommoditySPEC(String commodityId) {
+	    /*
+	    *{"颜色":["蓝色","白色"]}
+	    * 蓝色，白色使用List<String>，最外层使用Map，多条记录再包一层List
+	    * 即：List<Map<String,List<String>>>
+	    * */
+		Integer cid = null;
+        System.out.println((String)commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES"));
+		if(commodityId != null || !"".equals(commodityId)) {
+           return  (String)commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES");
+		}
+
+		return null;
+
+	}
+
+	@Override
+	public List<Map<String,Object>> queryCommoditySPU(String spuValue) {
+		return  commodityDao.querySPU(spuValue);
 	}
 
 

@@ -6,8 +6,10 @@ import io.zhangjia.mall.dao.impl.CommodityDaoImpl;
 import io.zhangjia.mall.dao.impl.UserDaoImpl;
 import io.zhangjia.mall.entity.Commodity;
 import io.zhangjia.mall.entity.User;
+import io.zhangjia.mall.service.CommodityService;
 import io.zhangjia.mall.service.NavService;
 import io.zhangjia.mall.service.UserService;
+import io.zhangjia.mall.service.impl.CommodityServiceImpl;
 import io.zhangjia.mall.service.impl.NavServiceImpl;
 import io.zhangjia.mall.service.impl.UserServiceImpl;
 
@@ -18,9 +20,8 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
 
-
-        CommodityDao c = new CommodityDaoImpl();
-//        System.out.println(c.queryCommodity(1));
+        CommodityService c = new CommodityServiceImpl();
+        c.queryCommoditySPEC("1");
 
     }
 }

@@ -1,0 +1,30 @@
+
+.btn-allocate.btn-normal.active {
+    color: #fff;
+    background: #317df4;
+    border: 1px solid #317df4;
+
+}
+.btn-allocate {
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    display: inline-block;
+    border: 1px solid black;
+}
+dt.spu-key {
+    text-align: left;
+    float: left;
+    width: 66px;
+    padding-top: 5px;
+}
+p.inventors {
+    float: left;
+    margin-right: 100px;
+    width: 200px;
+}
+
+.commodityCount p span{
+   color:red;
+}

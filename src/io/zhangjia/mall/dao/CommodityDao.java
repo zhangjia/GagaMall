@@ -12,4 +12,8 @@ public interface CommodityDao {
     Integer queryCommodityCount(Integer firstMenuId,Integer secMenuId,String name);
     Commodity queryCommodity(String commodityId);
 
+    List<Map<String,Object>> querySPEC(Integer commodityId);
+
+    List<Map<String,Object>> querySPU(String spuValue);
+
 }
