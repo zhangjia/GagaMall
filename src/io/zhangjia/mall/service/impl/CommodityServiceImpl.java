@@ -16,8 +16,8 @@ public class CommodityServiceImpl implements CommodityService {
 	private CommodityDao commodityDao = new CommodityDaoImpl();
 	private int pageSize = 2;
 	@Override
-	public List<Commodity> queryCommodities(String name,String page,
-											String firstMenuId,String secMenuId,String orders) {
+	public List<Commodity> getCommodities(String name, String page,
+										  String firstMenuId, String secMenuId, String orders) {
 		int pages= 0;
 		int order = 0;
 
@@ -54,7 +54,7 @@ public class CommodityServiceImpl implements CommodityService {
 	}
 
 	@Override
-	public Integer queryPagesCount(String firstMenuId, String secMenuId,String name) {
+	public Integer getPagesCount(String firstMenuId, String secMenuId, String name) {
 		if(firstMenuId != null && (!"".equals(firstMenuId))) {
 			double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null,name) / (pageSize * 1.0));
 			return (int)ceil;
@@ -75,12 +75,12 @@ public class CommodityServiceImpl implements CommodityService {
 	}
 
 	@Override
-	public Commodity queryCommodity(String firstMenuId) {
+	public Commodity getCommodity(String firstMenuId) {
 		return commodityDao.queryCommodity(firstMenuId);
 	}
 
 	@Override
-//	public List<Map<String, Object>> queryCommoditySPEC(String commodityId) {
+//	public List<Map<String, Object>> getCommoditySPEC(String commodityId) {
 /*
 Map<String,List<String>> spu = null;
 		List<Map<String,List<String>>> spus = null;
@@ -105,8 +105,13 @@ Map<String,List<String>> spu = null;
 
         System.out.println(key);
     }*/
+/**
+ * 根据商品的ID，查询商品的属性
+ * @param spuValue
+ * @return
+ */
 
-    public String queryCommoditySPEC(String commodityId) {
+    public String getCommoditySPEC(String commodityId) {
 	    /*
 	    *{"颜色":["蓝色","白色"]}
 	    * 蓝色，白色使用List<String>，最外层使用Map，多条记录再包一层List
@@ -122,8 +127,13 @@ Map<String,List<String>> spu = null;
 
 	}
 
+	/**
+	 * 根据spu表的spu——value获取该商品的其他spu属性
+	 * @param spuValue
+	 * @return
+	 */
 	@Override
-	public List<Map<String,Object>> queryCommoditySPU(String spuValue) {
+	public List<Map<String,Object>> getCommoditySPU(String spuValue) {
 		return  commodityDao.querySPU(spuValue);
 	}
 

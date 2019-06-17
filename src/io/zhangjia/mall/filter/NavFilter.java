@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebFilter(urlPatterns = { "/commodityDetail","/cart" })
+@WebFilter(urlPatterns = { "/commodityDetail","/cart","/index","/list","/personal"})
 public class NavFilter extends HttpFilter {
     private NavService navService = new NavServiceImpl();
     @Override

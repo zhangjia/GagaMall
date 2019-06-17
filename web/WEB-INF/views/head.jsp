@@ -18,7 +18,7 @@
 
                 <c:if test="${sessionScope.user != null}">
                     <p class="fl">
-                      欢迎您：  <a href="mygxin.jsp" id="WelcomeUser">${sessionScope.user.userName}</a>
+                      欢迎您：  <a href="${path}/personal" id="WelcomeUser">${sessionScope.user.userName}</a>
                                             </p>
                 </c:if>
                 <form action="${path}/list" method="get" class="fl">
@@ -28,7 +28,7 @@
                     <input class="ssimg" type="submit" value="" />
                 </form>
                 <div class="btn fl clearfix">
-                    <a href="mygxin.jsp"><img src="${path}/static/img/grzx.png"/></a>
+                    <a href="${path}/personal"><img src="${path}/static/img/grzx.png"/></a>
                     <a href="#" class="er1"><img src="${path}/static/img/ewm.png"/></a>
                     <a href="${path}/cart"><img src="${path}/static/img/gwc.png"/></a>
                     <p><a href="#"><img src="${path}/static/img/smewm.png"/></a></p>

@@ -16,13 +16,13 @@ import java.util.Map;
 
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
-    private NavService navService = new NavServiceImpl();
+//    private NavService navService = new NavServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<FirstMenu> nav = navService.getNav();
+//        List<FirstMenu> nav = navService.getNav();
 
-        req.setAttribute("nav",nav);
+//        req.setAttribute("nav",nav);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
     }
 }

@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/mygxin.jsp"})
+@WebFilter(urlPatterns = {"/personal","/cart"})
 public class LoginFilter extends HttpFilter {
 
     @Override
@@ -43,7 +43,7 @@ public class LoginFilter extends HttpFilter {
                 if(queryString != null){
                     requestURI += ("?" + queryString);
                 }
-                response.sendRedirect(request.getContextPath() + "/login.jsp?uri=" + requestURI);
+                response.sendRedirect(request.getContextPath() + "/login?uri=" + requestURI);
             }
         } else {
             //已经登录，放行

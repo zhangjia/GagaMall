@@ -11,15 +11,15 @@ import java.util.Map;
  * 用户的业务层
  */
 public interface CommodityService {
-    List<Commodity> queryCommodities(String name, String page, String firstMenuId, String secMenuId, String order);
+    List<Commodity> getCommodities(String name, String page, String firstMenuId, String secMenuId, String order);
 
-    //	List<Commodity> queryCommodities(String name);
-    Integer queryPagesCount(String firstMenuId, String secMenuId, String name);
+    //	List<Commodity> getCommodities(String name);
+    Integer getPagesCount(String firstMenuId, String secMenuId, String name);
 
-    Commodity queryCommodity(String firstMenuId);
+    Commodity getCommodity(String firstMenuId);
 
-    //	List<Map<String,Object>> queryCommoditySPEC(String commodityId);
-    String queryCommoditySPEC(String commodityId);
-    List<Map<String,Object>> queryCommoditySPU(String spuValue);
+    //	List<Map<String,Object>> getCommoditySPEC(String commodityId);
+    String getCommoditySPEC(String commodityId);
+    List<Map<String,Object>> getCommoditySPU(String spuValue);
 
 }

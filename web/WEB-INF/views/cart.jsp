@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -40,174 +41,39 @@
 					<div>小计</div>
 					<div>操作</div>
 				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart01.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
+				<c:forEach items="${requestScope.commodities}" var="commodity">
+					<div class="th">
+						<div class="pro clearfix">
+							<label class="fl">
+								<input type="checkbox"/>
+								<span></span>
+							</label>
+							<a class="fl" href="#">
+								<dl class="clearfix">
+									<dt class="fl"><img src="${commodity.IMG_URL}" class="cart-commodity-img"></dt>
+									<dd class="fl">
+										<p class="cart-commodity-name">${commodity.COMMODITY_NAME}</p>
+										<p>
+												${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SPU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
+										</p>
+<%--										<p>白色瓷瓶+白色串枚</p>--%>
+									</dd>
+								</dl>
+							</a>
+						</div>
+						<div class="price">￥${commodity.SPU_PRESENT_PRICE}</div>
+						<div class="number">
+							<p class="num clearfix">
+								<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
+								<span class="fl">1</span>
+								<img class="fl add" src="${path}/static/img/temp/add.jpg">
+							</p>
+						</div>
+						<div class="price sAll">￥${commodity.SPU_PRESENT_PRICE}</div>
+						<div class="price"><a class="del" href="#2">删除</a></div>
 					</div>
-					<div class="price">￥20.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥20.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart02.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥30.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥30.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart03.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥59.99</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥59.99</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart01.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥20.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥20.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart02.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥30.00</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥30.00</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
-				<div class="th">
-					<div class="pro clearfix">
-						<label class="fl">
-							<input type="checkbox"/>
-    						<span></span>
-						</label>
-						<a class="fl" href="#">
-							<dl class="clearfix">
-								<dt class="fl"><img src="${path}/static/img/temp/cart03.jpg"></dt>
-								<dd class="fl">
-									<p>创意现代简约干花花瓶摆件</p>
-									<p>颜色分类:</p>
-									<p>白色瓷瓶+白色串枚</p>
-								</dd>
-							</dl>
-						</a>
-					</div>
-					<div class="price">￥59.99</div>
-					<div class="number">
-						<p class="num clearfix">
-							<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-							<span class="fl">1</span>
-							<img class="fl add" src="${path}/static/img/temp/add.jpg">
-						</p>
-					</div>
-					<div class="price sAll">￥59.99</div>
-					<div class="price"><a class="del" href="#2">删除</a></div>
-				</div>
+				</c:forEach>
+
 				<div class="goOn">空空如也~<a href="index.html">去逛逛</a></div>
 				<div class="tr clearfix">
 					<label class="fl">

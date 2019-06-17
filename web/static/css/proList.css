@@ -986,3 +986,13 @@ dl, ol, ul {
 	position: relative;
 	/*font-size: 16px;*/
 }
+.cart-commodity-name{
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cart-commodity-img{
+	width: 120px;
+	height: auto;
+}

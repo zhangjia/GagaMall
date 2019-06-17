@@ -6,7 +6,6 @@ import io.zhangjia.mall.service.CommodityService;
 import io.zhangjia.mall.service.impl.CommodityServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,14 +16,14 @@ import java.util.List;
 import java.util.Map;
 
 @WebServlet("/commodityDetail")
-public class CommodityDetail extends HttpServlet {
+public class CommodityDetailServlet extends HttpServlet {
     private CommodityService commodityService = new CommodityServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String commodityId = req.getParameter("commodityId");
-        Commodity commodity = commodityService.queryCommodity(commodityId);
+        Commodity commodity = commodityService.getCommodity(commodityId);
         System.out.println(commodity);
-        String SPEC = commodityService.queryCommoditySPEC(commodityId);
+        String SPEC = commodityService.getCommoditySPEC(commodityId);
 
         req.setAttribute("SPEC", JSON.parseObject(SPEC));
         System.out.println(JSON.parseObject(SPEC));
@@ -34,7 +33,7 @@ public class CommodityDetail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String json = req.getParameter("SPEC");
-        List<Map<String, Object>> maps = commodityService.queryCommoditySPU(json);
+        List<Map<String, Object>> maps = commodityService.getCommoditySPU(json);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
 
