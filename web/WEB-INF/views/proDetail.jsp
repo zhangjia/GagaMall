@@ -27,6 +27,7 @@
         $(function () {
             var x = 1;
             $.ajax({});
+            var selectjson;
 
 
             $(document).on('click', '.btn-allocate.btn-normal', function () {///对于静态和动态创建的标签都好使
@@ -47,6 +48,7 @@
                     var s = "";
                     var j = {};
                     var json = [];
+                    //生成spu-name的json字符串
                     $(".spu").each(function () {
                         // s = s+$(this).children(".spu-key").text();
                         // s = s + $(this).children("dd.active").text();
@@ -63,33 +65,60 @@
                     // var a = JSON.stringify(json);
 
                     // console.log(JSON.stringify(s));
-
+                    selectjson = j;
                     $.ajax({
-                        url:"${path}/commodityDetail",
-                        type:"post",
-                        data:{
-                            SPEC:JSON.stringify(j)
+                        url: "${path}/commodityDetail",
+                        type: "post",
+                        data: {
+                            SPEC: JSON.stringify(j)
                         },
-                        success:function (res) {
-                           console.log(JSON.stringify(j));
-                           $(".commodity-price").text('￥'+res[0].SPU_PRESENT_PRICE);
-                           $(".inventor").text(res[0].SPU_INVENTOR);
+                        success: function (res) {
+                            console.log(JSON.stringify(j));
+                            $(".commodity-price").text('￥' + res[0].SPU_PRESENT_PRICE);
+                            $(".inventory").text(res[0].SPU_INVENTORY);
                             $(".sale").text(res[0].SPU_SALES);
                         }
                     });
                 } else {
 
-                    if(${requestScope.commodity.commodityMaxPresentPrice != requestScope.commodity.commodityMinPresentPrice}){
-                        $(".commodity-price").text('￥'+'${requestScope.commodity.commodityMinPresentPrice}'+"~￥"+'${requestScope.commodity.commodityMaxPresentPrice}');
+                    if (${requestScope.commodity.commodityMaxPresentPrice != requestScope.commodity.commodityMinPresentPrice}) {
+                        $(".commodity-price").text('￥' + '${requestScope.commodity.commodityMinPresentPrice}' + "~￥" + '${requestScope.commodity.commodityMaxPresentPrice}');
                     } else {
-                        $(".commodity-price").text('￥'+'${requestScope.commodity.commodityMinPresentPrice}');
+                        $(".commodity-price").text('￥' + '${requestScope.commodity.commodityMinPresentPrice}');
                     }
-                    $(".inventor").text(${requestScope.commodity.commodityInventor});
+                    $(".inventory").text(${requestScope.commodity.commodityInventory});
                     $(".sale").text(${requestScope.commodity.commoditySales});
                 }
             });
 
+            //------------------------------------------加入购物车-----------------------------------------------------
+            $(".add-cart").click(function () {
+                var spu = JSON.stringify(selectjson);
+                var commodityCount = $(".cart-commodity-count").text()
+                var length = $(".spu").length;
+                if ($(".spu dd.active").length != length) {
+                    layer.alert("请先选择商品规格")
+                } else {
+                    $.ajax({
+                        url: "${path}/addCart",
+                        type: "get",
+                        data: {
+                            SPU: spu,
+                            commodityCount: commodityCount
+                        },
+                        success: function (res) {
+                            if (res.isLogin === false) {
+                                <%--location = "${path}/login";--%>
+                                location = "${path}/login?uri=/ga/commodityDetail?commodityId=${param.commodityId}";
+                            }
+                            if (res.success) {
+                                layer.alert("添加成功")
+                            }
 
+                        }
+                    });
+                }
+            });
         });
     </script>
 
@@ -173,15 +202,16 @@
                     </div>
 
                     <div class="commodityCount">
-                        <p class="inventors">库存  <span class="inventor">${requestScope.commodity.commodityInventor}</span> 件
+                        <p class="inventorys">库存 <span
+                                class="inventory">${requestScope.commodity.commodityInventory}</span> 件
                         </p>
 
-                        <p class="sales">销量  <span class="sale">${requestScope.commodity.commoditySales}</span>件</p>
+                        <p class="sales">销量 <span class="sale">${requestScope.commodity.commoditySales}</span>件</p>
                     </div>
 
                     <div class="num clearfix">
                         <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-                        <span class="fl" contentEditable="true">1</span>
+                        <span class="fl cart-commodity-count" contentEditable="true">1</span>
                         <img class="fl add" src="${path}/static/img/temp/add.jpg">
                         <p class="please fl">请选择商品属性!</p>
                     </div>
@@ -189,7 +219,8 @@
                 </div>
                 <div class="btns clearfix">
                     <a href="#2"><p class="buy fl">立即购买</p></a>
-                    <a href="#2"><p class="cart fr">加入购物车</p></a>
+                    <%--                    <a href="javascript:;"><p class="cart fr add-cart">加入购物车</p></a>--%>
+                    <a href="javascript:;"><span class="add-cart">加入购物车</span></a>
                 </div>
             </div>
         </div>

@@ -1,45 +1,4 @@
-﻿<%--<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>发布/编辑/更新-用户中心</title>
-    <meta name="keywords" content="DeathGhost"/>
-    <meta name="description" content="DeathGhost"/>
-    <meta name="author" content="DeathGhost,deathghost@deathghost.cn">
-    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon">
-
-    <script>
-        $(document).ready(function () {
-            $("nav .indexAsideNav").hide();
-            $("nav .category").mouseover(function () {
-                $(".asideNav").slideDown();
-            });
-            $("nav .asideNav").mouseleave(function () {
-                $(".asideNav").slideUp();
-            });
-            $(".switchNav li").click(function () {
-                $(this).addClass("active").siblings().removeClass("active");
-            });
-            $("#chanpin").click(function () {
-                $(".inputWrap input[type='text']").attr("placeholder", "输入产品关键词或货号");
-            });
-            $("#shangjia").click(function () {
-                $(".inputWrap input[type='text']").attr("placeholder", "输入商家店铺名");
-            });
-            $("#zixun").click(function () {
-                $(".inputWrap input[type='text']").attr("placeholder", "输入关键词查找文章内容");
-            });
-            $("#wenku").click(function () {
-                $(".inputWrap input[type='text']").attr("placeholder", "输入关键词查找文库内容");
-            });
-        });
-    </script>
-</head>
-<body>
-
-
-</body>
-</html>--%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
@@ -68,12 +27,13 @@
                     var value = data.value;
                     $('.zjtest option').not(":first").remove();
                     // $(".secMenuValue").addClass(data.value).removeClass("secMenuValue");
+                    //http://localhost:8888/ga/saveOrUpdateCommodity?commodityName=%E6%89%8B%E6%9C%BA&firstMenuId=%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81&secMenuId=1&commodityImg=spt&commodityDetails=spxqt&spgg=A&spsx=1&spsx=2&spgg=B&spsx=3&spu-inventory0=1&spu-present-price0=1&spu-inventory1=2&spu-present-price1=2
                     <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
-                    if('${nav.firstMenuChineseName}' == value){
-                    <c:forEach items="${nav.secMenu}" var="secNav">
+                    if ('${nav.firstMenuChineseName}' == value) {
+                        <c:forEach items="${nav.secMenu}" var="secNav">
                         var option = "<option value='${secNav.SEC_MENU_ID}'>${secNav.SEC_MENU_CHINESE_NAME}</option>";
                         $(".secMenuValue").after(option);
-                    </c:forEach>
+                        </c:forEach>
                     }
                     </c:forEach>
                     form.render(); //
@@ -83,39 +43,39 @@
             });
 
             // $(".shuxing").addClass("layui-btn-disabled");
-
-            $(".guige").click(function() {
+            //商品规格，比如颜色，大小，版本等等
+            $(".guige").click(function () {
 
                 // $(".shuxing").removeClass("layui-btn-disabled");
-                if($(".number:last").val() == "") {
+                if ($(".number:last").val() == "") {
                     alert(1)
                 } else {
+
                     var htm = "";
                     htm += "    <div class='layui-form-item spgg'>";
                     htm += "    <label class='layui-form-label '>商品规格</label>";
                     htm += "    <div class='layui-input-block'>";
-                    htm += " <input type='text' name='title' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input commodity-specifications'>";
+                    htm += " <input type='text' name='spgg' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input commodity-specifications'>";
                     htm += "</div>";
                     htm += "</div>";
-
 
 
                     $('.buttons').before(htm);
                 }
                 // $(".guige").addClass("layui-btn-disabled");
 
-        });
+            });
 
-            $(".shuxing").click(function() {
+            $(".shuxing").click(function () {
                 // $(".guige").removeClass("layui-btn-disabled");
-                if($(".number:last").val() == "") {
+                if ($(".number:last").val() == "") {
                     alert(1)
                 } else {
                     var htm = "";
                     // htm += "    <div class='layui-form-item spsx'>";
                     // htm += "    <label class='layui-form-label '>商品属性</label>";
                     htm += "    <div class='layui-input-inline layui-col-md4 spsx'>";
-                    htm += " <input type='text' name='title' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input '>";
+                    htm += " <input type='text' name='spsx' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input '>";
                     htm += "</div>";
                     $('.spgg:last').append(htm);
                 }
@@ -123,48 +83,91 @@
                 // $(".shuxing").addClass("layui-btn-disabled");
             });
 
-            $(".bianli").click(function() {
-                var g = $(".commodity-specifications").length;
-                var s = $(".layui-input specification-attribute").length;
 
-                var length = 1;
+
+
+
+
+
+
+            // var jsonSpuArray = [];
+            $(".bianli").click(function () {
+
                 var x = 1;
 
-                var listValues =[];
-                var listKey = [];
+                //用于生成笛卡尔积
+                var listValues = [];
+
+
+
+
                 $(".spgg").each(function () {
-                    listKey.push($(this).children(".layui-input-block").children("input").val());
-                    var list =[];
-                    var t =  $(this).children(".spsx").length;
+                    var jsongg={}
+                    //用于生成笛卡尔积
+                    var list = [];
+
+                    var t = $(this).children(".spsx").length;
+                   var spggValue= $(this).children(".layui-input-block").children("input").val();
                     $(this).children(".spsx ").each(function () {
-                        console.log($(this).children().val());
-                        list.push($(this).children().val());
+                        // console.log($(this).children().val());
+
+                        var sum = spggValue + ":" + ($(this).children().val().toString());
+                            list.push(sum);
+                            // console.log(JSON.stringify(sum))
                     });
 
                     listValues.push(list);
 
-                    if(t != 0) {
+
+                    if (t != 0) {
                         x *= t;
                     }
-
-
                 });
 
 
-                // //测试数据
-                // var listValues =[];
-                // var listKey = [];
-                // var list =[]; list.push(1);list.push(2);listValues.push(list);
-                // var list2 =[]; list2.push(3);list2.push(4);listValues.push(list2);
-                // listKey.push("a"); listKey.push("b");
-                console.log(listValues)
-                console.log(listKey)
-                for(var i=0;i<listValues.length;i++){
-                    for (var j = 0; j < listValues[i].length; j++) {
+                // var sda = JSON.stringify(listValues).toString();
+                // x = x.replace("[","");
+                // console.log(x.replace("]",""));
+                //"[[\"1:2\",\"1:3\"],[\"4:5\"]]"
+                // ["a:1", "b:3"]
 
-                    }
-                }
-                function calcDescartes (array) {
+
+//-----------------------------------------生成attributeJson-------------------------------------------------------
+                /*
+                * 思路：
+                * jsonAttr是最后生成的map的最外圈，也就是{....}
+                * name就是商品的规格，也就是{"颜色":...,"容量":}，作为JsonAttr的key
+                * jsonAttr2 就是每个商品规格下的属性，也就是["黑色","白色"]
+                *  首先遍历所有的商品规格，将其值存入name
+                * 然后遍历每个商品规格下的商品属性，将其值存入jsonAttr2，并将其作为jsonAttr的Value
+                *
+                * */
+                var jsonAttr = {};
+
+                //{"颜色":["黑色","白色"],"容量":["128G","256G"]}
+
+                //遍历所有的商品规格
+                $(".spgg").each(function () {
+                    var jsonAttr2 = [];
+                    // console.log($(this).children(".layui-input-block").children("input").val())
+                    var name = $(this).children(".layui-input-block").children("input").val().toString();
+                    //遍历当前商品规格下的商品属性
+                    $(this).children(".spsx").each(function () {
+                        // console.log($(this).children("input").val());
+                        jsonAttr2.push($(this).children("input").val());
+                    });
+
+                    jsonAttr[name]=jsonAttr2;
+
+                });
+
+                //将生成的json添加到fom中，并且隐藏
+                var jsonattr= "<input type='hidden' name='jsonAttribue' value='"+JSON.stringify(jsonAttr)+"'>";
+                $(".layui-form").append(jsonattr);
+
+
+ // -----------------------------------------生成attributeJson结束---------------------------------------------------
+                function calcDescartes(array) {
                     if (array.length < 2) return array[0] || [];
                     return [].reduce.call(array, function (col, set) {
                         var res = [];
@@ -180,26 +183,62 @@
                 }
 
                 var ss = calcDescartes(listValues);
+                // console.log(ss)
 
-                for(var i = 0; i < x; i++){
+                for (var i = 0; i < x; i++) {
                     var htm = "";
                     htm += "    <div class='layui-form-item '>";
                     htm += "    <label class='layui-form-label '>商品SKU</label>";
                     htm += "    <div class='layui-input-inline'>";
-                    htm += " <input type='text' name='title' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input c-sku' value="+ss[i]+ " disabled>";
+                    htm += " <input type='text' name='spu-value" + i + "' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input c-sku' value=" + ss[i] + " readonly='readonly'>";
                     htm += "</div>";
                     htm += "    <div class='layui-input-inline layui-col-md4 '>";
-                    htm += " <input type='text' name='title' required lay-verify='required' placeholder='库存' autocomplete='off' class='layui-input i-and-p'>";
+                    htm += " <input type='text' name='spu-inventory" + i + "' required lay-verify='required' placeholder='库存' autocomplete='off' class='layui-input i-and-p'>";
                     htm += "</div>";
                     htm += "    <div class='layui-input-inline layui-col-md4 '>";
-                    htm += " <input type='text' name='title' required lay-verify='required' placeholder='价格' autocomplete='off' class='layui-input i-and-p'>";
+                    htm += " <input type='text' name='spu-present-price" + i + "' required lay-verify='required' placeholder='价格' autocomplete='off' class='layui-input i-and-p'>";
                     htm += "</div>";
                     htm += "</div>";
 
                     $('.buttons').before(htm);
                 }
 
+                //---------------------------------------spu生成开始---------------
+                //// {"颜色":"白色","容量":"256G"}
+                for (var i = 0; i < x; i++) {
+                    var si = ss[i];
+                   console.log(si.length);
+                   console.log(ss[i].length);
+                   console.log(x);
+
+                }
+                console.log("----------" + ss.length)
+
+
             });
+
+
+
+            $(".submit").click(function () {
+                // console.log("aaaaaaaaaaaaaaaaaa");
+                // console.log(JSON.stringify(jsonSpuArray))
+                var data = $("form").serialize();
+                $.ajax({
+                    url: "${path}/addCommodity",
+                    type: "post",
+                    data: data,
+                    success:function (res) {
+
+                    }
+                });
+
+
+                return false;
+            });
+            //{"颜色":"白色","容量":"256G"}
+            //["1", "3"]
+            //颜色:黄,大小:b
+            $
 
         });
     </script>
@@ -239,11 +278,11 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">一级菜单</label>
                     <div class="layui-input-block">
-<%--                        <select name="firstMenuValue" lay-verify="required" lay-filter="zj">--%>
+                        <%--                        <select name="firstMenuValue" lay-verify="required" lay-filter="zj">--%>
                         <select name="firstMenuId" lay-verify="required" lay-filter="zj">
                             <option value="">请选择</option>
                             <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
-                                <option value="${nav.firstMenuChineseName}">${nav.firstMenuChineseName}</option>
+                                <option value="${nav.firstMenuId}">${nav.firstMenuChineseName}</option>
                             </c:forEach>
 
                         </select>
@@ -252,7 +291,7 @@
                 <div class="layui-form-item two">
                     <label class="layui-form-label">二级菜单</label>
                     <div class="layui-input-block">
-<%--                        <select class="zjtest" name="secMenuValue" lay-verify="required">--%>
+                        <%--                        <select class="zjtest" name="secMenuValue" lay-verify="required">--%>
                         <select class="zjtest" name="secMenuId" lay-verify="required">
                             <option class="secMenuValue" value="">请选择</option>
 
@@ -262,18 +301,31 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">商品图</label>
                     <div class="layui-input-block">
-                        <input type="text" name="commodityImg" required lay-verify="required" placeholder="请输入标题"
+                        <input type="text" name="spt" required lay-verify="required" placeholder="请输入标题"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品图</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="spt" required lay-verify="required" placeholder="请输入标题"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">商品详情图</label>
                     <div class="layui-input-block">
-                        <input type="text" name="commodityDetails" required lay-verify="required" placeholder="请输入标题"
+                        <input type="text" name="spxqt" required lay-verify="required" placeholder="请输入标题"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品详情图</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="spxqt" required lay-verify="required" placeholder="请输入标题"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
 
                 <div class="layui-form-item buttons">
                     <div class="layui-input-block">
@@ -282,7 +334,7 @@
                         <button type="button" class="layui-btn  layui-btn-warm guige">添加规格</button>
                         <button type="button" class="layui-btn  layui-btn-warm shuxing">添加属性</button>
                         <button type="button" class="layui-btn  layui-btn-warm bianli">规格确定</button>
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button class="layui-btn submit" lay-submit lay-filter="formDemo">立即提交</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>

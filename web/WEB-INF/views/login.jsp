@@ -27,6 +27,7 @@
 							console.log(res);
 							if(res.result){
 								var c = layer.msg('登录成功',{time:1000,anim: 2,icon: 6},function () {
+
 									if(res.uri){
 										location = res.uri;
 									}else{

@@ -31,10 +31,10 @@ public class RegisterServlet extends HttpServlet {
         Map<String, Object> map = userService.register(user);
         Map<String,Object> json = new HashMap<>();
         if(map.containsKey("user")){
-            //登录成功，将用户信息存入session
+
             req.getSession().setAttribute("user",map.get("user"));
             json.put("result",true);
-            //不过不是直接登录，将原地址存入uri
+
             if(uri != null){
                 json.put("uri",uri);
             }

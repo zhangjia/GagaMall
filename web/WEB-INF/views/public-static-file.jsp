@@ -8,3 +8,4 @@
 
 <script src="${pageContext.request.contextPath}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/static/js/nav.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>

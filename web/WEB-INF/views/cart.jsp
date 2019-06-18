@@ -42,6 +42,8 @@
 					<div>操作</div>
 				</div>
 				<c:forEach items="${requestScope.commodities}" var="commodity">
+
+					<c:if test="${commodity.SPU_INVENTORY > 0}">
 					<div class="th">
 						<div class="pro clearfix">
 							<label class="fl">
@@ -65,13 +67,17 @@
 						<div class="number">
 							<p class="num clearfix">
 								<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-								<span class="fl">1</span>
+								<span class="fl">${commodity.COMMODITY_COUNT}</span>
 								<img class="fl add" src="${path}/static/img/temp/add.jpg">
 							</p>
 						</div>
-						<div class="price sAll">￥${commodity.SPU_PRESENT_PRICE}</div>
+						<div class="price sAll">￥${commodity.SPU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
 						<div class="price"><a class="del" href="#2">删除</a></div>
 					</div>
+					</c:if>
+
+
+
 				</c:forEach>
 
 				<div class="goOn">空空如也~<a href="index.html">去逛逛</a></div>
@@ -92,6 +98,71 @@
 				</div>
 			</div>
 		</div>
+		<div class="cart mt">
+
+			<!-----------------site------------------->
+			<div class="site">
+
+			</div>
+			<!-----------------table------------------->
+			<div class="table wrapper">
+				<h4>失效商品</h4>
+				<c:forEach items="${requestScope.commodities}" var="commodity">
+
+					<c:if test="${commodity.SPU_INVENTORY <= 0}">
+
+						<hr />
+						<%--库存不足--%>
+						<div class="th grayness">
+							<div class="pro clearfix">
+								<label class="fl">
+									<input disabled="disabled" type="checkbox"/>
+									<span></span>
+								</label>
+								<a class="fl" href="#">
+									<dl class="clearfix">
+										<dt class="fl"><img src="${commodity.IMG_URL}" class="cart-commodity-img"></dt>
+										<dd class="fl">
+											<p class="cart-commodity-name cart-understock">${commodity.COMMODITY_NAME}</p>
+											<p>
+													${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SPU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
+															</p>
+													<%--										<p>白色瓷瓶+白色串枚</p>--%>
+										</dd>
+									</dl>
+								</a>
+							</div>
+							<div class="price">￥${commodity.SPU_PRESENT_PRICE}</div>
+							<div class="number">
+								<p class="num clearfix">
+									<img class="fl sub" src="${path}/static/img/temp/sub.jpg">
+									<span class="fl">0</span>
+									<img class="fl add" src="${path}/static/img/temp/add.jpg">
+								</p>
+							</div>
+							<div class="price sAll">￥${commodity.SPU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
+							<div class="price"><a class="del" href="#2">删除</a></div>
+						</div>
+
+					</c:if>
+					<c:if test="${length == 1}">
+
+					</c:if>
+
+				</c:forEach>
+
+				<div class="goOn">空空如也~<a href="index.html">去逛逛</a></div>
+				<div class="xxx">
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<%-------------------------------------------------------%>
 		<div class="mask"></div>
 		<div class="tipDel">
 			<p>确定要删除该商品吗？</p>

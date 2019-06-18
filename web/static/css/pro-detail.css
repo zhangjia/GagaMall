@@ -19,7 +19,7 @@ dt.spu-key {
     width: 66px;
     padding-top: 5px;
 }
-p.inventors {
+p.inventorys {
     float: left;
     margin-right: 100px;
     width: 200px;
@@ -27,4 +27,13 @@ p.inventors {
 
 .commodityCount p span{
    color:red;
+}
+.add-cart {
+    border: 1px solid #000;
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
 }

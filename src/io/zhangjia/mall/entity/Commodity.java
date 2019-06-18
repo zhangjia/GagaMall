@@ -26,7 +26,7 @@ public class Commodity {
     private String firstMenuChineseName;
     private String secMenuChineseName;
     private Integer commoditySales;
-    private Integer commodityInventor;
+    private Integer commodityInventory;
     private Double commodityMinOriginalPrice;
     private Double commodityMaxOriginalPrice;
     private Double commodityMinPresentPrice;
@@ -171,12 +171,12 @@ public class Commodity {
         this.commoditySales = commoditySales;
     }
 
-    public Integer getCommodityInventor() {
-        return commodityInventor;
+    public Integer getCommodityInventory() {
+        return commodityInventory;
     }
 
-    public void setCommodityInventor(Integer commodityInventor) {
-        this.commodityInventor = commodityInventor;
+    public void setCommodityInventory(Integer commodityInventory) {
+        this.commodityInventory = commodityInventory;
     }
 
     public Double getCommodityMinOriginalPrice() {
@@ -238,7 +238,7 @@ public class Commodity {
                 Objects.equals(firstMenuChineseName, commodity.firstMenuChineseName) &&
                 Objects.equals(secMenuChineseName, commodity.secMenuChineseName) &&
                 Objects.equals(commoditySales, commodity.commoditySales) &&
-                Objects.equals(commodityInventor, commodity.commodityInventor) &&
+                Objects.equals(commodityInventory, commodity.commodityInventory) &&
                 Objects.equals(commodityMinOriginalPrice, commodity.commodityMinOriginalPrice) &&
                 Objects.equals(commodityMaxOriginalPrice, commodity.commodityMaxOriginalPrice) &&
                 Objects.equals(commodityMinPresentPrice, commodity.commodityMinPresentPrice) &&
@@ -248,7 +248,7 @@ public class Commodity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(commodityId, commodityName, commodityAttributes, commodityCreateTime, commodityUpdateTIme, commodityViews, firstMenuId, secMenuId, commodityIsDel, commodityImg, commodityDetails, firstMenuChineseName, secMenuChineseName, commoditySales, commodityInventor, commodityMinOriginalPrice, commodityMaxOriginalPrice, commodityMinPresentPrice, commodityMaxPresentPrice, commodityMaxMarkDown);
+        return Objects.hash(commodityId, commodityName, commodityAttributes, commodityCreateTime, commodityUpdateTIme, commodityViews, firstMenuId, secMenuId, commodityIsDel, commodityImg, commodityDetails, firstMenuChineseName, secMenuChineseName, commoditySales, commodityInventory, commodityMinOriginalPrice, commodityMaxOriginalPrice, commodityMinPresentPrice, commodityMaxPresentPrice, commodityMaxMarkDown);
     }
 
     @Override
@@ -268,7 +268,7 @@ public class Commodity {
                 ", firstMenuChineseName='" + firstMenuChineseName + '\'' +
                 ", secMenuChineseName='" + secMenuChineseName + '\'' +
                 ", commoditySales=" + commoditySales +
-                ", commodityInventor=" + commodityInventor +
+                ", commodityInventory=" + commodityInventory +
                 ", commodityMinOriginalPrice=" + commodityMinOriginalPrice +
                 ", commodityMaxOriginalPrice=" + commodityMaxOriginalPrice +
                 ", commodityMinPresentPrice=" + commodityMinPresentPrice +

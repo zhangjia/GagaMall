@@ -58,22 +58,23 @@ $(function(){
 		//移除鼠标离开事件
 		$(this).off("mouseleave").parent('p').siblings().find('img').on('mouseleave',function(){
 			$(this).parents(".smallImg").find("span").remove();
+
 			$(this).parent("p").removeClass('on');
 		})
 	});
 	/**********************无规格不结算************************************/
-	$(".btns a").click(function(){
-		if($(".categ p").hasClass("on")){
-			if($(this).children().hasClass("buy")){
-				$(this).attr("href","order.html");
-			}
-			$(".proIntro").css("border","none");
-			$(".num .please").hide();
-		}else{
-			$(".proIntro").css("border","1px solid #c10000");
-			$(".num .please").show();
-		}
-	})
+	// $(".btns a").click(function(){
+	// 	if($(".categ p").hasClass("on")){
+	// 		if($(this).children().hasClass("buy")){
+	// 			$(this).attr("href","order.html");
+	// 		}
+	// 		$(".proIntro").css("border","none");
+	// 		$(".num .please").hide();
+	// 	}else{
+	// 		$(".proIntro").css("border","1px solid #c10000");
+	// 		$(".num .please").show();
+	// 	}
+	// })
 	/*************************小图切换大图*****************************/
 	$(".smallImg > img").mouseover(function(){
 		$(this).css("border","1px solid #c10000").siblings("img").css("border","none");

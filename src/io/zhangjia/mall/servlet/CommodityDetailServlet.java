@@ -26,7 +26,7 @@ public class CommodityDetailServlet extends HttpServlet {
         String SPEC = commodityService.getCommoditySPEC(commodityId);
 
         req.setAttribute("SPEC", JSON.parseObject(SPEC));
-        System.out.println(JSON.parseObject(SPEC));
+        System.out.println("SPEC" + JSON.parseObject(SPEC));
         req.setAttribute("commodity",commodity);
         req.getRequestDispatcher("/WEB-INF/views/proDetail.jsp").forward(req,resp);
     }

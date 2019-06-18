@@ -16,4 +16,8 @@ public interface CommodityDao {
 
     List<Map<String,Object>> querySPU(String spuValue);
 
+    int doCommodityInsert(Commodity commodity);
+    int doSPUInsert(List<Map<String,Object>> lists) ;
+
+
 }

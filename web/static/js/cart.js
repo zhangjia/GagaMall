@@ -71,8 +71,13 @@ $(function(){
 		var sc= $(this).hasClass("checkAll");
 		if(sf){
 			if(sc){
-				 $("input[type='checkbox']").each(function(){  
-	                this.checked=true;  
+				 $("input[type='checkbox']").each(function(){
+					 //已经失效的不选择
+					 //:disabled匹配所有不可用元素
+					 if(!$(this).is(':disabled')){
+						 this.checked=true;
+					 }
+
 	           }); 
 				zg();
 	           	jisuan();
