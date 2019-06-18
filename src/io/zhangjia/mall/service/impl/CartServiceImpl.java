@@ -46,4 +46,15 @@ public class CartServiceImpl implements CarService {
         }
         return i == 1;
     }
+
+    @Override
+    public boolean deleteCart(String userId, List<String> SPUId) {
+       if(userId != null && !"".equals(userId)){
+           System.out.println("SPUID" + SPUId);
+           boolean b = cartDao.doDelete(Integer.parseInt(userId),SPUId) == 1;
+           System.out.println("b = " + b);
+           return b;
+       }
+       return false;
+    }
 }

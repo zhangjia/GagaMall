@@ -45,5 +45,16 @@ public class CartDaoImpl extends CommonDao implements CartDao {
         return i;
     }
 
+    @Override
+    public int doDelete(Integer userId, List<String> SPUId) {
+        int i = 1;
+        for (String sid: SPUId) {
+            String sql = "DELETE FROM CART WHERE USER_ID = ? AND SPU_ID = ?";
+            System.out.println("sid" + sid);
+            i *= executeUpdate(sql,userId,sid);
+        }
+        return i;
+    }
+
 
 }

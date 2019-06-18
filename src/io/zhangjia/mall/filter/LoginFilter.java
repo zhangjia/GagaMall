@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/personal","/cart","/addCart"})
+@WebFilter(urlPatterns = {"/personal","/cart","/addCart","/cart/delete"})
 public class LoginFilter extends HttpFilter {
 
     @Override
@@ -35,13 +35,9 @@ public class LoginFilter extends HttpFilter {
                 PrintWriter writer = response.getWriter();
                 Map<String, Object> map = new HashMap<>();
                 map.put("isLogin", false);
-//                if(queryString != null){
-//                    map.put("queryString",queryString);
-//                }
-
                 writer.println(JSON.toJSONString(map));
                 writer.close();
-
+            //这里用不用再放行
             } else {
                 //如果不是ajax
                 //没有登录，去登录

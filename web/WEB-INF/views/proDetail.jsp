@@ -107,10 +107,12 @@
                             commodityCount: commodityCount
                         },
                         success: function (res) {
-                            if (res.isLogin === false) {
-                                <%--location = "${path}/login";--%>
+                            console.log(res);
+                             if (res.isLogin === false) {
+
                                 location = "${path}/login?uri=/ga/commodityDetail?commodityId=${param.commodityId}";
                             }
+                            console.log(res);
                             if (res.success) {
                                 layer.alert("添加成功")
                             }
