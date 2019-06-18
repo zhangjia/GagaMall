@@ -84,12 +84,6 @@
             });
 
 
-
-
-
-
-
-
             // var jsonSpuArray = [];
             $(".bianli").click(function () {
 
@@ -99,21 +93,19 @@
                 var listValues = [];
 
 
-
-
                 $(".spgg").each(function () {
-                    var jsongg={}
+                    var jsongg = {}
                     //用于生成笛卡尔积
                     var list = [];
 
                     var t = $(this).children(".spsx").length;
-                   var spggValue= $(this).children(".layui-input-block").children("input").val();
+                    var spggValue = $(this).children(".layui-input-block").children("input").val();
                     $(this).children(".spsx ").each(function () {
                         // console.log($(this).children().val());
 
                         var sum = spggValue + ":" + ($(this).children().val().toString());
-                            list.push(sum);
-                            // console.log(JSON.stringify(sum))
+                        list.push(sum);
+                        // console.log(JSON.stringify(sum))
                     });
 
                     listValues.push(list);
@@ -157,16 +149,16 @@
                         jsonAttr2.push($(this).children("input").val());
                     });
 
-                    jsonAttr[name]=jsonAttr2;
+                    jsonAttr[name] = jsonAttr2;
 
                 });
 
                 //将生成的json添加到fom中，并且隐藏
-                var jsonattr= "<input type='hidden' name='jsonAttribue' value='"+JSON.stringify(jsonAttr)+"'>";
+                var jsonattr = "<input type='hidden' name='jsonAttribue' value='" + JSON.stringify(jsonAttr) + "'>";
                 $(".layui-form").append(jsonattr);
 
 
- // -----------------------------------------生成attributeJson结束---------------------------------------------------
+                // -----------------------------------------生成attributeJson结束---------------------------------------------------
                 function calcDescartes(array) {
                     if (array.length < 2) return array[0] || [];
                     return [].reduce.call(array, function (col, set) {
@@ -204,19 +196,76 @@
                 }
 
                 //---------------------------------------spu生成开始---------------
-                //// {"颜色":"白色","容量":"256G"}
-                for (var i = 0; i < x; i++) {
-                    var si = ss[i];
-                   console.log(si.length);
-                   console.log(ss[i].length);
-                   console.log(x);
 
+                function zj(array) {
+                    if (array.length < 2) return array[0] || [];
+                    return [].reduce.call(array, function (col, set) {
+                        var res = [];
+                        col.forEach(function (c) {
+                            set.forEach(function (s) {
+                                var t = [].concat(Array.isArray(c) ? c : [c]);
+                                t.push(s);
+                                res.push(t);
+                            })
+                        });
+                        return res;
+                    });
                 }
-                console.log("----------" + ss.length)
 
+                var ss2 = zj(listValues);
+                console.log(ss2)
+
+                //// {"颜色":"白色","容量":"256G"}
+                var jx = {};
+
+                // for (var i = 0; i < x; i++) {
+                //     console.log(ss[i])
+
+                // //如果添加了多个规格
+                // if($(".spgg").length > 1) {
+                //     for (var j = 0; j < ss[i].length; j++) {
+                //         var ssi = ss[i][j];
+                //         console.log(ssi)
+                //         var sp =  ssi.split(":");
+                //         var name = sp[0];
+                //         var value = sp[1];
+                //        jx[name] = value;
+                //
+                //     }
+                // } else {
+                //     //如果只有一个规格
+                //     for (var j = 0; j < ss2.length; j++) {
+                //         alert("a")
+                //     }
+                //     console.log(ss[j])
+                // }
+
+
+                // }
+                // console.log(JSON.stringify(jx))
+                var zzj = {};
+                for (var i = 0; i < ss2.length; i++) {
+                   if(ss2.length > 1) {
+                       for (var j = 0; j < ss2[i].length; j++) {
+                           console.log(ss2[i][j]);
+                          var sp =   ss2[i][j] .split(":");
+                           var name = sp[0];
+                            var value = sp[1];
+                           zzj[name] = value;
+                       }
+                   } else {
+                       console.log(ss2[i] + "]");
+                       var sp =   ss2[i] .split(":");
+                       var name = sp[0];
+                       var value = sp[1];
+                       zzj[name] = value;
+                   }
+                }
+
+                console.log(JSON.stringify(ss2) + "---")
+                console.log(JSON.stringify(zzj) + "---")
 
             });
-
 
 
             $(".submit").click(function () {
@@ -227,7 +276,7 @@
                     url: "${path}/addCommodity",
                     type: "post",
                     data: data,
-                    success:function (res) {
+                    success: function (res) {
 
                     }
                 });
