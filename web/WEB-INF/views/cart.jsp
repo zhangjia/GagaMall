@@ -18,16 +18,20 @@
                 var thiss = $(this);
                 layer.confirm('确定要删除吗?', {icon: 3, title: '嘎嘎警告'}, function (index) {
                     //获取要删除的商品ID
+                    var SPUIds = [];
                     var SPUId = thiss.parent().parent().children(":first").children(":first").children("input").val();
+                    SPUIds.push(SPUId);
                     //获取用于remove的元素
                     var remove = thiss.parent().parent();
                     $.ajax({
                         url: "${path}/cart/delete",
                         type: "get",
                         data: {
-                            SPUId: SPUId
+                            SPUIds: SPUIds
                         },
+                        traditional:true,
                         success: function (res) {
+
                             if (res.success) {
                                 layer.msg('删除成功', {time: 300, anim: 1});
                                 remove.remove();

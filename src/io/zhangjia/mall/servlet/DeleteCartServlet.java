@@ -26,7 +26,7 @@ public class DeleteCartServlet extends HttpServlet {
         String userId = user.getUserId().toString();
         String[] spuIds = req.getParameterValues("SPUIds");
 
-        System.out.println(spuIds[0].getClass());
+//        System.out.println(spuIds[0].getClass());
         List<String> list = new ArrayList<String>(Arrays.asList(spuIds));
 
         System.out.println(list.size()+ " " + list + "lll " +req.getParameterValues("SPUId") );
