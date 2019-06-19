@@ -1,10 +1,11 @@
 package io.zhangjia.mall.servlet;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import io.zhangjia.mall.entity.User;
 import io.zhangjia.mall.service.CarService;
+import io.zhangjia.mall.service.CommodityService;
 import io.zhangjia.mall.service.impl.CartServiceImpl;
+import io.zhangjia.mall.service.impl.CommodityServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,21 +17,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
-@WebServlet("/updateCount")
-public class UpdateCountServlet extends HttpServlet {
-    private CarService carService = new CartServiceImpl();
+@WebServlet("/updateCount2CommodityDetail")
+public class UpdateCount2CommodityDetailServlet extends HttpServlet {
+    private CommodityService commodityService = new CommodityServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         User user = (User)session.getAttribute("user");
         String userId = user.getUserId().toString();
         String SKUId =  req.getParameter("SKUId");
+        String count = req.getParameter("count");
         resp.setContentType("application/json;charset=utf-8");
         String action = req.getParameter("action");
         PrintWriter writer = resp.getWriter();
-        Map<String, Object> stringObjectMap = carService.updateCount(action, userId, SKUId);
+        System.out.println("aaaahahahah" + count + "--" + SKUId + "--" + userId);
+        Map<String, Object> stringObjectMap = commodityService.updateCount2CommodityDetail(action, userId, SKUId,count);
         writer.println(JSON.toJSONString(stringObjectMap));
         writer.close();
-
     }
 }

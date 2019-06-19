@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/personal","/cart","/addCart","/cart/delete"})
+@WebFilter(urlPatterns = {"/personal","/cart","/addCart","/cart/delete","/updateCount"})
 public class LoginFilter extends HttpFilter {
 
     @Override

@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>详情页</title>
+    <link rel="stylesheet" type="text/css" href="${path}/static/layui/css/layui.css"/>
+    <script src="${path}/static/layui/layui.js " type="text/javascript" charset="utf-8"></script>
     <jsp:include page="public-static-file.jsp"/>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css"/>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/pro-detail.css"/>
@@ -28,6 +30,8 @@
             var x = 1;
             $.ajax({});
             var selectjson;
+
+            var skuId;
 
 
             $(document).on('click', '.btn-allocate.btn-normal', function () {///对于静态和动态创建的标签都好使
@@ -74,6 +78,7 @@
                         },
                         success: function (res) {
                             console.log(JSON.stringify(j));
+                            skuId = res[0].SKU_ID;
                             $(".commodity-price").text('￥' + res[0].SKU_PRESENT_PRICE);
                             $(".inventory").text(res[0].SKU_INVENTORY);
                             $(".sale").text(res[0].SKU_SALES);
@@ -94,7 +99,7 @@
             //------------------------------------------加入购物车-----------------------------------------------------
             $(".add-cart").click(function () {
                 var sku = JSON.stringify(selectjson);
-                var commodityCount = $(".cart-commodity-count").text()
+                var commodityCount = $(".jia-commodity-detail-num").val();
                 var length = $(".sku").length;
                 if ($(".sku dd.active").length != length) {
                     layer.alert("请先选择商品规格")
@@ -108,19 +113,103 @@
                         },
                         success: function (res) {
                             console.log(res);
-                             if (res.isLogin === false) {
+                            if (res.isLogin === false) {
 
-                                location = "${path}/login?uri=/ga/commodityDetail?commodityId=${param.commodityId}";
+                                location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
+                            } else {
+                                console.log(res);
+                                if (res.success === true) {
+                                    layer.alert("添加成功")
+                                } else {
+                                    layer.alert(res.error)
+                                }
                             }
-                            console.log(res);
-                            if (res.success) {
-                                layer.alert("添加成功")
-                            }
+
 
                         }
                     });
                 }
             });
+
+            //-------------------------------------------------------------
+            $(".cart-add").click(function () {
+                var SKUId = skuId;
+                var action = "add";
+                var thiss = $(this);
+
+
+                $.ajax({
+                    url: "${path}/updateCount2CommodityDetail",
+                    type: "get",
+                    data: {
+                        SKUId: SKUId,
+                        action: action,
+                        count:1
+                    },
+                    success: function (res) {
+                        console.log(res)
+                        if (res.isLogin === false) {
+                            location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
+                        } else {
+                            if (!res.error) {
+                                var nowCartCount = $(thiss).siblings("input").val();
+                                console.log(nowCartCount)
+                                $(thiss).siblings("input").val(++nowCartCount);
+
+
+                            } else {
+
+                                layer.msg(res.error)
+                            }
+                        }
+
+
+
+                    }
+                });
+            });
+
+
+            $(".cart-sub").click(function () {
+                var thiss = $(this);
+                  var nowCartCount = $(this).siblings("input").val();
+                 if(nowCartCount - 1 == 0) {
+                     layer.msg("不能再少了！")
+                 } else {
+                     $(thiss).siblings("input").val(--nowCartCount);
+                 }
+            });
+            
+            function determineTheInventory(action,count) {
+
+                $.ajax({
+                    url: "${path}/updateCount2CommodityDetail",
+                    type: "get",
+                    data: {
+                        SKUId: skuId,
+                        action: action,
+                        count:count
+                    },
+                    success: function (res) {
+                        console.log(res)
+                        if (res.isLogin === false) {
+                            location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
+                        } else {
+                            if (!res.error) {
+                               alert("成功")
+                            } else {
+
+                                layer.msg(res.error)
+                            }
+                        }
+
+
+
+                    }
+                });
+            }
+
+
         });
     </script>
 
@@ -212,10 +301,19 @@
                     </div>
 
                     <div class="num clearfix">
-                        <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-                        <span class="fl cart-commodity-count" contentEditable="true">1</span>
-                        <img class="fl add" src="${path}/static/img/temp/add.jpg">
-                        <p class="please fl">请选择商品属性!</p>
+<%--                        <img class="fl sub" src="${path}/static/img/temp/sub.jpg">--%>
+<%--                        <span class="fl cart-commodity-count" contentEditable="true">1</span>--%>
+<%--                        <img class="fl add" src="${path}/static/img/temp/add.jpg">--%>
+<%--                        <p class="please fl">请选择商品属性!</p>--%>
+    <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-sub">
+        <i class="layui-icon">&#xe603;</i>
+    </button>
+
+    <input type="number" value="1" autocomplete="off"
+           class="jia-commodity-detail-num" style="text-align:center ">
+    <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
+        <i class="layui-icon">&#xe602;</i>
+    </button>
                     </div>
 
                 </div>

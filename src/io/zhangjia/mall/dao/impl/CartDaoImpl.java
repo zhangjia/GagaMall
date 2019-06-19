@@ -91,7 +91,7 @@ public class CartDaoImpl extends CommonDao implements CartDao {
      */
     @Override
     public int addCount(Integer userId, Integer SKUId) {
-        String sql = "UPDATE CART SET COMMODITY_COUNT = COMMODITY_COUNT + 1 WHERE USER_ID = ? AND SPU_ID = ?";
+        String sql = "UPDATE CART SET COMMODITY_COUNT = COMMODITY_COUNT + 1 WHERE USER_ID = ? AND SKU_ID = ?";
         return executeUpdate(sql,userId,SKUId);
     }
 
@@ -104,7 +104,7 @@ public class CartDaoImpl extends CommonDao implements CartDao {
 
     @Override
     public int subCount(Integer userId, Integer SKUId) {
-        String sql = "UPDATE CART SET COMMODITY_COUNT = COMMODITY_COUNT - 1 WHERE USER_ID = ? AND SPU_ID = ?";
+        String sql = "UPDATE CART SET COMMODITY_COUNT = COMMODITY_COUNT - 1 WHERE USER_ID = ? AND SKU_ID = ?";
         return executeUpdate(sql,userId,SKUId);
     }
 

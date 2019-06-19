@@ -52,12 +52,11 @@ public class AddCartServlet extends HttpServlet {
 //        writer.println("{\"error\":"+b+"}");
 
 
-        boolean b = false;
         String skuId = sku.get(0).get("SKU_ID") + "";
-        b = carService.addCart(user.getUserId() + "", skuId, req.getParameter("commodityCount"));
+        Map<String, Object> map = carService.addCart(user.getUserId() + "", skuId, req.getParameter("commodityCount"));
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+b+"}");
+        writer.println(JSON.toJSONString(map));
         writer.close();
 
 

@@ -3,83 +3,92 @@ package io.zhangjia.mall.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import io.zhangjia.mall.dao.CartDao;
 import io.zhangjia.mall.dao.CommodityDao;
+import io.zhangjia.mall.dao.SKUDao;
+import io.zhangjia.mall.dao.impl.CartDaoImpl;
 import io.zhangjia.mall.dao.impl.CommodityDaoImpl;
+import io.zhangjia.mall.dao.impl.SKUDaoImpl;
 import io.zhangjia.mall.entity.Commodity;
 import io.zhangjia.mall.service.CommodityService;
 import org.omg.PortableInterceptor.INACTIVE;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class CommodityServiceImpl implements CommodityService {
 
-	private CommodityDao commodityDao = new CommodityDaoImpl();
-	private int pageSize = 2;
-	@Override
-	public List<Commodity> getCommodities(String name, String page,
-										  String firstMenuId, String secMenuId, String orders) {
-		int pages= 0;
-		int order = 0;
+    private CommodityDao commodityDao = new CommodityDaoImpl();
+    private CartDao cartDao = new CartDaoImpl();
+    private SKUDao skuDao = new SKUDaoImpl();
 
-		if(orders == null || "".equals(orders)){
-			order = 0;
-		} else {
-			order = Integer.parseInt(orders);
-		}
-		if(page != null) {
-			pages = Integer.parseInt(page);
-		}
+    private int pageSize = 2;
 
-		if(name != null) {
-			return commodityDao.queryLike(name,(pages-1) * pageSize,pageSize * pages,order);
-		} else {
-			if(firstMenuId == null && secMenuId == null) {
-				return commodityDao.queryAll(null,null,(pages-1) * pageSize,pageSize * pages,order);
-			}
-			if(firstMenuId != null && secMenuId == null) {
-				if(!"".equals(firstMenuId)) {
-					return commodityDao.queryAll(Integer.parseInt(firstMenuId), null, (pages - 1) * pageSize, pageSize * pages,order);
-				}
-			}
-			if(firstMenuId == null && secMenuId != null) {
-				if(!"".equals(secMenuId)) {
-					return commodityDao.queryAll(null,Integer.parseInt(secMenuId),(pages-1) * pageSize,pageSize * pages,order);
-				}
+    @Override
+    public List<Commodity> getCommodities(String name, String page,
+                                          String firstMenuId, String secMenuId, String orders) {
+        int pages = 0;
+        int order = 0;
 
-			}
-		}
+        if (orders == null || "".equals(orders)) {
+            order = 0;
+        } else {
+            order = Integer.parseInt(orders);
+        }
+        if (page != null) {
+            pages = Integer.parseInt(page);
+        }
 
-		return  null;
+        if (name != null) {
+            return commodityDao.queryLike(name, (pages - 1) * pageSize, pageSize * pages, order);
+        } else {
+            if (firstMenuId == null && secMenuId == null) {
+                return commodityDao.queryAll(null, null, (pages - 1) * pageSize, pageSize * pages, order);
+            }
+            if (firstMenuId != null && secMenuId == null) {
+                if (!"".equals(firstMenuId)) {
+                    return commodityDao.queryAll(Integer.parseInt(firstMenuId), null, (pages - 1) * pageSize, pageSize * pages, order);
+                }
+            }
+            if (firstMenuId == null && secMenuId != null) {
+                if (!"".equals(secMenuId)) {
+                    return commodityDao.queryAll(null, Integer.parseInt(secMenuId), (pages - 1) * pageSize, pageSize * pages, order);
+                }
 
-	}
+            }
+        }
 
-	@Override
-	public Integer getPagesCount(String firstMenuId, String secMenuId, String name) {
-		if(firstMenuId != null && (!"".equals(firstMenuId))) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null,name) / (pageSize * 1.0));
-			return (int)ceil;
+        return null;
 
-		}
-		if(secMenuId != null && (!"".equals(secMenuId))) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(null,Integer.parseInt(secMenuId),name)/ (pageSize * 1.0));
-			return (int)ceil;
+    }
 
-		}
+    @Override
+    public Integer getPagesCount(String firstMenuId, String secMenuId, String name) {
+        if (firstMenuId != null && (!"".equals(firstMenuId))) {
+            double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null, name) / (pageSize * 1.0));
+            return (int) ceil;
 
-		if(secMenuId == null && firstMenuId==null) {
-			double ceil = Math.ceil(commodityDao.queryCommodityCount(null, null,name) / (pageSize * 1.0));
-			return (int)ceil;
-		}
+        }
+        if (secMenuId != null && (!"".equals(secMenuId))) {
+            double ceil = Math.ceil(commodityDao.queryCommodityCount(null, Integer.parseInt(secMenuId), name) / (pageSize * 1.0));
+            return (int) ceil;
 
-		return -1;
-	}
+        }
 
-	@Override
-	public Commodity getCommodity(String firstMenuId) {
-		return commodityDao.queryCommodity(firstMenuId);
-	}
+        if (secMenuId == null && firstMenuId == null) {
+            double ceil = Math.ceil(commodityDao.queryCommodityCount(null, null, name) / (pageSize * 1.0));
+            return (int) ceil;
+        }
 
-	@Override
+        return -1;
+    }
+
+    @Override
+    public Commodity getCommodity(String firstMenuId) {
+        return commodityDao.queryCommodity(firstMenuId);
+    }
+
+    @Override
 //	public List<Map<String, Object>> getCommoditySPEC(String commodityId) {
 /*
 Map<String,List<String>> sku = null;
@@ -112,30 +121,90 @@ Map<String,List<String>> sku = null;
  */
 
     public String getCommoditySPEC(String commodityId) {
-	    /*
-	    *{"颜色":["蓝色","白色"]}
-	    * 蓝色，白色使用List<String>，最外层使用Map，多条记录再包一层List
-	    * 即：List<Map<String,List<String>>>
-	    * */
-		Integer cid = null;
-        System.out.println((String)commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES"));
-		if(commodityId != null || !"".equals(commodityId)) {
-           return  (String)commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES");
-		}
+        /*
+         *{"颜色":["蓝色","白色"]}
+         * 蓝色，白色使用List<String>，最外层使用Map，多条记录再包一层List
+         * 即：List<Map<String,List<String>>>
+         * */
+        Integer cid = null;
+        System.out.println((String) commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES"));
+        if (commodityId != null || !"".equals(commodityId)) {
+            return (String) commodityDao.querySPEC(Integer.parseInt(commodityId)).get(0).get("COMMODITY_ATTRIBUTES");
+        }
 
-		return null;
+        return null;
 
-	}
+    }
 
-	/**
-	 * 根据sku表的sku——value获取该商品的其他sku属性
-	 * @param skuValue
-	 * @return
-	 */
-	@Override
-	public List<Map<String,Object>> getCommoditySKU(String skuValue) {
-		return  commodityDao.querySKU(skuValue);
-	}
+    /**
+     * 根据sku表的sku——value获取该商品的其他sku属性
+     *
+     * @param skuValue
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> getCommoditySKU(String skuValue) {
+        return commodityDao.querySKU(skuValue);
+    }
+
+
+    /**
+     * 在商品详情页，点击《》按钮判断是否可以
+     * @param action
+     * @param userId
+     * @param SKUId
+     * @param count
+     * @return
+     */
+    @Override
+    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count) {
+        int uid = -1;
+        int sid = -1;
+        int ct = -1;
+        System.out.println("userId = " + userId);
+        System.out.println("SKUId = " + SKUId);
+        Map<String, Object> map = new HashMap<>();
+        if (userId != null && !"".equals(userId) &&
+                SKUId != null && !"".equals(SKUId) && count != null && !"".equals(count)) {
+            uid = Integer.parseInt(userId);
+            sid = Integer.parseInt(SKUId);
+            ct = Integer.parseInt(count);
+            System.out.println("进入了嘎嘎");
+
+            /*思路整理：
+             * 先获取当前商品的库存
+             * 再获取当前商品在当前用户的购物车中数量，
+             * 如果是0，则添加，如果不是0，则修改
+             * 如果购物车中的数量加当前选中的数量 > 库存，则失败
+                     * */
+
+//        获取当前商品的库存
+            int skuInventory = skuDao.querySKUInventory(sid);
+
+//        再获取当前商品在当前用户的购物车中数量
+
+            Map<String, Object> cartSKU = cartDao.queryByUserIdAndSKUId(uid, sid);
+            System.out.println("cartSKU = " + cartSKU);
+            System.out.println("cartSKU.get(\"COMMODITY_COUNT\")class = " + cartSKU.get("COMMODITY_COUNT").getClass());
+            int skuCount = ((BigDecimal) cartSKU.get("COMMODITY_COUNT")).intValue();
+
+            //如果是null，说明购物车里没有
+            if (cartSKU == null) {
+                skuCount = 0;
+            }
+
+            if (action.equals("add")) {
+                if ((skuCount + ct) > skuInventory) {
+                    map.put("error", "超出库存");
+                }
+
+            }
+
+            return map;
+        } else {
+            return null;
+        }
+    }
 
 
 }

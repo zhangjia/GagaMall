@@ -84,7 +84,7 @@
             });
 
 
-            // var jsonSpuArray = [];
+            // var jsonSKUArray = [];
             var sss;
             $(".bianli").click(function () {
 

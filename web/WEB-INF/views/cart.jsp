@@ -7,12 +7,109 @@
 <head lang="en">
     <meta charset="utf-8"/>
     <title>cart</title>
+    <link rel="stylesheet" type="text/css" href="${path}/static/layui/css/layui.css"/>
+    <script src="${path}/static/layui/layui.js " type="text/javascript" charset="utf-8"></script>
     <jsp:include page="public-static-file.jsp"></jsp:include>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/cart.css"/>
     <script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
     <script src="${path}/static/js/cart.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
+
+
         $(function () {
+            /*-------------------------------------------------商品全选开始-------------------------------------------------*/
+
+            //计算总价
+            function jisuan() {
+                var all = 0;
+                var len = $(".th input[type='checkbox']:checked").length;
+                if (len == 0) {
+                    $("#all").text('￥' + parseFloat(0).toFixed(2));
+                } else {
+                    $(".th input[type='checkbox']:checked").each(function () {
+                        //获取小计里的数值
+                        var sAll = $(this).parents(".pro").siblings('.sAll').text().substring(1);
+                        //累加
+                        all += parseFloat(sAll);
+                        //赋值
+                        $("#all").text('￥' + all.toFixed(2));
+                    })
+                }
+
+            }
+
+            //计算总共几件商品
+            function zg() {
+                var zsl = 0;
+                var index = $(".th input[type='checkbox']:checked").parents(".th").find(".num .cart-num");
+                var len = index.length;
+                if (len == 0) {
+                    $("#sl").text(0);
+                } else {
+                    index.each(function () {
+                        zsl += parseInt($(this).val());
+                        $("#sl").text(zsl);
+                    })
+                }
+                if ($("#sl").text() > 0) {
+                    $(".count").css("background", "#c10000");
+                } else {
+                    $(".count").css("background", "#8e8e8e");
+                }
+            }
+            $("input[type='checkbox']").on('click', function () {
+                var sf = $(this).is(":checked");
+                var sc = $(this).hasClass("checkAll");
+                if (sf) {
+                    if (sc) {
+                        $("input[type='checkbox']").each(function () {
+                            //已经失效的不选择
+                            //:disabled匹配所有不可用元素
+                            if (!$(this).is(':disabled')) {
+                                this.checked = true;
+                            }
+
+                        });
+                        zg();
+                        jisuan();
+                    } else {
+                        $(this).checked = true;
+                        var len = $("input[type='checkbox']:checked").length;
+                        var len1 = $("input").length - 1;
+                        if (len == len1) {
+                            $("input[type='checkbox']").each(function () {
+                                this.checked = true;
+                            });
+                        }
+                        zg();
+                        jisuan();
+                    }
+                } else {
+                    if (sc) {
+                        $("input[type='checkbox']").each(function () {
+                            this.checked = false;
+                        });
+                        zg();
+                        jisuan();
+                    } else {
+                        $(this).checked = false;
+                        var len = $(".th input[type='checkbox']:checked").length;
+                        var len1 = $("input").length - 1;
+                        if (len < len1) {
+                            $('.checkAll').attr("checked", false);
+                        }
+                        zg();
+                        jisuan();
+                    }
+                }
+
+            });
+
+
+            /*-------------------------------------------------商品全选结束--------------------------------------------------*/
+
+            /*-------------------------------------------------删除商品开始-------------------------------------------------*/
             $(".cart-del").click(function () {
                 //必须先把this保存，否则获取的是layer的this
                 var thiss = $(this);
@@ -29,14 +126,19 @@
                         data: {
                             SKUIds: SKUIds
                         },
-                        traditional:true,
+                        traditional: true,
                         success: function (res) {
+                            if (res.isLogin === false) {
 
-                            if (res.success) {
-                                layer.msg('删除成功', {time: 300, anim: 1});
-                                remove.remove();
+                                location = "${path}/login?uri=${path}/cart";
                             } else {
-                                layer.msg('删除失败');
+                                if (res.success) {
+                                    layer.msg('删除成功', {time: 300, anim: 1});
+                                    remove.remove();
+                                } else {
+                                    layer.msg('删除失败');
+                                }
+
                             }
 
                         }
@@ -46,7 +148,9 @@
                 });
 
             });
+            /*-------------------------------------------------删除商品结束-------------------------------------------------*/
 
+            /*-------------------------------------------------删除全部商品开始-------------------------------------------------*/
             $(".cart-all-del").click(function () {
                 //必须先把this保存，否则获取的是layer的this
 
@@ -76,19 +180,25 @@
                         //获取用于remove的元素
                         var remove = thiss.parent().parent();
                         $.ajax({
-                            url:"${path}/cart/delete",
+                            url: "${path}/cart/delete",
                             type: "get",
                             data: {
                                 SKUIds: SKUIds
                             },
-                            traditional:true,
+                            traditional: true,
                             success: function (res) {
-                                if (res.success) {
-                                    layer.msg('删除成功', {time: 300, anim: 1});
-                                    remove.remove();
+                                if (res.isLogin === false) {
+
+                                    location = "${path}/login?uri=${path}/cart";
                                 } else {
-                                    layer.msg('删除失败');
+                                    if (res.success) {
+                                        layer.msg('删除成功', {time: 300, anim: 1});
+                                        remove.remove();
+                                    } else {
+                                        layer.msg('删除失败');
+                                    }
                                 }
+
 
                             }
 
@@ -99,6 +209,238 @@
                 }
 
             });
+            /*-------------------------------------------------删除全部商品结束-------------------------------------------------*/
+
+            /*-------------------------------------------------更改商品数量开始-------------------------------------------------*/
+
+            $(".cart-add").click(function () {
+                var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
+                var action = "add";
+                var thiss = $(this);
+
+                $.ajax({
+                    url: "${path}/updateCount",
+                    type: "get",
+                    data: {
+                        SKUId: SKUId,
+                        action: action
+                    },
+                    success: function (res) {
+                        if (res.isLogin === false) {
+
+                            location = "${path}/login?uri=${path}/cart";
+                        } else {
+                            if (res.success) {
+                                var nowCartCount = $(thiss).siblings("input").val();
+                                console.log(nowCartCount)
+                                $(thiss).siblings("input").val(++nowCartCount);
+                                console.log()
+                                var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
+
+                                var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
+                                $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
+                                jisuan();
+
+                            } else {
+                                layer.msg(res.error)
+                            }
+                        }
+
+
+
+                    }
+                });
+            });
+
+
+           $(".cart-sub").click(function () {
+                var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
+                var action = "sub";
+                var thiss = $(this);
+                $.ajax({
+                    url: "${path}/updateCount",
+                    type: "get",
+                    data: {
+                        SKUId: SKUId,
+                        action: action
+                    },
+                    success: function (res) {
+                        if (res.isLogin === false) {
+
+                            location = "${path}/login?uri=${path}/cart";
+                        } else {
+                            console.log(res.success === true)
+                            if (res.success) {
+                                var nowCartCount = $(thiss).siblings("input").val();
+                                console.log(nowCartCount)
+                                $(thiss).siblings("input").val(--nowCartCount);
+                                console.log()
+                                var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
+
+                                var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
+                                $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
+                                jisuan()
+
+                            } else {
+                                layer.msg(res.error)
+                            }
+                        }
+
+
+                    }
+                });
+            });
+
+
+            $(".cart-num").each(function () {
+               $(this).blur(function () {
+                   alert($(this).val())
+
+                   $.ajax({
+                       url: "${path}/updateCount",
+                       type: "get",
+                       data: {
+                           SKUId: SKUId,
+                           action: action
+                       },
+                       success: function (res) {
+                           if (res.isLogin === false) {
+
+                               location = "${path}/login?uri=${path}/cart";
+                           } else {
+                               if (res.success) {
+                                   var nowCartCount = $(thiss).siblings("input").val();
+                                   console.log(nowCartCount)
+                                   $(thiss).siblings("input").val(++nowCartCount);
+                                   console.log()
+                                   var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
+
+                                   var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
+                                   $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
+                                   jisuan();
+
+                               } else {
+                                   layer.msg(res.error)
+                               }
+                           }
+
+
+
+                       }
+                   });
+               });
+            });
+
+
+            /*-------------------------------------------------更改商品数量结束-------------------------------------------------*/
+            var floatObj = function () {
+
+                /*
+                 * 判断obj是否为一个整数
+                 */
+                function isInteger(obj) {
+                    return Math.floor(obj) === obj
+                }
+
+                /*
+                 * 将一个浮点数转成整数，返回整数和倍数。如 3.14 >> 314，倍数是 100
+                 * @param floatNum {number} 小数
+                 * @return {object}
+                 *   {times:100, num: 314}
+                 */
+                function toInteger(floatNum) {
+                    var ret = {times: 1, num: 0}
+                    var isNegative = floatNum < 0
+                    if (isInteger(floatNum)) {
+                        ret.num = floatNum
+                        return ret
+                    }
+                    var strfi = floatNum + ''
+                    var dotPos = strfi.indexOf('.')
+                    var len = strfi.substr(dotPos + 1).length
+                    var times = Math.pow(10, len)
+                    var intNum = parseInt(Math.abs(floatNum) * times + 0.5, 10)
+                    ret.times = times
+                    if (isNegative) {
+                        intNum = -intNum
+                    }
+                    ret.num = intNum
+                    return ret
+                }
+
+                /*
+                 * 核心方法，实现加减乘除运算，确保不丢失精度
+                 * 思路：把小数放大为整数（乘），进行算术运算，再缩小为小数（除）
+                 *
+                 * @param a {number} 运算数1
+                 * @param b {number} 运算数2
+                 * @param digits {number} 精度，保留的小数点数，比如 2, 即保留为两位小数
+                 * @param op {string} 运算类型，有加减乘除（add/subtract/multiply/divide）
+                 *
+                 */
+                function operation(a, b, digits, op) {
+                    var o1 = toInteger(a)
+                    var o2 = toInteger(b)
+                    var n1 = o1.num
+                    var n2 = o2.num
+                    var t1 = o1.times
+                    var t2 = o2.times
+                    var max = t1 > t2 ? t1 : t2
+                    var result = null
+                    switch (op) {
+                        case 'add':
+                            if (t1 === t2) { // 两个小数位数相同
+                                result = n1 + n2
+                            } else if (t1 > t2) { // o1 小数位 大于 o2
+                                result = n1 + n2 * (t1 / t2)
+                            } else { // o1 小数位 小于 o2
+                                result = n1 * (t2 / t1) + n2
+                            }
+                            return result / max
+                        case 'subtract':
+                            if (t1 === t2) {
+                                result = n1 - n2
+                            } else if (t1 > t2) {
+                                result = n1 - n2 * (t1 / t2)
+                            } else {
+                                result = n1 * (t2 / t1) - n2
+                            }
+                            return result / max
+                        case 'multiply':
+                            result = (n1 * n2) / (t1 * t2)
+                            return result
+                        case 'divide':
+                            result = (n1 / n2) * (t2 / t1)
+                            return result
+                    }
+                }
+
+                // 加减乘除的四个接口
+                function add(a, b, digits) {
+                    return operation(a, b, digits, 'add')
+                }
+
+                function subtract(a, b, digits) {
+                    return operation(a, b, digits, 'subtract')
+                }
+
+                function multiply(a, b, digits) {
+                    return operation(a, b, digits, 'multiply')
+                }
+
+                function divide(a, b, digits) {
+                    return operation(a, b, digits, 'divide')
+                }
+
+                // exports
+                return {
+                    add: add,
+                    subtract: subtract,
+                    multiply: multiply,
+                    divide: divide
+                }
+            }();
+            /*-------------------------------------------------结束-------------------------------------------------*/
         });
     </script>
 </head>
@@ -153,16 +495,23 @@
                             </dl>
                         </a>
                     </div>
-                    <div class="price">￥${commodity.SKU_PRESENT_PRICE}</div>
+                    <div class="cart-price">￥<span>${commodity.SKU_PRESENT_PRICE}</span></div>
                     <div class="number">
                         <p class="num clearfix">
-                            <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
-                            <span class="fl">${commodity.COMMODITY_COUNT}</span>
-                            <img class="fl add" src="${path}/static/img/temp/add.jpg">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-sub">
+                                <i class="layui-icon">&#xe603;</i>
+                            </button>
+
+                            <input type="number" value="${commodity.COMMODITY_COUNT}" autocomplete="off"
+                                   class="cart-num" style="text-align:center">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
+                                <i class="layui-icon">&#xe602;</i>
+                            </button>
                         </p>
                     </div>
-                    <div class="price sAll">￥${commodity.SKU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
-<%--                    正常商品删除--%>
+                    <div class="price sAll">￥<span>${commodity.SKU_PRESENT_PRICE * commodity.COMMODITY_COUNT}</span>
+                    </div>
+                        <%--                    正常商品删除--%>
                     <div class="price"><a class="cart-del" href="javascript:;">删除</a></div>
                 </div>
             </c:if>
@@ -222,7 +571,7 @@
                             </dl>
                         </a>
                     </div>
-                    <div class="price">￥${commodity.SKU_PRESENT_PRICE}</div>
+                    <div class="sku-price">￥${commodity.SKU_PRESENT_PRICE}</div>
                     <div class="number">
                         <p class="num clearfix">
                             <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
@@ -232,7 +581,7 @@
                     </div>
                     <div class="price sAll">￥${commodity.SKU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
                         <%--							<div class="price"><a class="del cart-del" href="#2">删除</a></div>--%>
-<%--                    失效删除--%>
+                        <%--                    失效删除--%>
                     <div class="price"><a class="cart-del" href="#2">删除</a></div>
                 </div>
 
