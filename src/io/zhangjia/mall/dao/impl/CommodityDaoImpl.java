@@ -53,15 +53,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -78,15 +78,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES\n" +
@@ -102,15 +102,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_SALES DESC\n" +
@@ -126,15 +126,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_MAX_PRESENT_PRICE\n" +
@@ -150,15 +150,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_MAX_PRESENT_PRICE DESC\n" +
@@ -174,15 +174,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT *\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                             "                    AND t1.COMMODITY_IS_DEL = 1 ORDER BY COMMODITY_CREATE_TIME DESC\n" +
@@ -216,15 +216,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -245,15 +245,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*, t2.*, t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -274,15 +274,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*, t2.*, t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -303,15 +303,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*, t2.*, t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -332,15 +332,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*, t2.*, t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -361,15 +361,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*, t2.*, t3.SEC_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       SEC_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -411,15 +411,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -439,15 +439,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -469,15 +469,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -498,15 +498,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -527,15 +527,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -556,15 +556,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                             "                  SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME\n" +
                             "                  FROM COMMODITY t1,\n" +
                             "                       (SELECT COMMODITY_ID                            cid,\n" +
-                            "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                            "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                            "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                            "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                            "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                            "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                            "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                            "                        FROM SPU\n" +
-                            "                        WHERE SPU_IS_DEL = 1\n" +
+                            "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                            "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                            "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                            "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                            "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                            "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                            "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                            "                        FROM SKU\n" +
+                            "                        WHERE SKU_IS_DEL = 1\n" +
                             "                        GROUP BY COMMODITY_ID) t2,\n" +
                             "                       FIRST_MENU t3\n" +
                             "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
@@ -607,15 +607,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -629,15 +629,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -651,15 +651,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -673,15 +673,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -695,15 +695,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -717,15 +717,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                         "                  SELECT *\n" +
                         "                  FROM COMMODITY t1,\n" +
                         "                       (SELECT COMMODITY_ID                            cid,\n" +
-                        "                               SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                        "                               SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                        "                               MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                        "                               MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                        "                               MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                        "                               MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                        "                               MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                        "                        FROM SPU\n" +
-                        "                        WHERE SPU_IS_DEL = 1\n" +
+                        "                               SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                        "                               SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                        "                               MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                        "                               MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                        "                               MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                        "                               MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                        "                               MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                        "                        FROM SKU\n" +
+                        "                        WHERE SKU_IS_DEL = 1\n" +
                         "                        GROUP BY COMMODITY_ID) t2\n" +
                         "                  WHERE t1.COMMODITY_ID = t2.cid\n" +
                         "                    AND t1.COMMODITY_IS_DEL = 1\n" +
@@ -769,15 +769,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                 "         SELECT t1.*,t2.*,t3.FIRST_MENU_CHINESE_NAME,t4.SEC_MENU_CHINESE_NAME\n" +
                 "         FROM COMMODITY t1,\n" +
                 "              (SELECT COMMODITY_ID                            cid,\n" +
-                "                      SUM(SPU_SALES)                          COMMODITY_SALES,\n" +
-                "                      SUM(SPU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
-                "                      MAX(SPU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
-                "                      MIN(SPU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
-                "                      MAX(SPU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
-                "                      MIN(SPU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
-                "                      MAX(SPU_LAST_PRICE - SPU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
-                "               FROM SPU\n" +
-                "               WHERE SPU_IS_DEL = 1\n" +
+                "                      SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                "                      SUM(SKU_INVENTORY)                       COMMODITY_INVENTORY,\n" +
+                "                      MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                "                      MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                "                      MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                "                      MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                "                      MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                "               FROM SKU\n" +
+                "               WHERE SKU_IS_DEL = 1\n" +
                 "               GROUP BY COMMODITY_ID) t2,\n" +
                 "               FIRST_MENU t3,\n" +
                 "            SEC_MENU t4\n" +
@@ -797,15 +797,15 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 
     @Override
     public List<Map<String, Object>> querySPEC(Integer commodityId) {
-//		String sql = "SELECT SPU_VALUE,COMMODITY_ID   FROM SPU  WHERE COMMODITY_ID = 1 AND SPU_IS_DEL = ?";
+//		String sql = "SELECT SKU_VALUE,COMMODITY_ID   FROM SKU  WHERE COMMODITY_ID = 1 AND SKU_IS_DEL = ?";
         String sql = "SELECT COMMODITY_ATTRIBUTES,COMMODITY_ID FROM COMMODITY WHERE COMMODITY_ID = ?";
         return query4MapList(sql, commodityId);
     }
 
     @Override
-    public List<Map<String, Object>> querySPU(String spuValue) {
-        String sql = "SELECT * FROM SPU WHERE SPU_VALUE = ? AND SPU_IS_DEL = 1";
-        return query4MapList(sql, spuValue);
+    public List<Map<String, Object>> querySKU(String skuValue) {
+        String sql = "SELECT * FROM SKU WHERE SKU_VALUE = ? AND SKU_IS_DEL = 1";
+        return query4MapList(sql, skuValue);
     }
 
     @Override
@@ -816,14 +816,16 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
     }
 
     @Override
-    public int doSPUInsert(List<Map<String, Object>> lists) {
+    public int doSKUInsert(List<Map<String, Object>> lists) {
         int i = 1;
         for (Map<String, Object> list : lists) {
-			String sql = "INSERT INTO spu VALUES(seq_spu.nextval,1,?,0,0,?,?,0,sysdate,sysdate,1)";
+			String sql = "INSERT INTO sku VALUES(seq_sku.nextval,1,?,0,0,?,?,0,sysdate,sysdate,1)";
 			i *= executeUpdate(sql);
         }
 
         return -1;
     }
+
+
 
 }

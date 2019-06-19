@@ -33,7 +33,7 @@ public class CommodityDetailServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String json = req.getParameter("SPEC");
-        List<Map<String, Object>> maps = commodityService.getCommoditySPU(json);
+        List<Map<String, Object>> maps = commodityService.getCommoditySKU(json);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
 

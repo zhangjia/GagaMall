@@ -82,8 +82,8 @@ public class CommodityServiceImpl implements CommodityService {
 	@Override
 //	public List<Map<String, Object>> getCommoditySPEC(String commodityId) {
 /*
-Map<String,List<String>> spu = null;
-		List<Map<String,List<String>>> spus = null;
+Map<String,List<String>> sku = null;
+		List<Map<String,List<String>>> skus = null;
 		Set<String> key = new HashSet<>();
 		Set<String> value = new HashSet<>();
         Map<String,String> z = new HashMap<>();
@@ -91,10 +91,10 @@ Map<String,List<String>> spu = null;
     List<Map<String, Object>> maps = commodityDao.querySPEC(cid);
     //遍历所有的记录，每次遍历生成一个：
 			for (Map<String,Object> map: maps) {
-        //获取SPU表中的JSON字符串
-        String spuValue = (String)map.get("SPU_VALUE");
+        //获取SKU表中的JSON字符串
+        String skuValue = (String)map.get("SKU_VALUE");
         //将其转换为Java对象
-        JSONObject jsonObject = JSON.parseObject(spuValue);
+        JSONObject jsonObject = JSON.parseObject(skuValue);
         //获取所有的key
         Set<String> strings = jsonObject.keySet();
         //遍历所有的key，将其存入set，防止重复
@@ -107,7 +107,7 @@ Map<String,List<String>> spu = null;
     }*/
 /**
  * 根据商品的ID，查询商品的属性
- * @param spuValue
+ * @param skuValue
  * @return
  */
 
@@ -128,13 +128,13 @@ Map<String,List<String>> spu = null;
 	}
 
 	/**
-	 * 根据spu表的spu——value获取该商品的其他spu属性
-	 * @param spuValue
+	 * 根据sku表的sku——value获取该商品的其他sku属性
+	 * @param skuValue
 	 * @return
 	 */
 	@Override
-	public List<Map<String,Object>> getCommoditySPU(String spuValue) {
-		return  commodityDao.querySPU(spuValue);
+	public List<Map<String,Object>> getCommoditySKU(String skuValue) {
+		return  commodityDao.querySKU(skuValue);
 	}
 
 

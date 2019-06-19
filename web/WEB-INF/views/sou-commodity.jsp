@@ -27,7 +27,7 @@
                     var value = data.value;
                     $('.zjtest option').not(":first").remove();
                     // $(".secMenuValue").addClass(data.value).removeClass("secMenuValue");
-                    //http://localhost:8888/ga/saveOrUpdateCommodity?commodityName=%E6%89%8B%E6%9C%BA&firstMenuId=%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81&secMenuId=1&commodityImg=spt&commodityDetails=spxqt&spgg=A&spsx=1&spsx=2&spgg=B&spsx=3&spu-inventory0=1&spu-present-price0=1&spu-inventory1=2&spu-present-price1=2
+                    //http://localhost:8888/ga/saveOrUpdateCommodity?commodityName=%E6%89%8B%E6%9C%BA&firstMenuId=%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81&secMenuId=1&commodityImg=spt&commodityDetails=spxqt&spgg=A&spsx=1&spsx=2&spgg=B&spsx=3&sku-inventory0=1&sku-present-price0=1&sku-inventory1=2&sku-present-price1=2
                     <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
                     if ('${nav.firstMenuChineseName}' == value) {
                         <c:forEach items="${nav.secMenu}" var="secNav">
@@ -85,6 +85,7 @@
 
 
             // var jsonSpuArray = [];
+            var sss;
             $(".bianli").click(function () {
 
                 var x = 1;
@@ -103,9 +104,9 @@
                     $(this).children(".spsx ").each(function () {
                         // console.log($(this).children().val());
 
-                        var sum = spggValue + ":" + ($(this).children().val().toString());
-                        list.push(sum);
-                        // console.log(JSON.stringify(sum))
+                        var skuRecord = spggValue + ":" + ($(this).children().val().toString());
+                        list.push(skuRecord);
+                        // console.log(JSON.stringify(skuRecord))
                     });
 
                     listValues.push(list);
@@ -175,102 +176,125 @@
                 }
 
                 var ss = calcDescartes(listValues);
+
+                sss = ss;
                 // console.log(ss)
 
                 for (var i = 0; i < x; i++) {
                     var htm = "";
-                    htm += "    <div class='layui-form-item '>";
+                    htm += "    <div class='layui-form-item create-sku'>";
                     htm += "    <label class='layui-form-label '>商品SKU</label>";
                     htm += "    <div class='layui-input-inline'>";
-                    htm += " <input type='text' name='spu-value" + i + "' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input c-sku' value=" + ss[i] + " readonly='readonly'>";
+                    htm += " <input type='text' name='sku-value" + i + "' required lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input c-sku' value=" + ss[i] + " readonly='readonly'>";
                     htm += "</div>";
                     htm += "    <div class='layui-input-inline layui-col-md4 '>";
-                    htm += " <input type='text' name='spu-inventory" + i + "' required lay-verify='required' placeholder='库存' autocomplete='off' class='layui-input i-and-p'>";
+                    htm += " <input type='text' name='sku-inventory" + i + "' required lay-verify='required' placeholder='库存' autocomplete='off' class='layui-input i-and-p create-sku-inventory'>";
                     htm += "</div>";
                     htm += "    <div class='layui-input-inline layui-col-md4 '>";
-                    htm += " <input type='text' name='spu-present-price" + i + "' required lay-verify='required' placeholder='价格' autocomplete='off' class='layui-input i-and-p'>";
+                    htm += " <input type='text' name='sku-present-price" + i + "' required lay-verify='required' placeholder='价格' autocomplete='off' class='layui-input i-and-p create-sku-price'>";
                     htm += "</div>";
                     htm += "</div>";
 
                     $('.buttons').before(htm);
                 }
 
-                //---------------------------------------spu生成开始---------------
-
-                function zj(array) {
-                    if (array.length < 2) return array[0] || [];
-                    return [].reduce.call(array, function (col, set) {
-                        var res = [];
-                        col.forEach(function (c) {
-                            set.forEach(function (s) {
-                                var t = [].concat(Array.isArray(c) ? c : [c]);
-                                t.push(s);
-                                res.push(t);
-                            })
-                        });
-                        return res;
-                    });
-                }
-
-                var ss2 = zj(listValues);
-                console.log(ss2)
-
-                //// {"颜色":"白色","容量":"256G"}
-                var jx = {};
-
-                // for (var i = 0; i < x; i++) {
-                //     console.log(ss[i])
-
-                // //如果添加了多个规格
-                // if($(".spgg").length > 1) {
-                //     for (var j = 0; j < ss[i].length; j++) {
-                //         var ssi = ss[i][j];
-                //         console.log(ssi)
-                //         var sp =  ssi.split(":");
-                //         var name = sp[0];
-                //         var value = sp[1];
-                //        jx[name] = value;
-                //
-                //     }
-                // } else {
-                //     //如果只有一个规格
-                //     for (var j = 0; j < ss2.length; j++) {
-                //         alert("a")
-                //     }
-                //     console.log(ss[j])
-                // }
+                //---------------------------------------sku生成开始---------------
 
 
-                // }
-                // console.log(JSON.stringify(jx))
-                var zzj = {};
-                for (var i = 0; i < ss2.length; i++) {
-                   if(ss2.length > 1) {
-                       for (var j = 0; j < ss2[i].length; j++) {
-                           console.log(ss2[i][j]);
-                          var sp =   ss2[i][j] .split(":");
-                           var name = sp[0];
-                            var value = sp[1];
-                           zzj[name] = value;
-                       }
-                   } else {
-                       console.log(ss2[i] + "]");
-                       var sp =   ss2[i] .split(":");
-                       var name = sp[0];
-                       var value = sp[1];
-                       zzj[name] = value;
-                   }
-                }
+               /* var jsonSKUValue = {};
 
-                console.log(JSON.stringify(ss2) + "---")
-                console.log(JSON.stringify(zzj) + "---")
+                var jsonsss = JSON.stringify(ss)+"";
+                console.log(JSON.stringify(ss) + "---");
+                console.log(JSON.stringify(jsonSKUValue) + "---");
+                jsonsss = jsonsss.replace(/\[/g,"");
+                jsonsss = jsonsss.replace(/\]/g,"");
+                jsonsss = jsonsss.replace(/:/g,'":"');
+               // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
+                var leg = $(".spgg").length;
+
+               var splits =  jsonsss.split(",");
+                for (var m = 0; m < splits.length ; m+=leg) {
+                    var strings="";
+                    for (var y = m; y < m+leg; y++) {
+                        if(y+1 < m+leg) {
+
+                            strings += (splits[y] + ",");
+                        } else {
+                            strings += splits[y];
+                        }
+
+                    }
+
+                    console.log("{" + strings + "}" )
+
+                }*/
+
 
             });
+            //---------------------------------------sku生成结束---------------
 
 
             $(".submit").click(function () {
-                // console.log("aaaaaaaaaaaaaaaaaa");
-                // console.log(JSON.stringify(jsonSpuArray))
+                var skuRecords = [];
+
+                //----------------------------------------------
+                var jsonSKUValue = {};
+
+                var jsonsss = JSON.stringify(sss)+"";
+                console.log(JSON.stringify(sss) + "---");
+                console.log(JSON.stringify(jsonSKUValue) + "---");
+                jsonsss = jsonsss.replace(/\[/g,"");
+                jsonsss = jsonsss.replace(/\]/g,"");
+                jsonsss = jsonsss.replace(/:/g,'":"');
+                // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
+                var leg = $(".spgg").length;
+
+                var sc= 0;
+
+                var splits =  jsonsss.split(",");
+                for (var m = 0; m < splits.length ; m+=leg) {
+                    var skuRecord = {};
+                    var strings="";
+                    for (var y = m; y < m+leg; y++) {
+                        if(y+1 < m+leg) {
+
+                            strings += (splits[y] + ",");
+                        } else {
+                            strings += splits[y];
+                        }
+
+                    }
+
+                    console.log("{" + strings + "}" )
+                    skuRecord.skuvalue = JSON.parse("{" + strings + "}");
+
+
+
+                        // var inventory = $(".create-sku:eq("+(sc+1)+")").children(":eq(2)").children("input").val();
+                        //$("ul li:nth-child(2)")
+                        var inventory = $(".create-sku:eq("+(sc+1)+")").children(":eq(2)").children("input").val();
+                        var price = $(".create-sku:eq("+sc+++")").children(":eq(3)").children("input").val()
+                        // var price = $(".create-sku:eq("+sc+++")").children(":eq(3)").children("input").val()
+                        skuRecord.inventory = inventory;
+                        skuRecord.price = price;
+
+                        alert(inventory)
+
+
+                    skuRecords.push(skuRecord);
+
+                }
+                // $(".create-sku").each(function () {
+                //     var xxx = {};
+                //     var inventory = $(this).children(":eq(2)").children("input").val();
+                //     var price = $(this).children(":eq(3)").children("input").val()
+                //     skuRecord.inventory = inventory;
+                //     skuRecord.price = price;
+                //     console.log(xxx)
+                //
+                // });
+
+                console.log(JSON.stringify(skuRecords))
                 var data = $("form").serialize();
                 $.ajax({
                     url: "${path}/addCommodity",

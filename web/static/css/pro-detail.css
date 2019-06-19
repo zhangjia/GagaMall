@@ -13,7 +13,7 @@
     display: inline-block;
     border: 1px solid black;
 }
-dt.spu-key {
+dt.sku-key {
     text-align: left;
     float: left;
     width: 66px;

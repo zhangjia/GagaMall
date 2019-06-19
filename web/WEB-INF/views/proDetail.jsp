@@ -42,18 +42,18 @@
                     $(this).addClass("active")
                 }
 
-                var length = $(".spu").length;
-                if ($(".spu dd.active").length == length) {
-                    var le = $(".spu").length;
+                var length = $(".sku").length;
+                if ($(".sku dd.active").length == length) {
+                    var le = $(".sku").length;
                     var s = "";
                     var j = {};
                     var json = [];
-                    //生成spu-name的json字符串
-                    $(".spu").each(function () {
-                        // s = s+$(this).children(".spu-key").text();
+                    //生成sku-name的json字符串
+                    $(".sku").each(function () {
+                        // s = s+$(this).children(".sku-key").text();
                         // s = s + $(this).children("dd.active").text();
-                        // var name = $(this).children(".spu-key").textAlign.toString.replace(" ", "");
-                        var name = $(this).children(".spu-key").text();
+                        // var name = $(this).children(".sku-key").textAlign.toString.replace(" ", "");
+                        var name = $(this).children(".sku-key").text();
                         name = name.replace(/ /g, "");
                         name = name.replace(/\n/g, "");
                         console.log(name);
@@ -74,9 +74,9 @@
                         },
                         success: function (res) {
                             console.log(JSON.stringify(j));
-                            $(".commodity-price").text('￥' + res[0].SPU_PRESENT_PRICE);
-                            $(".inventory").text(res[0].SPU_INVENTORY);
-                            $(".sale").text(res[0].SPU_SALES);
+                            $(".commodity-price").text('￥' + res[0].SKU_PRESENT_PRICE);
+                            $(".inventory").text(res[0].SKU_INVENTORY);
+                            $(".sale").text(res[0].SKU_SALES);
                         }
                     });
                 } else {
@@ -93,17 +93,17 @@
 
             //------------------------------------------加入购物车-----------------------------------------------------
             $(".add-cart").click(function () {
-                var spu = JSON.stringify(selectjson);
+                var sku = JSON.stringify(selectjson);
                 var commodityCount = $(".cart-commodity-count").text()
-                var length = $(".spu").length;
-                if ($(".spu dd.active").length != length) {
+                var length = $(".sku").length;
+                if ($(".sku dd.active").length != length) {
                     layer.alert("请先选择商品规格")
                 } else {
                     $.ajax({
                         url: "${path}/addCart",
                         type: "get",
                         data: {
-                            SPU: spu,
+                            SKU: sku,
                             commodityCount: commodityCount
                         },
                         success: function (res) {
@@ -187,10 +187,10 @@
                             <p class="fl"><img src="${path}/static/img/temp/prosmall03.jpg" alt="20支快乐花" data-src="${path}/static/img/temp/proBig03.jpg"></p>
                             <p class="fl"><img src="${path}/static/img/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="${path}/static/img/temp/proBig04.jpg"></p>
                         </div>--%>
-                    <div class="spus">
+                    <div class="skus">
                         <c:forEach items="${requestScope.SPEC}" var="SPEC">
-                            <dl class="spu" id="order">
-                                <dt class="spu-key">
+                            <dl class="sku" id="order">
+                                <dt class="sku-key">
                                         ${SPEC.key}
                                 </dt>
                                 <c:forEach items="${SPEC.value}" var="x">

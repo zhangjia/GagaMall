@@ -18,16 +18,16 @@
                 var thiss = $(this);
                 layer.confirm('确定要删除吗?', {icon: 3, title: '嘎嘎警告'}, function (index) {
                     //获取要删除的商品ID
-                    var SPUIds = [];
-                    var SPUId = thiss.parent().parent().children(":first").children(":first").children("input").val();
-                    SPUIds.push(SPUId);
+                    var SKUIds = [];
+                    var SKUId = thiss.parent().parent().children(":first").children(":first").children("input").val();
+                    SKUIds.push(SKUId);
                     //获取用于remove的元素
                     var remove = thiss.parent().parent();
                     $.ajax({
                         url: "${path}/cart/delete",
                         type: "get",
                         data: {
-                            SPUIds: SPUIds
+                            SKUIds: SKUIds
                         },
                         traditional:true,
                         success: function (res) {
@@ -58,10 +58,10 @@
                     layer.confirm('确定要删除吗?', {icon: 3, title: '嘎嘎警告'}, function (index) {
                         //获取要删除的商品ID
 
-                        var SPUIds = [];
+                        var SKUIds = [];
                         // layer.alert( $(".th input[type='checkbox']:checked").length);
                         $(".th input[type='checkbox']:checked").each(function (j) {
-                            SPUIds.push($(this).val())
+                            SKUIds.push($(this).val())
                             indexs = $(this).parents('.th').index() - 1;
                             $(".th").eq(indexs).remove();
                             if ($(".th").length == 0) {
@@ -69,17 +69,17 @@
                             }
                         })
 
-                        console.log(SPUIds)
+                        console.log(SKUIds)
 
 
-                        var SPUId = thiss.parent().parent().children(":first").children(":first").children("input").val();
+                        var SKUId = thiss.parent().parent().children(":first").children(":first").children("input").val();
                         //获取用于remove的元素
                         var remove = thiss.parent().parent();
                         $.ajax({
                             url:"${path}/cart/delete",
                             type: "get",
                             data: {
-                                SPUIds: SPUIds
+                                SKUIds: SKUIds
                             },
                             traditional:true,
                             success: function (res) {
@@ -133,11 +133,11 @@
         </div>
         <c:forEach items="${requestScope.commodities}" var="commodity">
 
-            <c:if test="${commodity.SPU_INVENTORY > 0}">
+            <c:if test="${commodity.SKU_INVENTORY > 0}">
                 <div class="th">
                     <div class="pro clearfix">
                         <label class="fl">
-                            <input class="cart-spu-id" type="checkbox" value="${commodity.SPU_ID}"/>
+                            <input class="cart-sku-id" type="checkbox" value="${commodity.SKU_ID}"/>
                             <span></span>
                         </label>
                         <a class="fl" href="#">
@@ -146,14 +146,14 @@
                                 <dd class="fl">
                                     <p class="cart-commodity-name">${commodity.COMMODITY_NAME}</p>
                                     <p>
-                                            ${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SPU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
+                                            ${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SKU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
                                                     </p>
                                             <%--										<p>白色瓷瓶+白色串枚</p>--%>
                                 </dd>
                             </dl>
                         </a>
                     </div>
-                    <div class="price">￥${commodity.SPU_PRESENT_PRICE}</div>
+                    <div class="price">￥${commodity.SKU_PRESENT_PRICE}</div>
                     <div class="number">
                         <p class="num clearfix">
                             <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
@@ -161,7 +161,7 @@
                             <img class="fl add" src="${path}/static/img/temp/add.jpg">
                         </p>
                     </div>
-                    <div class="price sAll">￥${commodity.SPU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
+                    <div class="price sAll">￥${commodity.SKU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
 <%--                    正常商品删除--%>
                     <div class="price"><a class="cart-del" href="javascript:;">删除</a></div>
                 </div>
@@ -199,7 +199,7 @@
         <h4>失效商品</h4>
         <c:forEach items="${requestScope.commodities}" var="commodity">
 
-            <c:if test="${commodity.SPU_INVENTORY <= 0}">
+            <c:if test="${commodity.SKU_INVENTORY <= 0}">
 
                 <hr/>
                 <%--库存不足--%>
@@ -215,14 +215,14 @@
                                 <dd class="fl">
                                     <p class="cart-commodity-name cart-understock">${commodity.COMMODITY_NAME}</p>
                                     <p>
-                                            ${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SPU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
+                                            ${fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(commodity.SKU_VALUE, '{', ''),'}' ,'' ),'"' , ''),',' ,'<br />' ),':' ,'：    ' )}
                                                     </p>
                                             <%--										<p>白色瓷瓶+白色串枚</p>--%>
                                 </dd>
                             </dl>
                         </a>
                     </div>
-                    <div class="price">￥${commodity.SPU_PRESENT_PRICE}</div>
+                    <div class="price">￥${commodity.SKU_PRESENT_PRICE}</div>
                     <div class="number">
                         <p class="num clearfix">
                             <img class="fl sub" src="${path}/static/img/temp/sub.jpg">
@@ -230,7 +230,7 @@
                             <img class="fl add" src="${path}/static/img/temp/add.jpg">
                         </p>
                     </div>
-                    <div class="price sAll">￥${commodity.SPU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
+                    <div class="price sAll">￥${commodity.SKU_PRESENT_PRICE * commodity.COMMODITY_COUNT} </div>
                         <%--							<div class="price"><a class="del cart-del" href="#2">删除</a></div>--%>
 <%--                    失效删除--%>
                     <div class="price"><a class="cart-del" href="#2">删除</a></div>

@@ -20,6 +20,6 @@ public interface CommodityService {
 
     //	List<Map<String,Object>> getCommoditySPEC(String commodityId);
     String getCommoditySPEC(String commodityId);
-    List<Map<String,Object>> getCommoditySPU(String spuValue);
+    List<Map<String,Object>> getCommoditySKU(String skuValue);
 
 }

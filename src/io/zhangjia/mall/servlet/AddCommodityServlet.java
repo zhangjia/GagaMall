@@ -23,9 +23,9 @@ public class AddCommodityServlet extends HttpServlet {
 //{"颜色":"白色","容量":"256G"}
 //        {"颜色":["黑色","白色"],"容量":["128G","256G"]}
 
-        List<String> spuValue = new ArrayList<>();
-        List<String> spuInventory = new ArrayList<>();
-        List<String> spuPresentPrice = new ArrayList<>();
+        List<String> skuValue = new ArrayList<>();
+        List<String> skuInventory = new ArrayList<>();
+        List<String> skuPresentPrice = new ArrayList<>();
 //        List<Map<String,Object>> attr = new ArrayList<>();
 
         //存商品的attribute
@@ -35,13 +35,13 @@ public class AddCommodityServlet extends HttpServlet {
 //            attr
 
 //            temp.put(req.getParameter("spgg"+i+""),req.getParameter("spss"+i+""));
-            spuValue.add(req.getParameter("spu-value"+i+""));
-            spuInventory.add(req.getParameter("spu-inventory"+i+""));
-            spuPresentPrice.add(req.getParameter("spu-present-price"+i+""));
+            skuValue.add(req.getParameter("sku-value"+i+""));
+            skuInventory.add(req.getParameter("sku-inventory"+i+""));
+            skuPresentPrice.add(req.getParameter("sku-present-price"+i+""));
         }
-        System.out.println(spuValue);
-        System.out.println(spuInventory);
-        System.out.println(spuPresentPrice);
+        System.out.println(skuValue);
+        System.out.println(skuInventory);
+        System.out.println(skuPresentPrice);
         List<String> spsx= new ArrayList<String>(Arrays.asList(spsxes));
         List<String> spgg= new ArrayList<String>(Arrays.asList(spggs));
         List<String> spt= new ArrayList<String>(Arrays.asList(spts));
@@ -51,10 +51,10 @@ public class AddCommodityServlet extends HttpServlet {
         System.out.println(Arrays.toString(spts));
         System.out.println(Arrays.toString(spxqts));
         System.out.println("--------------------");
-        map.put("spuValue",spuValue);
-        map.put("spuInventory",spuInventory);
-        map.put("spuValue",spuValue);
-        map.put("spuPresentPrice",spuPresentPrice);
+        map.put("skuValue",skuValue);
+        map.put("skuInventory",skuInventory);
+        map.put("skuValue",skuValue);
+        map.put("skuPresentPrice",skuPresentPrice);
         map.put("spgg",spgg);
         map.put("spt",spt);
         map.put("spxqt",spxqt);
@@ -67,7 +67,7 @@ public class AddCommodityServlet extends HttpServlet {
         * 商品表: 商品名，商品属性值，一级菜单，二级菜单
         * key表
         * value表
-        * spu表：spu的值，价格，库存，商品ID，
+        * sku表：sku的值，价格，库存，商品ID，
         *
         * ***********************************
         * {"颜色":"白色","容量":"256G"}

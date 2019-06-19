@@ -14,10 +14,10 @@ public interface CommodityDao {
 
     List<Map<String,Object>> querySPEC(Integer commodityId);
 
-    List<Map<String,Object>> querySPU(String spuValue);
+    List<Map<String,Object>> querySKU(String skuValue);
 
     int doCommodityInsert(Commodity commodity);
-    int doSPUInsert(List<Map<String,Object>> lists) ;
+    int doSKUInsert(List<Map<String,Object>> lists) ;
 
 
 }
