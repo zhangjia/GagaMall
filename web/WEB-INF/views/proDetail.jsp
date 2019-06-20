@@ -165,7 +165,6 @@
                                 }
                             } else {
                              if(action =="input") {
-                                    alert("asdfasd")
                                     $(thiss).val(res.nowInventory);
                                 }
                                 layer.msg(res.error)
@@ -197,14 +196,22 @@
 
 
             });
-            $(".jia-commodity-detail-num").blur(function () {
+
+
+            $(".jia-commodity-detail-num").keyup(function () {
                 var length = $(".sku").length;
                 if ($(".sku dd.active").length != length) {
                     layer.alert("请先选择商品规格")
                 } else {
                     var val = $(this).val();
-                    console.log(val+"wer")
-                    determineTheInventory("input",0,$(this),val)
+                    console.log("val" + val)
+                    if (val === '') {
+                        $(this).val(1)
+                    } else {
+                        console.log(val+"wer")
+                        determineTheInventory("input",0,$(this),val)
+                    }
+
                 }
 
 

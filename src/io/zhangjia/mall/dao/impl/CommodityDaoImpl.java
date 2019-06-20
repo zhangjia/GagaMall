@@ -810,9 +810,18 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
 
     @Override
     public int doCommodityInsert(Commodity commodity) {
-        String sql = "INSERT INTO commodity VALUES(seq_commodity.nextval,?,?,sysdate,sysdate,100,?,?,1)";
-        return executeUpdate(sql, commodity.getCommodityName(), commodity.getCommodityAttributes(),
+        String sqlid = "SELECT seq_commodity.nextval id FROM dual";
+        int id =  query4IntData(sqlid);
+        System.out.println("id = " + id);
+        String sql = "INSERT INTO commodity VALUES(?,?,?,sysdate,sysdate,100,?,?,1)";
+        int i = executeUpdate(sql,id, commodity.getCommodityName(), commodity.getCommodityAttributes(),
                 commodity.getFirstMenuId(), commodity.getSecMenuId());
+        if(i == 1) {
+            return id;
+        } else {
+            return 0;
+        }
+
     }
 
     @Override

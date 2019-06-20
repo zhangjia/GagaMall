@@ -18,29 +18,7 @@
 
         $(function () {
             $(".two").hide();
-            layui.use('form', function () {
-                var form = layui.form;
 
-                //各种基于事件的操作，下面会有进一步介绍
-
-                form.on('select(zj)', function (data) {
-                    var value = data.value;
-                    $('.zjtest option').not(":first").remove();
-                    // $(".secMenuValue").addClass(data.value).removeClass("secMenuValue");
-                    //http://localhost:8888/ga/saveOrUpdateCommodity?commodityName=%E6%89%8B%E6%9C%BA&firstMenuId=%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81&secMenuId=1&commodityImg=spt&commodityDetails=spxqt&spgg=A&spsx=1&spsx=2&spgg=B&spsx=3&sku-inventory0=1&sku-present-price0=1&sku-inventory1=2&sku-present-price1=2
-                    <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
-                    if ('${nav.firstMenuChineseName}' == value) {
-                        <c:forEach items="${nav.secMenu}" var="secNav">
-                        var option = "<option value='${secNav.SEC_MENU_ID}'>${secNav.SEC_MENU_CHINESE_NAME}</option>";
-                        $(".secMenuValue").after(option);
-                        </c:forEach>
-                    }
-                    </c:forEach>
-                    form.render(); //
-
-                    $(".two").show(1000);
-                });
-            });
 
             // $(".shuxing").addClass("layui-btn-disabled");
             //商品规格，比如颜色，大小，版本等等
@@ -86,6 +64,7 @@
 
             // var jsonSKUArray = [];
             var sss;
+            var jsonAttrs;
             $(".bianli").click(function () {
 
                 var x = 1;
@@ -155,7 +134,7 @@
                 });
 
                 //将生成的json添加到fom中，并且隐藏
-                var jsonattr = "<input type='hidden' name='jsonAttribue' value='" + JSON.stringify(jsonAttr) + "'>";
+                var jsonattr = "<input type='hidden' name='jsonAttribute' value='" + JSON.stringify(jsonAttr) + "'>";
                 $(".layui-form").append(jsonattr);
 
 
@@ -196,122 +175,191 @@
                     htm += "</div>";
 
                     $('.buttons').before(htm);
+
+                    jsonAttrs = jsonAttr;
+
                 }
 
                 //---------------------------------------sku生成开始---------------
-
-
-               /* var jsonSKUValue = {};
-
-                var jsonsss = JSON.stringify(ss)+"";
-                console.log(JSON.stringify(ss) + "---");
-                console.log(JSON.stringify(jsonSKUValue) + "---");
-                jsonsss = jsonsss.replace(/\[/g,"");
-                jsonsss = jsonsss.replace(/\]/g,"");
-                jsonsss = jsonsss.replace(/:/g,'":"');
-               // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
-                var leg = $(".spgg").length;
-
-               var splits =  jsonsss.split(",");
-                for (var m = 0; m < splits.length ; m+=leg) {
-                    var strings="";
-                    for (var y = m; y < m+leg; y++) {
-                        if(y+1 < m+leg) {
-
-                            strings += (splits[y] + ",");
-                        } else {
-                            strings += splits[y];
-                        }
-
-                    }
-
-                    console.log("{" + strings + "}" )
-
-                }*/
-
 
             });
             //---------------------------------------sku生成结束---------------
 
 
-            $(".submit").click(function () {
-                var skuRecords = [];
+            // $(".submit").click(function () {
 
-                //----------------------------------------------
-                var jsonSKUValue = {};
+            //{"颜色":"白色","容量":"256G"}
+            //["1", "3"]
+            //颜色:黄,大小:b
 
-                var jsonsss = JSON.stringify(sss)+"";
-                console.log(JSON.stringify(sss) + "---");
-                console.log(JSON.stringify(jsonSKUValue) + "---");
-                jsonsss = jsonsss.replace(/\[/g,"");
-                jsonsss = jsonsss.replace(/\]/g,"");
-                jsonsss = jsonsss.replace(/:/g,'":"');
-                // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
-                var leg = $(".spgg").length;
+            // $(".submits").click(function () {
 
-                var sc= 0;
+$(".as").click(function () {
+    var sonspts = [];
+    var spts = {};
 
-                var splits =  jsonsss.split(",");
-                for (var m = 0; m < splits.length ; m+=leg) {
-                    var skuRecord = {};
-                    var strings="";
-                    for (var y = m; y < m+leg; y++) {
-                        if(y+1 < m+leg) {
+    // var data = $("form").serialize();
+    $("input[name='spt']").each(function () {
 
-                            strings += (splits[y] + ",");
-                        } else {
-                            strings += splits[y];
+        sonspts.push($(this).val());
+    });
+    var imgType = "spt";
+    spts[imgType]=sonspts;
+
+    var sonspxqt= [];
+    var spxqts= {};
+    // var data = $("form").serialize();
+    $("input[name='spxqt']").each(function () {
+
+        sonspxqt.push($(this).val());
+    });
+    imgType = "sptxqt";
+    spxqts[imgType]=sonspxqt;
+    console.log(spts)
+    console.log(spxqts)
+    console.log($("input[name='firstMenuId']").val())
+    console.log($("input[name='secMenuId']").val())
+
+});
+            layui.use('form', function () {
+                var form = layui.form;
+                form.on('submit(formDemo)', function(data){
+                    var sonspts = [];
+                    var spts = {};
+
+                    // var data = $("form").serialize();
+                    $("input[name='spt']").each(function () {
+
+                        sonspts.push($(this).val());
+                    });
+                    var imgType = "spt";
+                    spts[imgType]=sonspts;
+
+                    var sonspxqt= [];
+                    var spxqts= {};
+                    // var data = $("form").serialize();
+                    $("input[name='spxqt']").each(function () {
+
+                        sonspxqt.push($(this).val());
+                    });
+                    imgType = "spxqt";
+                    spxqts[imgType]=sonspxqt;
+
+                    var jsonattr1 = "<input type='hidden' name='jsonspt' value='" + JSON.stringify(spts) + "'>";
+                    $(".layui-form").append(jsonattr1);
+                    var jsonattr2 = "<input type='hidden' name='jsonspxqt' value='" + JSON.stringify(spxqts) + "'>";
+                    $(".layui-form").append(jsonattr2);
+                    var skuRecords = [];
+
+                    //----------------------------------------------
+                    var jsonSKUValue = {};
+
+                    var jsonsss = JSON.stringify(sss)+"";
+                    console.log(JSON.stringify(sss) + "---");
+                    console.log(JSON.stringify(jsonSKUValue) + "---");
+                    jsonsss = jsonsss.replace(/\[/g,"");
+                    jsonsss = jsonsss.replace(/\]/g,"");
+                    jsonsss = jsonsss.replace(/:/g,'":"');
+                    // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
+                    var leg = $(".spgg").length;
+
+                    var sc= 0;
+
+                    var splits =  jsonsss.split(",");
+                    for (var m = 0; m < splits.length ; m+=leg) {
+                        console.log(m)
+                        var skuRecord = {};
+                        var strings="";
+                        for (var y = m; y < m+leg; y++) {
+                            if(y+1 < m+leg) {
+
+                                strings += (splits[y] + ",");
+                            } else {
+                                strings += splits[y];
+                            }
+
                         }
 
-                    }
-
-                    console.log("{" + strings + "}" )
-                    skuRecord.skuvalue = JSON.parse("{" + strings + "}");
+                        console.log("{" + strings + "}" )
+                        skuRecord.skuvalue = JSON.parse("{" + strings + "}");
 
 
 
                         // var inventory = $(".create-sku:eq("+(sc+1)+")").children(":eq(2)").children("input").val();
                         //$("ul li:nth-child(2)")
-                        var inventory = $(".create-sku:eq("+(sc+1)+")").children(":eq(2)").children("input").val();
-                        var price = $(".create-sku:eq("+sc+++")").children(":eq(3)").children("input").val()
+                        var inventory = $(".create-sku:eq("+(sc)+")").children(":eq(2)").children("input").val();
+                        var price = $(".create-sku:eq("+(sc++)+")").children(":eq(3)").children("input").val()
                         // var price = $(".create-sku:eq("+sc+++")").children(":eq(3)").children("input").val()
                         skuRecord.inventory = inventory;
                         skuRecord.price = price;
 
-                        alert(inventory)
 
 
-                    skuRecords.push(skuRecord);
 
-                }
-                // $(".create-sku").each(function () {
-                //     var xxx = {};
-                //     var inventory = $(this).children(":eq(2)").children("input").val();
-                //     var price = $(this).children(":eq(3)").children("input").val()
-                //     skuRecord.inventory = inventory;
-                //     skuRecord.price = price;
-                //     console.log(xxx)
-                //
-                // });
+                        skuRecords.push(skuRecord);
 
-                console.log(JSON.stringify(skuRecords))
-                var data = $("form").serialize();
-                $.ajax({
-                    url: "${path}/addCommodity",
-                    type: "post",
-                    data: data,
-                    success: function (res) {
 
                     }
+
+
+                    console.log(JSON.stringify(skuRecords))
+
+                    console.log(spts)
+                    console.log(spxqts)
+                    console.log($("input[name='firstMenuId']").val())
+                    console.log($("input[name='secMenuId']").val())
+                   var map = data.field;
+
+
+                    var datas ={
+                        commodityName:$("input[name='commodityName']").val(),
+                        firstMenuId:map.firstMenuId,
+                        secMenuId:map.secMenuId,
+                        jsonAttr:$("input[name='jsonAttribute']").val(),
+                        spt:$("input[name='jsonspt']").val(),
+                        spxqt:$("input[name='jsonspxqt']").val(),
+                        skuRecords:JSON.stringify(skuRecords)
+
+
+                    };
+                    console.log(data);
+                    alert("a")
+                    $.ajax({
+                        url: "${path}/addCommodity",
+                        type: "get",
+                        data:datas,
+                        success: function (res) {
+                            alert(res)
+                        }
+                    });
+
+                    return false;
                 });
 
+                //各种基于事件的操作，下面会有进一步介绍
 
-                return false;
+                form.on('select(zj)', function (data) {
+                    var value = data.value;
+
+                    $('.zjtest option').not(":first").remove();
+                    // $(".secMenuValue").addClass(data.value).removeClass("secMenuValue");
+                    //http://localhost:8888/ga/saveOrUpdateCommodity?commodityName=%E6%89%8B%E6%9C%BA&firstMenuId=%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81&secMenuId=1&commodityImg=spt&commodityDetails=spxqt&spgg=A&spsx=1&spsx=2&spgg=B&spsx=3&sku-inventory0=1&sku-present-price0=1&sku-inventory1=2&sku-present-price1=2
+                    <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
+                    var fid = ${nav.firstMenuId};
+
+                    if (fid == value) {
+
+                        <c:forEach items="${nav.secMenu}" var="secNav">
+                        var option = "<option value='${secNav.SEC_MENU_ID}'>${secNav.SEC_MENU_CHINESE_NAME}</option>";
+                        $(".secMenuValue").after(option);
+                        </c:forEach>
+                    }
+                    </c:forEach>
+                    form.render(); //
+
+                    $(".two").show(1000);
+                });
             });
-            //{"颜色":"白色","容量":"256G"}
-            //["1", "3"]
-            //颜色:黄,大小:b
-            $
 
         });
     </script>
@@ -337,9 +385,11 @@
             <jsp:include page="personal-left.jsp"/>
         </div>
         <div class="you fl">
+            <button class="as">a</button>
 
             <form class="layui-form" action="">
                 <h2>添加商品</h2>
+
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
@@ -355,6 +405,7 @@
                         <select name="firstMenuId" lay-verify="required" lay-filter="zj">
                             <option value="">请选择</option>
                             <c:forEach items="${requestScope.nav}" var="nav" varStatus="i">
+
                                 <option value="${nav.firstMenuId}">${nav.firstMenuChineseName}</option>
                             </c:forEach>
 
@@ -402,12 +453,13 @@
 
                 <div class="layui-form-item buttons">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                         <button type="button" class="layui-btn  layui-btn-warm guige">添加规格</button>
                         <button type="button" class="layui-btn  layui-btn-warm shuxing">添加属性</button>
                         <button type="button" class="layui-btn  layui-btn-warm bianli">规格确定</button>
-                        <button class="layui-btn submit" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button class="layui-btn  " lay-submit lay-filter="formDemo" >立即提交</button>
+<%--                        <button type="button " class="layui-btn  layui-btn-warm submits">提交</button>--%>
+
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>

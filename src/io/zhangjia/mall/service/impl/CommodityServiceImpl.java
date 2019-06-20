@@ -190,7 +190,7 @@ Map<String,List<String>> sku = null;
             int skuCount;
             Map<String, Object> cartSKU = cartDao.queryByUserIdAndSKUId(uid, sid);
             if (cartSKU == null) {
-
+                map.put("nowInventory",skuInventory);
                 skuCount = 0;
             } else {
                 System.out.println(cartSKU);
