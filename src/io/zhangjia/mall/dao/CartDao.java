@@ -8,6 +8,7 @@ public interface CartDao {
     int doInsert(Map<String,Object> param);
     Map<String,Object> queryByUserIdAndSKUId(Integer userId, Integer SKUId);
     int doUpdateCommodityCount(Map<String,Object> param);
+    int doUpdateCartCount(Map<String,Object> param);
     int doDelete(Integer userId,List<String> SKUId);
 
     int addCount(Integer userId, Integer SKUId);

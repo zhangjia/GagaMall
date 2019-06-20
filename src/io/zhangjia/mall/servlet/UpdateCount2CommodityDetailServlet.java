@@ -27,11 +27,14 @@ public class UpdateCount2CommodityDetailServlet extends HttpServlet {
         String userId = user.getUserId().toString();
         String SKUId =  req.getParameter("SKUId");
         String count = req.getParameter("count");
+        String val = req.getParameter("val");
         resp.setContentType("application/json;charset=utf-8");
         String action = req.getParameter("action");
         PrintWriter writer = resp.getWriter();
-        System.out.println("aaaahahahah" + count + "--" + SKUId + "--" + userId);
-        Map<String, Object> stringObjectMap = commodityService.updateCount2CommodityDetail(action, userId, SKUId,count);
+        System.out.println("aaaahahahah" + count + "--" + SKUId + "--" + userId + "val" + val);
+        Map<String, Object> stringObjectMap = commodityService.updateCount2CommodityDetail(action, userId, SKUId,count,val);
+
+        System.out.println(stringObjectMap);
         writer.println(JSON.toJSONString(stringObjectMap));
         writer.close();
     }

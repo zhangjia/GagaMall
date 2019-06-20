@@ -157,18 +157,23 @@ Map<String,List<String>> sku = null;
      * @return
      */
     @Override
-    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count) {
+    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count,String vals) {
         int uid = -1;
         int sid = -1;
         int ct = -1;
+        int val = -1;
         System.out.println("userId = " + userId);
         System.out.println("SKUId = " + SKUId);
+        System.out.println("val = " + vals);
         Map<String, Object> map = new HashMap<>();
         if (userId != null && !"".equals(userId) &&
-                SKUId != null && !"".equals(SKUId) && count != null && !"".equals(count)) {
+                SKUId != null && !"".equals(SKUId) && count != null && !"".equals(count)
+                && vals != null && !"".equals(vals)) {
             uid = Integer.parseInt(userId);
             sid = Integer.parseInt(SKUId);
             ct = Integer.parseInt(count);
+
+            val = Integer.parseInt(vals);
             System.out.println("进入了嘎嘎");
 
             /*思路整理：
@@ -182,23 +187,33 @@ Map<String,List<String>> sku = null;
             int skuInventory = skuDao.querySKUInventory(sid);
 
 //        再获取当前商品在当前用户的购物车中数量
-
+            int skuCount;
             Map<String, Object> cartSKU = cartDao.queryByUserIdAndSKUId(uid, sid);
-            System.out.println("cartSKU = " + cartSKU);
-            System.out.println("cartSKU.get(\"COMMODITY_COUNT\")class = " + cartSKU.get("COMMODITY_COUNT").getClass());
-            int skuCount = ((BigDecimal) cartSKU.get("COMMODITY_COUNT")).intValue();
-
-            //如果是null，说明购物车里没有
             if (cartSKU == null) {
-                skuCount = 0;
-            }
 
-            if (action.equals("add")) {
-                if ((skuCount + ct) > skuInventory) {
+                skuCount = 0;
+            } else {
+                System.out.println(cartSKU);
+                map.put("nowInventory",skuInventory);
+                skuCount= ((BigDecimal) cartSKU.get("COMMODITY_COUNT")).intValue();
+
+            }
+            if (action.equals("add") || action.equals("input")) {
+                System.out.println("Sku" + skuCount + "val" + val + "ct" + ct + "skuInventory" +skuInventory);
+                if ((val + ct) > skuInventory) {
+                    System.out.println("库存吵了");
                     map.put("error", "超出库存");
+
                 }
 
             }
+
+
+            //如果是null，说明购物车里没有
+
+            System.out.println("action = " + action + "--" + "userId = " + userId + "--" +"count = " + count + "--" + skuCount + "--" + SKUId);
+            System.out.println();
+
 
             return map;
         } else {

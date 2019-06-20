@@ -223,7 +223,8 @@
                     type: "get",
                     data: {
                         SKUId: SKUId,
-                        action: action
+                        action: action,
+                        count:1
                     },
                     success: function (res) {
                         if (res.isLogin === false) {
@@ -262,7 +263,8 @@
                     type: "get",
                     data: {
                         SKUId: SKUId,
-                        action: action
+                        action: action,
+                        count:1
                     },
                     success: function (res) {
                         if (res.isLogin === false) {
@@ -294,14 +296,17 @@
 
             $(".cart-num").each(function () {
                $(this).blur(function () {
-                   alert($(this).val())
-
+                   var count = $(this).val();
+                   var thiss = $(this);
+                   var action = 'input';
+                   var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
                    $.ajax({
                        url: "${path}/updateCount",
                        type: "get",
                        data: {
                            SKUId: SKUId,
-                           action: action
+                           action: action,
+                           count:count,
                        },
                        success: function (res) {
                            if (res.isLogin === false) {
@@ -309,9 +314,9 @@
                                location = "${path}/login?uri=${path}/cart";
                            } else {
                                if (res.success) {
-                                   var nowCartCount = $(thiss).siblings("input").val();
+                                   var nowCartCount = $(thiss).val();
                                    console.log(nowCartCount)
-                                   $(thiss).siblings("input").val(++nowCartCount);
+                                   // $(thiss).siblings("input").val(++nowCartCount);
                                    console.log()
                                    var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
 
@@ -321,6 +326,7 @@
 
                                } else {
                                    layer.msg(res.error)
+                                   $(thiss).val(res.skuInventory);
                                }
                            }
 
@@ -330,7 +336,53 @@
                    });
                });
             });
+            //------------------------------------------------------------------------------------------------------------
+            $(".cart-num").each(function () {
 
+                    var count = $(this).val();
+                    var thiss = $(this);
+                    var action = 'input';
+                    var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
+                    $.ajax({
+                        url: "${path}/updateCount",
+                        type: "get",
+                        data: {
+                            SKUId: SKUId,
+                            action: action,
+                            count:count,
+                        },
+                        success: function (res) {
+                            if (res.isLogin === false) {
+
+                                location = "${path}/login?uri=${path}/cart";
+                            } else {
+                                if (res.success) {
+                                    var nowCartCount = $(thiss).val();
+                                    console.log(nowCartCount)
+                                    // $(thiss).siblings("input").val(++nowCartCount);
+                                    console.log()
+                                    var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
+
+                                    var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
+                                    $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
+                                    jisuan();
+
+                                } else {
+
+                                    layer.tips('超出库存，已经为您更改为最大库存', thiss, {
+                                        tips: [1, '#3595CC'],
+                                        time: 1500
+                                    });
+                                    $(thiss).val(res.skuInventory);
+                                }
+                            }
+
+
+
+                        }
+                    });
+
+            });
 
             /*-------------------------------------------------更改商品数量结束-------------------------------------------------*/
             var floatObj = function () {
@@ -503,7 +555,7 @@
                             </button>
 
                             <input type="number" value="${commodity.COMMODITY_COUNT}" autocomplete="off"
-                                   class="cart-num" style="text-align:center">
+                                   class="cart-num" style="text-align:center" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/>
                             <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
                                 <i class="layui-icon">&#xe602;</i>
                             </button>

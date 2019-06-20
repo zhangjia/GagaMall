@@ -25,10 +25,13 @@ public class UpdateCountServlet extends HttpServlet {
         User user = (User)session.getAttribute("user");
         String userId = user.getUserId().toString();
         String SKUId =  req.getParameter("SKUId");
+        String count = req.getParameter("count");
         resp.setContentType("application/json;charset=utf-8");
         String action = req.getParameter("action");
         PrintWriter writer = resp.getWriter();
-        Map<String, Object> stringObjectMap = carService.updateCount(action, userId, SKUId);
+
+        Map<String, Object> stringObjectMap = carService.updateCount(action, userId, SKUId,count);
+        System.out.println(stringObjectMap + "1.03");
         writer.println(JSON.toJSONString(stringObjectMap));
         writer.close();
 

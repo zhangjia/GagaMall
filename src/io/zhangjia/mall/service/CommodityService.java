@@ -22,6 +22,6 @@ public interface CommodityService {
     String getCommoditySPEC(String commodityId);
     List<Map<String,Object>> getCommoditySKU(String skuValue);
 
-    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId,String count);
+    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId,String count,String val);
 
 }

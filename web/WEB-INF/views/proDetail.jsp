@@ -98,6 +98,8 @@
 
             //------------------------------------------加入购物车-----------------------------------------------------
             $(".add-cart").click(function () {
+
+
                 var sku = JSON.stringify(selectjson);
                 var commodityCount = $(".jia-commodity-detail-num").val();
                 var length = $(".sku").length;
@@ -131,75 +133,44 @@
                 }
             });
 
-            //-------------------------------------------------------------
-            $(".cart-add").click(function () {
-                var SKUId = skuId;
-                var action = "add";
-                var thiss = $(this);
-
-
-                $.ajax({
-                    url: "${path}/updateCount2CommodityDetail",
-                    type: "get",
-                    data: {
-                        SKUId: SKUId,
-                        action: action,
-                        count:1
-                    },
-                    success: function (res) {
-                        console.log(res)
-                        if (res.isLogin === false) {
-                            location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
-                        } else {
-                            if (!res.error) {
-                                var nowCartCount = $(thiss).siblings("input").val();
-                                console.log(nowCartCount)
-                                $(thiss).siblings("input").val(++nowCartCount);
-
-
-                            } else {
-
-                                layer.msg(res.error)
-                            }
-                        }
+            //------------------------------------------加入购物车结束-------------------
 
 
 
-                    }
-                });
-            });
-
-
-            $(".cart-sub").click(function () {
-                var thiss = $(this);
-                  var nowCartCount = $(this).siblings("input").val();
-                 if(nowCartCount - 1 == 0) {
-                     layer.msg("不能再少了！")
-                 } else {
-                     $(thiss).siblings("input").val(--nowCartCount);
-                 }
-            });
-            
-            function determineTheInventory(action,count) {
-
+            //------------------------------------------更改个数开始-------------------
+        function determineTheInventory(action,count,thiss,val) {
+                console.log(val);
+            var result = false;
                 $.ajax({
                     url: "${path}/updateCount2CommodityDetail",
                     type: "get",
                     data: {
                         SKUId: skuId,
                         action: action,
-                        count:count
+                        count:count,
+                        val:val
                     },
                     success: function (res) {
-                        console.log(res)
+                        result = true;
+
+                        console.log(res + "res");
+                        console.log(res.nowInventory + "resss");
                         if (res.isLogin === false) {
                             location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
                         } else {
                             if (!res.error) {
-                               alert("成功")
+                                if(action == "add") {
+                                    var nowCartCount = $(thiss).siblings("input").val();
+                                    $(thiss).siblings("input").val(++nowCartCount);
+                                }
                             } else {
-
+                             if(action =="input") {
+                                    alert("asdfasd")
+                                    $(thiss).val(res.nowInventory);
+                                }
                                 layer.msg(res.error)
+
+
                             }
                         }
 
@@ -207,7 +178,48 @@
 
                     }
                 });
+
+                return result;
+
             }
+
+            $(".cart-add").click(function () {
+                var length = $(".sku").length;
+                if ($(".sku dd.active").length != length) {
+                    layer.alert("请先选择商品规格")
+                } else {
+                    var val = $(this).siblings(".jia-commodity-detail-num").val();
+                    determineTheInventory("add",1,$(this),val)
+                }
+
+
+
+
+
+            });
+            $(".jia-commodity-detail-num").blur(function () {
+                var length = $(".sku").length;
+                if ($(".sku dd.active").length != length) {
+                    layer.alert("请先选择商品规格")
+                } else {
+                    var val = $(this).val();
+                    console.log(val+"wer")
+                    determineTheInventory("input",0,$(this),val)
+                }
+
+
+            });
+
+
+            $(".cart-sub").click(function () {
+                var thiss = $(this);
+                var nowCartCount = $(this).siblings("input").val();
+                if(nowCartCount - 1 == 0) {
+                    layer.msg("不能再少了！")
+                } else {
+                    $(thiss).siblings("input").val(--nowCartCount);
+                }
+            });
 
 
         });

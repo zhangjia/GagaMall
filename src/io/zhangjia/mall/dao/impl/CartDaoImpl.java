@@ -66,6 +66,13 @@ public class CartDaoImpl extends CommonDao implements CartDao {
         return i;
     }
 
+    @Override
+    public int doUpdateCartCount(Map<String, Object> param) {
+        String sql = "UPDATE CART SET COMMODITY_COUNT = ? WHERE USER_ID = ? AND SKU_ID = ?";
+        int i = executeUpdate(sql,param.get("commodityCount"),param.get("userId"),param.get("SKUId"));
+        return i;
+    }
+
     /**
      * 删除购物车中的商品，可以删除一个或者多个
      * @param userId

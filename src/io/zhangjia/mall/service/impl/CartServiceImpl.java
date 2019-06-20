@@ -7,7 +7,6 @@ import io.zhangjia.mall.dao.impl.CartDaoImpl;
 import io.zhangjia.mall.dao.impl.CommodityDaoImpl;
 import io.zhangjia.mall.dao.impl.SKUDaoImpl;
 import io.zhangjia.mall.service.CarService;
-import io.zhangjia.mall.service.CommodityService;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -18,7 +17,6 @@ public class CartServiceImpl implements CarService {
     private CartDao cartDao = new CartDaoImpl();
     private SKUDao skuDao = new SKUDaoImpl();
     private CommodityDao commodityDao = new CommodityDaoImpl();
-    private CommodityService commodityService= new CommodityServiceImpl();
 
     @Override
     public List<Map<String, Object>> getCarCommodities(String userId) {
@@ -50,27 +48,15 @@ public class CartServiceImpl implements CarService {
         Map<String, Object> cart = cartDao.queryByUserIdAndSKUId(uid, sid);
         //仔细考虑一下，这里的判断为啥要加在Service里而不是DaoImpl里
         int i = 0;
-
-
-        Map<String, Object> add = commodityService.updateCount2CommodityDetail("add", userId, SKUId, commodityCount);
-
-        if(add.get("error") == null ){
-            i = 1;
-
-            if (cart == null) {
-                i = cartDao.doInsert(param);
-            } else {
-                i = cartDao.doUpdateCommodityCount(param);
-            }
-
+        if (cart == null) {
+            i = cartDao.doInsert(param);
         } else {
-            i = 0;
-            map.put("error",add.get("error"));
+            i = cartDao.doUpdateCommodityCount(param);
         }
 
 
-        map.put("success",i == 1);
-        System.out.println("put"+map);
+
+            map.put("success",i == 1);
 
         return map;
     }
@@ -87,18 +73,22 @@ public class CartServiceImpl implements CarService {
     }
 
     @Override
-    public Map<String, Object> updateCount(String action, String userId, String SKUId) {
+    public Map<String, Object> updateCount(String action, String userId, String SKUId,String count) {
         int uid = -1;
         int sid = -1;
+        int ct = -1;
         System.out.println("userId = " + userId);
         System.out.println("SKUId = " + SKUId);
+        System.out.println("ct = " + count);
         Map<String, Object> map = new HashMap<>();
         if (userId != null && !"".equals(userId) &&
-                SKUId != null && !"".equals(SKUId)) {
+                SKUId != null && !"".equals(SKUId) && count != null && !"".equals(count)) {
             uid = Integer.parseInt(userId);
             sid = Integer.parseInt(SKUId);
+            ct = Integer.parseInt(count);
             System.out.println("uid = " + uid);
             System.out.println("sid = " + sid);
+            System.out.println("csid = " + sid);
 
 
             /*思路整理：
@@ -126,6 +116,24 @@ public class CartServiceImpl implements CarService {
                     i = cartDao.addCount(uid, sid);
                 }
 
+            } else if (action.equals("input")) {
+                if (ct > skuInventory) {
+                    map.put("error", "超出库存");
+                    Map<String,Object> m = new HashMap<>();
+                    m.put("commodityCount",skuInventory);
+                    m.put("userId",uid);
+                    m.put("SKUId",sid);
+                    cartDao.doUpdateCartCount(m);
+                    map.put("skuInventory",skuInventory);
+                    System.out.println(skuInventory);
+                } else {
+                    Map<String,Object> m = new HashMap<>();
+                    m.put("commodityCount",ct);
+                    m.put("userId",uid);
+                    m.put("SKUId",sid);
+                    i = cartDao.doUpdateCartCount(m);
+                    System.out.println("m" + m);
+                }
             } else {
                 if (skuCount - 1 == 0) {
                     map.put("error", "不能再少啦");
