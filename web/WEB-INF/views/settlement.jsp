@@ -88,33 +88,7 @@
 		</div>
 		<!--编辑弹框-->
 		<!--遮罩-->
-		<div class="mask"></div>
-		<div class="adddz editAddre">
-			<form action="#" method="get">
-				<input type="text" placeholder="姓名" class="on" />
-				<input type="text" placeholder="手机号" />
-				<div class="city">
-					<select name="">
-						<option value="省份/自治区">省份/自治区</option>
-					</select>
-					<select>
-						<option value="城市/地区">城市/地区</option>
-					</select>
-					<select>
-						<option value="区/县">区/县</option>
-					</select>
-					<select>
-						<option value="配送区域">配送区域</option>
-					</select>
-				</div>
-				<textarea name="" rows="" cols="" placeholder="详细地址"></textarea>
-				<input type="text" placeholder="邮政编码" />
-				<div class="bc">
-					<input type="button" value="保存" />
-					<input type="button" value="取消" />
-				</div>
-			</form>
-		</div>
+
 		<!--返回顶部-->
 		<div class="gotop">
 			<a href="cart.html">

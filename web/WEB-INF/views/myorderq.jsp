@@ -83,7 +83,7 @@
                               <c:if test="${commodity.ORDER_DETAILS_STATUS == 3}">
                                   <a href="myprod.html">待评价</a>
                               </c:if>
-                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 0}">
+                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 5}">
                                   <a href="myprod.html">已关闭</a>
                               </c:if>
                               <a href="${path}/orderDetails?orderId=${order.ORDER_ID}">订单详情</a>

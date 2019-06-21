@@ -5,48 +5,46 @@ $(function(){
 		$(".mask").show();
 		$(".adddz").show();
 	});
-	
-	// $(".bc>input").click(function(){
-	// 	if($(this).val()=="保存"){
-	// 		console.log(11)
-	// 		$(".mask").hide();
-	// 		$(".adddz").hide();
-	// 		$(".bj").hide();
-	// 		$(".xg").hide();
-	// 		$(".remima").hide();
-	// 		$(".pj").hide();
-	// 		$(".chak").hide();
-	//
-	// 	}else{
-	// 		$(".mask").hide();
-	// 		$(".adddz").hide();
-	// 		$(".bj").hide();
-	// 		$(".xg").hide();
-	// 		$(".remima").hide();
-	// 		$(".pj").hide();
-	// 		$(".chak").hide();
-	// 	}
-	// });
-	//
-	
-	
+
+	$(".bc>input").click(function(){
+		if($(this).val()=="保存"){
+			$(".mask").hide();
+			$(".adddz").hide();
+			$(".bj").hide();
+			$(".xg").hide();
+			$(".remima").hide();
+			$(".pj").hide();
+			$(".chak").hide();
+		}else{
+			$(".mask").hide();
+			$(".adddz").hide();
+			$(".bj").hide();
+			$(".xg").hide();
+			$(".remima").hide();
+			$(".pj").hide();
+			$(".chak").hide();
+		}
+	});
+
+
+
 //	我的订单tab切换
 	$("#wa li").click(function(){
 		$(this).addClass("on").siblings().removeClass("on");
 		var txt1=$(this).find("a").text();
 		$(".dkuang").find("p.one").each(function(){
 			var txt2=$(this).text();
-				if(txt1==txt2){
-					$(this).parent(".dkuang").show().siblings(".dkuang").hide();
-				}
-				$("#wa li").eq(0).click(function(){
-					$(".dkuang").show();
-				})
+			if(txt1==txt2){
+				$(this).parent(".dkuang").show().siblings(".dkuang").hide();
+			}
+			$("#wa li").eq(0).click(function(){
+				$(".dkuang").show();
+			})
 		});
 	});
-	
+
 //	评价 tab切换
-		
+
 	$(".sx div:gt(0)").hide();
 	$(".sx div").each(function(i){
 		if($(this).html()==''){
@@ -61,24 +59,24 @@ $(function(){
 		var index=$(this).index();
 		$(".sx > div").eq(index).show().siblings().hide();
 	});
-	
+
 
 //		评价打心
 
-		$(".sx dl dd").find("a").click(function(){
-			if($(this).text()=="评价"){
-				$(".mask").show();
-				$(".pj").show();
-			}else if($(this).text()=="查看评价"){
-				$(".mask").show();
-				$(".chak").show();
-			}else{
-				$(".mask").hide();
-				$(".pj").hide();
-				$(".chak").hide();
-			}
-			
-		});
+	$(".sx dl dd").find("a").click(function(){
+		if($(this).text()=="评价"){
+			$(".mask").show();
+			$(".pj").show();
+		}else if($(this).text()=="查看评价"){
+			$(".mask").show();
+			$(".chak").show();
+		}else{
+			$(".mask").hide();
+			$(".pj").hide();
+			$(".chak").hide();
+		}
+
+	});
 //	评价打心
 	$("#xin").each(function(i){
 		$("#xin").eq(i).children("a").click(function(){
@@ -90,14 +88,14 @@ $(function(){
 				else{
 					$("#xin").eq(i).find("a").eq(j).find("img").attr("src","img/xin.png");
 				}
-				
+
 			}
 		})
 	})
 
 
 
-		
+
 //	个人信息 编辑
 	$("#edit1").click(function(){
 		$(".mask").show();
@@ -107,7 +105,7 @@ $(function(){
 		$(".mask").show();
 		$(".xg").show();
 	});
-	
+
 //修改头像
 	$("#avatar").click(function(){
 		$(".mask").show();
@@ -124,31 +122,30 @@ $(function(){
 		$(".pj").hide();
 		$(".chak").hide();
 	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 //	address
 	$("#addxad").click(function(){
 		$(".mask").show();
 		$(".adddz").show();
 	});
-	/*$("#dizhi").hover(function(){
+	$("#dizhi").hover(function(){
 		var txt="";
 		txt='<p class="addp"><a href="#"  id="readd">修改</a><a href="#" id="deladd">删除</a></p>'
 		$(this).append(txt);
 		$("#readd").click(function(){
-			console.log($(this).parent().siblings("p:hidden").text())
 			$(".mask").show();
 			$(".readd").show();
 		});
 		$("#deladd").click(function(){
-			$(this).parents(".dizhi").remove();
+			$(this).parents("#dizhi").remove();
 		});
 	},function(){
 		$(".bc>input").click(function(){
@@ -161,13 +158,13 @@ $(function(){
 			}
 		});
 		$(".addp").remove();
-	});*/
-	
+	});
+
 //	查看物流
 	$(".vewwl").hover(function(){
 		$(this).children(".wuliu").fadeIn(100);
 	},function(){
 		$(this).children(".wuliu").fadeOut(100);
 	});
-	
+
 })

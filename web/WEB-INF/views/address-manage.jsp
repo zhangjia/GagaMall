@@ -7,30 +7,19 @@
     <meta charset="utf-8" />
     <title>最家</title>
     <jsp:include page="public-static-file.jsp" />
-    <link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
-    <script src="${path}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
-
-    <link href="${path}/static/address/css/main.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css" />
     <link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
-    <script src="${path}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
     <script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
     <script src="${path}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
+    <script src="${path}/static/js/city.js" type="text/javascript" charset="utf-8"></script>
 
-    <link href="${path}/static/address/css/city-picker.css" rel="stylesheet" type="text/css" />
-    <script src="${path}/static/address/js/city-picker.data.js"></script>
-    <script src="${path}/static/address/js/city-picker.js"></script>
-    <script src="${path}/static/address/js/main.js"></script>
-
-    <script>
-        $(function () {
-        });
-    </script>
 
 </head>
 <body>
 <jsp:include page="head.jsp" />
+
 <!------------------------------idea------------------------------>
 <div class="address mt">
     <div class="wrapper clearfix">
@@ -54,41 +43,7 @@
         </div>
     </div>
 </div>
-<!--编辑弹框-->
-<!--遮罩-->
-<div class="mask"></div>
-<c:forEach items="${requestScope.userAddress}" var="address">
 
-    <div class="adddz">
-        <form action="#" method="get">
-            <input type="text" placeholder="姓名" class="on" />
-            <input type="text" placeholder="手机号" />
-
-            <div class="docs-methods">
-
-                <div class="distpicker">
-                    <div class="form-group">
-                        <div style="position: relative;">
-                            <input class="form-control city-picker3" readonly type="text" value="" data-toggle="city-picker">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-warning reset"  type="button">重置</button>
-                        <button class="btn btn-danger destroy"  type="button">确定</button>
-                    </div>
-                </div>
-
-            </div>
-            <textarea name="" rows="" cols="" placeholder="详细地址"></textarea>
-            <input type="text" placeholder="邮政编码" />
-            <div class="bc">
-                <input type="button" value="保存" class="submits" />
-                <input type="button" value="取消" />
-            </div>
-        </form>
-    </div>
-
-</c:forEach>
 
 <!--返回顶部-->
 <div class="gotop">

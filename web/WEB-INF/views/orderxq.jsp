@@ -50,7 +50,7 @@
 							<c:if test="${order.ORDER_STATUS == 3}">
 								<h3>待评价</h3>
 							</c:if>
-							<c:if test="${order.ORDER_STATUS == 0}">
+							<c:if test="${order.ORDER_STATUS == 5}">
 								<h3>已关闭</h3>
 							</c:if>
 							<c:forEach items="${order.COMMODITIES}" var="commodity" >
