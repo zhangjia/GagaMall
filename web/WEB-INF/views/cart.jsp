@@ -504,7 +504,7 @@
     <!-----------------logo------------------->
     <!--<div class="logo">
 				<h1 class="wrapper clearfix">
-					<a href="index.html"><img class="fl" src="${path}/static/img/temp/logo.png"></a>
+					<a href="index.jsp"><img class="fl" src="${path}/static/img/temp/logo.png"></a>
 					<img class="top" src="${path}/static/img/temp/cartTop01.png">
 				</h1>
 			</div>-->
@@ -584,7 +584,7 @@
             <p class="fr">
                 <span>共<small id="sl">0</small>件商品</span>
                 <span>合计:&nbsp;<small id="all">￥0.00</small></span>
-                <a href="order.html" class="count">结算</a>
+                <a href="${path}/settlement" class="count">结算</a>
             </p>
         </div>
     </div>

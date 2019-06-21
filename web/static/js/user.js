@@ -6,26 +6,28 @@ $(function(){
 		$(".adddz").show();
 	});
 	
-	$(".bc>input").click(function(){
-		if($(this).val()=="保存"){
-			$(".mask").hide();
-			$(".adddz").hide();
-			$(".bj").hide();
-			$(".xg").hide();
-			$(".remima").hide();
-			$(".pj").hide();
-			$(".chak").hide();
-		}else{
-			$(".mask").hide();
-			$(".adddz").hide();
-			$(".bj").hide();
-			$(".xg").hide();
-			$(".remima").hide();
-			$(".pj").hide();
-			$(".chak").hide();
-		}
-	});
-	
+	// $(".bc>input").click(function(){
+	// 	if($(this).val()=="保存"){
+	// 		console.log(11)
+	// 		$(".mask").hide();
+	// 		$(".adddz").hide();
+	// 		$(".bj").hide();
+	// 		$(".xg").hide();
+	// 		$(".remima").hide();
+	// 		$(".pj").hide();
+	// 		$(".chak").hide();
+	//
+	// 	}else{
+	// 		$(".mask").hide();
+	// 		$(".adddz").hide();
+	// 		$(".bj").hide();
+	// 		$(".xg").hide();
+	// 		$(".remima").hide();
+	// 		$(".pj").hide();
+	// 		$(".chak").hide();
+	// 	}
+	// });
+	//
 	
 	
 //	我的订单tab切换
@@ -136,16 +138,17 @@ $(function(){
 		$(".mask").show();
 		$(".adddz").show();
 	});
-	$("#dizhi").hover(function(){
+	/*$("#dizhi").hover(function(){
 		var txt="";
 		txt='<p class="addp"><a href="#"  id="readd">修改</a><a href="#" id="deladd">删除</a></p>'
 		$(this).append(txt);
 		$("#readd").click(function(){
+			console.log($(this).parent().siblings("p:hidden").text())
 			$(".mask").show();
 			$(".readd").show();
 		});
 		$("#deladd").click(function(){
-			$(this).parents("#dizhi").remove();
+			$(this).parents(".dizhi").remove();
 		});
 	},function(){
 		$(".bc>input").click(function(){
@@ -158,7 +161,7 @@ $(function(){
 			}
 		});
 		$(".addp").remove();
-	});
+	});*/
 	
 //	查看物流
 	$(".vewwl").hover(function(){

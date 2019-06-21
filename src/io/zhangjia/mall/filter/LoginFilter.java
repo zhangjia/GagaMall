@@ -16,7 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @WebFilter(urlPatterns = {"/personal","/cart","/addCart","/cart/delete","/updateCount",
-"/updateCount2CommodityDetail"})
+"/updateCount2CommodityDetail","/addCommodity","/address","/myorder"
+,"/orderDetails"})
 public class LoginFilter extends HttpFilter {
 
     @Override

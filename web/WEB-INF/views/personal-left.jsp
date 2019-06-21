@@ -9,8 +9,8 @@
 <div>
     <h4>我的交易</h4>
     <ul>
-        <li><a href="cart.jsp">我的购物车</a></li>
-        <li><a href="myorderq.jsp">我的订单</a></li>
+        <li><a href="${path}/cart">我的购物车</a></li>
+        <li><a href="${path}/myorder"">我的订单</a></li>
         <li><a href="myprod.jsp">评价晒单</a></li>
     </ul>
     <h4>个人中心</h4>

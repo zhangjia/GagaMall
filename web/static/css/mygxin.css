@@ -163,8 +163,8 @@
 	margin-right: 10px;
 }
 .Bott .you .add div:nth-child(3){
-	width: 268px;
-	height: 178px;
+	/*width: 268px;*/
+	/*height: 178px;*/
 }
 
 
@@ -269,4 +269,18 @@ body{
 	color: #FFFFFF;
 }
 
+.dizhis{
+	width: 244px;
+	height: 158px;
+	border: 1px solid #E0E0E0;
+	padding: 20px 0 0 24px;
+	color: #757575;
+	line-height: 20px;
+	display: block;
+}
 
+a#readd,a#deladd{
+	color: #A10000;
+	display: inline-block;
+	margin-right: 10px;
+}
