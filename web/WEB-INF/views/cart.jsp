@@ -58,16 +58,25 @@
                     $(".count").css("background", "#8e8e8e");
                 }
             }
+
+
             $("input[type='checkbox']").on('click', function () {
+
                 var sf = $(this).is(":checked");
                 var sc = $(this).hasClass("checkAll");
+                //如果是选中
                 if (sf) {
+                    //如果选中的是全选
                     if (sc) {
                         $("input[type='checkbox']").each(function () {
+                            var val = $(this).val();
                             //已经失效的不选择
                             //:disabled匹配所有不可用元素
                             if (!$(this).is(':disabled')) {
                                 this.checked = true;
+
+                                <%--${pageContext.request.setAttribute("commoditySKUs",)}--%>
+                                <%--alert(${sessionScope.commoditySKUs})--%>
                             }
 
                         });
@@ -85,7 +94,9 @@
                         zg();
                         jisuan();
                     }
+                //    如果是取消勾选
                 } else {
+                    //如果取消勾选的是全选按钮
                     if (sc) {
                         $("input[type='checkbox']").each(function () {
                             this.checked = false;
@@ -493,6 +504,22 @@
                 }
             }();
             /*-------------------------------------------------结束-------------------------------------------------*/
+            /*-------------------------------------------------结算开始-------------------------------------------------*/
+            $(".count").click(function () {
+               var checkedCount =  $(":checkbox[class='cart-sku-id']:checked").length;
+               var checkedCommoditySKU = $(":checkbox[class='cart-sku-id']:checked");
+               var url= "${path}/settlement?"
+               if(checkedCount === 0){
+                   layer.msg("请选择商品")
+               }
+               checkedCommoditySKU.each(function () {
+                    url+="csid=" + this.value + "&";
+               });
+               console.log(url);
+               location=url;
+            });
+            /*-------------------------------------------------结算结束-------------------------------------------------*/
+
         });
     </script>
 </head>
@@ -584,7 +611,7 @@
             <p class="fr">
                 <span>共<small id="sl">0</small>件商品</span>
                 <span>合计:&nbsp;<small id="all">￥0.00</small></span>
-                <a href="${path}/settlement" class="count">结算</a>
+                <a href="javascript:;" class="count">结算</a>
             </p>
         </div>
     </div>

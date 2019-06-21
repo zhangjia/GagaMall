@@ -10,6 +10,7 @@
     <c:forEach var="address" items="${requestScope.userAddress}">
 
         <div class="addre fl">
+            <p hidden>${address.ADDRESS_ID}</p>
             <div class="tit clearfix">
                 <p class="fl">${address.ADDRESS_NAME}
                         <%--1是正常，-1是删除，2是默认--%>
@@ -28,7 +29,7 @@
                     <span>|</span>
                     <a href="#" class="edit">编辑</a>
                 </p>
-                <p hidden>${address.ADDRESS_ID}</p>
+
             </div>
             <div class="addCon">
                 <p>${address.ADDRESS_DETAIL}</p>

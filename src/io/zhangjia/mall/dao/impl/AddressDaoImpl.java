@@ -8,7 +8,11 @@ import java.util.Map;
 
 public class AddressDaoImpl extends CommonDao implements AddressDao {
 
-
+    /**
+     * 根据用户的Id查询该用户的全部可用的地址
+     * @param userId
+     * @return
+     */
     @Override
     public List<Map<String, Object>> queryByUserId(Integer userId) {
         String sql = "SELECT * FROM ADDRESS WHERE ADDRESS_STATUS != 0 AND USER_ID = ?";

@@ -17,4 +17,10 @@ public class SKUDaoImpl extends CommonDao implements SKUDao {
         return executeUpdate(sql,sku.getCommodityId(),sku.getSkuValue(),
                 sku.getPresentPrice(),sku.getSkuInventory());
     }
+
+    @Override
+    public int updateInventoryAndSales(Integer SKUId, Integer count) {
+        String sql = "UPDATE SKU SET SKU_INVENTORY = SKU_INVENTORY - ?,SKU_SALES = SKU_SALES + ? WHERE SKU_ID = ?";
+        return executeUpdate(sql,SKUId,count,count);
+    }
 }

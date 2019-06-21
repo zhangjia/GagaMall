@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
@@ -11,6 +12,25 @@
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css" />
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
+		<script>
+			$(function () {
+				$(".pay").click(function () {
+					if($(".addre.fl.on").length === 0){
+						layer.msg("先选择地址")
+					} else{
+						var addreddId = $(".addre.fl.on").children("p:hidden").text();
+						var url = "${path}/pay?"
+						$(".msg ul").children("input:hidden").each(function () {
+							url += "csid="+this.value+"&";
+
+						});
+						alert(url)
+					}
+
+
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<!----------------------------------------order------------------>
@@ -35,54 +55,43 @@
 						<img src="${path}/static/img/temp/way03.jpg">
 						<img src="${path}/static/img/temp/way04.jpg">
 					</div>
-					<h3>选择快递</h3>
-					<!--------dis---------------->
-					<div class="dis clearfix">
-						<span class="on">顺风快递</span>
-						<span>百世汇通</span>
-						<span>圆通快递</span>
-						<span>中通快递</span>
-					</div>
+
 				</div>
 				<div class="orderR fr">
 					<div class="msg">
 						<h3>订单内容<a href="cart.html" class="fr">返回购物车</a></h3>
 						<!--------ul---------------->
-						<ul class="clearfix">
-							<li class="fl">
-								<img src="${path}/static/img/temp/order01.jpg">
-							</li>
-							<li class="fl">
-								<p>创意现代简约干花花瓶摆件</p>
-								<p>颜色分类：烟灰色玻璃瓶</p>
-								<p>数量：1</p>
-							</li>
-							<li class="fr">￥69.90</li>
-						</ul>
-						<ul class="clearfix">
-							<li class="fl">
-								<img src="${path}/static/img/temp/order02.jpg">
-							</li>
-							<li class="fl">
-								<p>创意现代简约干花花瓶摆件</p>
-								<p>颜色分类：烟灰色玻璃瓶</p>
-								<p>数量：1</p>
-							</li>
-							<li class="fr">￥69.90</li>
-						</ul>
+						<c:forEach items="${requestScope.commoditySKUS}" var="commoditySKU">
+
+							<ul class="clearfix">
+								<li class="fl">
+									<img src="${commoditySKU.IMG_URL}" style="width: 87px;height: auto;">
+								</li>
+								<input type="hidden" value="${commoditySKU.SKU_ID}" />
+								<li class="fl">
+									<p class="settlement-ellipsis">${commoditySKU.COMMODITY_NAME}</p>
+									<p>
+										${fn:replace(fn:replace(fn:replace(fn:replace(commoditySKU.SKU_VALUE, '"', ''), '{', ''), '}', ''), ',', '    ')}
+									</p>
+									<p>数量：${commoditySKU.COMMODITY_COUNT}</p>
+								</li>
+								<li class="fr">￥${commoditySKU.SKU_PRESENT_PRICE}</li>
+							</ul>
+						</c:forEach>
 					</div>
 					<!--------tips---------------->
 					<div class="tips">
-						<p><span class="fl">商品金额：</span><span class="fr">￥139.80</span></p>
+						<p><span class="fl">商品金额：</span><span class="fr">￥${requestScope.total.SUM_COMMODITY_PRESENT_PRICE}</span></p>
 						<p><span class="fl">优惠金额：</span><span class="fr">￥0.00</span></p>
 						<p><span class="fl">运费：</span><span class="fr">免运费</span></p>
 					</div>
 					<!--------tips count---------------->
 					<div class="count tips">
-						<p><span class="fl">合计：</span><span class="fr">￥139.80</span></p>
+						<p><span class="fl">商品总数：</span><span class="fr">${requestScope.total.SUM_COMMODITY_COUNT}</span></p>
+						<p><span class="fl">支付金额：</span><span class="fr">￥${requestScope.total.SUM_COMMODITY_PAY_PRICE}</span></p>
 					</div>
 					<!--<input type="button" name="" value="去支付"> -->
-					<a href="ok.html" class="pay">去支付</a>
+					<a href="javascript:;" class="pay">去支付</a>
 				</div>
 			</div>
 		</div>

@@ -115,5 +115,57 @@ public class CartDaoImpl extends CommonDao implements CartDao {
         return executeUpdate(sql,userId,SKUId);
     }
 
+    /**
+     * 结算页面需要的数据
+     * @param userId
+     * @param CommoditySKUIds
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> queryCommodities4Settlement(Integer userId, String[] CommoditySKUIds) {
+        StringBuffer sql =  new StringBuffer("SELECT  * FROM CART,SKU,COMMODITY,IMG WHERE IMG.IMG_TYPE = '商品图' AND IMG_BELONG = COMMODITY.COMMODITY_ID  AND IMG_ORDER = 1 AND USER_ID = 1 AND CART_IS_DEL != 0 AND CART_IS_DEL != 5  AND SKU.COMMODITY_ID = COMMODITY.COMMODITY_ID AND CART.USER_ID = ? AND  CART.SKU_ID = SKU.SKU_ID AND CART.SKU_ID IN (") ;
+        Object[] param = new Object[CommoditySKUIds.length + 1];
+        param[0] = userId;
+        for (int i = 0; i < CommoditySKUIds.length; i++) {
+            sql.append("?,");
+            param[i+1] = CommoditySKUIds[i];
+
+        }
+//        去掉最后一个参数的的逗号，
+        sql.deleteCharAt(sql.length()-1);
+//        添加右括号
+        sql.append(")");
+        List<Map<String, Object>> maps = query4MapList(sql.toString(), param);
+        System.out.println(sql);
+        System.out.println("maps = " + maps);
+        return  maps;
+
+
+    }
+
+    /**
+     * 计算总金额、需要支付的金额、运费（未写）、优惠金额总和（未写）
+     * @param userId
+     * @param CommoditySKUIds
+     * @return
+     */
+    @Override
+    public Map<String, Object> queryTotal(Integer userId, String[] CommoditySKUIds) {
+        StringBuffer sql =  new StringBuffer("SELECT SUM(CART.COMMODITY_COUNT) sum_commodity_count,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) sum_commodity_present_price,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) sum_commodity_pay_price FROM  SKU,CART WHERE  SKU.SKU_ID = CART.SKU_ID AND  CART_IS_DEL != 5 AND CART_IS_DEL != 0 AND USER_ID = ? AND CART.SKU_ID IN(") ;
+        Object[] param = new Object[CommoditySKUIds.length + 1];
+        param[0] = userId;
+        for (int i = 0; i < CommoditySKUIds.length; i++) {
+            sql.append("?,");
+            param[i+1] = CommoditySKUIds[i];
+
+        }
+        sql.deleteCharAt(sql.length()-1);
+        sql.append(")");
+        Map<String, Object> map = query4Map(sql.toString(), param);
+        System.out.println(sql);
+        System.out.println("map = " + map);
+        return  map;
+    }
+
 
 }

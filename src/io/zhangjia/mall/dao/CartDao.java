@@ -13,4 +13,8 @@ public interface CartDao {
 
     int addCount(Integer userId, Integer SKUId);
     int subCount(Integer userId, Integer SKUId);
+    List<Map<String,Object>> queryCommodities4Settlement(Integer userId,String[] CommoditySKUIds);
+
+    Map<String,Object> queryTotal(Integer userId,String[] commoditySKUIds);
+
 }

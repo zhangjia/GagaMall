@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class CartServiceImpl implements CarService {
     private CartDao cartDao = new CartDaoImpl();
     private SKUDao skuDao = new SKUDaoImpl();
@@ -151,5 +152,25 @@ public class CartServiceImpl implements CarService {
             return null;
         }
 
+    }
+
+    @Override
+    public List<Map<String, Object>> getCarCommodities4Settlement(String userId,String[] commoditySKUIds) {
+        if(userId != null && !"".equals(userId)) {
+            int uid = Integer.parseInt(userId);
+            System.out.println("uid = " + uid);
+        return cartDao.queryCommodities4Settlement(uid,commoditySKUIds);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public Map<String, Object> getTotal(String userId, String[] commoditySKUIds) {
+        if(userId != null && !"".equals(userId)) {
+           return cartDao.queryTotal(Integer.parseInt(userId),commoditySKUIds);
+        } else {
+            return null;
+        }
     }
 }

@@ -562,3 +562,9 @@ body {
 
 /*---------------------------------------------自己加的------------------*/
 
+.settlement-ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 230px;
+}

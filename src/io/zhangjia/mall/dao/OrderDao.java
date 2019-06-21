@@ -10,4 +10,8 @@ public interface OrderDao {
     Double queryOrderOriginalPrice(Integer orderId);
     Double queryOrderDiscountPrice(Integer orderId);
 
+    int doInsert(Map<String, Object> param);
+
+    int doInsert4Detail(Map<String, Object> param);
+
 }
