@@ -568,3 +568,8 @@ body {
 	white-space: nowrap;
 	width: 230px;
 }
+.address-details{
+
+	white-space: normal !important;
+
+}

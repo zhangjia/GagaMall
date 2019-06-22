@@ -26,7 +26,7 @@ public class SettlementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         User user = (User)session.getAttribute("user");
-        String[]commoditySKUIds = req.getParameterValues("csid");
+        String[]commoditySKUIds = req.getParameterValues("SKUIds");
         System.out.println("commoditySKUIds = " + commoditySKUIds);
         System.out.println("Arrays.toString(commoditySKUIds) = " + Arrays.toString(commoditySKUIds));
         List<Map<String, Object>> userAddress = addresservice.getUserAddress(user.getUserId() + "");

@@ -102,7 +102,7 @@ $(function(){
 	});
 	$(".addre").on('click','.setDefault',function(){
 		$(this).next().remove();
-		$(this).parent("p").prev().append('<span class="default">[默认地址]</span>').parents('.addre').addClass("on").siblings().removeClass("on")
+		$(this).parent("p").prev().append('<span class="default" style="color: red">[默认地址]</span>').parents('.addre').addClass("on").siblings().removeClass("on")
 		.find(".default").remove().end().find(".tit p").eq(1).prepend('<a href="#" class="setDefault">设为默认</a><span>|</span>');
 		$(this).parent("p").prev().parents('.addre').prependTo(".addres");
 		$(this).remove();

@@ -511,12 +511,14 @@
                var url= "${path}/settlement?"
                if(checkedCount === 0){
                    layer.msg("请选择商品")
+               } else {
+                   checkedCommoditySKU.each(function () {
+                       url+="SKUIds=" + this.value + "&";
+                   });
+                   console.log(url);
+                   location=url;
                }
-               checkedCommoditySKU.each(function () {
-                    url+="csid=" + this.value + "&";
-               });
-               console.log(url);
-               location=url;
+
             });
             /*-------------------------------------------------结算结束-------------------------------------------------*/
 

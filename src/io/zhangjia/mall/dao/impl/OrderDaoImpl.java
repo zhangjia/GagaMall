@@ -90,9 +90,11 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
         int id =  query4IntData(sqlid);
         System.out.println("id = " + id);
         String sql = "INSERT INTO orders VALUES(?,?,?,sysdate,?,?,?,?,1)";
-        int i = executeUpdate(sql, id, param.get("userId"), param.get("address_id"), param.get("rderLogistics")
+        int i = executeUpdate(sql, id, param.get("userId"), param.get("addressId"), param.get("orderLogistics")
                 , param.get("orderFreightPrice"), param.get("orderPayType"), param.get("orderNote"));
+        System.out.println("i = " + i);
         if(i == 1) {
+            System.out.println("进入i = " + i);
             return id;
         } else {
             return 0;
@@ -107,9 +109,13 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
     public int doInsert4Detail(Map<String, Object> param) {
         String sql = "INSERT INTO order_details VALUES(seq_order_details.nextval,?,?,?,?,?,?,?,?,1)";
         return executeUpdate(sql,
-                param.get("orderId "),param.get("skuId"),
+                param.get("ORDER_ID"),param.get("SKU_ID"),
+                param.get("COMMODITY_NAME"),param.get("SKU_VALUE"),
+                param.get("IMG_URL"),param.get("SKU_PRESENT_PRICE"),
+                param.get("ORdER_DETAILS_DISCOUNT_PRICE"),param.get("COMMODITY_COUNT"));
+                /* param.get("orderId "),param.get("skuId"),
                 param.get("orderDetailsCommodityName"),param.get("orderDetailsSKUValue"),
                 param.get("orderDetailsCommodityImg"),param.get("orderDetailsCommodityPrice"),
-                param.get("orderDetailsDiscountsPrice"),param.get("orderDetailsCommodityCount"));
+                param.get("orderDetailsDiscountsPrice"),param.get("orderDetailsCommodityCount"));*/
     }
 }

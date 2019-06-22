@@ -8,13 +8,13 @@ $(function(){
 
 	$(".bc>input").click(function(){
 		if($(this).val()=="保存"){
-			$(".mask").hide();
-			$(".adddz").hide();
-			$(".bj").hide();
-			$(".xg").hide();
-			$(".remima").hide();
-			$(".pj").hide();
-			$(".chak").hide();
+			// $(".mask").hide();
+			// $(".adddz").hide();
+			// $(".bj").hide();
+			// $(".xg").hide();
+			// $(".remima").hide();
+			// $(".pj").hide();
+			// $(".chak").hide();
 		}else{
 			$(".mask").hide();
 			$(".adddz").hide();

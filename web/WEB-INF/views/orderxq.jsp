@@ -83,7 +83,7 @@
 							<p><strong>运费：</strong><span>¥${order.ORDER_FREIGHT_PRICE}</span></p>
 							<p><strong>优惠：</strong><span>¥${order.DISCOUNTPRICE}</span></p>
 
-							<p><strong>实付金额：</strong><span>¥${order.ORDER_FREIGHT_PRICE}</span></p>
+							<p><strong>实付金额：</strong><span>¥${order.ORDERPRICE}</span></p>
 						</div>
 
 					</div>

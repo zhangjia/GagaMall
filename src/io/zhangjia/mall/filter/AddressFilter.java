@@ -24,6 +24,7 @@ public class AddressFilter extends HttpFilter {
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
+        System.out.println("user.getUserId()+\"\" = " + user.getUserId()+"");
         List<Map<String, Object>> userAddress = addressService.getUserAddress(user.getUserId()+"");
         System.out.println("userAddress2345 = " + JSON.toJSONString(userAddress));
         request.setAttribute("userAddress", userAddress);

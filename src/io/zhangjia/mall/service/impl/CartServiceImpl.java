@@ -89,7 +89,7 @@ public class CartServiceImpl implements CarService {
             ct = Integer.parseInt(count);
             System.out.println("uid = " + uid);
             System.out.println("sid = " + sid);
-            System.out.println("csid = " + sid);
+            System.out.println("SKUIds = " + sid);
 
 
             /*思路整理：

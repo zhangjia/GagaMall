@@ -12,6 +12,9 @@
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css" />
 		<link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
+		<script src="${path}/static/js/city.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function () {
 				$(".pay").click(function () {
@@ -19,12 +22,20 @@
 						layer.msg("先选择地址")
 					} else{
 						var addreddId = $(".addre.fl.on").children("p:hidden").text();
-						var url = "${path}/pay?"
+						<%--var url = "${path}/pay?"--%>
+						var url = "${path}/submit?"
 						$(".msg ul").children("input:hidden").each(function () {
-							url += "csid="+this.value+"&";
+							url += "SKUIds="+this.value+"&";
 
 						});
-						alert(url)
+						url += "addressId=" + addreddId;
+						$.ajax({
+							url:url,
+							type:"get",
+							success:function (res) {
+								console.log(res)
+							}
+						});
 					}
 
 
