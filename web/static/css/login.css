@@ -43,7 +43,8 @@ html,body{
 	width:440px;
 	height: 310px;
 	border-radius:10px;
-	padding: 20px 70px;
+	padding: 20px 0 ;
+	padding-right: 50px;
 }
 .reg form {
 	width:480px;
@@ -95,7 +96,7 @@ div.reg form p.txtL a{
 	color:#c10000;
 }
 .reg form p.txt,.login form p.txt{
-	width:280px;
+	/*width:280px;*/
 	margin:10px auto 0;
 	text-align: right;
 }
@@ -121,4 +122,10 @@ div.login form p.txt a{
 
     margin: 0 auto;
 }
-
+.reg form p.txt, .login form p.txt {
+	/* width: 280px; */
+	/* margin: 10px auto 0; */
+	/* text-align: right; */
+	text-align: right;
+	margin-top: 25px;
+}

@@ -24,7 +24,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("进入了doPost");
         //获取用户名和密码
-        String username = req.getParameter("account");
+        String username = req.getParameter(req.getParameter("action"));
         String password = req.getParameter("userPassword");
         String uri = req.getParameter("uri");
         User user = new User(username,password,null,null,null,null,null,null,null,null,null,null);

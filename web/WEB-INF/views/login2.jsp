@@ -4,19 +4,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			.layui-input-block {
-				margin-left: 82px !important;
-				min-height: 36px;
-			}
-			.jia-login{
-				margin-left: 80px !important;
-			}
-			.jia-login-reset{
-				margin-left: 145px !important;
-			}
-
-		</style>
 		<meta charset="UTF-8">
 		<title>登录</title>
 
@@ -31,17 +18,10 @@
 <%--		<script type="text/javascript" src="${path}/static/js/login.js"></script>--%>
 		<script type="text/javascript">
 			$(function () {
-				layui.use('form', function(){
-					var form = layui.form;
-
-					//各种基于事件的操作，下面会有进一步介绍
-				});
-
 				$(":submit").click(function () {
 					//将表单序列化
 					var data = $("form").serialize();
 					//发起请求，完成登录
-					console.log(data)
 					$.ajax({
 						url:"${path}/login",
 						type:"post",
@@ -64,18 +44,11 @@
 							}else{
 								//失败
 								if(res.error === "密码错误"){
-									layer.tips(res.error, 'input[name=\'userPassword',{
-										tips: [1, '#FF5722'],
-										anim: 6,
-										time:800
-									});
-
+									$("input[name='userPassword']").addClass("is-invalid");
+									$("input[name='userPassword']").next("span").addClass("text-danger").text(res.error);
 								}else if(res.error === "用户名不存在"){
-									layer.tips(res.error, 'input[name=\'account',{
-										tips: [1, '#FF5722'],
-										anim: 6,
-										time:800
-									});
+									$("input[name='account']").addClass("is-invalid");
+									$("input[name='account']").next("span").addClass("text-danger").text(res.error);
 								}
 							}
 						}
@@ -112,23 +85,16 @@
 				<c:if test="${param.uri != null}">
 					<input type="hidden" name="uri" value="${param.uri}">
 				</c:if>
-				<div class="layui-form-item">
-					<label class="layui-form-label">账户：</label>
-					<div class="layui-input-block">
-						<input type="text" name="account" placeholder="请输入用户名/手机号/邮箱" autocomplete="off" class="layui-input">
-					</div>
+				<div  class="form-group ">
+					<input class="form-control " type="text" name="account" value="" placeholder="用户名/邮箱/手机号">
+					<span></span>
 				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">密码：</label>
-					<div class="layui-input-block">
-						<input type="password" name="userPassword" placeholder="请输入密码" autocomplete="off" class="layui-input">
-					</div>
+				<div  class="form-group">
+				<input class="form-control"  type="password" name="userPassword" value="" placeholder="密码"><span></span>
+
 				</div>
-<%--				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="登  录">--%>
-						<button class="layui-btn  layui-btn-warm jia-login" lay-submit lay-filter="formDemo" style="text-align: left">立即登录</button>
-						<button type="reset" class="layui-btn  layui-btn-danger jia-login-reset">重置</button>
-				<p class="txt"><a class="" href="${path}/register">免费注册</a><a href="forget.html">忘记密码？</a></p>
-				</div>
+				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="登  录">
+				<p class="txt"><a class="" href="register.jsp">免费注册</a><a href="forget.html">忘记密码？</a></p>
 			</form>
 		</div>
 

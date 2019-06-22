@@ -17,6 +17,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Map<String, Object> login(String userName, String userPassword) {
 		User user = userDao.queryByUsername(userName);
+		System.out.println("username = " + userName);
+		System.out.println("username = " + userName.getClass());
+		System.out.println("username = " + userPassword);
+		System.out.println("username = " + userPassword.getClass());
 		Map<String,Object> map = new HashMap<>();
 		if(user != null) {
 

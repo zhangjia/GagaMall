@@ -25,5 +25,8 @@
     <orderEntry type="library" name="ojdbc6" level="project" />
     <orderEntry type="library" name="standard" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat" level="application_server_libraries" />
+    <orderEntry type="library" name="aliyun-java-sdk-core-4.1.0" level="project" />
+    <orderEntry type="library" name="aliyun-java-sdk-dysmsapi-1.0.0" level="project" />
+    <orderEntry type="library" name="gson-2.8.5" level="project" />
   </component>
 </module>
