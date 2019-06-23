@@ -18,7 +18,7 @@
 
                 <c:if test="${sessionScope.user != null}">
                     <p class="fl">
-                      欢迎您：  <a href="${path}/personal" id="WelcomeUser">${sessionScope.user.userName}</a>
+                      欢迎您：  <a href="${path}/personal" id="WelcomeUser">${sessionScope.user.userNick}</a>
                                             </p>
                 </c:if>
                 <form action="${path}/list" method="get" class="fl">

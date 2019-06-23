@@ -23,6 +23,7 @@
 					$(".avatar").hide();
 					$(".pj").hide();
 					$(".chak").hide();
+					$(".xg-pay").hide();
 				});
 				$(".jia-user-information-save").click(function(){
 					$(".mask").hide();
@@ -32,6 +33,17 @@
 					$(".avatar").hide();
 					$(".pj").hide();
 					$(".chak").hide();
+					$(".xg-pay").hide();
+				});
+				$(".jia-user-paypassword-save").click(function(){
+					$(".mask").hide();
+					$(".bj").hide();
+					$(".xg").hide();
+					$(".remima").hide();
+					$(".avatar").hide();
+					$(".pj").hide();
+					$(".chak").hide();$(".xg-pay").hide();
+
 				});
 
 
@@ -70,7 +82,16 @@
 				<div class="you fl">
 					<h2>个人信息</h2>
 					<div class="gxin">
-						<div class="tx"><a href="#"><img class="jia-userAvatar" src="${sessionScope.user.imgUrl}"/><p id="avatar">修改头像</p></a></div>
+						<div class="tx"><a href="#">
+							<c:if test="${sessionScope.user.imgUrl == null}">
+								<img class="jia-userAvatar" src="${path}/static/img/tx.png"/>
+
+							</c:if>
+							<c:if test="${sessionScope.user.imgUrl != null}">
+								<img class="jia-userAvatar" src="${sessionScope.user.imgUrl}"/>
+
+							</c:if>
+							<p id="avatar">修改头像</p></a></div>
 						<div class="xx">
 							<h3 class="clearfix"><strong class="fl">基础资料</strong><a href="#" class="fr" id="edit1">编辑</a></h3>
 							<div>用户名：${sessionScope.user.userName}</div>
@@ -86,7 +107,14 @@
 							<h3>高级设置</h3>
 							<!--<div><span class="fl">银行卡</span><a href="#" class="fr">管理</a></div>-->
 							<div><span class="fl">登录密码</span><a href="#" class="fr" id="edit2">修改</a></div>
-							<div><span class="fl">支付密码</span><a href="#" class="fr" id="edit2">修改</a></div>
+							<c:if test="${sessionScope.user.userPayPassword == null}">
+								<div><span class="fl">支付密码</span><a href="#" class="fr" id="edit3">添加</a></div>
+
+							</c:if>
+							<c:if test="${sessionScope.user.userPayPassword != null}">
+								<div><span class="fl">支付密码</span><a href="#" class="fr" id="edit4">修改</a></div>
+
+							</c:if>
 						</div>
 					</div>			
 				</div>
@@ -111,7 +139,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">生日</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input" id="jia-user-birthday"
+						<input readonly="" type="text" class="layui-input" id="jia-user-birthday"
 placeholder="<fmt:formatDate value="${sessionScope.user.userBirthday}" type="DATE" />">
 						<input type="hidden" class="jia-select-birthday" value="" name="birthday">
 					</div>
@@ -188,18 +216,122 @@ placeholder="<fmt:formatDate value="${sessionScope.user.userBirthday}" type="DAT
 				});
 			</script>
 		</div>
-		<!--高级设置修改-->
+		<!--修改密码-->
 		<div class="xg">
-			<div class="clearfix"><a href="#" class="fr gb"><img src="${path}/static/img/icon4.png"/></a></div>
-			<h3>切换账号地区</h3>
-			<form action="#" method="get">
-				<p><label>姓名：</label><input type="text"  value="六六六" /></p>
-				<div class="bc">
-					<input type="button" value="保存" />
-					<input type="button" value="取消" />
+			<div class="clearfix"><a href="#" class="fr gb"></a></div>
+			<h3 style="margin: 10px">修改密码</h3>
+			<br/>
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label">密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="password" required  lay-verify="required" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+
+
+
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn jia-user-password-save" lay-submit  lay-filter="jia-edit-user-password">保存</button>
+						<button type="button" class="layui-btn layui-btn-primary jia-btn-cancle">取消</button>
+					</div>
 				</div>
 			</form>
+
+			<script>
+				//Demo
+				layui.use('form', function(){
+					var form = layui.form;
+
+					//监听提交
+					form.on('submit(jia-edit-user-password)', function(data){
+
+						console.log(data.field)
+						$.ajax({
+							url:"${path}/editUserPassword",
+							type:"get",
+							data:{
+								password:data.field.password
+							},
+							success:function (res) {
+								if(res.success === true){
+									layer.msg("修改成功")
+									location = "${path}/logout";
+								} else {
+									layer.msg("修改失败")
+								}
+
+							}
+
+
+
+						})
+						console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+						return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+					});
+				});
+			</script>
 		</div>
+<%--	修改支付秘密码--%>
+	<div class="xg-pay">
+		<div class="clearfix"><a href="#" class="fr gb"></a></div>
+		<h3 style="margin: 10px">修改支付密码</h3>
+		<br/>
+		<form class="layui-form" action="">
+			<div class="layui-form-item">
+				<label class="layui-form-label">支付密码</label>
+				<div class="layui-input-block">
+					<input type="text" name="paypassword" required  lay-verify="required" placeholder="请输入支付密码" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+
+
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn jia-user-paypassword-save" lay-submit  lay-filter="jia-edit-user-paypassword">保存</button>
+					<button type="button" class="layui-btn layui-btn-primary jia-btn-cancle">取消</button>
+				</div>
+			</div>
+		</form>
+
+		<script>
+			//Demo
+			layui.use('form', function(){
+				var form = layui.form;
+
+				//监听提交
+				form.on('submit(jia-edit-user-paypassword)', function(data){
+
+					console.log(data.field)
+					$.ajax({
+						url:"${path}/editUserPayPassword",
+						type:"get",
+						data:{
+							paypassword:data.field.paypassword
+						},
+						success:function (res) {
+							if(res.success === true){
+								layer.msg("修改成功");
+								location.reload()
+							} else {
+								layer.msg("修改失败")
+							}
+
+						}
+
+
+
+					})
+					console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+					return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+				});
+			});
+		</script>
+	</div>
 		<!--修改头像-->
 		<div class="avatar">
 			<div class="clearfix"><a href="#" class="fr gb"><img src="${path}/static/img/icon4.png"/></a></div>

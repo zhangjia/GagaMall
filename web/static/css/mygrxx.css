@@ -149,7 +149,7 @@ body{
 	display: none;
 }
 /*编辑个人信息*/
-.bj,.xg{
+.bj,.xg,.xg-pay{
 	width: 410px;
 	position: absolute;
 	top: 40%;

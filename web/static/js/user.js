@@ -20,6 +20,7 @@ $(function(){
 			$(".adddz").hide();
 			$(".bj").hide();
 			$(".xg").hide();
+			$(".xg-pay").hide();
 			$(".remima").hide();
 			$(".pj").hide();
 			$(".chak").hide();
@@ -105,6 +106,14 @@ $(function(){
 		$(".mask").show();
 		$(".xg").show();
 	});
+	$("#edit3").click(function(){
+		$(".mask").show();
+		$(".xg-pay").show();
+	});
+	$("#edit4").click(function(){
+		$(".mask").show();
+		$(".xg-pay").show();
+	});
 
 //修改头像
 	$("#avatar").click(function(){
@@ -117,6 +126,8 @@ $(function(){
 		$(".mask").hide();
 		$(".bj").hide();
 		$(".xg").hide();
+		$(".xg-pay").hide();
+
 		$(".remima").hide();
 		$(".avatar").hide();
 		$(".pj").hide();
