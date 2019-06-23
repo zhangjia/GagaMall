@@ -6,95 +6,89 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
-	<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
-	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>layout 后台大布局 - Layui</title>
+	<link rel="stylesheet" href="../src/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="${path}/static/layui/css/layui.css"/>
+	<script src="${path}/static/layui/layui.js " type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
-<div>
-	<div>
-		<div id="app">
-			<select @change="provinceChange">
-				<option v-for="province in provinceList">{{province}}</option>
-			</select>
-			<select @change="cityChange">
-				<option v-for="city in cityList">{{city}}</option>
-			</select>
-			<select @change="districtChange">
-				<option v-for="district in districtList">{{district}}</option>
-			</select>
-			<select>
-				<option v-for="street in streetList">{{street}}</option>
-			</select>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+	<div class="layui-header">
+		<div class="layui-logo">layui 后台布局</div>
+		<!-- 头部区域（可配合layui已有的水平导航） -->
+		<ul class="layui-nav layui-layout-left">
+			<li class="layui-nav-item"><a href="">控制台</a></li>
+			<li class="layui-nav-item"><a href="">商品管理</a></li>
+			<li class="layui-nav-item"><a href="">用户</a></li>
+			<li class="layui-nav-item">
+				<a href="javascript:;">其它系统</a>
+				<dl class="layui-nav-child">
+					<dd><a href="">邮件管理</a></dd>
+					<dd><a href="">消息管理</a></dd>
+					<dd><a href="">授权管理</a></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="layui-nav layui-layout-right">
+			<li class="layui-nav-item">
+				<a href="javascript:;">
+					<img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+					贤心
+				</a>
+				<dl class="layui-nav-child">
+					<dd><a href="">基本资料</a></dd>
+					<dd><a href="">安全设置</a></dd>
+				</dl>
+			</li>
+			<li class="layui-nav-item"><a href="">退了</a></li>
+		</ul>
+	</div>
+
+	<div class="layui-side layui-bg-black">
+		<div class="layui-side-scroll">
+			<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+			<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+				<li class="layui-nav-item layui-nav-itemed">
+					<a class="" href="javascript:;">所有商品</a>
+					<dl class="layui-nav-child">
+						<dd><a href="javascript:;">列表一</a></dd>
+						<dd><a href="javascript:;">列表二</a></dd>
+						<dd><a href="javascript:;">列表三</a></dd>
+						<dd><a href="">超链接</a></dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">解决方案</a>
+					<dl class="layui-nav-child">
+						<dd><a href="javascript:;">列表一</a></dd>
+						<dd><a href="javascript:;">列表二</a></dd>
+						<dd><a href="">超链接</a></dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item"><a href="">云市场</a></li>
+				<li class="layui-nav-item"><a href="">发布商品</a></li>
+			</ul>
 		</div>
 	</div>
-</div>
-</body>
-<script type="text/javascript">
-	new Vue({
-		el: "#app",
-		data: {
-			districtSearch: '',
-			provinceList: [],
-			cityList: [],
-			districtList: [],
-			streetList: []
-		},
-		mounted: function () {
-			this.init();
-		},
-		methods: {
-			init: function () {
-				var _this = this;
-				AMap.plugin('AMap.DistrictSearch', function () {
-					_this.districtSearch = new AMap.DistrictSearch({
-						level: 'country',
-						subdistrict: 1
-					})
-				});
-				this.districtSearch.search('中国', function (status, result) {
-					var list = result.districtList[0]['districtList'];
-					for (var i = 0; i < list.length; i++) {
-						_this.provinceList.push(list[i].name);
-					}
-				})
-			},
-			provinceChange: function (e) {
-				var _this = this;
-				var provinceName = e.target.value;
-				this.cityList = [];
-				this.districtSearch.search(provinceName, function (status, result) {
-					var list = result.districtList[0]['districtList'];
-					for (var i = 0; i < list.length; i++) {
-						_this.cityList.push(list[i].name);
-					}
-				})
-			},
-			cityChange: function (e) {
-				var _this = this;
-				var cityName = e.target.value;
-				this.districtList = [];
-				this.districtSearch.search(cityName, function (status, result) {
-					var list = result.districtList[0]['districtList'];
-					for (var i = 0; i < list.length; i++) {
-						_this.districtList.push(list[i].name);
-					}
-				})
-			},
-			districtChange: function(e) {
-				var _this = this;
-				var districtName = e.target.value;
-				this.streetList = [];
-				this.districtSearch.search(districtName, function (status, result) {
-					var list = result.districtList[0]['districtList'];
-					for (var i = 0; i < list.length; i++) {
-						_this.streetList.push(list[i].name);
-						console.log(list[i]);
-					}
-				})
-			}
-		}
-	})
-</script>
 
+	<div class="layui-body">
+		<!-- 内容主体区域 -->
+		<div style="padding: 15px;">内容主体区域</div>
+	</div>
+
+	<div class="layui-footer">
+		<!-- 底部固定区域 -->
+		© layui.com - 底部固定区域
+	</div>
+</div>
+<script src="../src/layui.js"></script>
+<script>
+	//JavaScript代码区域
+	layui.use('element', function(){
+		var element = layui.element;
+
+	});
+</script>
+</body>
 </html>

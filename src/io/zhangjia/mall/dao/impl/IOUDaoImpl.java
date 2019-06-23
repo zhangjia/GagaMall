@@ -1,0 +1,14 @@
+package io.zhangjia.mall.dao.impl;
+
+import io.zhangjia.mall.dao.IOUDao;
+import io.zhangjia.mall.utils.CommonDao;
+
+import java.util.Map;
+
+public class IOUDaoImpl extends CommonDao implements IOUDao {
+    @Override
+    public Map<String, Object> queryByUserId(Integer userId) {
+        String sql = "SELECT  * FROM IOU WHERE USER_ID = ?";
+        return  query4Map(sql,userId);
+    }
+}
