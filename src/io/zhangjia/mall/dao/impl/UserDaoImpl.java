@@ -44,7 +44,16 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 	@Override
 	public User queryByUsername(String userName) {
 		String sql = "SELECT * FROM users WHERE user_name = ?";
-		return query4Bean(sql,User.class,userName);
+
+		User user = query4Bean(sql, User.class, userName);
+
+		String sql2 = "SELECT * FROM USERS,IMG WHERE USER_ID = ? AND IMG_TYPE ='用户头像' AND IMG_BELONG = USER_ID AND IMG_IS_DEL != 0";
+		User user2 = query4Bean(sql2, User.class, user.getUserId());
+		System.out.println("2user2 = " + user2);
+		if(user2 != null) {
+			user.setImgUrl(user2.getImgUrl());
+		}
+		return user;
 	}
 
 	/**

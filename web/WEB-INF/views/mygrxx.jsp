@@ -70,19 +70,19 @@
 				<div class="you fl">
 					<h2>个人信息</h2>
 					<div class="gxin">
-						<div class="tx"><a href="#"><img class="jia-userAvatar" src="${sessionScope.userInformation.imgUrl}"/><p id="avatar">修改头像</p></a></div>
+						<div class="tx"><a href="#"><img class="jia-userAvatar" src="${sessionScope.user.imgUrl}"/><p id="avatar">修改头像</p></a></div>
 						<div class="xx">
 							<h3 class="clearfix"><strong class="fl">基础资料</strong><a href="#" class="fr" id="edit1">编辑</a></h3>
-							<div>用户名：${sessionScope.userInformation.userName}</div>
-							<div>昵  称：${sessionScope.userInformation.userNick}</div>
-							<div>性  别：${sessionScope.userInformation.userGender}</div>
+							<div>用户名：${sessionScope.user.userName}</div>
+							<div>昵  称：${sessionScope.user.userNick}</div>
+							<div>性  别：${sessionScope.user.userGender}</div>
 							<div>等  级：<fmt:formatNumber
-									value="${sessionScope.userInformation.userGrade /100}"
+									value="${sessionScope.user.userGrade /100}"
 									type="NUMBER"/></div>
-							<div>生  日：<fmt:formatDate value="${sessionScope.userInformation.userBirthday}" type="DATE" /></div>
-							<div>手机号：${sessionScope.userInformation.userTel}</div>
-							<div>邮  箱：${sessionScope.userInformation.userMail}</div>
-							<div>注册时间：<fmt:formatDate value="${sessionScope.userInformation.userRegisterTime}" type="both" /></div>
+							<div>生  日：<fmt:formatDate value="${sessionScope.user.userBirthday}" type="DATE" /></div>
+							<div>手机号：${sessionScope.user.userTel}</div>
+							<div>邮  箱：${sessionScope.user.userMail}</div>
+							<div>注册时间：<fmt:formatDate value="${sessionScope.user.userRegisterTime}" type="both" /></div>
 							<h3>高级设置</h3>
 							<!--<div><span class="fl">银行卡</span><a href="#" class="fr">管理</a></div>-->
 							<div><span class="fl">登录密码</span><a href="#" class="fr" id="edit2">修改</a></div>
@@ -103,7 +103,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">昵称</label>
 					<div class="layui-input-block">
-						<input type="text" name="nickname" required  lay-verify="required" placeholder="${sessionScope.userInformation.userNick}" autocomplete="off" class="layui-input">
+						<input type="text" name="nickname" required  lay-verify="required" placeholder="${sessionScope.user.userNick}" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 
@@ -112,7 +112,7 @@
 					<label class="layui-form-label">生日</label>
 					<div class="layui-input-block">
 						<input type="text" class="layui-input" id="jia-user-birthday"
-placeholder="<fmt:formatDate value="${sessionScope.userInformation.userBirthday}" type="DATE" />">
+placeholder="<fmt:formatDate value="${sessionScope.user.userBirthday}" type="DATE" />">
 						<input type="hidden" class="jia-select-birthday" value="" name="birthday">
 					</div>
 				</div>

@@ -37,6 +37,10 @@ public class EditUserInformationServlet extends HttpServlet {
 //        String paypassword = req.getParameter("paypassword");
 //        user.setUserPayPassword(paypassword);
         int i = userService.editUserInformation(user);
+//        更新session信息
+       if(i == 1){
+           req.getSession().setAttribute("user",userService.getUserInformation(user.getUserName()));
+       }
         System.out.println("iiii = " + i);
         System.out.println("user2222 = " + user);
         resp.setContentType("application/json;charset=utf-8");

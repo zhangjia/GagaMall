@@ -25,7 +25,7 @@ public interface UserService {
 	 */
 	Map<String, Object> register(User user);
 
-	User getUserInformation(String userId);
+	User getUserInformation(String userName);
 
 	int editUserInformation(User user);
 }

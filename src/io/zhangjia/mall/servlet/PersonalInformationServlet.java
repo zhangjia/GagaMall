@@ -18,11 +18,12 @@ public class PersonalInformationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userId = req.getParameter("userId");
-        User userInformation = userService.getUserInformation(userId);
-        req.getSession().setAttribute("userInformation", userInformation);
-        System.out.println("userInformation = " + JSON.toJSONString(userInformation));
-        System.out.println(" =ssss " );
+//        String userId = req.getParameter("userId");
+//        User userInformation = userService.getUserInformation(userId);
+//        req.getSession().setAttribute("userInformation", userInformation);
+//        System.out.println("userInformation = " + JSON.toJSONString(userInformation));
+        System.out.println( );
+        System.out.println(" =ssss " + JSON.toJSONString(req.getSession().getAttribute("user")));
         req.getRequestDispatcher("/WEB-INF/views/mygrxx.jsp").forward(req,resp);
     }
 }
