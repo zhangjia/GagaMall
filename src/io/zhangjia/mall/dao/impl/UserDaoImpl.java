@@ -26,11 +26,44 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 	}
 
 	@Override
+	public int updateUserInformation(User user) {
+		String sql = "update USERS\n" +
+				"set (USER_NICK, USER_GENDER, USER_BIRTHDAY, USER_TEL,USER_MAIL,USER_PASSWORD,USER_PAY_PASSWORD) =\n" +
+				"        (SELECT ?,?,TO_DATE(?,'yyyy-mm-dd'),?,?,?,? FROM dual)\n" +
+				"where USER_ID = ?";
+		System.out.println("user1111 = " + user);
+		return executeUpdate(sql,user.getUserNick(),user.getUserGender(),user.getDate(),user.getUserTel()
+		,user.getUserMail(),user.getUserPassword(),user.getUserPayPassword(),user.getUserId());
+	}
+
+	/**
+	 * 不能作为用户的个人信息使用，因为这个方法再用户刚登录的时候，作为用户是否存在的判断了，用户都默认没有头像
+	 * @param userName 用户名
+	 * @return
+	 */
+	@Override
 	public User queryByUsername(String userName) {
 		String sql = "SELECT * FROM users WHERE user_name = ?";
 		return query4Bean(sql,User.class,userName);
 	}
 
-	
+	/**
+	 * 作为查询用户的个人信息使用
+	 * @param userId
+	 * @return
+	 */
+	@Override
+	public User queryByUserId(String userId) {
+		String sql1 = "SELECT * FROM users WHERE USER_ID = ?";
+		User user = query4Bean(sql1, User.class, userId);
+
+		String sql2 = "SELECT * FROM USERS,IMG WHERE USER_ID = ? AND IMG_TYPE ='用户头像' AND IMG_BELONG = USER_ID AND IMG_IS_DEL != 0";
+		User user2 = query4Bean(sql2, User.class, userId);
+		if(user2 != null) {
+			user.setImgUrl(user2.getImgUrl());
+		}
+		return user;
+	}
+
 
 }

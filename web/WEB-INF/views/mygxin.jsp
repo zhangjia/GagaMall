@@ -33,7 +33,7 @@
             <div class="tx clearfix">
                 <div class="fl clearfix">
                     <a href="#" class="fl"><img src="${path}/static/img/tx.png"/></a>
-                    <p class="fl"><span>${sessionScope.user.userName}</span><a href="mygrxx.jsp">修改个人信息></a></p>
+                    <p class="fl"><span>${sessionScope.user.userName}</span><a href="${path}/personalInformation?userId=${sessionScope.user.userId}">修改个人信息></a></p>
                 </div>
                 <div class="fr">绑定邮箱：12****4@**.com</div>
             </div>

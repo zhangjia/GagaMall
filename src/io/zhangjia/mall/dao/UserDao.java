@@ -20,6 +20,7 @@ public interface UserDao {
      * @return 查询的用户
      */
     User queryByUsername(String userName);
+    User queryByUserId(String userId);
 
     /**
      *根据用户名和密码添加用户
@@ -27,4 +28,6 @@ public interface UserDao {
      * @return 添加是否成功，成功返回1，不成功返回0
      */
     int doInsert(User user);
+
+    int updateUserInformation(User user);
 }

@@ -53,6 +53,15 @@ public class UserServiceImpl implements UserService {
 		return map;
 	}
 
+	@Override
+	public User getUserInformation(String userId) {
+		return userDao.queryByUserId(userId);
+	}
+
+	@Override
+	public int editUserInformation(User user) {
+		return userDao.updateUserInformation(user);
+	}
 
 
 }

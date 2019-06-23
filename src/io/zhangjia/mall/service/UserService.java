@@ -24,4 +24,8 @@ public interface UserService {
 	 * @return 注册结果
 	 */
 	Map<String, Object> register(User user);
+
+	User getUserInformation(String userId);
+
+	int editUserInformation(User user);
 }

@@ -18,6 +18,10 @@ public class User {
     private Integer userGrade;          //用户等级
     private Integer userStatus;         //用户状态
 
+//    -------------------------------------
+    private String ImgUrl;
+    private String date;
+
     /**
      * 无参构造函数
      */
@@ -191,6 +195,24 @@ public class User {
     public Integer getUserStatus() {
         return userStatus;
     }
+//    ---------------------
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getImgUrl() {
+        return ImgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        ImgUrl = imgUrl;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -233,8 +255,8 @@ public class User {
                 ", userAvatar='" + userAvatar + '\'' +
                 ", userGrade=" + userGrade +
                 ", userStatus=" + userStatus +
+                ", ImgUrl='" + ImgUrl + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
-
-
 }

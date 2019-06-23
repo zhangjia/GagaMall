@@ -42,7 +42,7 @@
 						</ul>
 						<h4>账户管理</h4>
 						<ul>
-							<li><a href="mygrxx.jsp">个人信息</a></li>
+							<li><a href="${path}/personalInformation?userId=${sessionScope.user.userId}">个人信息</a></li>
 							<li><a href="remima.jsp">修改密码</a></li>
 						</ul>
 					</div>
