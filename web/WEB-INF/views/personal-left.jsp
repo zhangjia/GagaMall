@@ -3,14 +3,14 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <h3 class="left-h3">
     <a href="#"><img src="${path}/static/img/tx.png"/></a>
-    <p class="clearfix"><span class="fl">[${sessionScope.user.userName}]</span><span class="fr"><a
+    <p class="clearfix"><span class="fl jia-person-username">[${sessionScope.user.userName}]</span><span class="fr"><a
             href="${path}/logout">[退出登录]</a></span></p>
 </h3>
 <div>
     <h4>我的交易</h4>
     <ul>
         <li><a href="${path}/cart">我的购物车</a></li>
-        <li><a href="${path}/myorder"">我的订单</a></li>
+        <li><a href="${path}/myorder">我的订单</a></li>
         <li><a href="myprod.jsp">评价晒单</a></li>
     </ul>
     <h4>个人中心</h4>

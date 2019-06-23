@@ -43,45 +43,52 @@
           rel="stylesheet">
     <%------------------------------------资源引入结束-----------------------------------%>
     <script>
-        function IsphoneCodeRight() {
-            var tel = $("input[name='userTel']").val();
-            var inputCode = $(".jia-register-input-code").val();
-            if (inputCode == null || inputCode == '') {
-                layer.msg("请输入验证码");
-                return false;
-            }
-            if (tel == null || inputCode == '') {
-                layer.msg("请输入手机号");
-                return false;
-            }
-            var userInputPhoneCode = $("input[name='verificationCode']").val();
-            console.log("ID = " + ${sessionScope.phoneCode});
-            if (userInputPhoneCode == ${sessionScope.phoneCode}) {
-                return true
-            } else {
-                return false;
-            }
+        // function IscodesRight() {
+        //     var tel = $("input[name='userTel']").val();
+        //     var inputCode = $("input[name='codes']").val();
+        //     if (inputCode == null || inputCode == '') {
+        //         layer.msg("请输入验证码");
+        //         return false;
+        //     }
+        //     if (tel == null || inputCode == '') {
+        //         layer.msg("请输入手机号");
+        //         return false;
+        //     }
+        //     var userInputPhoneCode = $("input[name='codes']").val();
+        //         return true;
+        //
+        // }
 
+        function register(){
+            // $(".jia-btn-register").click(function () {
+                // function register(){
+                var account = $(".jia-register-select-account").children("option:selected").val();
+                var data;
+                console.log(account)
+                if(account =='userTel'){
 
-        }
-        $(function () {
+                     data = $.param({'action':'userTel'}) + '&' + $("form").serialize();
+                }
+                if(account =='userName'){
 
-            var index;
+                    data = $.param({'action':'userName'}) + '&' + $("form").serialize();
+                }
+                if(account =='userEmail'){
 
-
-
-            $(":submit").click(function () {
-
-                IsphoneCodeRight();
+                    data = $.param({'action':'userEmail'}) + '&' + $("form").serialize();
+                }
                 //将表单序列化
-                var data = $("form").serialize();
-                data.put("action","userTel");
+                // if (!IscodesRight()) {
+                //     return false;
+                // }
+                console.log(data);
                 //发起请求，完成登录
                 $.ajax({
                     url: "${path}/register",
                     type: "post",
                     data: data,
                     success: function (res) {
+                        console.log(res)
 
 
                         if (res.result) {
@@ -90,7 +97,7 @@
                                 if (res.uri) {
                                     location = res.uri;
                                 } else {
-                                    location = "index.jsp";
+                                    location = "${path}/login";
                                 }
                             })
 
@@ -102,17 +109,33 @@
                                 $("input[name='userPassword']").next("span").addClass("text-danger").text(res.error);
                             } else if (res.error === "用户名已存在") {
                                 index = layer.tips('用户名已存在', $("input[name='account']"), {
-                                    time: 0
+                                    time: 800
                                 });
                                 $("input[name='account']").addClass("is-invalid");
                                 // $("input[name='account']").next("span").addClass("text-danger").text(res.error);
+                            } else if (res.error === "验证码不正确") {
+                                layer.tips('验证码不正确', $("input[name='codes']"), {
+                                    time: 800
+                                });
                             }
                         }
                     }
                 });
                 return false;
-            });
 
+            // });
+        }
+
+        $(function () {
+
+
+            var index;
+
+            // $(":submit").click(function () {
+
+            $("form").submit(function () {
+               return  register()
+            });
 
             $("input[type=text]").focus(function () {
 
@@ -195,6 +218,23 @@
 
                         }
                     },
+                    codes: {
+                        validators: {
+                            stringLength: {
+                                min: 4,
+                                max: 4,
+                                message: '请输入四位验证码'
+                            },
+                            notEmpty: {
+                                message: '验证码不能为空'
+                            },
+
+                        }
+                    },
+                    submitHandler:function(form) {
+                        $(form).register();
+                    }
+
                 }
 
             });
@@ -202,17 +242,18 @@
             /*---------------------------------选择用户名开始------------------------------------*/
             $("input[name='userEmail']").hide();
             $(".jia-register-get-code").hide();
-            $("input[name='verificationCode']").hide();
+            $("input[name='codes']").hide();
             $("input[name='userTel']").hide();
 
             $("select").change(function () {
+
                 $("small[data-bv-result='INVALID']").attr("style", 'display: none');
 
                 var value = $(":selected").val();
                 if (value === 'userName') {
                     $(".jia-register-get-code").hide();
                     $("input[name='userEmail']").hide();
-                    $("input[name='verificationCode']").hide();
+                    $("input[name='codes']").hide();
                     $("input[name='userTel']").hide();
                     $("input[name='userName']").attr("name", value);
                     $("input[name='userName']").show()
@@ -223,7 +264,7 @@
                     $("input[name='userName']").hide();
                     $("input[name='userEmail']").hide();
                     $("input[name='userTel']").attr("name", value);
-                    $("input[name='verificationCode']").show();
+                    $("input[name='codes']").show();
                     $("input[name='userTel']").show();
                     $(".jia-register-get-code").show();
                 }
@@ -231,7 +272,7 @@
                     $("input[name='userName']").hide();
                     $("input[name='userTel']").hide();
                     $("input[name='userEmail']").attr("name", value);
-                    $("input[name='verificationCode']").show();
+                    $("input[name='codes']").show();
                     $("input[name='userEmail']").show()
                     $(".jia-register-get-code").show();
                 }
@@ -240,13 +281,25 @@
             /*---------------------------------获取验证码开始------------------------------------*/
             $(".jia-register-get-code").click(function () {
                 countDown();
-                var tel = $("input[name='userTel']").val();
-                console.log("tel" + tel);
+                var url = '';
+                var type = '';
+                var value = $(":selected").val();
+                if (value === 'userTel') {
+                   url =  "${path}/getPhoneCode";
+                    type = $("input[name='userTel']").val();
+                }
+                if (value === 'userEmail') {
+                   url = "${path}/getEmailCode";
+
+                    type = $("input[name='userEmail']").val();
+                }
+
+
                 $.ajax({
-                    url: "${path}/getPhoneCode",
+                    url: url,
                     type: "get",
                     data: {
-                        tel: tel
+                        type: type
                     },
                     success: function (res) {
                         console.log(res)
@@ -323,14 +376,14 @@
         </div>
         <div class="form-group jia-register-code">
 
-            <input class="form-control jia-register-input-code" type="text" name="verificationCode" value=""
+            <input class="form-control jia-register-input-code" type="text" name="codes" value=""
                    placeholder="验证码">
             <button type="button" class="btn btn-primary btn-lg jia-register-get-code ">获取验证码</button>
         </div>
         <%--				<p class="txtL txt"><input class="code" type="text" name="" value="" placeholder="验证码"><img src="${path}/static/img/temp/code.jpg"></p>--%>
-        <input class="btn btn-primary btn-lg btn-block submit" type="submit" value="注  册">
+        <input class="btn btn-primary btn-lg btn-block submit jia-btn-register" type="submit" value="注  册">
         <p class="txtL txt">完成此注册，即表明您同意了我们的<a href="#">使用条款和隐私策略</a></p>
-        <p class="txt"><a href="login.jsp"><span></span>已有账号登录</a></p>
+        <p class="txt"><a href="${path}/login"><span></span>已有账号登录</a></p>
         <!--<a href="#" class="off"><img src="img/temp/off.png"></a>-->
 
     </form>

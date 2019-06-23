@@ -573,3 +573,9 @@ body {
 	white-space: normal !important;
 
 }
+.jia-person-username{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 60px;
+}

@@ -1,16 +1,17 @@
 package io.zhangjia.mall.utils;
 
 import io.zhangjia.mall.service.CommodityService;
+import io.zhangjia.mall.service.MailCodeService;
 import io.zhangjia.mall.service.OrderService;
 import io.zhangjia.mall.service.impl.CommodityServiceImpl;
+import io.zhangjia.mall.service.impl.MailCodeServiceImpl;
 import io.zhangjia.mall.service.impl.OrderServiceImpl;
 import io.zhangjia.mall.servlet.SettlementServlet;
 
 public class Test {
     public static void main(String[] args) {
 
-//        OrderService c = new OrderServiceImpl();
-//        System.out.println(c.getOrder("1" , "3"));
-        SettlementServlet st = new SettlementServlet();
+        MailCodeService mailCodeService = new MailCodeServiceImpl();
+        mailCodeService.getMailCode("zhangjia@188.com");
     }
 }

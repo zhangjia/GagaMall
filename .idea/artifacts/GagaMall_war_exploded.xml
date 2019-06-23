@@ -12,8 +12,13 @@
           <element id="library" level="project" name="jstl" />
           <element id="library" level="project" name="ojdbc6" />
           <element id="library" level="project" name="standard" />
+          <element id="library" level="project" name="aliyun-java-sdk-core-4.1.0" />
+          <element id="library" level="project" name="aliyun-java-sdk-dysmsapi-1.0.0" />
+          <element id="library" level="project" name="gson-2.8.5" />
+          <element id="library" level="project" name="aliyun-java-sdk-dm-3.1.0" />
         </element>
       </element>
+      <element id="library" level="project" name="aliyun-java-sdk-core-3.0.0" />
       <element id="javaee-facet-resources" facet="GagaMall/web/Web" />
     </root>
   </artifact>
