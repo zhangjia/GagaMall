@@ -123,7 +123,7 @@ public class CartDaoImpl extends CommonDao implements CartDao {
      */
     @Override
     public List<Map<String, Object>> queryCommodities4Settlement(Integer userId, String[] CommoditySKUIds) {
-        StringBuffer sql =  new StringBuffer("SELECT  * FROM CART,SKU,COMMODITY,IMG WHERE IMG.IMG_TYPE = '商品图' AND IMG_BELONG = COMMODITY.COMMODITY_ID  AND IMG_ORDER = 1 AND USER_ID = 1 AND CART_IS_DEL != 0 AND CART_IS_DEL != 5  AND SKU.COMMODITY_ID = COMMODITY.COMMODITY_ID AND CART.USER_ID = ? AND  CART.SKU_ID = SKU.SKU_ID AND CART.SKU_ID IN (") ;
+        StringBuffer sql =  new StringBuffer("SELECT  * FROM CART,SKU,COMMODITY,IMG WHERE IMG.IMG_TYPE = '商品图' AND IMG_BELONG = COMMODITY.COMMODITY_ID  AND IMG_ORDER = 1  AND CART_IS_DEL != 0 AND CART_IS_DEL != 5  AND SKU.COMMODITY_ID = COMMODITY.COMMODITY_ID AND CART.USER_ID = ? AND  CART.SKU_ID = SKU.SKU_ID AND CART.SKU_ID IN (") ;
         Object[] param = new Object[CommoditySKUIds.length + 1];
         param[0] = userId;
         for (int i = 0; i < CommoditySKUIds.length; i++) {

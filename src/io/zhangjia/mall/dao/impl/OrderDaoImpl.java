@@ -39,6 +39,7 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
      */
     @Override
     public Double queryOrderPrice(Integer orderId) {
+        System.out.println("jinrulequeryOrderPrice = " + orderId);
         String sql = "SELECT t2.ORDER_FREIGHT_PRICE + t1.price  sumPrice\n" +
                 "FROM\n" +
                 "    ( SELECT ORDER_ID,SUM(ORDER_DETAILS_COMMODITY_PRICE * ORDER_DETAILS_COMMODITY_COUNT - ORDER_DETAILS_DISCOUNTS_PRICE) price\n" +
@@ -48,7 +49,9 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
                 "    ORDERS t2\n" +
                 "WHERE t1.ORDER_ID = t2.ORDER_ID\n" +
                 "  AND t2.ORDER_STATUS != 0";
-        return Double.parseDouble(query4Map(sql,orderId).get("SUMPRICE") + "");
+        System.out.println("123" + query4Map(sql,orderId) == null);
+        System.out.println("321" +query4Map(sql,orderId).get("SUMPRICE") == null);
+        return Double.parseDouble(query4Map(sql,orderId).get("SUMPRICE")+"");
     }
 
     /**

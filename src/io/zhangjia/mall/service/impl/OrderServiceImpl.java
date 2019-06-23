@@ -35,6 +35,7 @@ public class OrderServiceImpl implements OrderService {
                 Map<String, Object> stringObjectMap = addressDao.queryById(addressId);
                 map.put("ADDRESS", stringObjectMap);
                 int orderId = Integer.parseInt(map.get("ORDER_ID") + "");
+                System.out.println("orderIdzz = " + orderId);
                 Double aDouble = orderDao.queryOrderPrice(orderId);
                 map.put("ORDERPRICE", aDouble);
                 List<Map<String, Object>> maps1 = orderDao.queryCommodityByOrderId(orderId);

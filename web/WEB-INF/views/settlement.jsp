@@ -33,7 +33,7 @@
 							url:url,
 							type:"get",
 							success:function (res) {
-								console.log(res)
+								location="${path}/pay";
 							}
 						});
 					}
