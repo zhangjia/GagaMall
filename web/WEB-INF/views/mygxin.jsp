@@ -34,7 +34,7 @@
                 <div class="fl clearfix">
                     <a href="#" class="fl">
                         <c:if test="${sessionScope.user.imgUrl == null}">
-                            <img class="jia-userAvatar" src="${path}/static/img/tx.png"/>
+                            <img class="jia-userAvatar" src="${path}/static/img/tx.jpg"/>
 
                         </c:if>
                         <c:if test="${sessionScope.user.imgUrl != null}">

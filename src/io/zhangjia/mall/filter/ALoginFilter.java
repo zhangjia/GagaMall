@@ -41,7 +41,7 @@ import java.util.Map;
 "/editUserPayPassword",
 "/editUserPassword",
 "/editUserInformation",
-"/deleteAddress","/admin","/setPageSize"
+"/deleteAddress","/admin","/setPageSize","/deliverGoods"
 
 
 })

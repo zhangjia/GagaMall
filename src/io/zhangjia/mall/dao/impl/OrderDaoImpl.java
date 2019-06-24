@@ -134,7 +134,7 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
     @Override
     public int doUpdateByDeliverGoods(Integer orderId, String logistics) {
         String sql ="UPDATE ORDERS\n" +
-                "SET ORDER_LOGISTICS = ?,ORDER_STATUS = 1\n" +
+                "SET ORDER_LOGISTICS = ?,ORDER_STATUS = 2\n" +
                 "    WHERE ORDER_ID  = ?";
         return executeUpdate(sql,logistics,orderId);
     }

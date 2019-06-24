@@ -173,12 +173,20 @@
                         console.log(res.success ==="支付成功")
                         console.log(res.haha)
                         if (res.success ==='支付成功') {
-                            layer.msg("支付成功");
-                            location = "${path}/myorder";
+                            layer.msg("支付成功",{
+                                time:1000
+                            },function () {
+                                location = "${path}/myorder";
+                            });
+
 
                         } else if(res.error ==='余额不足') {
-                            layer.msg("余额不足");
-                            location = "${path}/wallet";
+                            layer.msg("余额不足",{
+                                time:1000
+                            },function () {
+                                location = "${path}/wallet";
+                            });
+
                         } else if(res.error === '额度不足'){
                             layer.msg("额度不足");
 

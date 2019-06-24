@@ -3,7 +3,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <h3 class="left-h3">
     <c:if test="${sessionScope.user.imgUrl == null}">
-        <a href="#"><img class="jia-userAvatar" src="${path}/static/img/tx.png"/></a>
+        <a href="#"><img class="jia-userAvatar" src="${path}/static/img/tx.jpg"/></a>
     </c:if>
     <c:if test="${sessionScope.user.imgUrl != null}">
         <a href="#"><img class="jia-userAvatar" src="${sessionScope.user.imgUrl}"/></a>

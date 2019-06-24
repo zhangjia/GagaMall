@@ -209,8 +209,8 @@
                     userName: {
                         validators: {
                             stringLength: {
-                                max: 4,
-                                message: '不超过4个字符'
+                                max: 5,
+                                message: '不超过5个字符'
                             },
                             notEmpty: {
                                 message: '用户名不能为空'
@@ -314,7 +314,7 @@
 
             function countDown() {
                 $(this).addClass("on");
-                var time = 5;
+                var time = 60;
                 $(this).attr("disabled", true);
                 var timer = setInterval(function () {
                     if (time == 0) {

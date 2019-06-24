@@ -62,6 +62,7 @@
 							<c:if test="${order.ORDER_STATUS == 5}">
 								<h3>已关闭</h3>
 							</c:if>
+								<h3>物流：${order.ORDER_LOGISTICS}</h3>
 							</div>
 							<c:forEach items="${order.COMMODITIES}" var="commodity" >
 							<div class="clearfix">
