@@ -15,10 +15,37 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/personal","/cart","/addCart","/cart/delete","/updateCount",
-"/updateCount2CommodityDetail","/addCommodity","/address","/myorder"
-,"/orderDetails","/personalInformation","/addAddress"} ,filterName = "a")
-public class LoginFilter extends HttpFilter {
+@WebFilter(urlPatterns = {
+"/personal",
+"/cart",
+"/addCart",
+"/cart/delete",
+"/updateCount",
+"/updateCount2CommodityDetail",
+"/addCommodity",
+"/address",
+"/myorder",
+"/orderDetails",
+"/personalInformation",
+"/addAddress",
+"/iou",
+"/wallet",
+"/submit",
+"/settlement",
+"/setDefaultAddress",
+"/saveOrUpdateCommodity",
+"/recharge",
+"/pay",
+"/logout",
+"/getAddress",
+"/editUserPayPassword",
+"/editUserPassword",
+"/editUserInformation",
+"/deleteAddress"
+
+
+})
+public class ALoginFilter extends HttpFilter {
 
     @Override
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {

@@ -19,5 +19,9 @@ public interface CommodityDao {
     int doCommodityInsert(Commodity commodity);
     int doSKUInsert(List<Map<String,Object>> lists) ;
 
+    List<Commodity> queryCommodity4Index();
+
+
+
 
 }

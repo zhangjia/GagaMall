@@ -835,6 +835,28 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
         return -1;
     }
 
+    @Override
+    public List<Commodity> queryCommodity4Index() {
+//        String sql = "SELECT  * FROM  COMMODITY WHERE  COMMODITY.COMMODITY_IS_DEL != 0";
+        String sql = "SELECT *\n" +
+                "FROM COMMODITY t1,\n" +
+                "     (SELECT COMMODITY_ID                            cid,\n" +
+                "             SUM(SKU_SALES)                          COMMODITY_SALES,\n" +
+                "             SUM(SKU_INVENTORY)                      COMMODITY_INVENTORY,\n" +
+                "             MAX(SKU_PRESENT_PRICE)                  COMMODITY_MAX_PRESENT_PRICE,\n" +
+                "             MIN(SKU_PRESENT_PRICE)                  COMMODITY_MIN_PRESENT_PRICE,\n" +
+                "             MAX(SKU_ORIGINAL_PRICE)                 COMMODITY_MAX_ORIGINAL_PRICE,\n" +
+                "             MIN(SKU_ORIGINAL_PRICE)                 COMMODITY_MIN_ORIGINAL_PRICE,\n" +
+                "             MAX(SKU_LAST_PRICE - SKU_PRESENT_PRICE) COMMODITY_MAX_MARK_DOWN\n" +
+                "      FROM SKU\n" +
+                "      WHERE SKU_IS_DEL = 1\n" +
+                "      GROUP BY COMMODITY_ID) t2\n" +
+                "WHERE t1.COMMODITY_ID = t2.cid\n" +
+                "  AND t1.COMMODITY_IS_DEL = 1\n";
+        List<Commodity> commodities = query4BeanList(sql, Commodity.class);
+        queryCommodityImgs(commodities);
+        return commodities;
+    }
 
 
 }

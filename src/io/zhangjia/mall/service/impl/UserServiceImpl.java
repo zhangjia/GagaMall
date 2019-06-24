@@ -1,8 +1,12 @@
 package io.zhangjia.mall.service.impl;
 
 
+import io.zhangjia.mall.dao.IOUDao;
 import io.zhangjia.mall.dao.UserDao;
+import io.zhangjia.mall.dao.WalletDao;
+import io.zhangjia.mall.dao.impl.IOUDaoImpl;
 import io.zhangjia.mall.dao.impl.UserDaoImpl;
+import io.zhangjia.mall.dao.impl.WalletDaoImpl;
 import io.zhangjia.mall.entity.User;
 import io.zhangjia.mall.service.UserService;
 
@@ -13,6 +17,8 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
 	
 	private UserDao userDao = new UserDaoImpl();
+	private WalletDao walletDao = new WalletDaoImpl();
+	private IOUDao iouDao = new IOUDaoImpl();
 
 	@Override
 	public Map<String, Object> login(String userName, String userPassword) {
@@ -41,8 +47,11 @@ public class UserServiceImpl implements UserService {
 		Map<String,Object> map = new HashMap<>();
 		if(user2 == null) {
 			int i = userDao.doInsert(user);
-			if(i == 1) {
+			if(i != 0) {
 				map.put("user",user);
+				walletDao.doInsert(i);
+				iouDao.doInsert(i);
+
 			} else {
 				map.put("error","注册失败");
 			}

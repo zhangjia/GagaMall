@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet("/list")
 public class ListServlet extends HttpServlet {
     private CommodityService commodityService = new CommodityServiceImpl();
-//    private NavService navService = new NavServiceImpl();
+    private NavService navService = new NavServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        List<FirstMenu> nav = navService.getNav();
@@ -40,6 +40,7 @@ public class ListServlet extends HttpServlet {
 
 
         req.setAttribute("commodities",commodities);
+        req.setAttribute("firstMenuChineseName",navService.getFirstMenuChineseName(secMenuId));
 
         req.setAttribute("commoditiesCount",commodityService.getPagesCount(firstMenuId,secMenuId,name));
 //

@@ -9,4 +9,7 @@ public interface NavService {
    /* List<Map<String, Object>> getFirstNav();
     List<Map<String, Object>> getSecNav();*/
     List<FirstMenu> getNav();
+
+
+    String getFirstMenuChineseName(String fid);
 }

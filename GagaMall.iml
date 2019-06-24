@@ -30,5 +30,12 @@
     <orderEntry type="library" name="gson-2.8.5" level="project" />
     <orderEntry type="library" name="aliyun-java-sdk-core-3.0.0" level="project" />
     <orderEntry type="library" name="aliyun-java-sdk-dm-3.1.0" level="project" />
+    <orderEntry type="library" name="aliyun-sdk-oss-2.8.3" level="project" />
+    <orderEntry type="library" name="commons-codec-1.9" level="project" />
+    <orderEntry type="library" name="commons-logging-1.2" level="project" />
+    <orderEntry type="library" name="hamcrest-core-1.1" level="project" />
+    <orderEntry type="library" name="httpclient-4.4.1" level="project" />
+    <orderEntry type="library" name="httpcore-4.4.1" level="project" />
+    <orderEntry type="library" name="jdom-1.1" level="project" />
   </component>
 </module>

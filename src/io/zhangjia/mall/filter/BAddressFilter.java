@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @WebFilter(urlPatterns = {"/address","/settlement"},filterName = "b")
-public class AddressFilter extends HttpFilter {
+public class BAddressFilter extends HttpFilter {
     private AddressService addressService = new AddressServiceImpl();
     @Override
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {

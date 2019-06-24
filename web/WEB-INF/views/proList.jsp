@@ -6,13 +6,14 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
-    <title>全部商品</title>
+    <title>商品列表</title>
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
     <%@ include file="public-static-file.jsp" %>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css"/>
 
     <script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
     <script src="${path}/static/js/cart.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+
 
     <script>
 
@@ -210,12 +211,18 @@
     <div class="address">
         <div class="wrapper clearfix">
             <a href="${path}/index">首页</a>
+<%--    ${requestScope.commodities[0]}--%>
+            <c:if test="${param.firstMenuId != null}">
             <span>/</span>
-            <a href="${path}/list?firstMenuId=${requestScope.commodities[0].firstMenuId}&page=1">${requestScope.commodities[0].firstMenuChineseName}</a>
+                <a href="${path}/list?firstMenuId=${requestScope.commodities[0].firstMenuId}&page=1">${requestScope.commodities[0].firstMenuChineseName}</a>
+            </c:if>
+
 
             <c:if test="${param.firstMenuId == null}">
                 <span>/</span>
-                <a href="${path}/list?firstMenuId=${requestScope.commodities[0].secMenuId}&page=1">${requestScope.commodities[0].secMenuChineseName}</a>
+                <a href="${path}/list?firstMenuId=${requestScope.commodities[0].firstMenuId}&page=1">${requestScope.firstMenuChineseName}</a>
+                <span>/</span>
+                <a href="${path}/list?secMenuId=${requestScope.commodities[0].secMenuId}&page=1">${requestScope.commodities[0].secMenuChineseName}</a>
             </c:if>
         </div>
     </div>
@@ -357,35 +364,7 @@
     </div>
     <a class="more" href="proDetail.jsp">查看更多细节</a>
 </div>
-<!--返回顶部-->
-<div class="gotop">
-    <a href="cart.jsp">
-        <dl class="goCart">
-            <dt><img src="${path}/static/img/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
-            <span>1</span>
-        </dl>
-    </a>
-    <a href="#" class="dh">
-        <dl>
-            <dt><img src="${path}/static/img/gt2.png"/></dt>
-            <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.jsp">
-        <dl>
-            <dt><img src="${path}/static/img/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none;">
-        <dl>
-            <dt><img src="${path}/static/img/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
-        </dl>
-    </a>
-    <p>400-800-8200</p>
-</div>
+<jsp:include page="right-sidebar.jsp"></jsp:include>
 <div class="msk"></div>
 
 <div class="page">

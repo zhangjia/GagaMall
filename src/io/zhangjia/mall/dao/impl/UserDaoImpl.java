@@ -18,11 +18,18 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 
 	@Override
 	public int doInsert(User user) {
-		String sql = "INSERT INTO users VALUES(seq_users.nextval,?,?,?,sysdate,?,?,?,?,?,?,0,1)";
-		int i = executeUpdate(sql, user.getUserName(), user.getUserPassword(),user.getUserPayPassword(),
+		String sqlid = "SELECT seq_users.nextval id FROM dual";
+		int id =  query4IntData(sqlid);
+		String sql = "INSERT INTO users VALUES(?,?,?,?,sysdate,?,?,?,?,?,?,0,1)";
+		int i = executeUpdate(sql, id,user.getUserName(), user.getUserPassword(),user.getUserPayPassword(),
 				user.getUserTel(),user.getUserMail(),user.getUserName(),user.getUserGender(),
 				user.getUserBirthday(),user.getUserAvatar());
-		return i ;
+		if(i == 1) {
+			return  id;
+		} else {
+			return 0;
+		}
+
 	}
 
 	@Override

@@ -17,4 +17,10 @@ public class IOUDaoImpl extends CommonDao implements IOUDao {
         String sql = "UPDATE IOU SET IOU_USABLE_LIMIT = IOU_USABLE_LIMIT +  ? WHERE USER_ID = ?";
         return executeUpdate(sql,money,userId);
     }
+
+    @Override
+    public int doInsert(Integer userId) {
+        String sql = "INSERT INTO iou VALUES(seq_iou.nextval,5000.0,5000,?)";
+        return executeUpdate(sql,userId);
+    }
 }

@@ -24,4 +24,5 @@ public interface CommodityService {
 
     public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId,String count,String val);
 
+    List<Commodity> getCommodities4Index();
 }

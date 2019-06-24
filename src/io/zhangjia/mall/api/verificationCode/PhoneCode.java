@@ -28,8 +28,8 @@ public class PhoneCode {
         request.setVersion("2017-05-25");
         request.setAction("SendSms");
         request.putQueryParameter("PhoneNumbers", tel);
-        request.putQueryParameter("SignName", "小绿单车");
-        request.putQueryParameter("TemplateCode", "SMS_164510483");
+        request.putQueryParameter("SignName", "嘎嘎商城");
+        request.putQueryParameter("TemplateCode", "SMS_168725713");
         String random = String.valueOf(new Random().nextInt(9999) + 100);
         request.putQueryParameter("TemplateParam", "{\"code\":\"" + random + "\"}");
         try {

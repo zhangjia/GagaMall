@@ -20,11 +20,13 @@
             $(".two").hide();
 
 
+
             // $(".shuxing").addClass("layui-btn-disabled");
             //商品规格，比如颜色，大小，版本等等
             $(".guige").click(function () {
 
                 // $(".shuxing").removeClass("layui-btn-disabled");
+                // $(this).addClass("layui-btn-disabled");
                 if ($(".number:last").val() == "") {
                     alert(1)
                 } else {
@@ -194,36 +196,36 @@
 
             // $(".submits").click(function () {
 
-$(".as").click(function () {
-    var sonspts = [];
-    var spts = {};
+            $(".as").click(function () {
+                var sonspts = [];
+                var spts = {};
 
-    // var data = $("form").serialize();
-    $("input[name='spt']").each(function () {
+                // var data = $("form").serialize();
+                $("input[name='spt']").each(function () {
 
-        sonspts.push($(this).val());
-    });
-    var imgType = "spt";
-    spts[imgType]=sonspts;
+                    sonspts.push($(this).val());
+                });
+                var imgType = "spt";
+                spts[imgType] = sonspts;
 
-    var sonspxqt= [];
-    var spxqts= {};
-    // var data = $("form").serialize();
-    $("input[name='spxqt']").each(function () {
+                var sonspxqt = [];
+                var spxqts = {};
+                // var data = $("form").serialize();
+                $("input[name='spxqt']").each(function () {
 
-        sonspxqt.push($(this).val());
-    });
-    imgType = "sptxqt";
-    spxqts[imgType]=sonspxqt;
-    console.log(spts)
-    console.log(spxqts)
-    console.log($("input[name='firstMenuId']").val())
-    console.log($("input[name='secMenuId']").val())
+                    sonspxqt.push($(this).val());
+                });
+                imgType = "sptxqt";
+                spxqts[imgType] = sonspxqt;
+                console.log(spts)
+                console.log(spxqts)
+                console.log($("input[name='firstMenuId']").val())
+                console.log($("input[name='secMenuId']").val())
 
-});
+            });
             layui.use('form', function () {
                 var form = layui.form;
-                form.on('submit(formDemo)', function(data){
+                form.on('submit(formDemo)', function (data) {
                     var sonspts = [];
                     var spts = {};
 
@@ -233,17 +235,17 @@ $(".as").click(function () {
                         sonspts.push($(this).val());
                     });
                     var imgType = "spt";
-                    spts[imgType]=sonspts;
+                    spts[imgType] = sonspts;
 
-                    var sonspxqt= [];
-                    var spxqts= {};
+                    var sonspxqt = [];
+                    var spxqts = {};
                     // var data = $("form").serialize();
                     $("input[name='spxqt']").each(function () {
 
                         sonspxqt.push($(this).val());
                     });
                     imgType = "spxqt";
-                    spxqts[imgType]=sonspxqt;
+                    spxqts[imgType] = sonspxqt;
 
                     var jsonattr1 = "<input type='hidden' name='jsonspt' value='" + JSON.stringify(spts) + "'>";
                     $(".layui-form").append(jsonattr1);
@@ -254,24 +256,24 @@ $(".as").click(function () {
                     //----------------------------------------------
                     var jsonSKUValue = {};
 
-                    var jsonsss = JSON.stringify(sss)+"";
+                    var jsonsss = JSON.stringify(sss) + "";
                     console.log(JSON.stringify(sss) + "---");
                     console.log(JSON.stringify(jsonSKUValue) + "---");
-                    jsonsss = jsonsss.replace(/\[/g,"");
-                    jsonsss = jsonsss.replace(/\]/g,"");
-                    jsonsss = jsonsss.replace(/:/g,'":"');
+                    jsonsss = jsonsss.replace(/\[/g, "");
+                    jsonsss = jsonsss.replace(/\]/g, "");
+                    jsonsss = jsonsss.replace(/:/g, '":"');
                     // "1":"2","4":"5","1":"2","4":"6","1":"3","4":"5","1":"3","4":"6"
                     var leg = $(".spgg").length;
 
-                    var sc= 0;
+                    var sc = 0;
 
-                    var splits =  jsonsss.split(",");
-                    for (var m = 0; m < splits.length ; m+=leg) {
+                    var splits = jsonsss.split(",");
+                    for (var m = 0; m < splits.length; m += leg) {
                         console.log(m)
                         var skuRecord = {};
-                        var strings="";
-                        for (var y = m; y < m+leg; y++) {
-                            if(y+1 < m+leg) {
+                        var strings = "";
+                        for (var y = m; y < m + leg; y++) {
+                            if (y + 1 < m + leg) {
 
                                 strings += (splits[y] + ",");
                             } else {
@@ -280,20 +282,17 @@ $(".as").click(function () {
 
                         }
 
-                        console.log("{" + strings + "}" )
+                        console.log("{" + strings + "}")
                         skuRecord.skuvalue = JSON.parse("{" + strings + "}");
-
 
 
                         // var inventory = $(".create-sku:eq("+(sc+1)+")").children(":eq(2)").children("input").val();
                         //$("ul li:nth-child(2)")
-                        var inventory = $(".create-sku:eq("+(sc)+")").children(":eq(2)").children("input").val();
-                        var price = $(".create-sku:eq("+(sc++)+")").children(":eq(3)").children("input").val()
+                        var inventory = $(".create-sku:eq(" + (sc) + ")").children(":eq(2)").children("input").val();
+                        var price = $(".create-sku:eq(" + (sc++) + ")").children(":eq(3)").children("input").val()
                         // var price = $(".create-sku:eq("+sc+++")").children(":eq(3)").children("input").val()
                         skuRecord.inventory = inventory;
                         skuRecord.price = price;
-
-
 
 
                         skuRecords.push(skuRecord);
@@ -308,17 +307,17 @@ $(".as").click(function () {
                     console.log(spxqts)
                     console.log($("input[name='firstMenuId']").val())
                     console.log($("input[name='secMenuId']").val())
-                   var map = data.field;
+                    var map = data.field;
 
 
-                    var datas ={
-                        commodityName:$("input[name='commodityName']").val(),
-                        firstMenuId:map.firstMenuId,
-                        secMenuId:map.secMenuId,
-                        jsonAttr:$("input[name='jsonAttribute']").val(),
-                        spt:$("input[name='jsonspt']").val(),
-                        spxqt:$("input[name='jsonspxqt']").val(),
-                        skuRecords:JSON.stringify(skuRecords)
+                    var datas = {
+                        commodityName: $("input[name='commodityName']").val(),
+                        firstMenuId: map.firstMenuId,
+                        secMenuId: map.secMenuId,
+                        jsonAttr: $("input[name='jsonAttribute']").val(),
+                        spt: $("input[name='jsonspt']").val(),
+                        spxqt: $("input[name='jsonspxqt']").val(),
+                        skuRecords: JSON.stringify(skuRecords)
 
 
                     };
@@ -327,7 +326,7 @@ $(".as").click(function () {
                     $.ajax({
                         url: "${path}/addCommodity",
                         type: "get",
-                        data:datas,
+                        data: datas,
                         success: function (res) {
                             alert(res)
                         }
@@ -336,7 +335,6 @@ $(".as").click(function () {
                     return false;
                 });
 
-                //各种基于事件的操作，下面会有进一步介绍
 
                 form.on('select(zj)', function (data) {
                     var value = data.value;
@@ -385,7 +383,7 @@ $(".as").click(function () {
             <jsp:include page="personal-left.jsp"/>
         </div>
         <div class="you fl">
-            <button class="as">a</button>
+            <%--            <button class="as">a</button>--%>
 
             <form class="layui-form" action="">
                 <h2>添加商品</h2>
@@ -453,14 +451,13 @@ $(".as").click(function () {
 
                 <div class="layui-form-item buttons">
                     <div class="layui-input-block">
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                         <button type="button" class="layui-btn  layui-btn-warm guige">添加规格</button>
                         <button type="button" class="layui-btn  layui-btn-warm shuxing">添加属性</button>
-                        <button type="button" class="layui-btn  layui-btn-warm bianli">规格确定</button>
-                        <button class="layui-btn  " lay-submit lay-filter="formDemo" >立即提交</button>
-<%--                        <button type="button " class="layui-btn  layui-btn-warm submits">提交</button>--%>
+                        <button type="button" class="layui-btn  layui-btn-normal bianli">规格确定</button>
+                        <button class="layui-btn " lay-submit lay-filter="formDemo">立即提交</button>
+                        <%--                        <button type="button " class="layui-btn  layui-btn-warm submits">提交</button>--%>
 
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <button type="reset" class="layui-btn layui-btn-danger">重置</button>
                     </div>
                 </div>
             </form>
@@ -471,33 +468,7 @@ $(".as").click(function () {
 </div>
 
 <!--返回顶部-->
-<div class="gotop">
-    <a href="cart.html">
-        <dl>
-            <dt><img src="${path}/static/img/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
-        </dl>
-    </a>
-    <a href="#" class="dh">
-        <dl>
-            <dt><img src="${path}/static/img/gt2.png"/></dt>
-            <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.html">
-        <dl>
-            <dt><img src="${path}/static/img/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none">
-        <dl>
-            <dt><img src="${path}/static/img/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
-        </dl>
-    </a>
-    <p>400-800-8200</p>
-</div>
+<jsp:include page="right-sidebar.jsp"></jsp:include>
 
 
 <!--footer-->

@@ -45,9 +45,9 @@
 <!------------------------------idea------------------------------>
 <div class="address mt">
     <div class="wrapper clearfix">
-        <a href="#" class="fl">首页</a>
+        <a href="${path}/index" class="fl">首页</a>
         <span>/</span>
-        <a href="mygxin.html">个人中心</a>
+        <a href="${path}/personal">个人中心</a>
         <span>/</span>
         <a href="myorderq.html" class="on">我的订单</a>
     </div>
@@ -94,7 +94,11 @@
                   <c:forEach items="${order.COMMODITIES}" var="commodity" >
                       <div class="shohou clearfix">
                           <a href="#" class="fl"><img src="${commodity.ORDER_DETAILS_COMMODITY_IMG}"/></a>
-                          <p class="fl"><a href="#">${commodity.ORDER_DETAILS_COMMODITY_NAME}</a>
+
+                          <p class="fl">
+                      <span hidden>${commodity.ORDER_DETAILS_COMMODITY_NAME}</span>
+                      <a href="#">${commodity.ORDER_DETAILS_COMMODITY_NAME}
+                      </a>
                               <a href="#">
                       ${fn:replace(fn:replace(fn:replace(fn:replace(commodity.ORDER_DETAILS_SKU_VALUE, '"', ''), '{', ''), '}', ''), ',', '    ')}
                               </a>
@@ -134,33 +138,7 @@
     </div>
 </div>
 <!--返回顶部-->
-<div class="gotop">
-    <a href="cart.html">
-        <dl>
-            <dt><img src="${path}/static/img/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
-        </dl>
-    </a>
-    <a href="#" class="dh">
-        <dl>
-            <dt><img src="${path}/static/img/gt2.png"/></dt>
-            <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.html">
-        <dl>
-            <dt><img src="${path}/static/img/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none">
-        <dl>
-            <dt><img src="${path}/static/img/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
-        </dl>
-    </a>
-    <p>400-800-8200</p>
-</div>
+                              <jsp:include page="right-sidebar.jsp"></jsp:include>
 <!--footer-->
 <div class="footer">
     <div class="top">

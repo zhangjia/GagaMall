@@ -221,5 +221,10 @@ Map<String,List<String>> sku = null;
         }
     }
 
+    @Override
+    public List<Commodity> getCommodities4Index() {
+        return commodityDao.queryCommodity4Index();
+    }
+
 
 }

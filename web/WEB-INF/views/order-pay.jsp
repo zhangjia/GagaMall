@@ -112,11 +112,11 @@
                 console.log(data.field)
 
                 console.log(${requestScope.orderId})
-                var location;
+                var locations;
                 var orderId;
                 var payMoney;
                 if(${requestScope.total.SUM_COMMODITY_PAY_PRICE == null}) {
-                    location ="订单页";
+                    locations ="订单页";
                     orderId = data.field.orderId;
 
                 } else {
@@ -125,7 +125,7 @@
                 }
 
                 console.log("aa")
-                console.log(location)
+                console.log(locations)
                 console.log(orderId)
                 console.log(payMoney)
                 $.ajax({
@@ -136,7 +136,7 @@
                         payMoney:payMoney,
                         // note:data.field.note,
                         orderId:orderId,
-                        location:location
+                        location:locations
 
 
                     },
@@ -145,17 +145,17 @@
                         console.log(res.success ==="支付成功")
                         console.log(res.haha)
                         if (res.success ==='支付成功') {
-                            layer.msg("支付成功")
-                            location = "${path}/myorder"
+                            layer.msg("支付成功");
+                            location = "${path}/myorder";
 
                         } else if(res.error ==='余额不足') {
-                            layer.msg("余额不足")
-                            location = "${path}/wallet"
+                            layer.msg("余额不足");
+                            location = "${path}/wallet";
                         } else if(res.error === '额度不足'){
-                            layer.msg("额度不足")
+                            layer.msg("额度不足");
                             location = "${path}/wallet"
                         } else {
-                            layer.msg("支付失败")
+                            layer.msg("支付失败");
                         }
 
                     }

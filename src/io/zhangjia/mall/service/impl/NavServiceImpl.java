@@ -83,4 +83,13 @@ public class NavServiceImpl implements NavService {
         return firstMenus;
 
     }
+
+    @Override
+    public String getFirstMenuChineseName(String sid) {
+       if (sid != null && !"".equals(sid)){
+           return firstMenuDao.getFirstMenuChineseNameById(Integer.parseInt(sid));
+       } else  {
+           return null;
+       }
+    }
 }
