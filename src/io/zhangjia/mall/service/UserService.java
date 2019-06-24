@@ -3,6 +3,7 @@ package io.zhangjia.mall.service;
 import io.zhangjia.mall.entity.User;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,4 +31,6 @@ public interface UserService {
 	int editUserInformation(User user);
 
 	Map<String,Object> judgePayPassword(String userId,String payPassword);
+
+	List<User> queryUserAll();
 }

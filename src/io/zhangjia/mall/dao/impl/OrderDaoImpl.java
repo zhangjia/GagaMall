@@ -130,4 +130,12 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
                 "WHERE USER_ID = ? AND ORDER_ID  = ?\n";
         return executeUpdate(sql,payType,userId,orderId);
     }
+
+    @Override
+    public int doUpdateByDeliverGoods(Integer orderId, String logistics) {
+        String sql ="UPDATE ORDERS\n" +
+                "SET ORDER_LOGISTICS = ?,ORDER_STATUS = 1\n" +
+                "    WHERE ORDER_ID  = ?";
+        return executeUpdate(sql,logistics,orderId);
+    }
 }

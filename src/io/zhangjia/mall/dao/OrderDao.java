@@ -15,5 +15,6 @@ public interface OrderDao {
     int doInsert4Detail(Map<String, Object> param);
 
     int doUpdateByPay(String payType ,Integer userId, Integer orderId);
+    int doUpdateByDeliverGoods( Integer orderId,String logistics);
 
 }

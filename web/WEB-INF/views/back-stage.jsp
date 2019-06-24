@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <c:set var="order" value="${requestScope.order}"/>
 <!DOCTYPE html>
@@ -18,6 +19,10 @@
     <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
     <link rel="stylesheet" type="text/css" href="${path}/static/layui/css/layui.css"/>
     <script src="${path}/static/layui/layui.js " type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/myorder.css"/>
+    <script src="${path}/static/js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${path}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 
@@ -56,6 +61,12 @@
                         <dd><a class="sptj" href="javascript:;">商品添加</a></dd>
                         <dd><a href="javascript:;">商品修改</a></dd>
                         <dd><a href="javascript:;">商品删除</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">订单处理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a class="ddfh" href="javascript:;">订单发货</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -168,6 +179,84 @@
             </div>
 
         </div>
+        <div class="div-ddfh" style="padding: 15px;">
+            <jsp:include page="fahuo.jsp"></jsp:include>
+            <div style="background:white" class="Bott">
+                <div class="wrapper clearfix">
+                    <div class="you fl">
+                        <div class="my clearfix">
+                            <h2 class="fl">未发货订单</h2>
+                            <%--                <a href="#" class="fl">请谨防钓鱼链接或诈骗电话，了解更多&gt;</a>--%>
+                        </div>
+                        <div class="dlist clearfix">
+
+
+                        </div>
+                        <c:forEach items="${requestScope.orders}" var="order" varStatus="i">
+                            <div class="dkuang">
+                                <p class="one"></p>
+                                <div class="word clearfix">
+                                    <ul class="fl clearfix">
+                                        <li><fmt:formatDate value="${order.ORDER_TIME}" type="both"/></li>
+                                        <li>${order.ADDRESS.ADDRESS_NAME}</li>
+                                        <li class="order-num">订单号:<span>${order.ORDER_ID}</span></li>
+
+                                        <li>${order.ORDER_PAY_TYPE}</li>
+                                    </ul>
+                                    <p class="fr">订单金额：<span>${order.ORDERPRICE}</span>元</p>
+
+                                </div>
+                                <c:forEach items="${order.COMMODITIES}" var="commodity">
+                                    <div class="shohou clearfix">
+                                        <a href="#" class="fl"><img src="${commodity.ORDER_DETAILS_COMMODITY_IMG}"/></a>
+
+                                        <p class="fl">
+                                            <span hidden>${commodity.ORDER_DETAILS_COMMODITY_NAME}</span>
+                                            <a href="#">${commodity.ORDER_DETAILS_COMMODITY_NAME}
+                                            </a>
+                                            <a href="#">
+                                                    <%--        ${fn:replace(fn:replace(fn:replace(fn:replace(commodity.ORDER_DETAILS_SKU_VALUE, '"', ''), '{', ''), '}', ''), ',', '    ')}--%>
+                                                <c:set var="string"
+                                                       value="${fn:replace(fn:replace(fn:replace(fn:replace(commoditySKU.SKU_VALUE, '\"', ''), '{', ''), '}', ''), ',', '    ')}"></c:set>
+                                                    ${string}
+                                            </a>
+
+                                            <a href="#">¥${commodity.ORDER_DETAILS_COMMODITY_PRICE}×${commodity.ORDER_DETAILS_COMMODITY_COUNT}</a>
+                                        </p>
+
+                                        <p class="fr">
+                                            <c:if test="${order.ORDER_STATUS == 1}">
+                                                <a class="jia-id-myorder-pay" href="javascript:;">待发货</a>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 2}">
+                                                <a href="myprod.html2">已发货</a>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 3}">
+                                                <a href="myprod.html3">待评价</a>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 4}">
+                                                <a href="javascript:;">待支付</a>
+                                            </c:if>
+                                            <c:if test="${order.ORDER_STATUS == 5}">
+                                                <a href="myprod.html">已关闭</a>
+                                            </c:if>
+                                            <a href="${path}/orderDetails?orderId=${order.ORDER_ID}">订单详情</a>
+                                        </p>
+                                    </div>
+                                </c:forEach>
+
+                            </div>
+                        </c:forEach>
+
+                        <div class="fenye clearfix">
+                            <a href="#"><img src="${path}/static/img/zuo.jpg"/></a>
+                            <a href="#">1</a>
+                            <a href="#"><img src="${path}/static/img/you.jpg"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -185,6 +274,10 @@
     });
 
     $(function () {
+        $(".ddfh").click(function () {
+
+        });
+
 
         $(".jia-admin-setting-page-save").click(function () {
             var pageSize = $(".jia-admin-setting-page-input").val();
@@ -217,13 +310,23 @@
 
         $(".div-sptj").hide();
         $(".div-setting").hide();
+        $(".div-ddfh").hide();
         $(".sptj").click(function () {
             $(".div-sptj").show();
             $(".div-hello").hide();
             $(".div-setting").hide();
+            $(".div-ddfh").hide();
         });
         $(".fysz").click(function () {
             $(".div-setting").show();
+            $(".div-sptj").hide();
+            $(".div-hello").hide();
+            $(".div-ddfh").hide();
+        });
+
+        $(".ddfh").click(function () {
+            $(".div-ddfh").show();
+            $(".div-setting").hide();
             $(".div-sptj").hide();
             $(".div-hello").hide();
         });

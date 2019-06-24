@@ -7,6 +7,7 @@ import io.zhangjia.mall.utils.CommonDao;
 
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserDaoImpl extends CommonDao implements UserDao {
@@ -62,6 +63,12 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public List<User> queryUserAll() {
+		String sql = "SELECT * FROM USERS WHERE USER_STATUS =1";
+		return query4BeanList(sql,User.class);
 	}
 
 	/**
