@@ -72,5 +72,16 @@ public class UserServiceImpl implements UserService {
 		return userDao.updateUserInformation(user);
 	}
 
+	@Override
+	public Map<String, Object> judgePayPassword(String userId, String payPassword) {
+		Map<String, Object> result = new HashMap<>();
+		if(userId != null && !"".equals(userId) && payPassword != null && !"".equals(payPassword)){
+			result = userDao.queryByPayPassword(Integer.parseInt(userId),payPassword);
+		} else {
+			result.put("error","错误");
+		}
+		return  result;
+	}
+
 
 }

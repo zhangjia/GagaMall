@@ -80,6 +80,12 @@
 <%--            </div>--%>
 <%--        </div>--%>
         <div class="layui-form-item">
+            <label class="layui-form-label">支付密码</label>
+            <div class="layui-input-inline">
+                <input style="margin-left: 10px;    width: 200px;" type="password" name="paypassword" required lay-verify="required" placeholder="请输入支付密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn jia-user-order-pay" lay-submit lay-filter="jia-filter-user-order-pay"
                         lay-filter="jia-edit-user-information">支付
@@ -111,6 +117,7 @@
             form.on('submit(jia-filter-user-order-pay)', function (data) {
                 console.log(data.field)
 
+
                 console.log(${requestScope.orderId})
                 var locations;
                 var orderId;
@@ -136,12 +143,33 @@
                         payMoney:payMoney,
                         // note:data.field.note,
                         orderId:orderId,
-                        location:locations
+                        location:locations,
+                        paypassword:data.field.paypassword,
 
 
                     },
                     success: function (res) {
                         console.log(res)
+                        if (res.error ==='未设置密码') {
+
+                            layer.msg('未设置支付密码', {
+
+                                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                            }, function(){
+                               location = "${path}/personalInformation";
+                            });
+                            return;
+                        }
+
+                        if (res.error ==='支付密码不正确') {
+                            layer.msg("支付密码不正确",{
+
+                                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                            });
+                            return;
+
+                        }
+
                         console.log(res.success ==="支付成功")
                         console.log(res.haha)
                         if (res.success ==='支付成功') {
@@ -153,7 +181,7 @@
                             location = "${path}/wallet";
                         } else if(res.error === '额度不足'){
                             layer.msg("额度不足");
-                            location = "${path}/wallet"
+
                         } else {
                             layer.msg("支付失败");
                         }

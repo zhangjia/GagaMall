@@ -29,12 +29,12 @@
     <ul>
         <li><a href="${path}/personalInformation?userId=${sessionScope.user.userId}">个人信息</a></li>
     </ul>
-    <c:if test="${sessionScope.user.userStatus == 2}">
-        <h4>商品管理</h4>
-        <ul>
-            <li><a href="${path}/saveOrUpdateCommodity">添加商品</a></li>
-            <li><a href="remima.jsp">修改商品</a></li>
-            <li><a href="remima.jsp">删除商品</a></li>
-        </ul>
-    </c:if>
+<%--    <c:if test="${sessionScope.user.userStatus == 2}">--%>
+<%--        <h4>商品管理</h4>--%>
+<%--        <ul>--%>
+<%--            <li><a href="${path}/saveOrUpdateCommodity">添加商品</a></li>--%>
+<%--            <li><a href="remima.jsp">修改商品</a></li>--%>
+<%--            <li><a href="remima.jsp">删除商品</a></li>--%>
+<%--        </ul>--%>
+<%--    </c:if>--%>
 </div>

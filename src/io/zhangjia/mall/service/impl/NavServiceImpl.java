@@ -31,10 +31,16 @@ public class NavServiceImpl implements NavService {
 
     @Override
     public List<FirstMenu> getNav() {
+//        拿到所有的值
         List<Map<String, Object>> maps = secMenuDao.querySecMenu();
+        System.out.println("chongxie = " + JSON.toJSONString(maps));
+//        List中的每个FirstMenu
         List<FirstMenu> firstMenus = new ArrayList<>();
 
+
+
         for (int i = 0; i < maps.size(); i++) {
+
             Map<String, Object> map = maps.get(i);
             FirstMenu firstMenu = new FirstMenu();
             //设置FirstMenu的ID和值
@@ -61,6 +67,7 @@ public class NavServiceImpl implements NavService {
                     b2.put("SEC_MENU_CHINESE_NAME", map2.get("SEC_MENU_CHINESE_NAME"));
                     sec.add(b2);
                     maps.remove(map2);
+                    j--;
                     x++;
                 }
 
@@ -74,10 +81,6 @@ public class NavServiceImpl implements NavService {
         }
 
 
-       /* System.out.println(maps);
-
-
-        System.out.println(firstMenus);*/
 
         System.out.println(JSON.toJSONString(firstMenus));
         return firstMenus;

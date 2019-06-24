@@ -6,6 +6,8 @@ import io.zhangjia.mall.entity.User;
 import io.zhangjia.mall.utils.CommonDao;
 
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserDaoImpl extends CommonDao implements UserDao {
 
@@ -20,10 +22,10 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 	public int doInsert(User user) {
 		String sqlid = "SELECT seq_users.nextval id FROM dual";
 		int id =  query4IntData(sqlid);
-		String sql = "INSERT INTO users VALUES(?,?,?,?,sysdate,?,?,?,?,?,?,0,1)";
+		String sql = "INSERT INTO users VALUES(?,?,?,?,sysdate,?,?,?,?,?,'https://thirdqq.qlogo.cn/g?b=oidb&k=Wl7068SxFJxKNpfO943LXA&s=100',0,1)";
 		int i = executeUpdate(sql, id,user.getUserName(), user.getUserPassword(),user.getUserPayPassword(),
 				user.getUserTel(),user.getUserMail(),user.getUserName(),user.getUserGender(),
-				user.getUserBirthday(),user.getUserAvatar());
+				user.getUserBirthday()/*,user.getUserAvatar()*/);
 		if(i == 1) {
 			return  id;
 		} else {
@@ -41,6 +43,25 @@ public class UserDaoImpl extends CommonDao implements UserDao {
 		System.out.println("user1111 = " + user);
 		return executeUpdate(sql,user.getUserNick(),user.getUserGender(),user.getDate(),user.getUserTel()
 		,user.getUserMail(),user.getUserPassword(),user.getUserPayPassword(),user.getUserId());
+	}
+
+	@Override
+	public Map<String, Object> queryByPayPassword(Integer userId, String paypassword) {
+		Map<String, Object> result = new HashMap<>();
+		String sql = "SELECT USER_PAY_PASSWORD FROM USERS WHERE  USER_ID = ?";
+		String s = query4StringData(sql, userId);
+		if(s == null || "".equals(paypassword)) {
+			result.put("error","未设置密码");
+		} else {
+			String sql2 = "SELECT * FROM USERS WHERE  USER_ID = ? AND USER_PAY_PASSWORD = ?";
+			User user = query4Bean(sql2, User.class, userId, paypassword);
+			if(user == null){
+				result.put("error","支付密码不正确");
+			} else {
+				result.put("success","支付密码成功");
+			}
+		}
+		return result;
 	}
 
 	/**

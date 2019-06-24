@@ -852,7 +852,7 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
                 "      WHERE SKU_IS_DEL = 1\n" +
                 "      GROUP BY COMMODITY_ID) t2\n" +
                 "WHERE t1.COMMODITY_ID = t2.cid\n" +
-                "  AND t1.COMMODITY_IS_DEL = 1\n";
+                "  AND t1.COMMODITY_IS_DEL = 1 ORDER BY  t1.COMMODITY_CREATE_TIME DESC\n";
         List<Commodity> commodities = query4BeanList(sql, Commodity.class);
         queryCommodityImgs(commodities);
         return commodities;

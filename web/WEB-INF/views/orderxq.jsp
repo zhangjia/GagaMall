@@ -5,6 +5,11 @@
 <c:set var="order" value="${requestScope.order}"/>
 <!DOCTYPE html>
 <html>
+<style>
+	.orderList1 p{
+		margin-bottom: 20px;
+	}
+</style>
 	<head lang="en">
 		<meta charset="utf-8" />
 		<title>个人信息</title>
@@ -61,7 +66,7 @@
 							<c:forEach items="${order.COMMODITIES}" var="commodity" >
 							<div class="clearfix">
 								<a href="#" class="fl"><img class="spxqtsmall" src="${commodity.ORDER_DETAILS_COMMODITY_IMG}"/></a>
-								<p class="fl">
+								<p class="settlement-ellipsis-order-detail">
                                     <a href="#">${commodity.ORDER_DETAILS_COMMODITY_NAME}</a>
                                     <a href="#">¥${commodity.ORDER_DETAILS_COMMODITY_PRICE}×${commodity.ORDER_DETAILS_COMMODITY_COUNT} </a>
 
@@ -79,16 +84,16 @@
 							<p>收货地址：<span>${order.ADDRESS.ADDRESS_DETAIL}</span></p>
 						</div>
 						<div class="orderList1">
-							<h3>支付方式及送货时间</h3>
+							<h3>支付方式/备注</h3>
 							<p>支付方式：<span>${order.ORDER_PAY_TYPE}</span></p>
 							<p>备注：<span>${order.ORDER_NOTE}</span></p>
 						</div>
 						<div class="orderList1 hei">
 							<h3><strong>商品原价：</strong><span>${order.ORIGINALPRICE}</span></h3>
-							<p><strong>运费：</strong><span>¥${order.ORDER_FREIGHT_PRICE}</span></p>
-							<p><strong>优惠：</strong><span>¥${order.DISCOUNTPRICE}</span></p>
+							<p>运费：<span>¥${order.ORDER_FREIGHT_PRICE}</span></p>
+							<p>优惠：<span>¥${order.DISCOUNTPRICE}</span></p>
 
-							<p><strong>实付金额：</strong><span>¥${order.ORDERPRICE}</span></p>
+							<p>实付金额：<span>¥${order.ORDERPRICE}</span></p>
 						</div>
 
 					</div>

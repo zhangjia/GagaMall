@@ -77,7 +77,7 @@
 
 
                 <c:if test="${i.count <= 4}">
-                    <a href="proDetail.jsp">
+                    <a href="${path}/commodityDetail?commodityId=${com.commodityId}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -98,7 +98,7 @@
 
 
                 <c:if test="${i.count > 4 && i.count <=8}">
-                    <a href="proDetail.jsp">
+                    <a href="${path}/commodityDetail?commodityId=${com.commodityId}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
@@ -118,7 +118,7 @@
 
 
                 <c:if test="${i.count > 8 && i.count <= 12}">
-                    <a href="proDetail.jsp">
+                    <a href="${path}/commodityDetail?commodityId=${com.commodityId}">
                         <dl>
                             <dt>
                                 <span class="abl"></span>
