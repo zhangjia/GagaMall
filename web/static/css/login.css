@@ -4,16 +4,26 @@ html,body{
 	height:100%;
 }
 .reg{
-	width:100%;
-	height:100%;
-	background: url(../img/temp/20.jpg) no-repeat;
-	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
+	background-size: 500px;
+	background-repeat: no-repeat;
+	/* background-color: #ffff66; */
+	/* top: 200px; */
+	background-position: 300px;
+	background-position-y: -50px;
 }
-.login{
-	width:100%;
-	height:100%;
-	background: url(../img/temp/19.jpg) no-repeat;
-	background-size: 100% 100%;
+.login {
+	width: 100%;
+	height: 100%;
+	background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
+	background-size: 500px;
+	background-repeat: no-repeat;
+	/* background-color: #ffff66; */
+	/* top: 200px; */
+	background-position: 300px;
+	background-position-y: -50px;
 }
 .login img,.reg img{
 	width:auto;
@@ -41,7 +51,7 @@ html,body{
 	top:18%;
 	border:1px solid #dbdbdb;
 	width:440px;
-	height: 310px;
+	height: 340px;
 	border-radius:10px;
 	padding: 20px 0 ;
 	padding-right: 50px;

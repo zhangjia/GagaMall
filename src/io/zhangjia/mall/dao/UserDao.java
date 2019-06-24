@@ -3,6 +3,7 @@ package io.zhangjia.mall.dao;
 import io.zhangjia.mall.entity.User;
 
 import java.sql.Date;
+import java.util.Map;
 
 public interface UserDao {
 
@@ -30,4 +31,6 @@ public interface UserDao {
     int doInsert(User user);
 
     int updateUserInformation(User user);
+
+    Map<String,Object> queryByPayPassword(Integer userId,String paypassword);
 }

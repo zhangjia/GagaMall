@@ -6,9 +6,11 @@ import com.alibaba.fastjson.JSONObject;
 import io.zhangjia.mall.dao.CartDao;
 import io.zhangjia.mall.dao.CommodityDao;
 import io.zhangjia.mall.dao.SKUDao;
+import io.zhangjia.mall.dao.SiteSettingsDao;
 import io.zhangjia.mall.dao.impl.CartDaoImpl;
 import io.zhangjia.mall.dao.impl.CommodityDaoImpl;
 import io.zhangjia.mall.dao.impl.SKUDaoImpl;
+import io.zhangjia.mall.dao.impl.SiteSettingsDaoImpl;
 import io.zhangjia.mall.entity.Commodity;
 import io.zhangjia.mall.service.CommodityService;
 import org.omg.PortableInterceptor.INACTIVE;
@@ -21,12 +23,17 @@ public class CommodityServiceImpl implements CommodityService {
     private CommodityDao commodityDao = new CommodityDaoImpl();
     private CartDao cartDao = new CartDaoImpl();
     private SKUDao skuDao = new SKUDaoImpl();
+    private SiteSettingsDao siteSettingsDao = new SiteSettingsDaoImpl();
 
-    private int pageSize = 2;
+
+
+
 
     @Override
     public List<Commodity> getCommodities(String name, String page,
                                           String firstMenuId, String secMenuId, String orders) {
+        int pageSize = Integer.parseInt(siteSettingsDao.queryByKey("分页"));
+        System.out.println("pageSize = " + pageSize);
         int pages = 0;
         int order = 0;
 
@@ -64,6 +71,7 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public Integer getPagesCount(String firstMenuId, String secMenuId, String name) {
+        int pageSize = Integer.parseInt(siteSettingsDao.queryByKey("分页"));
         if (firstMenuId != null && (!"".equals(firstMenuId))) {
             double ceil = Math.ceil(commodityDao.queryCommodityCount(Integer.parseInt(firstMenuId), null, name) / (pageSize * 1.0));
             return (int) ceil;
@@ -88,7 +96,7 @@ public class CommodityServiceImpl implements CommodityService {
         return commodityDao.queryCommodity(firstMenuId);
     }
 
-    @Override
+
 //	public List<Map<String, Object>> getCommoditySPEC(String commodityId) {
 /*
 Map<String,List<String>> sku = null;
@@ -116,7 +124,7 @@ Map<String,List<String>> sku = null;
     }*/
 /**
  * 根据商品的ID，查询商品的属性
- * @param skuValue
+ * @param
  * @return
  */
 

@@ -107,7 +107,7 @@
 		<!-------------------login-------------------------->
 		<div class="login">
 			<form role="form" action="${path}/login" method="post">
-				<h1><a href="index.jsp"><img src="${path}/static/img/temp/logo.png"></a></h1>
+				<h2 style="margin:30px -5px 30px 30px;color:#1e9fff">用户登录</h2>
 
 				<c:if test="${param.uri != null}">
 					<input type="hidden" name="uri" value="${param.uri}">
@@ -125,9 +125,9 @@
 					</div>
 				</div>
 <%--				<input class="btn btn-primary btn-lg btn-block submit" type="submit"  value="登  录">--%>
-						<button class="layui-btn  layui-btn-warm jia-login" lay-submit lay-filter="formDemo" style="text-align: left">立即登录</button>
+						<button class="layui-btn  layui-btn-normal jia-login" lay-submit lay-filter="formDemo" style="text-align: left">立即登录</button>
 						<button type="reset" class="layui-btn  layui-btn-danger jia-login-reset">重置</button>
-				<p class="txt"><a class="" href="${path}/register">免费注册</a><a href="forget.html">忘记密码？</a></p>
+				<p style="margin-bottom: 20px" class="txt"><a class="" href="${path}/register">免费注册</a><a href="forget.html">忘记密码？</a></p>
 				</div>
 			</form>
 		</div>

@@ -28,4 +28,6 @@ public interface UserService {
 	User getUserInformation(String userName);
 
 	int editUserInformation(User user);
+
+	Map<String,Object> judgePayPassword(String userId,String payPassword);
 }

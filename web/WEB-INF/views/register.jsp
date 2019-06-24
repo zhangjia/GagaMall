@@ -344,8 +344,7 @@
     <form method="post">
 
 
-        <h1><a href="index.html"><img src="${path}/static/img/temp/logo.png"></a></h1>
-
+        <h2 style="margin:30px 25px 30px 30px;color:#1e9fff">用户注册</h2>
         <div class="form-group input-group">
 
             <div class="input-group-prepend">
