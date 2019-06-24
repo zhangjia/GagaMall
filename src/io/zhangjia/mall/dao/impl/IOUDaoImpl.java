@@ -11,4 +11,10 @@ public class IOUDaoImpl extends CommonDao implements IOUDao {
         String sql = "SELECT  * FROM IOU WHERE USER_ID = ?";
         return  query4Map(sql,userId);
     }
+
+    @Override
+    public int doUpdate(Integer userId, Double money) {
+        String sql = "UPDATE IOU SET IOU_USABLE_LIMIT = IOU_USABLE_LIMIT +  ? WHERE USER_ID = ?";
+        return executeUpdate(sql,money,userId);
+    }
 }

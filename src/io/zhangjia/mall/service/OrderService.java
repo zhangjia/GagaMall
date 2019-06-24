@@ -8,6 +8,8 @@ public interface OrderService {
 
     Map<String, Object> getOrder(String userId, String orderId);
 
-    boolean submit(String userId, String addressId, String logistics,
+//    boolean submit(String userId, String addressId, String logistics,
+//                   String orderPayType, String orderNote, String[] SKUIds);
+    int submit(String userId, String addressId, String logistics,
                    String orderPayType, String orderNote, String[] SKUIds);
 }

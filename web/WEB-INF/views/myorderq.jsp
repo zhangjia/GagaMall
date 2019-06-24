@@ -7,14 +7,41 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
+    <style>
+        /*编辑个人信息*/
+        .bj-order-pay{
+            width: 410px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -180px;
+            margin-left: -220px;
+            z-index: 30;
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            display: none;
+        }
+    </style>
     <title>最家</title>
+    <link rel="stylesheet" type="text/css" href="${path}/static/layui/css/layui.css"/>
+    <script src="${path}/static/layui/layui.js " type="text/javascript" charset="utf-8"></script>
     <jsp:include page="public-static-file.jsp"></jsp:include>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="${path}/static/css/myorder.css"/>
+
+    <script>
+     $(function () {
+
+     });
+
+    </script>
 </head>
 <body>
 <!------------------------------head------------------------------>
 <jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="order-pay.jsp"></jsp:include>
+
 <!------------------------------idea------------------------------>
 <div class="address mt">
     <div class="wrapper clearfix">
@@ -36,7 +63,7 @@
         <div class="you fl">
             <div class="my clearfix">
                 <h2 class="fl">我的订单</h2>
-                <a href="#" class="fl">请谨防钓鱼链接或诈骗电话，了解更多&gt;</a>
+<%--                <a href="#" class="fl">请谨防钓鱼链接或诈骗电话，了解更多&gt;</a>--%>
             </div>
             <div class="dlist clearfix">
                 <ul class="fl clearfix" id="wa">
@@ -57,7 +84,8 @@
                       <ul class="fl clearfix">
                           <li><fmt:formatDate value="${order.ORDER_TIME}" type="both" /></li>
                           <li>${order.ADDRESS.ADDRESS_NAME}</li>
-                          <li>订单号:${order.ORDER_ID}</li>
+                          <li class="order-num">订单号:<span>${order.ORDER_ID}</span></li>
+
                           <li>${order.ORDER_PAY_TYPE}</li>
                       </ul>
                       <p class="fr">订单金额：<span>${order.ORDERPRICE}</span>元</p>
@@ -74,16 +102,19 @@
                               <a href="#">¥${commodity.ORDER_DETAILS_COMMODITY_PRICE}×${commodity.ORDER_DETAILS_COMMODITY_COUNT}</a></p>
 
                           <p class="fr">
-                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 1}">
-                                  <a href="myprod.html">待发货</a>
+                              <c:if test="${order.ORDER_STATUS == 1}">
+                                  <a href="myprod.html1">待发货</a>
                               </c:if>
-                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 2}">
-                                  <a href="myprod.html">已发货</a>
+                              <c:if test="${order.ORDER_STATUS == 2}">
+                                  <a href="myprod.html2">已发货</a>
                               </c:if>
-                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 3}">
-                                  <a href="myprod.html">待评价</a>
+                              <c:if test="${order.ORDER_STATUS == 3}">
+                                  <a href="myprod.html3">待评价</a>
                               </c:if>
-                              <c:if test="${commodity.ORDER_DETAILS_STATUS == 5}">
+                              <c:if test="${order.ORDER_STATUS == 4}">
+                                      <a class ="jia-id-myorder-pay" href="javascript:;">待支付</a>
+                              </c:if>
+                              <c:if test="${order.ORDER_STATUS == 5}">
                                   <a href="myprod.html">已关闭</a>
                               </c:if>
                               <a href="${path}/orderDetails?orderId=${order.ORDER_ID}">订单详情</a>

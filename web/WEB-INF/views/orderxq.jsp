@@ -35,12 +35,13 @@
 				</div>
 				<div class="you fl">
 					<div class="my clearfix">
-						<h2>订单详情<a href="#">请谨防钓鱼链接或诈骗电话，了解更多&gt;</a></h2>
-						<h3>订单号：<span>${order.ORDER_ID}</span></h3>
+						<h2 style="margin-bottom: 10px ">订单详情<%--<a href="#">请谨防钓鱼链接或诈骗电话，了解更多&gt;</a>--%></h2>
+
 					</div>
 					<div class="orderList">
 						<div class="orderList1">
-
+							<div class="jia-h3">
+							<h3 style="margin-top: 20px ">订单号：<span>${order.ORDER_ID}</span></h3>
 							<c:if test="${order.ORDER_STATUS == 1}">
 								<h3>待发货</h3>
 							</c:if>
@@ -50,9 +51,13 @@
 							<c:if test="${order.ORDER_STATUS == 3}">
 								<h3>待评价</h3>
 							</c:if>
+							<c:if test="${order.ORDER_STATUS == 4}">
+								<h3>待支付</h3>
+							</c:if>
 							<c:if test="${order.ORDER_STATUS == 5}">
 								<h3>已关闭</h3>
 							</c:if>
+							</div>
 							<c:forEach items="${order.COMMODITIES}" var="commodity" >
 							<div class="clearfix">
 								<a href="#" class="fl"><img class="spxqtsmall" src="${commodity.ORDER_DETAILS_COMMODITY_IMG}"/></a>

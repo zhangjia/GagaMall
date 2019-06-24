@@ -16,5 +16,6 @@ public interface CartDao {
     List<Map<String,Object>> queryCommodities4Settlement(Integer userId,String[] CommoditySKUIds);
 
     Map<String,Object> queryTotal(Integer userId,String[] commoditySKUIds);
+    Map<String,Object> querylogistics(Integer userId,String[] commoditySKUIds);
 
 }

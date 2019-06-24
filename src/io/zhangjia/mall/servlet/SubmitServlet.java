@@ -26,10 +26,17 @@ public class SubmitServlet extends HttpServlet {
         System.out.println("submitSKUIds = " + SKUIds);
         String addressId = req.getParameter("addressId");
         System.out.println("addressIdsubmit = " + addressId);
-        boolean submit = orderService.submit(userId,addressId,"10","白条支付","备注",SKUIds);
+//         运费先默认0元,去service中根据价格判断
+        String note = req.getParameter("note");
+        System.out.println("note = " + note);
+        int submit = orderService.submit(userId,addressId,"0","未支付",note,SKUIds);
+        System.out.println("插入的订单记录ID是 = " + submit);
+//        向session中插入订单Id
+        session.setAttribute("orderId",submit);
+
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+submit+"}");
+        writer.println("{\"success\":"+(submit != 0)+"}");
         writer.close();
     }
 }

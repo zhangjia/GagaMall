@@ -1,6 +1,7 @@
 package io.zhangjia.mall.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.sun.xml.internal.bind.v2.TODO;
 import io.zhangjia.mall.dao.AddressDao;
 import io.zhangjia.mall.dao.CartDao;
 import io.zhangjia.mall.dao.OrderDao;
@@ -9,6 +10,7 @@ import io.zhangjia.mall.dao.impl.AddressDaoImpl;
 import io.zhangjia.mall.dao.impl.CartDaoImpl;
 import io.zhangjia.mall.dao.impl.OrderDaoImpl;
 import io.zhangjia.mall.dao.impl.SKUDaoImpl;
+import io.zhangjia.mall.service.CarService;
 import io.zhangjia.mall.service.OrderService;
 
 import java.math.BigDecimal;
@@ -22,6 +24,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao = new OrderDaoImpl();
     private CartDao cartDao = new CartDaoImpl();
     private SKUDao skuDao = new SKUDaoImpl();
+
+    private CarService carService = new CartServiceImpl();
 
     @Override
     public List<Map<String, Object>> getOrders(String userId) {
@@ -69,21 +73,29 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean submit(String userId, String addressId, String logistics,
+    public int submit(String userId, String addressId, String logistics,
                           String orderPayType, String orderNote, String[] SKUIds) {
         int result = 1;
         if(userId != null && !"".equals(userId) &&
                 addressId != null && !"".equals(addressId)) {
+//            判断运费
+            Map<String, Object> total = carService.getTotal(userId, SKUIds);
+            System.out.println("判断运费 = " + total);
+            int logistic =  (((BigDecimal)total.get("SUM_COMMODITY_PRESENT_PRICE")).doubleValue() >= 1000) ?0: 10;
+
             //        1.向订单表插入数据
 
             Map<String, Object> param = new HashMap<>();
             param.put("userId", userId);
             param.put("addressId", addressId);
-            param.put("orderLogistics", 10);
-            param.put("orderFreightPrice", logistics);
-            param.put("orderPayType", orderNote);
+//            param.put("orderLogistics", 10);
+//            TODO：订单物流
+            param.put("orderLogistics", "未支付");
+            param.put("orderFreightPrice", logistic);
+            param.put("orderPayType", "未支付");
             param.put("orderNote", orderNote);
             int orderId = orderDao.doInsert(param);
+
             result *= orderId;
             System.out.println("result0 = " + result);
 //        2.  向订单明细表插入数据
@@ -91,13 +103,14 @@ public class OrderServiceImpl implements OrderService {
             List<String> SKUIDs = new ArrayList<>();
             for (Map<String, Object> map : maps) {
                 map.put("ORDER_ID", orderId);
-                map.put("ORdER_DETAILS_DISCOUNT_PRICE", 2);
+//            TODO：订单优惠金额，留着做优惠券和京豆使用
+                map.put("ORdER_DETAILS_DISCOUNT_PRICE", 10);
                 result *= orderDao.doInsert4Detail(map);
                 System.out.println("result1 = " + result);
                 SKUIDs.add(((BigDecimal) map.get("SKU_ID")).intValue() + "");
 
 
-
+//                4. 更改库存和销量
                 result *= skuDao.updateInventoryAndSales(Integer.parseInt("" + map.get("SKU_ID")),
                         Integer.parseInt("" + map.get("COMMODITY_COUNT")));
                 System.out.println("result3 = " + result);
@@ -105,12 +118,16 @@ public class OrderServiceImpl implements OrderService {
 //        3. 删除购物车中的商品
             System.out.println("orderserviceSKUIDs = " + SKUIDs);
             result *= cartDao.doDelete(Integer.parseInt(userId), SKUIDs);
-//        4. 更改库存和销量
-            return   result  != 0;
+//       如果插入成功，将id返回
+           if(result  != 0){
+               return orderId;
+           } else {
+               return  0;
+           }
 
         } else {
 
-            return false;
+            return 0;
         }
     }
 }

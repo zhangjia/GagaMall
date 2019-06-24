@@ -119,10 +119,11 @@
 
                                 location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
                             } else {
-                                console.log(res);
+
                                 if (res.success === true) {
                                     layer.alert("添加成功")
                                 } else {
+                                    alert(res)
                                     layer.alert(res.error)
                                 }
                             }

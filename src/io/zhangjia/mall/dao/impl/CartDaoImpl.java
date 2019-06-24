@@ -151,19 +151,56 @@ public class CartDaoImpl extends CommonDao implements CartDao {
      */
     @Override
     public Map<String, Object> queryTotal(Integer userId, String[] CommoditySKUIds) {
-        StringBuffer sql =  new StringBuffer("SELECT SUM(CART.COMMODITY_COUNT) sum_commodity_count,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) sum_commodity_present_price,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) sum_commodity_pay_price FROM  SKU,CART WHERE  SKU.SKU_ID = CART.SKU_ID AND  CART_IS_DEL != 5 AND CART_IS_DEL != 0 AND USER_ID = ? AND CART.SKU_ID IN(") ;
-        Object[] param = new Object[CommoditySKUIds.length + 1];
-        param[0] = userId;
-        for (int i = 0; i < CommoditySKUIds.length; i++) {
+        StringBuffer sql =  new StringBuffer("SELECT SUM(CART.COMMODITY_COUNT) sum_commodity_count,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) sum_commodity_present_price,SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE)+? sum_commodity_pay_price FROM  SKU,CART WHERE  SKU.SKU_ID = CART.SKU_ID AND  CART_IS_DEL != 5 AND CART_IS_DEL != 0 AND USER_ID = ? AND CART.SKU_ID IN(") ;
+
+        Object[] param = new Object[CommoditySKUIds.length + 2];
+        param[0] = querylogistics(userId,CommoditySKUIds).get("LOGISTIC");
+        System.out.println("param[0] = " + param[0]);
+        param[1] = userId;
+        for (int i = 2; i < CommoditySKUIds.length+2; i++) {
             sql.append("?,");
-            param[i+1] = CommoditySKUIds[i];
+            param[i] = CommoditySKUIds[i-2];
 
         }
         sql.deleteCharAt(sql.length()-1);
         sql.append(")");
         Map<String, Object> map = query4Map(sql.toString(), param);
         System.out.println(sql);
-        System.out.println("map = " + map);
+        System.out.println("map2 = " + map);
+        return  map;
+    }
+
+    @Override
+    public Map<String, Object> querylogistics(Integer userId, String[] commoditySKUIds) {
+        StringBuffer sql =  new StringBuffer(
+                "select TO_NUMBER(case\n" +
+                        "                     when SUM(CART.COMMODITY_COUNT * SKU_PRESENT_PRICE) < 1000\n" +
+                        "                         then\n" +
+                        "                         '10'\n" +
+                        "                     else\n" +
+                        "                         '0'\n" +
+                        "    end) logistic\n" +
+                        "from SKU,\n" +
+                        "     CART\n" +
+                        "WHERE SKU.SKU_ID = CART.SKU_ID\n" +
+                        "  AND CART_IS_DEL != 5\n" +
+                        "  AND CART_IS_DEL != 0\n" +
+                        "  AND USER_ID = ?\n" +
+                        "  AND CART.SKU_ID IN ("
+        ) ;
+
+        Object[] param = new Object[commoditySKUIds.length + 1];
+        param[0] = userId;
+        for (int i = 0; i < commoditySKUIds.length; i++) {
+            sql.append("?,");
+            param[i+1] = commoditySKUIds[i];
+
+        }
+        sql.deleteCharAt(sql.length()-1);
+        sql.append(")");
+        Map<String, Object> map = query4Map(sql.toString(), param);
+        System.out.println(sql);
+        System.out.println("mapyunfei = " + map);
         return  map;
     }
 

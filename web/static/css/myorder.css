@@ -518,3 +518,7 @@
 .sku-value{
 	display: block;
 }
+.jia-h3 h3{
+	display: inline-block;
+	margin-right: 50px;
+}

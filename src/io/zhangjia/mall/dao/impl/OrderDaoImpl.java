@@ -15,7 +15,7 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
      */
     @Override
     public List<Map<String, Object>> queryByUserId(Integer userId) {
-        String sql = "SELECT * FROM ORDERS WHERE USER_ID = ? AND ORDER_STATUS != 0";
+        String sql = "SELECT * FROM ORDERS WHERE USER_ID = ? AND ORDER_STATUS != 0  ORDER BY ORDER_TIME DESC ";
         return query4MapList(sql,userId);
     }
 
@@ -92,7 +92,8 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
         String sqlid = "SELECT seq_commodity.nextval id FROM dual";
         int id =  query4IntData(sqlid);
         System.out.println("id = " + id);
-        String sql = "INSERT INTO orders VALUES(?,?,?,sysdate,?,?,?,?,1)";
+//        默认是待支付
+        String sql = "INSERT INTO orders VALUES(?,?,?,sysdate,?,?,?,?,4)";
         int i = executeUpdate(sql, id, param.get("userId"), param.get("addressId"), param.get("orderLogistics")
                 , param.get("orderFreightPrice"), param.get("orderPayType"), param.get("orderNote"));
         System.out.println("i = " + i);
@@ -120,5 +121,13 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
                 param.get("orderDetailsCommodityName"),param.get("orderDetailsSKUValue"),
                 param.get("orderDetailsCommodityImg"),param.get("orderDetailsCommodityPrice"),
                 param.get("orderDetailsDiscountsPrice"),param.get("orderDetailsCommodityCount"));*/
+    }
+
+    @Override
+    public int doUpdateByPay(String payType ,Integer userId, Integer orderId) {
+        String sql = "UPDATE ORDERS\n" +
+                "SET ORDER_PAY_TYPE = ?,ORDER_STATUS = 1,ORDER_LOGISTICS='未发货'\n" +
+                "WHERE USER_ID = ? AND ORDER_ID  = ?\n";
+        return executeUpdate(sql,payType,userId,orderId);
     }
 }
