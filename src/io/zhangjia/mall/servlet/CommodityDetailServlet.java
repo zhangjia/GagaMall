@@ -18,6 +18,7 @@ import java.util.Map;
 @WebServlet("/commodityDetail")
 public class CommodityDetailServlet extends HttpServlet {
     private CommodityService commodityService = new CommodityServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String commodityId = req.getParameter("commodityId");
@@ -27,9 +28,10 @@ public class CommodityDetailServlet extends HttpServlet {
 
         req.setAttribute("SPEC", JSON.parseObject(SPEC));
         System.out.println("SPEC" + JSON.parseObject(SPEC));
-        req.setAttribute("commodity",commodity);
-        req.getRequestDispatcher("/WEB-INF/views/proDetail.jsp").forward(req,resp);
+        req.setAttribute("commodity", commodity);
+        req.getRequestDispatcher("/WEB-INF/views/proDetail.jsp").forward(req, resp);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String json = req.getParameter("SPEC");

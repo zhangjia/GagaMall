@@ -4,7 +4,10 @@ import java.util.Map;
 
 public interface WalletService {
     int addWallet(String userId);
-    Map<String,Object> getUserWallet(String userId);
-    int recharge(String userId,String money);
-    Map<String,Object> orderPayByBalance(String userId,String money,String orderId);
+
+    Map<String, Object> getUserWallet(String userId);
+
+    int recharge(String userId, String money);
+
+    Map<String, Object> orderPayByBalance(String userId, String money, String orderId);
 }

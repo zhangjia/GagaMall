@@ -5,6 +5,7 @@
     border: 1px solid #317df4;
 
 }
+
 .btn-allocate {
     padding: 5px 15px;
     margin-bottom: 10px;
@@ -13,21 +14,24 @@
     display: inline-block;
     border: 1px solid black;
 }
+
 dt.sku-key {
     text-align: left;
     float: left;
     width: 66px;
     padding-top: 5px;
 }
+
 p.inventorys {
     float: left;
     margin-right: 100px;
     width: 200px;
 }
 
-.commodityCount p span{
-   color:red;
+.commodityCount p span {
+    color: red;
 }
+
 .add-cart {
     border: 1px solid #000;
     width: 170px;
@@ -37,7 +41,8 @@ p.inventorys {
     cursor: pointer;
     float: right;
 }
-.jia-commodity-detail-num{
+
+.jia-commodity-detail-num {
     width: 30px;
     /*float: left;*/
     padding-left: 5px;
@@ -49,6 +54,7 @@ p.inventorys {
 .jia-commodity-detail-num::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 .jia-commodity-detail-num[type="number"] {
     -moz-appearance: textfield;
 }

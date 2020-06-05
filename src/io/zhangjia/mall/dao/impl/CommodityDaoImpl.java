@@ -811,12 +811,12 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
     @Override
     public int doCommodityInsert(Commodity commodity) {
         String sqlid = "SELECT seq_commodity.nextval id FROM dual";
-        int id =  query4IntData(sqlid);
+        int id = query4IntData(sqlid);
         System.out.println("id = " + id);
         String sql = "INSERT INTO commodity VALUES(?,?,?,sysdate,sysdate,100,?,?,1)";
-        int i = executeUpdate(sql,id, commodity.getCommodityName(), commodity.getCommodityAttributes(),
+        int i = executeUpdate(sql, id, commodity.getCommodityName(), commodity.getCommodityAttributes(),
                 commodity.getFirstMenuId(), commodity.getSecMenuId());
-        if(i == 1) {
+        if (i == 1) {
             return id;
         } else {
             return 0;
@@ -828,8 +828,8 @@ public class CommodityDaoImpl extends CommonDao implements CommodityDao {
     public int doSKUInsert(List<Map<String, Object>> lists) {
         int i = 1;
         for (Map<String, Object> list : lists) {
-			String sql = "INSERT INTO sku VALUES(seq_sku.nextval,1,?,0,0,?,?,0,sysdate,sysdate,1)";
-			i *= executeUpdate(sql);
+            String sql = "INSERT INTO sku VALUES(seq_sku.nextval,1,?,0,0,?,?,0,sysdate,sysdate,1)";
+            i *= executeUpdate(sql);
         }
 
         return -1;

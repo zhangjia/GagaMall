@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("进入了doPost");
 
-        Map<String,Object> json = new HashMap<>();
+        Map<String, Object> json = new HashMap<>();
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
         System.out.println("action = " + req.getParameter("action"));
@@ -38,14 +38,14 @@ public class RegisterServlet extends HttpServlet {
         String username = req.getParameter(req.getParameter("action"));
 //        判断是不是手机注册
         user.setUserName(username);
-        if(req.getParameter("action").equals("userTel")){
+        if (req.getParameter("action").equals("userTel")) {
             System.out.println("\"是手机号登录\" = " + "是手机号登录");
 //            判断输入的验证码是否正确
             int phoneCode = phoneService.isPhoneCodeRight(req.getParameter("codes"), req.getSession());
-            if(phoneCode == 0) {
+            if (phoneCode == 0) {
                 System.out.println("\"不正确\" = " + "是手机号登录");
-                json.put("result",false);
-                json.put("error","验证码不正确");
+                json.put("result", false);
+                json.put("error", "验证码不正确");
                 writer.println(JSON.toJSONString(json));
                 writer.close();
                 return;
@@ -55,14 +55,14 @@ public class RegisterServlet extends HttpServlet {
         }
 
 //        判断是不是邮箱注册
-        if(req.getParameter("action").equals("userEmail")){
+        if (req.getParameter("action").equals("userEmail")) {
             System.out.println("\"是Email登录\" = " + "是Email登录");
             //            判断输入的验证码是否正确
             int emailCodes = mailCodeService.isMailCodeRight(req.getParameter("codes"), req.getSession());
-            if(emailCodes == 0) {
+            if (emailCodes == 0) {
                 System.out.println("\"不正确\" = " + "是Email录");
-                json.put("result",false);
-                json.put("error","验证码不正确");
+                json.put("result", false);
+                json.put("error", "验证码不正确");
                 writer.println(JSON.toJSONString(json));
                 writer.close();
                 return;
@@ -79,18 +79,18 @@ public class RegisterServlet extends HttpServlet {
         Map<String, Object> map = userService.register(user);
         System.out.println("验证");
         /*如果注册成功*/
-        if(map.containsKey("user")){
+        if (map.containsKey("user")) {
 
-            req.getSession().setAttribute("user",map.get("user"));
-            json.put("result",true);
+            req.getSession().setAttribute("user", map.get("user"));
+            json.put("result", true);
 
-            if(uri != null){
-                json.put("uri",uri);
+            if (uri != null) {
+                json.put("uri", uri);
             }
-        }else{
+        } else {
             Object error = map.get("error");
-            json.put("result",false);
-            json.put("error",error);
+            json.put("result", false);
+            json.put("error", error);
         }
 
         writer.println(JSON.toJSONString(json));
@@ -100,7 +100,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(req, resp);
 //        req.getRequestDispatcher("/WEB-INF/views/zhangjia.jsp").forward(req,resp);
     }
 

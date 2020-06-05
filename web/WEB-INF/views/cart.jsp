@@ -94,7 +94,7 @@
                         zg();
                         jisuan();
                     }
-                //    如果是取消勾选
+                    //    如果是取消勾选
                 } else {
                     //如果取消勾选的是全选按钮
                     if (sc) {
@@ -235,7 +235,7 @@
                     data: {
                         SKUId: SKUId,
                         action: action,
-                        count:1
+                        count: 1
                     },
                     success: function (res) {
                         if (res.isLogin === false) {
@@ -259,13 +259,12 @@
                         }
 
 
-
                     }
                 });
             });
 
 
-           $(".cart-sub").click(function () {
+            $(".cart-sub").click(function () {
                 var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
                 var action = "sub";
                 var thiss = $(this);
@@ -275,7 +274,7 @@
                     data: {
                         SKUId: SKUId,
                         action: action,
-                        count:1
+                        count: 1
                     },
                     success: function (res) {
                         if (res.isLogin === false) {
@@ -306,50 +305,7 @@
 
 
             $(".cart-num").each(function () {
-               $(this).blur(function () {
-                   var count = $(this).val();
-                   var thiss = $(this);
-                   var action = 'input';
-                   var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
-                   $.ajax({
-                       url: "${path}/updateCount",
-                       type: "get",
-                       data: {
-                           SKUId: SKUId,
-                           action: action,
-                           count:count,
-                       },
-                       success: function (res) {
-                           if (res.isLogin === false) {
-
-                               location = "${path}/login?uri=${path}/cart";
-                           } else {
-                               if (res.success) {
-                                   var nowCartCount = $(thiss).val();
-                                   console.log(nowCartCount)
-                                   // $(thiss).siblings("input").val(++nowCartCount);
-                                   console.log()
-                                   var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
-
-                                   var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
-                                   $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
-                                   jisuan();
-
-                               } else {
-                                   layer.msg(res.error)
-                                   $(thiss).val(res.skuInventory);
-                               }
-                           }
-
-
-
-                       }
-                   });
-               });
-            });
-            //------------------------------------------------------------------------------------------------------------
-            $(".cart-num").each(function () {
-
+                $(this).blur(function () {
                     var count = $(this).val();
                     var thiss = $(this);
                     var action = 'input';
@@ -360,7 +316,7 @@
                         data: {
                             SKUId: SKUId,
                             action: action,
-                            count:count,
+                            count: count,
                         },
                         success: function (res) {
                             if (res.isLogin === false) {
@@ -379,19 +335,60 @@
                                     jisuan();
 
                                 } else {
-
-                                    layer.tips('超出库存，已经为您更改为最大库存', thiss, {
-                                        tips: [1, '#3595CC'],
-                                        time: 1500
-                                    });
+                                    layer.msg(res.error)
                                     $(thiss).val(res.skuInventory);
                                 }
                             }
 
 
-
                         }
                     });
+                });
+            });
+            //------------------------------------------------------------------------------------------------------------
+            $(".cart-num").each(function () {
+
+                var count = $(this).val();
+                var thiss = $(this);
+                var action = 'input';
+                var SKUId = $(this).parent().parent().parent().children(":first").children(".fl").children("input").val();
+                $.ajax({
+                    url: "${path}/updateCount",
+                    type: "get",
+                    data: {
+                        SKUId: SKUId,
+                        action: action,
+                        count: count,
+                    },
+                    success: function (res) {
+                        if (res.isLogin === false) {
+
+                            location = "${path}/login?uri=${path}/cart";
+                        } else {
+                            if (res.success) {
+                                var nowCartCount = $(thiss).val();
+                                console.log(nowCartCount)
+                                // $(thiss).siblings("input").val(++nowCartCount);
+                                console.log()
+                                var price = $(thiss).parent().parent().siblings(".cart-price").children("span").text();
+
+                                var allPrice = floatObj.multiply(parseFloat(price), nowCartCount);
+                                $(thiss).parent().parent().siblings(".sAll").children("span").text(allPrice);
+                                jisuan();
+
+                            } else {
+
+                                layer.tips('超出库存，已经为您更改为最大库存', thiss, {
+                                    tips: [1, '#3595CC'],
+                                    time: 1500
+                                });
+                                $(thiss).val(res.skuInventory);
+                            }
+                        }
+
+
+                    }
+                });
 
             });
 
@@ -506,18 +503,18 @@
             /*-------------------------------------------------结束-------------------------------------------------*/
             /*-------------------------------------------------结算开始-------------------------------------------------*/
             $(".count").click(function () {
-               var checkedCount =  $(":checkbox[class='cart-sku-id']:checked").length;
-               var checkedCommoditySKU = $(":checkbox[class='cart-sku-id']:checked");
-               var url= "${path}/settlement?"
-               if(checkedCount === 0){
-                   layer.msg("请选择商品")
-               } else {
-                   checkedCommoditySKU.each(function () {
-                       url+="SKUIds=" + this.value + "&";
-                   });
-                   console.log(url);
-                   location=url;
-               }
+                var checkedCount = $(":checkbox[class='cart-sku-id']:checked").length;
+                var checkedCommoditySKU = $(":checkbox[class='cart-sku-id']:checked");
+                var url = "${path}/settlement?"
+                if (checkedCount === 0) {
+                    layer.msg("请选择商品")
+                } else {
+                    checkedCommoditySKU.each(function () {
+                        url += "SKUIds=" + this.value + "&";
+                    });
+                    console.log(url);
+                    location = url;
+                }
 
             });
             /*-------------------------------------------------结算结束-------------------------------------------------*/
@@ -584,7 +581,9 @@
                             </button>
 
                             <input type="number" value="${commodity.COMMODITY_COUNT}" autocomplete="off"
-                                   class="cart-num" style="text-align:center" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/>
+                                   class="cart-num" style="text-align:center"
+                                   onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                                   onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/>
                             <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
                                 <i class="layui-icon">&#xe602;</i>
                             </button>

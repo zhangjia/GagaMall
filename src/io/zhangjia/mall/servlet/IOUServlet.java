@@ -18,16 +18,17 @@ import java.util.Map;
 @WebServlet("/iou")
 public class IOUServlet extends HttpServlet {
     private IOUService iouService = new IOUServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         Map<String, Object> stringObjectMap = iouService.queryUserIOU(user.getUserId() + "");
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        if(stringObjectMap != null){
-            stringObjectMap.put("success",true);
-        writer.println(JSON.toJSONString(stringObjectMap));
+        if (stringObjectMap != null) {
+            stringObjectMap.put("success", true);
+            writer.println(JSON.toJSONString(stringObjectMap));
         }
 
         System.out.println(JSON.toJSONString(stringObjectMap));

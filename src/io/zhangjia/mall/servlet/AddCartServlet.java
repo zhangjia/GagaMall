@@ -22,10 +22,11 @@ import java.util.Map;
 public class AddCartServlet extends HttpServlet {
     private CarService carService = new CartServiceImpl();
     private CommodityService commodityService = new CommodityServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         //先根据json字符串判断是哪个sku表中的商品，并获取该商品的ID
         List<Map<String, Object>> sku = commodityService.getCommoditySKU(req.getParameter("SKU"));
         System.out.println("sku " + sku + "---" + sku.getClass());
@@ -42,13 +43,13 @@ public class AddCartServlet extends HttpServlet {
         }*/
 //        writer.println("{\"success\":"+b+"}");
         /*思路整理
-        * 1.当登录的时候，直接访问http://localhost:8888/ga/addCart?SKUId=3&commodityCount=10
-        * 直接访问，被filter拦截，不是ajax，所以直接被放行，进入该Servlet，输出false
-        *
-        * 当未登录的时候，直接访问http://localhost:8888/ga/addCart?SKUId=3&commodityCount=10
-        *被filter重定向到http://localhost:8888/ga/login?uri=/ga/addCart?SKUId=3&commodityCount=10
-        * 登录后，回到1
-        * */
+         * 1.当登录的时候，直接访问http://localhost:8888/ga/addCart?SKUId=3&commodityCount=10
+         * 直接访问，被filter拦截，不是ajax，所以直接被放行，进入该Servlet，输出false
+         *
+         * 当未登录的时候，直接访问http://localhost:8888/ga/addCart?SKUId=3&commodityCount=10
+         *被filter重定向到http://localhost:8888/ga/login?uri=/ga/addCart?SKUId=3&commodityCount=10
+         * 登录后，回到1
+         * */
 //        writer.println("{\"error\":"+b+"}");
 
 
@@ -58,7 +59,6 @@ public class AddCartServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println(JSON.toJSONString(map));
         writer.close();
-
 
 
 //        writer.close();

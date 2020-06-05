@@ -19,16 +19,17 @@ import java.util.Map;
 
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
-//    private NavService navService = new NavServiceImpl();
-private CommodityService commodityService = new CommodityServiceImpl();
+    //    private NavService navService = new NavServiceImpl();
+    private CommodityService commodityService = new CommodityServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<Commodity> commodities4Index = commodityService.getCommodities4Index();
 //        req.getRequestDispatcher("proList.jsp").forward(req,resp);
-        req.setAttribute("commodities4Index",commodities4Index);
+        req.setAttribute("commodities4Index", commodities4Index);
         System.out.println("commodities4Index = " + JSON.toJSONString(commodities4Index));
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
 }

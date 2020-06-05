@@ -14,13 +14,14 @@ import java.io.PrintWriter;
 @WebServlet("/add")
 public class InsertImgServlet extends HttpServlet {
     InsertImg i = new InsertImg();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getParameter("url");
         int cid = Integer.parseInt(req.getParameter("cid"));
         int order = Integer.parseInt(req.getParameter("order"));
         int i = 0;
-        if(req.getParameter("img").equals("spt")) {
+        if (req.getParameter("img").equals("spt")) {
             System.out.println("商品图");
 
             i = this.i.insertCommodityImg(url, cid, order);

@@ -17,14 +17,15 @@ import java.io.PrintWriter;
 @WebServlet("/editUserInformation")
 public class EditUserInformationServlet extends HttpServlet {
     private UserService userService = new UserServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         System.out.println("user3333 = " + user);
         String nickname = req.getParameter("nickname");
         user.setUserNick(nickname);
-        String gender =  req.getParameter("gender");
+        String gender = req.getParameter("gender");
         user.setUserGender(gender);
         String date = req.getParameter("birthday");
         user.setDate(date);
@@ -38,14 +39,14 @@ public class EditUserInformationServlet extends HttpServlet {
 //        user.setUserPayPassword(paypassword);
         int i = userService.editUserInformation(user);
 //        更新session信息
-       if(i == 1){
-           req.getSession().setAttribute("user",userService.getUserInformation(user.getUserName()));
-       }
+        if (i == 1) {
+            req.getSession().setAttribute("user", userService.getUserInformation(user.getUserName()));
+        }
         System.out.println("iiii = " + i);
         System.out.println("user2222 = " + user);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+(i==1)+"}");
+        writer.println("{\"success\":" + (i == 1) + "}");
         writer.close();
     }
 }

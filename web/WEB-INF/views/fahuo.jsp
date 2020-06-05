@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <style>
-    .bj-order-pay{
+    .bj-order-pay {
         width: 410px;
         position: fixed;
         top: 50%;
@@ -16,13 +16,14 @@
         padding: 15px;
         display: none;
     }
-    .mask-order-pay{
+
+    .mask-order-pay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         z-index: 20;
         display: none;
     }
@@ -40,13 +41,15 @@
         <div class="layui-form-item">
             <label class="layui-form-label">订单ID：</label>
             <div class="layui-input-inline">
-                <input style="margin-left: 10px;    width: 200px;" type="text" name="orderId" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                <input style="margin-left: 10px;    width: 200px;" type="text" name="orderId" required
+                       lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">物流编号：</label>
             <div class="layui-input-inline">
-                <input style="margin-left: 10px;    width: 200px;" type="text" name="logistics" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                <input style="margin-left: 10px;    width: 200px;" type="text" name="logistics" required
+                       lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -63,7 +66,7 @@
 
         $(function () {
             $(".jia-id-myorder-pay").click(function () {
-                var orderId =  $(this).parent().parent().siblings(".word.clearfix").children("ul").children(".order-num").children("span").text();
+                var orderId = $(this).parent().parent().siblings(".word.clearfix").children("ul").children(".order-num").children("span").text();
                 $("input[name='orderId']").val(orderId);
                 $(".bj-order-pay").show();
                 $(".mask-order-pay").show();
@@ -100,14 +103,14 @@
                     type: "get",
                     data: {
 
-                        orderId:data.field.orderId,
+                        orderId: data.field.orderId,
 
-                        logistics:data.field.logistics,
+                        logistics: data.field.logistics,
 
                     },
                     success: function (res) {
 
-                        if(res.success === true) {
+                        if (res.success === true) {
                             layer.msg("发货成功");
                             location.reload();
                         }

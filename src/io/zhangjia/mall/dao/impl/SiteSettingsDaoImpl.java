@@ -8,7 +8,7 @@ public class SiteSettingsDaoImpl extends CommonDao implements SiteSettingsDao {
     @Override
     public String queryByKey(String key) {
         String sql = "SELECT SITE_SITE_SETTINGS_VALUE VALUE FROM SITE_SETTINGS WHERE SITE_SETTINGS_OPTION=?";
-        return query4StringData(sql,key);
+        return query4StringData(sql, key);
     }
 
     @Override
@@ -17,6 +17,6 @@ public class SiteSettingsDaoImpl extends CommonDao implements SiteSettingsDao {
                 "SET SITE_SITE_SETTINGS_VALUE = ?\n" +
                 "\n" +
                 "WHERE SITE_SETTINGS_OPTION = ?";
-        return executeUpdate(sql,value,key);
+        return executeUpdate(sql, value, key);
     }
 }

@@ -22,17 +22,17 @@
         </div>
         <div class="form-group">
             <label for="cid">商品ID:</label>
-            <input type="text" class="form-control" id="cid" name = "cid" placeholder="cid">
+            <input type="text" class="form-control" id="cid" name="cid" placeholder="cid">
         </div>
         <div class="form-group">
             <label for="order">图片顺序:</label>
-            <input type="text" class="form-control" id="order" name = "order" placeholder="order">
+            <input type="text" class="form-control" id="order" name="order" placeholder="order">
         </div>
 
-        <input type="radio" name="img"  value="spt"/> 商品图
-        <input type="radio" name="img"  value="spxqt"/> 商品详情图
+        <input type="radio" name="img" value="spt"/> 商品图
+        <input type="radio" name="img" value="spxqt"/> 商品详情图
 
-        <br />
+        <br/>
         <button type="submit" class="btn btn-primary">添加</button>
     </form>
 </div>

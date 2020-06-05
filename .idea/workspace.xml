@@ -6,19 +6,173 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="528fa89f-9d1d-4918-82cc-cd10cbb2bddc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/static/img/tx.jpg" afterDir="false" />
+    <list default="true" id="528fa89f-9d1d-4918-82cc-cd10cbb2bddc" name="Default Changelist" comment="用户注册">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/api/mailcode/MailCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/api/mailcode/MailCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/api/oss/OSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/api/oss/OSS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/api/verificationCode/VerificationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/api/verificationCode/VerificationCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AddressDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AttributeKeyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AttributeKeyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AttributeValueDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/AttributeValueDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CartDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/CommodityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/FirstMenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/FirstMenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/IOUDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/IOUDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/ImgDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/ImgDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/SKUDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/SKUDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/SiteSettingsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/SiteSettingsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/WalletDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/WalletDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AddressDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AddressDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AttributeKeyDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AttributeKeyDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AttributeValueDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/AttributeValueDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CartDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/FirstMenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/FirstMenuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/IOUDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/IOUDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/ImgDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/ImgDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/OrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SKUDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SKUDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SiteSettingsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SiteSettingsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/WalletDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/WalletDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/Commodity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/FirstMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/SKU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/SKU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/ALoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/ALoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/BAddressFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/BAddressFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/CharacterEncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImgServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/insert/InsertImgServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/AddCommodityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/AddCommodityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/CommodityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/DeliverGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/DeliverGoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/IOUService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/IOUService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/MailCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/MailCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/PhoneCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/PhoneCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/SiteSettingsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/SiteSettingsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/WalletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/AddCommodityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/AddCommodityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/DeliverGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/DeliverGoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/IOUServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/IOUServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/MailCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/MailCodeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/PhoneCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/PhoneCodeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/SiteSettingsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/SiteSettingsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/WalletServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/WalletServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddAddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddAddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddCommodityServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddCommodityServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddressdServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/AddressdServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/BackStageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/BackStageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CommodityDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/CommodityDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeleteAddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeleteAddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeleteCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeleteCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeliverGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeliverGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserInformationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserInformationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserPasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserPasswordServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserPayPasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/EditUserPayPasswordServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IOUServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IOUServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/MyOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/MyOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/OrderDetailsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/OrderDetailsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PayServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PersonalInformationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PersonalInformationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PersonalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PersonalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RechargeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RechargeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SaveOrUpdateCommodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SaveOrUpdateCommodity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetDefaultAddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetDefaultAddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetPageSizeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetPageSizeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SettlementServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SettlementServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SubmitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SubmitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/UpdateCount2CommodityDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/UpdateCount2CommodityDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/UpdateCountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/UpdateCountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/WalletServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/WalletServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getAddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getAddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getEmailCodeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getEmailCodeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getPhoneCodeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getPhoneCodeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getUserAddressServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/getUserAddressServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/CommonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/HttpFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/HttpFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/zhangjia/mall/utils/JDBCUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/TS/flowerDer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/TS/flowerDer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/TS/jquery.flexslider-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/TS/jquery.flexslider-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/TS/paint.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/TS/paint.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/mygxin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/mygxin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/address-manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/address-manage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/back-stage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/back-stage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/fahuo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fahuo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/idea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/idea.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/login2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/login2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/mygrxx.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/mygrxx.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/myorderq.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/myorderq.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/order-pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/order-pay.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/orderxq.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/orderxq.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/pay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/pay.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/personal-left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/personal-left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/register2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/register2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/right-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/right-sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/settlement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/settlement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/sou-commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/sou-commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/views/wallet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/views/wallet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/insert.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/address/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/address/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/address/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/address/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/address/js/city-picker.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/address/js/city-picker.data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/address/js/city-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/address/js/city-picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/address/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/address/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/forget.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/forget.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/idea.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/idea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/mygrxx.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/mygrxx.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/mygxin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/mygxin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/myorder.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/myorder.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/pro-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/pro-detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/css/proList.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/proList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/css/sou-commodity.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/sou-commodity.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/aliossUploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/aliossUploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/pro.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/pro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/layui/font/iconfont.svg" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,14 +218,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="GAGAMALL: schema" type="3abd1b6a:OraImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ORDER_DETAILS: table" type="942f455b:OraImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="GAGAMALL: schema" type="3abd1b6a:OraImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ORDERS: table" type="942f455b:OraImplModel$Table" />
+        <item name="USERS: table" type="942f455b:OraImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -84,58 +231,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="316" column="29" selection-start-line="316" selection-start-column="29" selection-end-line="316" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="36" column="80" lean-forward="true" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/personal-left.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/static/css/proList.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="829" column="10" lean-forward="true" selection-start-line="829" selection-start-column="10" selection-end-line="829" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/order-pay.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1038">
-              <caret line="186" column="60" selection-start-line="186" selection-start-column="60" selection-end-line="186" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -150,108 +245,18 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>下单成功</find>
-      <find>msg(&quot;支付</find>
-      <find>addAddress</find>
-      <find>location</find>
-      <find>.login form{</find>
-      <find>密码</find>
-      <find>hov</find>
-      <find>免费注册</find>
-      <find>请输入支付密码</find>
-      <find>金额</find>
-      <find>html</find>
-      <find>DESC</find>
-      <find>DESC</find>
-      <find>ORDER_DETAILS_COMMODITY_NAME</find>
-      <find>x</find>
-      <find>送货时间</find>
-      <find>settlement</find>
-      <find>分页</find>
-      <find>充值</find>
-      <find>pageSize</find>
-      <find>time</find>
-      <find>{String}</find>
-      <find>List&lt;User&gt;</find>
-      <find>setting</find>
-      <find>jia-id-myorder-pay</find>
-      <find>cancle</find>
-      <find>7878</find>
-      <find>#f5f5f5</find>
-      <find>支付成功</find>
-      <find>li:nth-child(3)</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>sku</replace>
-      <replace>SKU</replace>
-      <replace>s(&quot;.dizhi</replace>
-      <replace>SKUIds</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/web/WEB-INF/views/address.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/WEB-INF/views/myorderq.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/WEB-INF/views/address.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/ListServlet.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/FirstMenuDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/right-sidebar.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/address-manage.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/cart.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/mygrxx.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/proList.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/wallet.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/sou-commodity.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/BAddressFilter.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/IOUDao.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/IOUDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/api/verificationCode/PhoneCode.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/settlement.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/myorderq.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/PayServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" />
-        <option value="$PROJECT_DIR$/web/static/css/login.css" />
-        <option value="$PROJECT_DIR$/web/static/css/public.css" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/SiteSettingsDao.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SiteSettingsDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/SiteSettingsService.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/SiteSettingsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetPageSizeServlet.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/BackStageServlet.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/DeliverGoodsService.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/OrderDao.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/back-stage.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/DeliverGoodsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeliverGoodsServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/fahuo.jsp" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/OrderDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/io/zhangjia/mall/filter/ALoginFilter.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/orderxq.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/register.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/personal-left.jsp" />
-        <option value="$PROJECT_DIR$/web/static/css/proList.css" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/order-pay.jsp" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\Java\IDEA_Project\JavaWeb\GagaMall\.idea" />
+      </set>
     </option>
   </component>
   <component name="LogFilters">
@@ -261,244 +266,15 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-85" />
-    <option name="y" value="111" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
+  <component name="ProjectId" id="1cXRKmXTuU8W412CcP0HBoKHkw9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <flattenPackages ProjectPane="false" />
-      <showMembers ProjectPane="false" />
-      <showExcludedFiles Scope="true" ProjectPane="true" />
-      <hideEmptyPackages ProjectPane="false" />
-      <sortByType ProjectPane="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="zhangjia" type="462c0819:PsiDirectoryNode" />
-              <item name="mall" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="TS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GagaMall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="GagaMall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="a49eb43f-51ab-4ee0-b996-a04c4f7ad116" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="oracle" />
@@ -509,7 +285,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/static/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -768,8 +544,8 @@
       <item itemvalue="Application.InsertImg" />
       <item itemvalue="Application.PhoneCode" />
       <item itemvalue="Application.MailCode" />
-      <item itemvalue="Tomcat Server.Tomcat" />
       <item itemvalue="Application.OSS" />
+      <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
@@ -797,7 +573,14 @@
       <workItem from="1560405945156" duration="18412000" />
       <workItem from="1560474183286" duration="32040000" />
       <workItem from="1560602124320" duration="155212000" />
-      <workItem from="1561264822798" duration="101478000" />
+      <workItem from="1561264822798" duration="104131000" />
+      <workItem from="1561511903367" duration="46000" />
+      <workItem from="1561524103690" duration="911000" />
+      <workItem from="1562908421996" duration="4124000" />
+      <workItem from="1563005029552" duration="33041000" />
+      <workItem from="1563152236003" duration="26092000" />
+      <workItem from="1563259983909" duration="56831000" />
+      <workItem from="1590672892600" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="搭建好开发环境">
       <created>1559882139539</created>
@@ -1044,11 +827,15 @@
       <option name="project" value="LOCAL" />
       <updated>1561401097116</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="第三阶段项目v1.1">
+      <created>1561404575121</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1561404575121</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="699179000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1058,82 +845,6 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Structure" order="0" sideWeight="0.27952167" side_tool="true" weight="0.29490617" />
-      <window_info id="Designer" order="1" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Web" order="6" sideWeight="0.07762557" side_tool="true" weight="0.33378017" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.72131145" visible="true" weight="0.26876676" />
-      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.5797587" weight="0.2877095" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.041899443" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49798927" visible="true" weight="0.11452514" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32960895" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.4202413" side_tool="true" weight="0.041899443" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.16480447" />
-      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32960895" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49865952" weight="0.2988827" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.35335195" />
-      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49932975" weight="0.56703913" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.10055866" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.02010724" />
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Module Dependencies" order="4" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.25670242" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.33981234" />
-      <window_info anchor="right" id="Maven" order="9" side_tool="true" weight="0.3297587" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Structure" order="0" sideWeight="0.27952167" side_tool="true" weight="0.29490617" />
-      <window_info id="Designer" order="1" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Web" order="6" sideWeight="0.07762557" side_tool="true" weight="0.33378017" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.72131145" visible="true" weight="0.26876676" />
-      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.5797587" weight="0.2877095" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.041899443" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49798927" weight="0.2793296" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32960895" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.4202413" side_tool="true" weight="0.041899443" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.16480447" />
-      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32960895" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49865952" weight="0.2988827" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.35335195" />
-      <window_info anchor="bottom" id="Application Servers" order="14" sideWeight="0.49932975" weight="0.56703913" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.10055866" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.02010724" />
-      <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Module Dependencies" order="4" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.25670242" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.33981234" />
-      <window_info anchor="right" id="Maven" order="9" side_tool="true" weight="0.3297587" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1154,20 +865,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -1190,7 +888,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="商品详情页规格自动生成、点击对应规格修改页面库存销量和价格" />
     <MESSAGE value="商品规格添加、购物车获取商品" />
     <MESSAGE value="添加商品到购物车、添加时判断是否登录、添加时判断是否选择商品规格" />
     <MESSAGE value="商品删除、商品全选删除" />
@@ -1215,7 +912,8 @@
     <MESSAGE value="添加后台页面" />
     <MESSAGE value="第三阶段项目V1.0" />
     <MESSAGE value="添加订单发货功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加订单发货功能" />
+    <MESSAGE value="第三阶段项目v1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三阶段项目v1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1223,43 +921,36 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java</url>
           <line>14</line>
-          <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/LoginServlet.java</url>
           <line>25</line>
-          <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp</url>
           <line>482</line>
-          <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java</url>
           <line>69</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/WEB-INF/views/proDetail.jsp</url>
           <line>240</line>
-          <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java</url>
           <line>32</line>
-          <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/WEB-INF/views/fahuo.jsp</url>
           <line>36</line>
-          <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -1284,416 +975,6 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/WalletDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="5" column="2162" selection-start-line="5" selection-start-column="2162" selection-end-line="5" selection-end-column="2162" />
-          <folding>
-            <element signature="e#25768#26002#2" expanded="true" />
-            <element signature="e#26806#26959#1" expanded="true" />
-            <element signature="e#26999#27233#1" expanded="true" />
-            <element signature="e#30239#30515#2" expanded="true" />
-            <element signature="e#31347#31500#1" expanded="true" />
-            <element signature="e#31540#31816#1" expanded="true" />
-            <element signature="e#61072#61259#2" expanded="true" />
-            <element signature="e#61488#61624#2" expanded="true" />
-            <element signature="e#62027#62160#2" expanded="true" />
-            <element signature="e#63642#63795#1" expanded="true" />
-            <element signature="e#75788#76018#2" expanded="true" />
-            <element signature="e#76885#77121#2" expanded="true" />
-            <element signature="e#106714#106891#2" expanded="true" />
-            <element signature="e#106937#107114#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/mygrxx.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="285" column="103" selection-start-line="285" selection-start-column="103" selection-end-line="285" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="571" column="21" lean-forward="true" selection-start-line="571" selection-start-column="21" selection-end-line="571" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/NavService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/SecMenuDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SecMenuDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="22" column="43" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/utils/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/NavServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/NavFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/proList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="394" column="60" selection-start-line="394" selection-start-column="60" selection-end-line="394" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/CommodityDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/wallet.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="106" column="41" lean-forward="true" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/WalletServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/BAddressFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/SiteSettingsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/SetPageSizeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/SiteSettingsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/SiteSettingsDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/CommodityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1166">
-          <caret line="73" column="74" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
-          <folding>
-            <element signature="method#getCommoditySPEC#0;class#CommodityServiceImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/SiteSettingsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/register2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/myorder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11145" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="87" column="34" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/BackStageServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="31" column="84" selection-start-line="31" selection-start-column="84" selection-end-line="31" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/OrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a49eb43f-51ab-4ee0-b996-a04c4f7ad116/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="233" selection-start-line="233" selection-end-line="235" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/sou-commodity.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10252">
-          <caret line="466" column="6" lean-forward="true" selection-start-line="466" selection-start-column="6" selection-end-line="466" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/impl/DeliverGoodsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/servlet/DeliverGoodsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/service/DeliverGoodsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/fahuo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2420">
-          <caret line="110" column="20" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/settlement.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4229">
-          <caret selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/back-stage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-856">
-          <caret line="182" column="41" selection-start-line="182" selection-start-column="41" selection-end-line="182" selection-end-column="41" />
-          <folding>
-            <element signature="n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/dao/impl/OrderDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="136" column="57" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/zhangjia/mall/filter/ALoginFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/orderxq.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="316" column="29" selection-start-line="316" selection-start-column="29" selection-end-line="316" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/myorderq.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/mygxin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="36" column="80" lean-forward="true" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/personal-left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/proList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="829" column="10" lean-forward="true" selection-start-line="829" selection-start-column="10" selection-end-line="829" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/order-pay.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1038">
-          <caret line="186" column="60" selection-start-line="186" selection-start-column="60" selection-end-line="186" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

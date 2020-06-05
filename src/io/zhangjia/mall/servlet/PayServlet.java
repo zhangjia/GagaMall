@@ -26,17 +26,18 @@ public class PayServlet extends HttpServlet {
     private IOUService iouService = new IOUServiceImpl();
     private OrderService orderService = new OrderServiceImpl();
     private UserService userService = new UserServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         String payStyle = req.getParameter("payStyle");
         String payMoney = req.getParameter("payMoney");
         String orderId = req.getParameter("orderId");
         String paypassword = req.getParameter("paypassword");
         Map<String, Object> result = new HashMap<>();
         Map<String, Object> stringObjectMap = userService.judgePayPassword(user.getUserId() + "", paypassword);
-        if(stringObjectMap.containsKey("error")){
+        if (stringObjectMap.containsKey("error")) {
             result = stringObjectMap;
         } else {
             //        todo：bug，一直是上一个的session
@@ -44,31 +45,30 @@ public class PayServlet extends HttpServlet {
             String location = req.getParameter("location");
 
 
-
-            if(("订单页").equals(location)){
-                System.out.println("heihei" + orderService.getOrder(user.getUserId()+"",orderId));
-                System.out.println("orderService.getOrder(user.getUserId()+\"\",orderId).get(\"ORDERPRICE\") = " + orderService.getOrder(user.getUserId()+"",orderId).get("ORDERPRICE"));
-                System.out.println("orderService.getOrder(user.getUserId()+\"\",orderId).get(\"ORDERPRICE\") = " + orderService.getOrder(user.getUserId()+"",orderId).get("ORDERPRICE").getClass());
-                Double money = (Double)orderService.getOrder(user.getUserId()+"",orderId).get("ORDERPRICE");
+            if (("订单页").equals(location)) {
+                System.out.println("heihei" + orderService.getOrder(user.getUserId() + "", orderId));
+                System.out.println("orderService.getOrder(user.getUserId()+\"\",orderId).get(\"ORDERPRICE\") = " + orderService.getOrder(user.getUserId() + "", orderId).get("ORDERPRICE"));
+                System.out.println("orderService.getOrder(user.getUserId()+\"\",orderId).get(\"ORDERPRICE\") = " + orderService.getOrder(user.getUserId() + "", orderId).get("ORDERPRICE").getClass());
+                Double money = (Double) orderService.getOrder(user.getUserId() + "", orderId).get("ORDERPRICE");
                 System.out.println("jiajiajiamoney = " + money);
-                if(payStyle.equals("余额")){
-                    result  = walletService.orderPayByBalance(user.getUserId() + "", money+"",orderId);
+                if (payStyle.equals("余额")) {
+                    result = walletService.orderPayByBalance(user.getUserId() + "", money + "", orderId);
                 }
 
-                if(payStyle.equals("白条")){
-                    result  = iouService.orderPayByIOU(user.getUserId() + "", money+"",orderId);
+                if (payStyle.equals("白条")) {
+                    result = iouService.orderPayByIOU(user.getUserId() + "", money + "", orderId);
                 }
 
             } else {
 
-                Double money = (Double)orderService.getOrder(user.getUserId()+"","" +session.getAttribute("orderId")).get("ORDERPRICE");
+                Double money = (Double) orderService.getOrder(user.getUserId() + "", "" + session.getAttribute("orderId")).get("ORDERPRICE");
                 System.out.println("直接下单页的orderId是 = " + session.getAttribute("orderId"));
-                if(payStyle.equals("余额")){
-                    result  = walletService.orderPayByBalance(user.getUserId() + "", money+"","" +session.getAttribute("orderId"));
+                if (payStyle.equals("余额")) {
+                    result = walletService.orderPayByBalance(user.getUserId() + "", money + "", "" + session.getAttribute("orderId"));
                 }
 
-                if(payStyle.equals("白条")){
-                    result  = iouService.orderPayByIOU(user.getUserId() + "", money+"","" +session.getAttribute("orderId"));
+                if (payStyle.equals("白条")) {
+                    result = iouService.orderPayByIOU(user.getUserId() + "", money + "", "" + session.getAttribute("orderId"));
                 }
 
             }

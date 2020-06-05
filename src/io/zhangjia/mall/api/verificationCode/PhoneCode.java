@@ -18,8 +18,8 @@ public class PhoneCode {
     }
 
     public String sendCode(String tel) {
-        DefaultProfile profile = DefaultProfile.getProfile("default", "LTAI7seTEQue2vu0",
-                "yevuiDu5XNNl96xlDtYIzaQsZm0Lhr");
+        DefaultProfile profile = DefaultProfile.getProfile("default", "keyid",
+                "secret");
         IAcsClient client = new DefaultAcsClient(profile);
 
         CommonRequest request = new CommonRequest();

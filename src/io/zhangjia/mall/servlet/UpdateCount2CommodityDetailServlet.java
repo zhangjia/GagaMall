@@ -20,19 +20,20 @@ import java.util.Map;
 @WebServlet("/updateCount2CommodityDetail")
 public class UpdateCount2CommodityDetailServlet extends HttpServlet {
     private CommodityService commodityService = new CommodityServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         String userId = user.getUserId().toString();
-        String SKUId =  req.getParameter("SKUId");
+        String SKUId = req.getParameter("SKUId");
         String count = req.getParameter("count");
         String val = req.getParameter("val");
         resp.setContentType("application/json;charset=utf-8");
         String action = req.getParameter("action");
         PrintWriter writer = resp.getWriter();
         System.out.println("aaaahahahah" + count + "--" + SKUId + "--" + userId + "val" + val);
-        Map<String, Object> stringObjectMap = commodityService.updateCount2CommodityDetail(action, userId, SKUId,count,val);
+        Map<String, Object> stringObjectMap = commodityService.updateCount2CommodityDetail(action, userId, SKUId, count, val);
 
         System.out.println(stringObjectMap);
         writer.println(JSON.toJSONString(stringObjectMap));

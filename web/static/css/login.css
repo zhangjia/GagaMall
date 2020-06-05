@@ -1,43 +1,48 @@
 
-html,body{
-	width:100%;
-	height:100%;
+html, body {
+    width: 100%;
+    height: 100%;
 }
-.reg{
-	width: 100%;
-	height: 100%;
-	background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
-	background-size: 500px;
-	background-repeat: no-repeat;
-	/* background-color: #ffff66; */
-	/* top: 200px; */
-	background-position: 300px;
-	background-position-y: -50px;
+
+.reg {
+    width: 100%;
+    height: 100%;
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    /* background-color: #ffff66; */
+    /* top: 200px; */
+    background-position: 300px;
+    background-position-y: -50px;
 }
+
 .login {
-	width: 100%;
-	height: 100%;
-	background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
-	background-size: 500px;
-	background-repeat: no-repeat;
-	/* background-color: #ffff66; */
-	/* top: 200px; */
-	background-position: 300px;
-	background-position-y: -50px;
+    width: 100%;
+    height: 100%;
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561395093640&di=59b96b6171711e0df9d26e819d5df81a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F22%2F20150522032903_m8vsn.jpeg) no-repeat;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    /* background-color: #ffff66; */
+    /* top: 200px; */
+    background-position: 300px;
+    background-position-y: -50px;
 }
-.login img,.reg img{
-	width:auto;
+
+.login img, .reg img {
+    width: auto;
 }
-.login form,.reg form{
-	position: fixed;
-	top:15%;
-	right:140px;
-	padding:20px 0;
-	text-align: center;
-	z-index: 10;
-	background: #fff;
+
+.login form, .reg form {
+    position: fixed;
+    top: 15%;
+    right: 140px;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 10;
+    background: #fff;
 }
-.msg-warn{
+
+.msg-warn {
     position: relative;
     background: #fef4e5;
     color: #666;
@@ -47,27 +52,30 @@ html,body{
     line-height: 15px;
     height: auto;
 }
-.login form{
-	top:18%;
-	border:1px solid #dbdbdb;
-	width:440px;
-	height: 340px;
-	border-radius:10px;
-	padding: 20px 0 ;
-	padding-right: 50px;
+
+.login form {
+    top: 18%;
+    border: 1px solid #dbdbdb;
+    width: 440px;
+    height: 340px;
+    border-radius: 10px;
+    padding: 20px 0;
+    padding-right: 50px;
 }
+
 .reg form {
-	width:480px;
-	height: 490px;
-	border:1px solid #dbdbdb;
-	border-radius:10px;
-	background: #fff;
-	padding: 20px 70px;
+    width: 480px;
+    height: 490px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px 70px;
 }
+
 /*log*/
-.reg form h1,.login form h1{
-	/*border-bottom:1px solid #dbdbdb;*/
-	padding-bottom: 20px;
+.reg form h1, .login form h1 {
+    /*border-bottom:1px solid #dbdbdb;*/
+    padding-bottom: 20px;
 }
 
 /*
@@ -94,48 +102,55 @@ html,body{
 /*div.reg form input.code{
 	width:150px;
 }*/
-div.reg form p.txtL{
-	text-align: left;
+div.reg form p.txtL {
+    text-align: left;
 }
-div.reg form p.txtL img{
-	width:97px;
-	height:37px;
-	vertical-align: middle;
+
+div.reg form p.txtL img {
+    width: 97px;
+    height: 37px;
+    vertical-align: middle;
 }
-div.reg form p.txtL a{
-	color:#c10000;
+
+div.reg form p.txtL a {
+    color: #c10000;
 }
-.reg form p.txt,.login form p.txt{
-	/*width:280px;*/
-	margin:10px auto 0;
-	text-align: right;
+
+.reg form p.txt, .login form p.txt {
+    /*width:280px;*/
+    margin: 10px auto 0;
+    text-align: right;
 }
-.reg p.txt a,.login p.txt a{
-	color:#666;
-	text-decoration: underline;
+
+.reg p.txt a, .login p.txt a {
+    color: #666;
+    text-decoration: underline;
 }
-div.login form p.txt a{
-	margin-left:20px;
-	cursor: pointer;
+
+div.login form p.txt a {
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 
 .form-control {
     /*width:270px !important;*/
-    height:40px !important;
+    height: 40px !important;
     margin: 0 auto;
     margin-top: 10px;
-    margin-bottom:  5px;
+    margin-bottom: 5px;
 }
+
 .btn-block {
     display: block;
 
     margin: 0 auto;
 }
+
 .reg form p.txt, .login form p.txt {
-	/* width: 280px; */
-	/* margin: 10px auto 0; */
-	/* text-align: right; */
-	text-align: right;
-	margin-top: 25px;
+    /* width: 280px; */
+    /* margin: 10px auto 0; */
+    /* text-align: right; */
+    text-align: right;
+    margin-top: 25px;
 }

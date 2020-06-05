@@ -53,7 +53,7 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
-    public Map<String, Object> orderPayByBalance(String userId, String money,String orderId) {
+    public Map<String, Object> orderPayByBalance(String userId, String money, String orderId) {
         System.out.println(" 进入了orderPayByBalance");
         Map<String, Object> result = new HashMap<>();
         System.out.println("userId = " + userId);
@@ -63,26 +63,26 @@ public class WalletServiceImpl implements WalletService {
             Integer uid = Integer.parseInt(userId);
             Map<String, Object> stringObjectMap = walletDao.queryByUserId(uid);
             System.out.println("gaggagastringObjectMap = " + stringObjectMap);
-            Double walletBalance =((BigDecimal)stringObjectMap.get("WALLET_BALANCE")).doubleValue();
+            Double walletBalance = ((BigDecimal) stringObjectMap.get("WALLET_BALANCE")).doubleValue();
             System.out.println("walletBalance = " + walletBalance);
             System.out.println("wallet_balance = " + walletBalance);
             double m = Double.parseDouble(money);
-           if(walletBalance < m) {
-               result.put("error","余额不足");
-           } else {
-               int i = walletDao.doUpdate(uid, m*-1);
-               if(i == 1) {
-                   result.put("success","支付成功");
-                   orderDao.doUpdateByPay("余额支付",uid,Integer.parseInt(orderId));
-               } else {
-                   System.out.println(" 路飞= ");
-                   result.put("error","支付失败");
-               }
-           }
+            if (walletBalance < m) {
+                result.put("error", "余额不足");
+            } else {
+                int i = walletDao.doUpdate(uid, m * -1);
+                if (i == 1) {
+                    result.put("success", "支付成功");
+                    orderDao.doUpdateByPay("余额支付", uid, Integer.parseInt(orderId));
+                } else {
+                    System.out.println(" 路飞= ");
+                    result.put("error", "支付失败");
+                }
+            }
 
         } else {
             System.out.println(" 索隆= ");
-            result.put("error","支付失败");
+            result.put("error", "支付失败");
 
         }
         return result;

@@ -84,8 +84,9 @@
         <!-- 内容主体区域 -->
         <div class="div-hello" style="padding: 15px;">
             <div>
-                <img style="margin-left: 500px"
-                     src="https://zhangjia.oss-cn-qingdao.aliyuncs.com/img/web/gagamall/other/timg%20(1).gif" alt="">
+                <img style="margin-left: 150px"
+                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561435759814&di=3d9388291c38165dee3afda581558039&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F05%2F20170505211218_3x8fJ.gif"
+                     alt="">
             </div>
 
         </div>

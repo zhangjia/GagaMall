@@ -137,19 +137,18 @@
             //------------------------------------------加入购物车结束-------------------
 
 
-
             //------------------------------------------更改个数开始-------------------
-        function determineTheInventory(action,count,thiss,val) {
+            function determineTheInventory(action, count, thiss, val) {
                 console.log(val);
-            var result = false;
+                var result = false;
                 $.ajax({
                     url: "${path}/updateCount2CommodityDetail",
                     type: "get",
                     data: {
                         SKUId: skuId,
                         action: action,
-                        count:count,
-                        val:val
+                        count: count,
+                        val: val
                     },
                     success: function (res) {
                         result = true;
@@ -160,12 +159,12 @@
                             location = "${path}/login?uri=${path}/commodityDetail?commodityId=${param.commodityId}";
                         } else {
                             if (!res.error) {
-                                if(action == "add") {
+                                if (action == "add") {
                                     var nowCartCount = $(thiss).siblings("input").val();
                                     $(thiss).siblings("input").val(++nowCartCount);
                                 }
                             } else {
-                             if(action =="input") {
+                                if (action == "input") {
                                     $(thiss).val(res.nowInventory);
                                 }
                                 layer.msg(res.error)
@@ -173,7 +172,6 @@
 
                             }
                         }
-
 
 
                     }
@@ -189,11 +187,8 @@
                     layer.alert("请先选择商品规格")
                 } else {
                     var val = $(this).siblings(".jia-commodity-detail-num").val();
-                    determineTheInventory("add",1,$(this),val)
+                    determineTheInventory("add", 1, $(this), val)
                 }
-
-
-
 
 
             });
@@ -209,8 +204,8 @@
                     if (val === '') {
                         $(this).val(1)
                     } else {
-                        console.log(val+"wer")
-                        determineTheInventory("input",0,$(this),val)
+                        console.log(val + "wer")
+                        determineTheInventory("input", 0, $(this), val)
                     }
 
                 }
@@ -222,7 +217,7 @@
             $(".cart-sub").click(function () {
                 var thiss = $(this);
                 var nowCartCount = $(this).siblings("input").val();
-                if(nowCartCount - 1 == 0) {
+                if (nowCartCount - 1 == 0) {
                     layer.msg("不能再少了！")
                 } else {
                     $(thiss).siblings("input").val(--nowCartCount);
@@ -321,19 +316,19 @@
                     </div>
 
                     <div class="num clearfix">
-<%--                        <img class="fl sub" src="${path}/static/img/temp/sub.jpg">--%>
-<%--                        <span class="fl cart-commodity-count" contentEditable="true">1</span>--%>
-<%--                        <img class="fl add" src="${path}/static/img/temp/add.jpg">--%>
-<%--                        <p class="please fl">请选择商品属性!</p>--%>
-    <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-sub">
-        <i class="layui-icon">&#xe603;</i>
-    </button>
+                        <%--                        <img class="fl sub" src="${path}/static/img/temp/sub.jpg">--%>
+                        <%--                        <span class="fl cart-commodity-count" contentEditable="true">1</span>--%>
+                        <%--                        <img class="fl add" src="${path}/static/img/temp/add.jpg">--%>
+                        <%--                        <p class="please fl">请选择商品属性!</p>--%>
+                        <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-sub">
+                            <i class="layui-icon">&#xe603;</i>
+                        </button>
 
-    <input type="number" value="1" autocomplete="off"
-           class="jia-commodity-detail-num" style="text-align:center ">
-    <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
-        <i class="layui-icon">&#xe602;</i>
-    </button>
+                        <input type="number" value="1" autocomplete="off"
+                               class="jia-commodity-detail-num" style="text-align:center ">
+                        <button type="button" class="layui-btn layui-btn-primary layui-btn layui-btn-xs cart-add">
+                            <i class="layui-icon">&#xe602;</i>
+                        </button>
                     </div>
 
                 </div>

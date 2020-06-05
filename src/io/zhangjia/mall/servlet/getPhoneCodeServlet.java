@@ -13,20 +13,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/getPhoneCode")
-public class getPhoneCodeServlet  extends HttpServlet {
+public class getPhoneCodeServlet extends HttpServlet {
     private PhoneCodeService phoneCodeService = new PhoneCodeServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String tel = req.getParameter("type");
         String phoneCode = phoneCodeService.getPhoneCode(tel);
-        req.getSession().setAttribute("phoneCode",phoneCode);
+        req.getSession().setAttribute("phoneCode", phoneCode);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
         System.out.println("JSON.toJSONString(phoneCode)" + JSON.toJSONString(phoneCode));
 //        writer.println(JSON.toJSONString(phoneCode));
         boolean result = phoneCode != null;
-        writer.println("{\"success\":"+result+"}");
+        writer.println("{\"success\":" + result + "}");
         writer.close();
     }
 }

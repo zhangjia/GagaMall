@@ -21,7 +21,7 @@ public class MailCode {
 
     public String sample(String mail) {
         // 如果是除杭州region外的其它region（如新加坡、澳洲Region），需要将下面的"cn-hangzhou"替换为"ap-southeast-1"、或"ap-southeast-2"。
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI7seTEQue2vu0", "yevuiDu5XNNl96xlDtYIzaQsZm0Lhr");
+        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "keyid", "secret");
         //使用https加密连接
         //profile.getHttpClientConfig().setProtocolType(com.aliyuncs.http.ProtocolType.HTTPS);
         // 如果是除杭州region外的其它region（如新加坡region）， 需要做如下处理
@@ -49,8 +49,7 @@ public class MailCode {
             return random;
         } catch (ServerException e) {
             e.printStackTrace();
-        }
-        catch (ClientException e) {
+        } catch (ClientException e) {
             e.printStackTrace();
         }
 

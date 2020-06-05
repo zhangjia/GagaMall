@@ -47,10 +47,10 @@
                 url: "${path}/getAddress",
                 type: "get",
                 data: {
-                   addressId:addressId
+                    addressId: addressId
                 },
                 success: function (res) {
-                   console.log(res);
+                    console.log(res);
                     $("input[placeholder='姓名']").val(res.ADDRESS_NAME);
                     $("input[placeholder='手机号']").val(res.ADDRESS_TEL);
                     $(".address-details").val(res.ADDRESS_DETAIL);
@@ -65,7 +65,7 @@
                     $(".o-x-hide").val(res.COUNTY);
 
                 }
-        });
+            });
         });
         $(".save-address").click(function () {
 
@@ -115,16 +115,16 @@
                         city: city,
                         district: qu,
                         country: xian,
-                        addressId:addressId,
+                        addressId: addressId,
 
                     },
                     success: function (res) {
                         if (res.success === true) {
                             console.log($(".jia-address-id").text() + "d ")
 
-                            if($(".jia-address-id").text() != '0'){
+                            if ($(".jia-address-id").text() != '0') {
                                 layer.msg("修改成功")
-                            } else{
+                            } else {
                                 layer.msg("添加成功")
                             }
 
@@ -172,7 +172,7 @@
                 url: "${path}/setDefaultAddress",
                 type: "get",
                 data: {
-                    addressId:addressId
+                    addressId: addressId
                 },
                 success: function (res) {
                     console.log(res)
@@ -181,7 +181,8 @@
                     }
 
 
-                } });
+                }
+            });
         });
         $(".jia-address-delete").click(function () {
             var addressId = $(this).parent().parent().siblings("p:hidden").text();
@@ -192,7 +193,7 @@
                 url: "${path}/deleteAddress",
                 type: "get",
                 data: {
-                    addressId:addressId
+                    addressId: addressId
                 },
                 success: function (res) {
                     console.log(res)
@@ -203,10 +204,11 @@
                     }
 
 
-                } });
+                }
+            });
 
         });
-        
+
 
     });
 

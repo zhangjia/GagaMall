@@ -20,7 +20,6 @@
             $(".two").hide();
 
 
-
             // $(".shuxing").addClass("layui-btn-disabled");
             //商品规格，比如颜色，大小，版本等等
             $(".guige").click(function () {

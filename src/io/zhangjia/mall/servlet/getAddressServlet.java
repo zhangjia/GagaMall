@@ -16,6 +16,7 @@ import java.util.Map;
 @WebServlet("/getAddress")
 public class getAddressServlet extends HttpServlet {
     private AddressService addressService = new AddressServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String addressId = req.getParameter("addressId");

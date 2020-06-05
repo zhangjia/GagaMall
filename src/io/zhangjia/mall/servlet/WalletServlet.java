@@ -22,15 +22,17 @@ import java.util.Map;
 @WebServlet("/wallet")
 public class WalletServlet extends HttpServlet {
     private WalletService walletService = new WalletServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("/WEB-INF/views/wallet.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/wallet.jsp").forward(req, resp);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         Map<String, Object> userWallet = walletService.getUserWallet(user.getUserId() + "");
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();

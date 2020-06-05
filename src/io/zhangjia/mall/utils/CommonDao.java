@@ -15,7 +15,6 @@ import java.util.Map;
 
 /**
  * 通用的DAO，可以对任意表做增删改查
- *
  */
 public class CommonDao extends JDBCUtils {
 
@@ -106,7 +105,7 @@ public class CommonDao extends JDBCUtils {
                 for (int i = 0; i < params.length; i++) {
                     // 设置占位符
                     pstm.setObject(i + 1, params[i]);
-                    System.out.println("i"+ (i + 1) + "param = " + params[i]);
+                    System.out.println("i" + (i + 1) + "param = " + params[i]);
                 }
             }
             // 执行SQL语句
@@ -341,7 +340,7 @@ public class CommonDao extends JDBCUtils {
         return null;
     }
 
-    public <T> List<T> findBypage(String sql, Class<T> clazz, int pageNo,Object... params) {
+    public <T> List<T> findBypage(String sql, Class<T> clazz, int pageNo, Object... params) {
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;

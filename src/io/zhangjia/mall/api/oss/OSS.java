@@ -5,7 +5,7 @@ import com.aliyun.oss.OSSClient;
 import java.io.*;
 
 public class OSS {
-//    public void createBucket(){
+    //    public void createBucket(){
 //        // Endpoint以杭州为例，其它Region请按实际情况填写。
 //        String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
 //// 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
@@ -22,15 +22,15 @@ public class OSS {
 //// 关闭OSSClient。
 //        ossClient.shutdown();
 //    }
-public static void main(String[] args) {
-}
+    public static void main(String[] args) {
+    }
 
     public void uplocad(String imgUrl) throws FileNotFoundException {
 
         String endpoint = "http://oss-cn-qingdao.aliyuncs.com";
 // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
-        String accessKeyId = "LTAI7seTEQue2vu0";
-        String accessKeySecret = "yevuiDu5XNNl96xlDtYIzaQsZm0Lhr";
+        String accessKeyId = "keyid";
+        String accessKeySecret = "secret";
         String bucketName = "zhangjia";
         String objectName = "aa.jpg";
 

@@ -17,18 +17,19 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@WebFilter(urlPatterns = {"/address","/settlement"},filterName = "b")
+@WebFilter(urlPatterns = {"/address", "/settlement"}, filterName = "b")
 public class BAddressFilter extends HttpFilter {
     private AddressService addressService = new AddressServiceImpl();
+
     @Override
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
-        System.out.println("user.getUserId()+\"\" = " + user.getUserId()+"");
-        List<Map<String, Object>> userAddress = addressService.getUserAddress(user.getUserId()+"");
+        User user = (User) session.getAttribute("user");
+        System.out.println("user.getUserId()+\"\" = " + user.getUserId() + "");
+        List<Map<String, Object>> userAddress = addressService.getUserAddress(user.getUserId() + "");
         System.out.println("userAddress2345 = " + JSON.toJSONString(userAddress));
         request.setAttribute("userAddress", userAddress);
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
 
 

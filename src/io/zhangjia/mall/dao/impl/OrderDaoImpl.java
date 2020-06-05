@@ -10,17 +10,19 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
 
     /**
      * 根据用户ID查熏她的所有订单
+     *
      * @param userId
      * @return
      */
     @Override
     public List<Map<String, Object>> queryByUserId(Integer userId) {
         String sql = "SELECT * FROM ORDERS WHERE USER_ID = ? AND ORDER_STATUS != 0  ORDER BY ORDER_TIME DESC ";
-        return query4MapList(sql,userId);
+        return query4MapList(sql, userId);
     }
 
     /**
      * 根据订单ID，查询订单详情
+     *
      * @param orderId
      * @return
      */
@@ -29,11 +31,12 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
         String sql = "SELECT t2.* FROM ORDERS t1,ORDER_DETAILS t2\n" +
                 "WHERE t1.ORDER_ID = t2.ORDER_ID AND t1.ORDER_ID = ? \n" +
                 "AND t1.ORDER_STATUS != 0 AND t2.ORDER_DETAILS_STATUS !=0";
-        return query4MapList(sql,orderId);
+        return query4MapList(sql, orderId);
     }
 
     /**
      * 订单实际支付金额 = 运费 + 每个商品原价 * 商品数量 - 每个商品的优惠金额总和
+     *
      * @param orderId
      * @return
      */
@@ -49,27 +52,29 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
                 "    ORDERS t2\n" +
                 "WHERE t1.ORDER_ID = t2.ORDER_ID\n" +
                 "  AND t2.ORDER_STATUS != 0";
-        System.out.println("123" + query4Map(sql,orderId) == null);
-        System.out.println("321" +query4Map(sql,orderId).get("SUMPRICE") == null);
-        return Double.parseDouble(query4Map(sql,orderId).get("SUMPRICE")+"");
+        System.out.println("123" + query4Map(sql, orderId) == null);
+        System.out.println("321" + query4Map(sql, orderId).get("SUMPRICE") == null);
+        return Double.parseDouble(query4Map(sql, orderId).get("SUMPRICE") + "");
     }
 
     /**
      * 订单中所有的商品原价总和 = 商品数量 * 商品原价
+     *
      * @param orderId
      * @return
      */
     @Override
     public Double queryOrderOriginalPrice(Integer orderId) {
-        String sql ="SELECT ORDER_ID,SUM(ORDER_DETAILS_COMMODITY_PRICE * ORDER_DETAILS_COMMODITY_COUNT) original_price\n" +
+        String sql = "SELECT ORDER_ID,SUM(ORDER_DETAILS_COMMODITY_PRICE * ORDER_DETAILS_COMMODITY_COUNT) original_price\n" +
                 "FROM ORDER_DETAILS\n" +
                 "WHERE ORDER_DETAILS_STATUS != 0\n" +
                 "GROUP BY ORDER_ID  HAVING  ORDER_ID = ?";
-        return Double.parseDouble(query4Map(sql,orderId).get("ORIGINAL_PRICE") + "");
+        return Double.parseDouble(query4Map(sql, orderId).get("ORIGINAL_PRICE") + "");
     }
 
     /**
      * 订单优惠金额 = 每个商品的优惠金额总和
+     *
      * @param orderId
      * @return
      */
@@ -79,33 +84,36 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
                 "FROM ORDER_DETAILS\n" +
                 "WHERE ORDER_DETAILS_STATUS != 0\n" +
                 "GROUP BY ORDER_ID  HAVING  ORDER_ID = ?";
-        return Double.parseDouble(query4Map(sql,orderId).get("DISCOUNT_PRICE") + "");
+        return Double.parseDouble(query4Map(sql, orderId).get("DISCOUNT_PRICE") + "");
     }
 
     /**
      * 插入订单记录
+     *
      * @param param
      * @return
      */
     @Override
     public int doInsert(Map<String, Object> param) {
         String sqlid = "SELECT seq_commodity.nextval id FROM dual";
-        int id =  query4IntData(sqlid);
+        int id = query4IntData(sqlid);
         System.out.println("id = " + id);
 //        默认是待支付
         String sql = "INSERT INTO orders VALUES(?,?,?,sysdate,?,?,?,?,4)";
         int i = executeUpdate(sql, id, param.get("userId"), param.get("addressId"), param.get("orderLogistics")
                 , param.get("orderFreightPrice"), param.get("orderPayType"), param.get("orderNote"));
         System.out.println("i = " + i);
-        if(i == 1) {
+        if (i == 1) {
             System.out.println("进入i = " + i);
             return id;
         } else {
             return 0;
         }
     }
+
     /**
      * 插入订单明细
+     *
      * @param param
      * @return
      */
@@ -113,10 +121,10 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
     public int doInsert4Detail(Map<String, Object> param) {
         String sql = "INSERT INTO order_details VALUES(seq_order_details.nextval,?,?,?,?,?,?,?,?,1)";
         return executeUpdate(sql,
-                param.get("ORDER_ID"),param.get("SKU_ID"),
-                param.get("COMMODITY_NAME"),param.get("SKU_VALUE"),
-                param.get("IMG_URL"),param.get("SKU_PRESENT_PRICE"),
-                param.get("ORdER_DETAILS_DISCOUNT_PRICE"),param.get("COMMODITY_COUNT"));
+                param.get("ORDER_ID"), param.get("SKU_ID"),
+                param.get("COMMODITY_NAME"), param.get("SKU_VALUE"),
+                param.get("IMG_URL"), param.get("SKU_PRESENT_PRICE"),
+                param.get("ORdER_DETAILS_DISCOUNT_PRICE"), param.get("COMMODITY_COUNT"));
                 /* param.get("orderId "),param.get("skuId"),
                 param.get("orderDetailsCommodityName"),param.get("orderDetailsSKUValue"),
                 param.get("orderDetailsCommodityImg"),param.get("orderDetailsCommodityPrice"),
@@ -124,18 +132,18 @@ public class OrderDaoImpl extends CommonDao implements OrderDao {
     }
 
     @Override
-    public int doUpdateByPay(String payType ,Integer userId, Integer orderId) {
+    public int doUpdateByPay(String payType, Integer userId, Integer orderId) {
         String sql = "UPDATE ORDERS\n" +
                 "SET ORDER_PAY_TYPE = ?,ORDER_STATUS = 1,ORDER_LOGISTICS='未发货'\n" +
                 "WHERE USER_ID = ? AND ORDER_ID  = ?\n";
-        return executeUpdate(sql,payType,userId,orderId);
+        return executeUpdate(sql, payType, userId, orderId);
     }
 
     @Override
     public int doUpdateByDeliverGoods(Integer orderId, String logistics) {
-        String sql ="UPDATE ORDERS\n" +
+        String sql = "UPDATE ORDERS\n" +
                 "SET ORDER_LOGISTICS = ?,ORDER_STATUS = 2\n" +
                 "    WHERE ORDER_ID  = ?";
-        return executeUpdate(sql,logistics,orderId);
+        return executeUpdate(sql, logistics, orderId);
     }
 }

@@ -27,7 +27,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
 
-            <jsp:include page="personal-left.jsp" />
+            <jsp:include page="personal-left.jsp"/>
         </div>
         <div class="you fl">
             <div class="tx clearfix">
@@ -42,7 +42,8 @@
 
                         </c:if>
                     </a>
-                    <p class="fl"><span>${sessionScope.user.userName}</span><a href="${path}/personalInformation?userId=${sessionScope.user.userId}">修改个人信息></a></p>
+                    <p class="fl"><span>${sessionScope.user.userName}</span><a
+                            href="${path}/personalInformation?userId=${sessionScope.user.userId}">修改个人信息></a></p>
                 </div>
                 <c:if test="${sessionScope.user.userMail == null}">
                     <div class="fr">绑定邮箱：未绑定</div>

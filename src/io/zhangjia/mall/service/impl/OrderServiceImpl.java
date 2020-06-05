@@ -74,14 +74,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public int submit(String userId, String addressId, String logistics,
-                          String orderPayType, String orderNote, String[] SKUIds) {
+                      String orderPayType, String orderNote, String[] SKUIds) {
         int result = 1;
-        if(userId != null && !"".equals(userId) &&
+        if (userId != null && !"".equals(userId) &&
                 addressId != null && !"".equals(addressId)) {
 //            判断运费
             Map<String, Object> total = carService.getTotal(userId, SKUIds);
             System.out.println("判断运费 = " + total);
-            int logistic =  (((BigDecimal)total.get("SUM_COMMODITY_PRESENT_PRICE")).doubleValue() >= 1000) ?0: 10;
+            int logistic = (((BigDecimal) total.get("SUM_COMMODITY_PRESENT_PRICE")).doubleValue() >= 1000) ? 0 : 10;
 
             //        1.向订单表插入数据
 
@@ -119,11 +119,11 @@ public class OrderServiceImpl implements OrderService {
             System.out.println("orderserviceSKUIDs = " + SKUIDs);
             result *= cartDao.doDelete(Integer.parseInt(userId), SKUIDs);
 //       如果插入成功，将id返回
-           if(result  != 0){
-               return orderId;
-           } else {
-               return  0;
-           }
+            if (result != 0) {
+                return orderId;
+            } else {
+                return 0;
+            }
 
         } else {
 

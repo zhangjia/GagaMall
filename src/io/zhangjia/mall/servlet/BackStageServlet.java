@@ -22,21 +22,22 @@ import java.util.Map;
 public class BackStageServlet extends HttpServlet {
     private OrderService orderService = new OrderServiceImpl();
     private DeliverGoodsService deliverGoodsService = new DeliverGoodsServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 //        Map<String,Object> user = (Map<String,Object>)session.getAttribute("user");
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         System.out.println(session.getAttribute("user"));
 //        Map<String,Object> user = (Map<String,Object>)session.getAttribute("user");
         List<Map<String, Object>> orders = deliverGoodsService.GetUnshippedOrders();
-        req.setAttribute("orders",orders);
+        req.setAttribute("orders", orders);
 
-        if(user.getUserStatus() != 2) {
-            req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
+        if (user.getUserStatus() != 2) {
+            req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
         } else {
 
-        req.getRequestDispatcher("/WEB-INF/views/back-stage.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/views/back-stage.jsp").forward(req, resp);
         }
     }
 }

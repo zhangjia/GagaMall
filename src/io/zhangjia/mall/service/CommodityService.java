@@ -20,9 +20,10 @@ public interface CommodityService {
 
     //	List<Map<String,Object>> getCommoditySPEC(String commodityId);
     String getCommoditySPEC(String commodityId);
-    List<Map<String,Object>> getCommoditySKU(String skuValue);
 
-    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId,String count,String val);
+    List<Map<String, Object>> getCommoditySKU(String skuValue);
+
+    Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count, String val);
 
     List<Commodity> getCommodities4Index();
 }

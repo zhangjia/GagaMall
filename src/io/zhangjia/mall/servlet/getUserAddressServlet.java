@@ -18,15 +18,16 @@ import java.util.Map;
 @WebServlet("/address2")
 public class getUserAddressServlet extends HttpServlet {
     private AddressService addressService = new AddressServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 //        Map<String,Object> user = (Map<String,Object>)session.getAttribute("user");
-        User user = (User)session.getAttribute("user");
-        List<Map<String, Object>> userAddress = addressService.getUserAddress(user.getUserId()+"");
+        User user = (User) session.getAttribute("user");
+        List<Map<String, Object>> userAddress = addressService.getUserAddress(user.getUserId() + "");
         System.out.println("userAddress = " + userAddress);
-        req.setAttribute("userAddress",userAddress);
-        req.getRequestDispatcher("/WEB-INF/views/address.jsp").forward(req,resp);
+        req.setAttribute("userAddress", userAddress);
+        req.getRequestDispatcher("/WEB-INF/views/address.jsp").forward(req, resp);
 
     }
 }

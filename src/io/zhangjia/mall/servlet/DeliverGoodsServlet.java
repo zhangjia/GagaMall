@@ -17,16 +17,17 @@ import java.io.PrintWriter;
 public class DeliverGoodsServlet extends HttpServlet {
     private OrderService orderService = new OrderServiceImpl();
     private DeliverGoodsService deliverGoodsService = new DeliverGoodsServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      String logistics = req.getParameter("logistics");
-      String orderId = req.getParameter("orderId");
+        String logistics = req.getParameter("logistics");
+        String orderId = req.getParameter("orderId");
 
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
         int i = deliverGoodsService.deliverGoods(orderId, logistics);
         System.out.println(" = 剪辑");
-        writer.println("{\"success\":"+(i == 1)+"}");
+        writer.println("{\"success\":" + (i == 1) + "}");
         writer.close();
 
     }

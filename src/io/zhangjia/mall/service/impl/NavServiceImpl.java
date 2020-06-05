@@ -38,7 +38,6 @@ public class NavServiceImpl implements NavService {
         List<FirstMenu> firstMenus = new ArrayList<>();
 
 
-
         for (int i = 0; i < maps.size(); i++) {
 
             Map<String, Object> map = maps.get(i);
@@ -54,15 +53,15 @@ public class NavServiceImpl implements NavService {
 
             Map<String, Object> b1 = new HashMap<>();
 
-                b1.put("SEC_MENU_ID", map.get("SEC_MENU_ID"));
-                b1.put("SEC_MENU_CHINESE_NAME", map.get("SEC_MENU_CHINESE_NAME"));
-                sec.add(b1);
+            b1.put("SEC_MENU_ID", map.get("SEC_MENU_ID"));
+            b1.put("SEC_MENU_CHINESE_NAME", map.get("SEC_MENU_CHINESE_NAME"));
+            sec.add(b1);
 
-            for (int j = i+1; j < maps.size(); j++) {
+            for (int j = i + 1; j < maps.size(); j++) {
 
                 Map<String, Object> map2 = maps.get(j);
                 Map<String, Object> b2 = new HashMap<>();
-                if(map.get("FIRST_MENU_CHINESE_NAME").equals(map2.get("FIRST_MENU_CHINESE_NAME")) ) {
+                if (map.get("FIRST_MENU_CHINESE_NAME").equals(map2.get("FIRST_MENU_CHINESE_NAME"))) {
                     b2.put("SEC_MENU_ID", map2.get("SEC_MENU_ID"));
                     b2.put("SEC_MENU_CHINESE_NAME", map2.get("SEC_MENU_CHINESE_NAME"));
                     sec.add(b2);
@@ -81,7 +80,6 @@ public class NavServiceImpl implements NavService {
         }
 
 
-
         System.out.println(JSON.toJSONString(firstMenus));
         return firstMenus;
 
@@ -89,10 +87,10 @@ public class NavServiceImpl implements NavService {
 
     @Override
     public String getFirstMenuChineseName(String sid) {
-       if (sid != null && !"".equals(sid)){
-           return firstMenuDao.getFirstMenuChineseNameById(Integer.parseInt(sid));
-       } else  {
-           return null;
-       }
+        if (sid != null && !"".equals(sid)) {
+            return firstMenuDao.getFirstMenuChineseNameById(Integer.parseInt(sid));
+        } else {
+            return null;
+        }
     }
 }

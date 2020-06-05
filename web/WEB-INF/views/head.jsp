@@ -5,27 +5,28 @@
 <div class="head">
     <div class="wrapper clearfix">
         <div class="clearfix" id="top">
-            <h1 class="fl"><a href="index.jsp"><img src="https://zhangjia.oss-cn-qingdao.aliyuncs.com/img/web/logo.png"/></a>
+            <h1 class="fl"><a href="index.jsp"><img
+                    src="https://zhangjia.oss-cn-qingdao.aliyuncs.com/img/web/logo.png"/></a>
             </h1>
 
 
             <div class="fr clearfix" id="top1">
-               <c:if test="${sessionScope.user == null}">
-                   <p class="fl">
-                       <a href="${path}/login" id="login">登录</a>
-                       <a href="${path}/register" id="reg">注册</a>
-               </c:if>
+                <c:if test="${sessionScope.user == null}">
+                <p class="fl">
+                    <a href="${path}/login" id="login">登录</a>
+                    <a href="${path}/register" id="reg">注册</a>
+                    </c:if>
 
-                <c:if test="${sessionScope.user != null}">
-                    <p class="fl">
-                      欢迎您：  <a href="${path}/personal" id="WelcomeUser">${sessionScope.user.userNick}</a>
-                                            </p>
+                    <c:if test="${sessionScope.user != null}">
+                <p class="fl">
+                    欢迎您： <a href="${path}/personal" id="WelcomeUser">${sessionScope.user.userNick}</a>
+                </p>
                 </c:if>
                 <form action="${path}/list" method="get" class="fl">
 
                     <input type="text" name="name" value="${param.name}" placeholder="搜索"/>
                     <input type="hidden" name="page" value="1">
-                    <input class="ssimg" type="submit" value="" />
+                    <input class="ssimg" type="submit" value=""/>
                 </form>
                 <div class="btn fl clearfix">
                     <a href="${path}/personal"><img src="${path}/static/img/grzx.png"/></a>
@@ -36,10 +37,10 @@
             </div>
         </div>
         <ul class="clearfix" id="bott">
-<%--            <li><a href="index.jsp">首页${sessionScope.nav2}</a></li>--%>
+            <%--            <li><a href="index.jsp">首页${sessionScope.nav2}</a></li>--%>
             <li><a href="${path}/index">首页</a></li>
             <c:forEach items="${requestScope.nav}" var="nav">
-<%--            <c:forEach items="${sessionScope.firstNav}" var="firstNav">--%>
+                <%--            <c:forEach items="${sessionScope.firstNav}" var="firstNav">--%>
                 <li>
                     <a href="list?firstMenuId=${nav.firstMenuId}&page=1">${nav.firstMenuChineseName}</a>
 

@@ -17,8 +17,6 @@ public class Commodity {
     private Integer commodityIsDel;
 
 
-
-
 //    ----------------------------------------
 
     private List<Map<String, Object>> commodityImg;

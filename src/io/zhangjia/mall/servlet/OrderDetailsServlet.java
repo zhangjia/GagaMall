@@ -17,17 +17,18 @@ import java.util.Map;
 @WebServlet("/orderDetails")
 public class OrderDetailsServlet extends HttpServlet {
     private OrderService orderService = new OrderServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 //        Map<String,Object> user = (Map<String,Object>)session.getAttribute("user");
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         System.out.println("user = " + user);
         String orderId = req.getParameter("orderId");
         System.out.println("orderId = " + orderId);
         Map<String, Object> order = orderService.getOrder(user.getUserId() + "", orderId);
-        req.setAttribute("order",order);
+        req.setAttribute("order", order);
         System.out.println("order = " + order);
-        req.getRequestDispatcher("/WEB-INF/views/orderxq.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/orderxq.jsp").forward(req, resp);
     }
 }

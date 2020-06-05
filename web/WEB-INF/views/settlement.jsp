@@ -7,7 +7,7 @@
 <html>
 <head lang="en">
     <style>
-        .bj-order-pay{
+        .bj-order-pay {
             width: 410px;
             position: absolute;
             top: 30%;
@@ -35,10 +35,10 @@
             src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
     <script src="${path}/static/js/city.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        function pay(){
+        function pay() {
 
-                $(".bj-order-pay").show();
-                $(".mask-order-pay").show();
+            $(".bj-order-pay").show();
+            $(".mask-order-pay").show();
 
         }
 
@@ -49,7 +49,6 @@
             });
 
 
-            
             $(".pay").click(function () {
                 if ($(".addre.fl.on").length === 0) {
                     layer.msg("先选择地址")
@@ -64,7 +63,7 @@
 
                     });
                     url += "addressId=" + addreddId;
-                    url +=  "&note=" + $("#note").val();
+                    url += "&note=" + $("#note").val();
                     console.log(url);
                     $.ajax({
                         url: url,
@@ -72,11 +71,11 @@
 
                         success: function (res) {
                             <%--location = "${path}/pay";--%>
-                            if(res.success === true ){
+                            if (res.success === true) {
                                 pay();
-                            // layer.msg("下单成功")
+                                // layer.msg("下单成功")
                                 console.log("下单成功")
-                            } else  {
+                            } else {
                                 layer.msg("下单失败")
                             }
                         }
@@ -106,18 +105,19 @@
         <div class="orderL fl">
             <jsp:include page="address.jsp"></jsp:include>
             <h3 class="testjia">输入备注</h3>
-<%--            <!--------way---------------->--%>
-<%--            <div class="way clearfix">--%>
-<%--                <img class="on jia-pay-style-banlance" src="${path}/static/img/temp/way01.jpg">--%>
-<%--                <img src="${path}/static/img/temp/way02.jpg">--%>
-<%--                <img src="${path}/static/img/temp/way03.jpg">--%>
-<%--                <img src="${path}/static/img/temp/way04.jpg">--%>
-<%--            </div>--%>
-                    <div class="layui-form-item layui-form-text">
-                        <div style="margin:10px" class="layui-input-block">
-                            <textarea id="note" style=" min-height: 10px; margin-top: 20px" name="note" placeholder="请输入备注" class="layui-textarea"></textarea>
-                        </div>
-                    </div>
+            <%--            <!--------way---------------->--%>
+            <%--            <div class="way clearfix">--%>
+            <%--                <img class="on jia-pay-style-banlance" src="${path}/static/img/temp/way01.jpg">--%>
+            <%--                <img src="${path}/static/img/temp/way02.jpg">--%>
+            <%--                <img src="${path}/static/img/temp/way03.jpg">--%>
+            <%--                <img src="${path}/static/img/temp/way04.jpg">--%>
+            <%--            </div>--%>
+            <div class="layui-form-item layui-form-text">
+                <div style="margin:10px" class="layui-input-block">
+                    <textarea id="note" style=" min-height: 10px; margin-top: 20px" name="note" placeholder="请输入备注"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
 
         </div>
         <div class="orderR fr">
@@ -171,7 +171,6 @@
 <!--遮罩-->
 
 <%--------------------------------------------------------------------------%>
-
 
 
 <%----------------------------------------------------------------------%>

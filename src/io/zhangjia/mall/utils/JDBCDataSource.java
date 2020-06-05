@@ -8,6 +8,7 @@ public class JDBCDataSource {
     private static final String USERNAME = "gagamall";
     private static final String PASSWORD = "zhangjia";
     private static DruidDataSource dataSource;
+
     //setDriverClassName可以不设置，当不设置驱动类名时，会根据url自动设置
     static {
         dataSource = new DruidDataSource();

@@ -211,9 +211,9 @@
     <div class="address">
         <div class="wrapper clearfix">
             <a href="${path}/index">首页</a>
-<%--    ${requestScope.commodities[0]}--%>
+                <%--    ${requestScope.commodities[0]}--%>
             <c:if test="${param.firstMenuId != null}">
-            <span>/</span>
+                <span>/</span>
                 <a href="${path}/list?firstMenuId=${requestScope.commodities[0].firstMenuId}&page=1">${requestScope.commodities[0].firstMenuChineseName}</a>
             </c:if>
 
@@ -410,7 +410,7 @@
                 </c:if>
 
             </c:if>
-         <%--************************************一级菜单中的商品的数字分页**********************************--%>
+            <%--************************************一级菜单中的商品的数字分页**********************************--%>
             <c:if test="${param.firstMenuId != null && param.secMenuId == null && param.name == null && param.page != null}">
 
                 <%--如果没有排序就直接查--%>

@@ -6,7 +6,7 @@ import java.util.Objects;
 public class SKU {
     private Integer skuId;
     private Integer commodityId;
-    private  String skuValue;
+    private String skuValue;
     private Double skuOriginalPrice;
     private Double skuLastPrice;
     private Double presentPrice;

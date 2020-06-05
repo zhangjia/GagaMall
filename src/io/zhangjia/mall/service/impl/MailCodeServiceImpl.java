@@ -19,7 +19,7 @@ public class MailCodeServiceImpl implements MailCodeService {
     @Override
     public int isMailCodeRight(String code, HttpSession session) {
 
-        if(!code.equals(session.getAttribute("mailCode"))){
+        if (!code.equals(session.getAttribute("mailCode"))) {
             System.out.println("code00000 = " + code);
             return 0;
         } else {
@@ -27,7 +27,6 @@ public class MailCodeServiceImpl implements MailCodeService {
         }
 
     }
-
 
 
 }

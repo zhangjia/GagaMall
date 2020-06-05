@@ -18,16 +18,17 @@ import java.util.Map;
 @WebServlet("/recharge")
 public class RechargeServlet extends HttpServlet {
     private WalletService walletService = new WalletServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String money = req.getParameter("money");
         System.out.println("money = " + money);
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         int recharge = walletService.recharge((user.getUserId() + ""), money);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+(recharge == 1)+"}");
+        writer.println("{\"success\":" + (recharge == 1) + "}");
         writer.close();
     }
 }

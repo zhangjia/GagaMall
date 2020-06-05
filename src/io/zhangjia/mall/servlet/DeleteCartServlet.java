@@ -19,23 +19,24 @@ import java.util.List;
 @WebServlet("/cart/delete")
 public class DeleteCartServlet extends HttpServlet {
     private CarService carService = new CartServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         String userId = user.getUserId().toString();
         String[] skuIds = req.getParameterValues("SKUIds");
 
 //        System.out.println(skuIds[0].getClass());
         List<String> list = new ArrayList<String>(Arrays.asList(skuIds));
 
-        System.out.println(list.size()+ " " + list + "lll " +req.getParameterValues("SKUId") );
+        System.out.println(list.size() + " " + list + "lll " + req.getParameterValues("SKUId"));
         boolean b = carService.deleteCart(userId, list);
         System.out.println("skuids" + req.getParameter("SKUIds"));
         System.out.println("skuids" + req.getParameterValues("SKUIds"));
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+b+"}");
+        writer.println("{\"success\":" + b + "}");
         writer.close();
     }
 }

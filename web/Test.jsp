@@ -17,7 +17,7 @@
 <div class="container mt-3">
     <%
         String imgs = "1.jpg,2.jpg,3.jpg";
-        pageContext.setAttribute("imgs",imgs);
+        pageContext.setAttribute("imgs", imgs);
     %>
     <ul>
         <c:forTokens items="${pageScope.imgs}" delims="," var="img" varStatus="status">
@@ -31,7 +31,7 @@
     <ul class="pager">
         <li>1</li>
         <li>2</li>
-        <li  class="test">3</li>
+        <li class="test">3</li>
         <li>4</li>
     </ul>
 </div>

@@ -22,8 +22,8 @@ public class PersonalInformationServlet extends HttpServlet {
 //        User userInformation = userService.getUserInformation(userId);
 //        req.getSession().setAttribute("userInformation", userInformation);
 //        System.out.println("userInformation = " + JSON.toJSONString(userInformation));
-        System.out.println( );
+        System.out.println();
         System.out.println(" =ssss " + JSON.toJSONString(req.getSession().getAttribute("user")));
-        req.getRequestDispatcher("/WEB-INF/views/mygrxx.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/mygrxx.jsp").forward(req, resp);
     }
 }

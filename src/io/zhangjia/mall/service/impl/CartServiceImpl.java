@@ -56,8 +56,7 @@ public class CartServiceImpl implements CarService {
         }
 
 
-
-            map.put("success",i == 1);
+        map.put("success", i == 1);
 
         return map;
     }
@@ -74,7 +73,7 @@ public class CartServiceImpl implements CarService {
     }
 
     @Override
-    public Map<String, Object> updateCount(String action, String userId, String SKUId,String count) {
+    public Map<String, Object> updateCount(String action, String userId, String SKUId, String count) {
         int uid = -1;
         int sid = -1;
         int ct = -1;
@@ -120,18 +119,18 @@ public class CartServiceImpl implements CarService {
             } else if (action.equals("input")) {
                 if (ct > skuInventory) {
                     map.put("error", "超出库存");
-                    Map<String,Object> m = new HashMap<>();
-                    m.put("commodityCount",skuInventory);
-                    m.put("userId",uid);
-                    m.put("SKUId",sid);
+                    Map<String, Object> m = new HashMap<>();
+                    m.put("commodityCount", skuInventory);
+                    m.put("userId", uid);
+                    m.put("SKUId", sid);
                     cartDao.doUpdateCartCount(m);
-                    map.put("skuInventory",skuInventory);
+                    map.put("skuInventory", skuInventory);
                     System.out.println(skuInventory);
                 } else {
-                    Map<String,Object> m = new HashMap<>();
-                    m.put("commodityCount",ct);
-                    m.put("userId",uid);
-                    m.put("SKUId",sid);
+                    Map<String, Object> m = new HashMap<>();
+                    m.put("commodityCount", ct);
+                    m.put("userId", uid);
+                    m.put("SKUId", sid);
                     i = cartDao.doUpdateCartCount(m);
                     System.out.println("m" + m);
                 }
@@ -155,11 +154,11 @@ public class CartServiceImpl implements CarService {
     }
 
     @Override
-    public List<Map<String, Object>> getCarCommodities4Settlement(String userId,String[] commoditySKUIds) {
-        if(userId != null && !"".equals(userId)) {
+    public List<Map<String, Object>> getCarCommodities4Settlement(String userId, String[] commoditySKUIds) {
+        if (userId != null && !"".equals(userId)) {
             int uid = Integer.parseInt(userId);
             System.out.println("uid = " + uid);
-        return cartDao.queryCommodities4Settlement(uid,commoditySKUIds);
+            return cartDao.queryCommodities4Settlement(uid, commoditySKUIds);
         } else {
             return null;
         }
@@ -167,8 +166,8 @@ public class CartServiceImpl implements CarService {
 
     @Override
     public Map<String, Object> getTotal(String userId, String[] commoditySKUIds) {
-        if(userId != null && !"".equals(userId)) {
-           return cartDao.queryTotal(Integer.parseInt(userId),commoditySKUIds);
+        if (userId != null && !"".equals(userId)) {
+            return cartDao.queryTotal(Integer.parseInt(userId), commoditySKUIds);
         } else {
             return null;
         }

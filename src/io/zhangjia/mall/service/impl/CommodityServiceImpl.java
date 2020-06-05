@@ -26,9 +26,6 @@ public class CommodityServiceImpl implements CommodityService {
     private SiteSettingsDao siteSettingsDao = new SiteSettingsDaoImpl();
 
 
-
-
-
     @Override
     public List<Commodity> getCommodities(String name, String page,
                                           String firstMenuId, String secMenuId, String orders) {
@@ -122,11 +119,13 @@ Map<String,List<String>> sku = null;
 
         System.out.println(key);
     }*/
-/**
- * 根据商品的ID，查询商品的属性
- * @param
- * @return
- */
+
+    /**
+     * 根据商品的ID，查询商品的属性
+     *
+     * @param
+     * @return
+     */
 
     public String getCommoditySPEC(String commodityId) {
         /*
@@ -158,6 +157,7 @@ Map<String,List<String>> sku = null;
 
     /**
      * 在商品详情页，点击《》按钮判断是否可以
+     *
      * @param action
      * @param userId
      * @param SKUId
@@ -165,7 +165,7 @@ Map<String,List<String>> sku = null;
      * @return
      */
     @Override
-    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count,String vals) {
+    public Map<String, Object> updateCount2CommodityDetail(String action, String userId, String SKUId, String count, String vals) {
         int uid = -1;
         int sid = -1;
         int ct = -1;
@@ -189,7 +189,7 @@ Map<String,List<String>> sku = null;
              * 再获取当前商品在当前用户的购物车中数量，
              * 如果是0，则添加，如果不是0，则修改
              * 如果购物车中的数量加当前选中的数量 > 库存，则失败
-                     * */
+             * */
 
 //        获取当前商品的库存
             int skuInventory = skuDao.querySKUInventory(sid);
@@ -198,16 +198,16 @@ Map<String,List<String>> sku = null;
             int skuCount;
             Map<String, Object> cartSKU = cartDao.queryByUserIdAndSKUId(uid, sid);
             if (cartSKU == null) {
-                map.put("nowInventory",skuInventory);
+                map.put("nowInventory", skuInventory);
                 skuCount = 0;
             } else {
                 System.out.println(cartSKU);
-                map.put("nowInventory",skuInventory);
-                skuCount= ((BigDecimal) cartSKU.get("COMMODITY_COUNT")).intValue();
+                map.put("nowInventory", skuInventory);
+                skuCount = ((BigDecimal) cartSKU.get("COMMODITY_COUNT")).intValue();
 
             }
             if (action.equals("add") || action.equals("input")) {
-                System.out.println("Sku" + skuCount + "val" + val + "ct" + ct + "skuInventory" +skuInventory);
+                System.out.println("Sku" + skuCount + "val" + val + "ct" + ct + "skuInventory" + skuInventory);
                 if ((val + ct) > skuInventory) {
                     System.out.println("库存吵了");
                     map.put("error", "超出库存");
@@ -219,7 +219,7 @@ Map<String,List<String>> sku = null;
 
             //如果是null，说明购物车里没有
 
-            System.out.println("action = " + action + "--" + "userId = " + userId + "--" +"count = " + count + "--" + skuCount + "--" + SKUId);
+            System.out.println("action = " + action + "--" + "userId = " + userId + "--" + "count = " + count + "--" + skuCount + "--" + SKUId);
             System.out.println();
 
 

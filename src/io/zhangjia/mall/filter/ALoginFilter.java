@@ -16,32 +16,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 @WebFilter(urlPatterns = {
-"/personal",
-"/cart",
-"/addCart",
-"/cart/delete",
-"/updateCount",
-"/updateCount2CommodityDetail",
-"/addCommodity",
-"/address",
-"/myorder",
-"/orderDetails",
-"/personalInformation",
-"/addAddress",
-"/iou",
-"/wallet",
-"/submit",
-"/settlement",
-"/setDefaultAddress",
-"/saveOrUpdateCommodity",
-"/recharge",
-"/pay",
-"/logout",
-"/getAddress",
-"/editUserPayPassword",
-"/editUserPassword",
-"/editUserInformation",
-"/deleteAddress","/admin","/setPageSize","/deliverGoods"
+        "/personal",
+        "/cart",
+        "/addCart",
+        "/cart/delete",
+        "/updateCount",
+        "/updateCount2CommodityDetail",
+        "/addCommodity",
+        "/address",
+        "/myorder",
+        "/orderDetails",
+        "/personalInformation",
+        "/addAddress",
+        "/iou",
+        "/wallet",
+        "/submit",
+        "/settlement",
+        "/setDefaultAddress",
+        "/saveOrUpdateCommodity",
+        "/recharge",
+        "/pay",
+        "/logout",
+        "/getAddress",
+        "/editUserPayPassword",
+        "/editUserPassword",
+        "/editUserInformation",
+        "/deleteAddress", "/admin", "/setPageSize", "/deliverGoods"
 
 
 })
@@ -66,11 +66,11 @@ public class ALoginFilter extends HttpFilter {
                 map.put("isLogin", false);
                 writer.println(JSON.toJSONString(map));
                 writer.close();
-            //这里用不用再放行
+                //这里用不用再放行
             } else {
                 //如果不是ajax
                 //没有登录，去登录
-                if(queryString != null){
+                if (queryString != null) {
                     requestURI += ("?" + queryString);
                 }
                 response.sendRedirect(request.getContextPath() + "/login?uri=" + requestURI);
@@ -83,7 +83,7 @@ public class ALoginFilter extends HttpFilter {
 
     }
 
-    private boolean isAjax (HttpServletRequest request){
+    private boolean isAjax(HttpServletRequest request) {
         String header = request.getHeader("X-Requested-With");
         if (header != null && header.equals("XMLHttpRequest")) {
             return true;

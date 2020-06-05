@@ -14,9 +14,9 @@ public class FirstMenu {
     private Date firstMenuCreateTime;
     private Integer firstMenuIsDel;
 
-//------------------------------------//
+    //------------------------------------//
     //存二级菜单
-    private List<Map<String,Object>> secMenu;
+    private List<Map<String, Object>> secMenu;
 
     public List<Map<String, Object>> getSecMenu() {
         return secMenu;

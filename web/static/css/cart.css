@@ -7,13 +7,15 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-.cart-num{
+
+.cart-num {
     width: 30px;
     /*float: left;*/
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 3px;
 }
-.cart-price{
+
+.cart-price {
     line-height: 146px;
 }

@@ -8,21 +8,21 @@ public class SKUDaoImpl extends CommonDao implements SKUDao {
     @Override
     public int querySKUInventory(Integer SKUId) {
         String sql = "SELECT SKU_INVENTORY FROM SKU  WHERE  SKU_ID = ?";
-        return query4IntData(sql,SKUId);
+        return query4IntData(sql, SKUId);
     }
 
     @Override
     public int doInsert(SKU sku) {
-        String sql ="INSERT INTO sku VALUES(seq_sku.nextval,?,?,0,0,?,?,0,sysdate,sysdate,1)";
-        return executeUpdate(sql,sku.getCommodityId(),sku.getSkuValue(),
-                sku.getPresentPrice(),sku.getSkuInventory());
+        String sql = "INSERT INTO sku VALUES(seq_sku.nextval,?,?,0,0,?,?,0,sysdate,sysdate,1)";
+        return executeUpdate(sql, sku.getCommodityId(), sku.getSkuValue(),
+                sku.getPresentPrice(), sku.getSkuInventory());
     }
 
     @Override
     public int updateInventoryAndSales(Integer SKUId, Integer count) {
         String sql = "UPDATE SKU SET SKU_INVENTORY = SKU_INVENTORY - ?,SKU_SALES = SKU_SALES + ? WHERE SKU_ID = ?";
-        System.out.println("skuesale" +SKUId);
+        System.out.println("skuesale" + SKUId);
         System.out.println("count = " + count);
-        return executeUpdate(sql,count,count,SKUId);
+        return executeUpdate(sql, count, count, SKUId);
     }
 }

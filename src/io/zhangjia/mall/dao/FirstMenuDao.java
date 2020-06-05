@@ -5,5 +5,6 @@ import java.util.Map;
 
 public interface FirstMenuDao {
     List<Map<String, Object>> queryFirstMenu();
+
     String getFirstMenuChineseNameById(Integer id);
 }

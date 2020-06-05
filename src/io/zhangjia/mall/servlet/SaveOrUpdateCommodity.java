@@ -15,11 +15,12 @@ import java.util.List;
 @WebServlet("/saveOrUpdateCommodity")
 public class SaveOrUpdateCommodity extends HttpServlet {
     private NavService navService = new NavServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<FirstMenu> nav = navService.getNav();
 
-        req.setAttribute("nav",nav);
-        req.getRequestDispatcher("/WEB-INF/views/sou-commodity.jsp").forward(req,resp);
+        req.setAttribute("nav", nav);
+        req.getRequestDispatcher("/WEB-INF/views/sou-commodity.jsp").forward(req, resp);
     }
 }

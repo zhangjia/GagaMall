@@ -22,27 +22,28 @@ import java.util.Map;
 public class SettlementServlet extends HttpServlet {
     private AddressService addresservice = new AddressServiceImpl();
     private CarService carService = new CartServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
-        String[]commoditySKUIds = req.getParameterValues("SKUIds");
+        User user = (User) session.getAttribute("user");
+        String[] commoditySKUIds = req.getParameterValues("SKUIds");
         System.out.println("commoditySKUIds = " + commoditySKUIds);
         System.out.println("Arrays.toString(commoditySKUIds) = " + Arrays.toString(commoditySKUIds));
         List<Map<String, Object>> userAddress = addresservice.getUserAddress(user.getUserId() + "");
         System.out.println("userAddress = " + userAddress);
-        List<Map<String, Object>> commoditySKUS = carService.getCarCommodities4Settlement(user.getUserId()+"",commoditySKUIds);
+        List<Map<String, Object>> commoditySKUS = carService.getCarCommodities4Settlement(user.getUserId() + "", commoditySKUIds);
         System.out.println("commoditySKUs = " + JSON.toJSONString(commoditySKUS));
 
         Map<String, Object> total = carService.getTotal(user.getUserId() + "", commoditySKUIds);
         System.out.println("total = " + total);
 
         System.out.println("commoditySKUSsss = " + JSON.toJSONString(commoditySKUS));
-        req.setAttribute("userAddress",userAddress);
-        req.setAttribute("commoditySKUS",commoditySKUS);
-        req.setAttribute("total",total);
+        req.setAttribute("userAddress", userAddress);
+        req.setAttribute("commoditySKUS", commoditySKUS);
+        req.setAttribute("total", total);
 
-        
-        req.getRequestDispatcher("/WEB-INF/views/settlement.jsp").forward(req,resp);
+
+        req.getRequestDispatcher("/WEB-INF/views/settlement.jsp").forward(req, resp);
     }
 }

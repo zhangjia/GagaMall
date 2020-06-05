@@ -16,18 +16,19 @@ import java.io.PrintWriter;
 @WebServlet("/setDefaultAddress")
 public class SetDefaultAddressServlet extends HttpServlet {
     private AddressService addressService = new AddressServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 //        Map<String,Object> user = (Map<String,Object>)session.getAttribute("user");
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         String addressId = req.getParameter("addressId");
         System.out.println("addressId = " + addressId);
 
-        boolean result = addressService.setDefaultAddress(addressId,user.getUserId()+"") == 1;
+        boolean result = addressService.setDefaultAddress(addressId, user.getUserId() + "") == 1;
 
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        writer.println("{\"success\":"+result+"}");
+        writer.println("{\"success\":" + result + "}");
     }
 }

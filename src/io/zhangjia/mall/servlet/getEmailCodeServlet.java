@@ -24,13 +24,13 @@ public class getEmailCodeServlet extends HttpServlet {
         String mail = req.getParameter("type");
         System.out.println("mail = " + mail);
         String mailCode = mailCodeService.getMailCode(mail);
-        req.getSession().setAttribute("mailCode",mailCode);
+        req.getSession().setAttribute("mailCode", mailCode);
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
         System.out.println("JSON.toJSONString(phoneCode)" + JSON.toJSONString(mailCode));
 //        writer.println(JSON.toJSONString(phoneCode));
         boolean result = mailCode != null;
-        writer.println("{\"success\":"+result+"}");
+        writer.println("{\"success\":" + result + "}");
         writer.close();
     }
 }

@@ -18,7 +18,7 @@ public class User {
     private Integer userGrade;          //用户等级
     private Integer userStatus;         //用户状态
 
-//    -------------------------------------
+    //    -------------------------------------
     private String ImgUrl;
     private String date;
 

@@ -16,6 +16,6 @@ public class CharacterEncodingFilter extends HttpFilter {
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
 }

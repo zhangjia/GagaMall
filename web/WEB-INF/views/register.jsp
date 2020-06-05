@@ -59,69 +59,69 @@
         //
         // }
 
-        function register(){
+        function register() {
             // $(".jia-btn-register").click(function () {
-                // function register(){
-                var account = $(".jia-register-select-account").children("option:selected").val();
-                var data;
-                console.log(account)
-                if(account =='userTel'){
+            // function register(){
+            var account = $(".jia-register-select-account").children("option:selected").val();
+            var data;
+            console.log(account)
+            if (account == 'userTel') {
 
-                     data = $.param({'action':'userTel'}) + '&' + $("form").serialize();
-                }
-                if(account =='userName'){
+                data = $.param({'action': 'userTel'}) + '&' + $("form").serialize();
+            }
+            if (account == 'userName') {
 
-                    data = $.param({'action':'userName'}) + '&' + $("form").serialize();
-                }
-                if(account =='userEmail'){
+                data = $.param({'action': 'userName'}) + '&' + $("form").serialize();
+            }
+            if (account == 'userEmail') {
 
-                    data = $.param({'action':'userEmail'}) + '&' + $("form").serialize();
-                }
-                //将表单序列化
-                // if (!IscodesRight()) {
-                //     return false;
-                // }
-                console.log(data);
-                //发起请求，完成登录
-                $.ajax({
-                    url: "${path}/register",
-                    type: "post",
-                    data: data,
-                    success: function (res) {
-                        console.log(res)
-
-
-                        if (res.result) {
-                            //成功，跳转到index.jsp
-                            var c = layer.msg('注册成功', {time: 1000, anim: 2, icon: 6}, function () {
-                                if (res.uri) {
-                                    location = res.uri;
-                                } else {
-                                    location = "${path}/login";
-                                }
-                            })
+                data = $.param({'action': 'userEmail'}) + '&' + $("form").serialize();
+            }
+            //将表单序列化
+            // if (!IscodesRight()) {
+            //     return false;
+            // }
+            console.log(data);
+            //发起请求，完成登录
+            $.ajax({
+                url: "${path}/register",
+                type: "post",
+                data: data,
+                success: function (res) {
+                    console.log(res)
 
 
-                        } else {
-                            //失败
-                            if (res.error === "注册失败") {
-                                $("input[name='userPassword']").addClass("is-invalid");
-                                $("input[name='userPassword']").next("span").addClass("text-danger").text(res.error);
-                            } else if (res.error === "用户名已存在") {
-                                index = layer.tips('用户名已存在', $("input[name='account']"), {
-                                    time: 800
-                                });
-                                $("input[name='account']").addClass("is-invalid");
-                                // $("input[name='account']").next("span").addClass("text-danger").text(res.error);
-                            } else if (res.error === "验证码不正确") {
-                                layer.tips('验证码不正确', $("input[name='codes']"), {
-                                    time: 800
-                                });
+                    if (res.result) {
+                        //成功，跳转到index.jsp
+                        var c = layer.msg('注册成功', {time: 1000, anim: 2, icon: 6}, function () {
+                            if (res.uri) {
+                                location = res.uri;
+                            } else {
+                                location = "${path}/login";
                             }
+                        })
+
+
+                    } else {
+                        //失败
+                        if (res.error === "注册失败") {
+                            $("input[name='userPassword']").addClass("is-invalid");
+                            $("input[name='userPassword']").next("span").addClass("text-danger").text(res.error);
+                        } else if (res.error === "用户名已存在") {
+                            layer.tips('用户名已存在', $(".jia-register-select-account"), {
+                                time: 800
+                            });
+                            $("input[name='account']").addClass("is-invalid");
+                            // $("input[name='account']").next("span").addClass("text-danger").text(res.error);
+                        } else if (res.error === "验证码不正确") {
+                            layer.tips('验证码不正确', $("input[name='codes']"), {
+                                time: 800
+                            });
                         }
                     }
-                });
-                return false;
+                }
+            });
+            return false;
 
             // });
         }
@@ -134,7 +134,7 @@
             // $(":submit").click(function () {
 
             $("form").submit(function () {
-               return  register()
+                return register()
             });
 
             $("input[type=text]").focus(function () {
@@ -231,7 +231,7 @@
 
                         }
                     },
-                    submitHandler:function(form) {
+                    submitHandler: function (form) {
                         $(form).register();
                     }
 
@@ -285,11 +285,11 @@
                 var type = '';
                 var value = $(":selected").val();
                 if (value === 'userTel') {
-                   url =  "${path}/getPhoneCode";
+                    url = "${path}/getPhoneCode";
                     type = $("input[name='userTel']").val();
                 }
                 if (value === 'userEmail') {
-                   url = "${path}/getEmailCode";
+                    url = "${path}/getEmailCode";
 
                     type = $("input[name='userEmail']").val();
                 }

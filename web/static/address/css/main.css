@@ -1,20 +1,25 @@
-input{
-  /*min-width: 360px;*/
+input {
+    /*min-width: 360px;*/
 }
-span.city-picker-span{
+
+span.city-picker-span {
     width: 200px !important;
 }
+
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
+
 [type=reset], [type=submit], button, html [type=button] {
     -webkit-appearance: button;
 }
+
 .btn-warning {
     color: #212529;
     background-color: #ffc107;
     border-color: #ffc107;
 }
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -30,50 +35,62 @@ span.city-picker-span{
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
 button, select {
     text-transform: none;
 }
+
 button, input {
     overflow: visible;
 }
+
 button, input, optgroup, select, textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
 }
+
 button {
     border-radius: 0;
 }
-btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(.disabled):active, .show>.btn-danger.dropdown-toggle {
+
+btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(.disabled):active, .show > .btn-danger.dropdown-toggle {
     color: #fff;
     background-color: #bd2130;
     border-color: #b21f2d;
 }
+
 .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
     background-image: none;
 }
+
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
+
 .btn-danger:hover {
     color: #fff;
     background-color: #c82333;
     border-color: #bd2130;
 }
+
 .btn:focus, .btn:hover {
     text-decoration: none;
 }
+
 [type=reset], [type=submit], button, html [type=button] {
     -webkit-appearance: button;
 }
+
 .btn-danger {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
 }
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -89,23 +106,28 @@ btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
 button, select {
     text-transform: none;
 }
+
 button, input {
     overflow: visible;
 }
+
 button, input, optgroup, select, textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
 }
-.docs-methods{
+
+.docs-methods {
     margin: 10px;
 }
+
 button {
     margin: 10px;
 }

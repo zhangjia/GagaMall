@@ -4,16 +4,17 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <style>
     /*遮罩*/
-    .mask-order-pay{
+    .mask-order-pay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         z-index: 20;
         display: none;
     }
+
     /*!*编辑个人信息*!*/
     /*.bj-order-pay{*/
     /*    width: 410px;*/
@@ -53,13 +54,18 @@
     <h3 style="margin: 10px">订单支付</h3>
     <hr>
     <form class="layui-form" action="">
-        <div class="layui-tab-item layui-show" >
+        <div class="layui-tab-item layui-show">
             <span style="margin-left: 50px;">订单金额</span>
             <c:if test="${requestScope.total.SUM_COMMODITY_PAY_PRICE == null}">
-                <input value="" readonly="readonly" style="width:200px; display: inline-block;margin-top: 20px;margin-left:20px" type="number"  name="payMoney" lay-verify="title" autocomplete="off" placeholder="" class="layui-input jia-order-pay-view-price ">
+                <input value="" readonly="readonly"
+                       style="width:200px; display: inline-block;margin-top: 20px;margin-left:20px" type="number"
+                       name="payMoney" lay-verify="title" autocomplete="off" placeholder=""
+                       class="layui-input jia-order-pay-view-price ">
             </c:if>
             <c:if test="${requestScope.total.SUM_COMMODITY_PAY_PRICE != null}">
-                <input value="${requestScope.total.SUM_COMMODITY_PAY_PRICE}" readonly="readonly" style="width:200px; display: inline-block;margin-top: 20px;margin-left:20px" type="number"  name="payMoney" lay-verify="title" autocomplete="off" placeholder="" class="layui-input ">
+                <input value="${requestScope.total.SUM_COMMODITY_PAY_PRICE}" readonly="readonly"
+                       style="width:200px; display: inline-block;margin-top: 20px;margin-left:20px" type="number"
+                       name="payMoney" lay-verify="title" autocomplete="off" placeholder="" class="layui-input ">
             </c:if>
             <span style="font-size: 20px;margin-left: 10px;">元</span>
             <br/>
@@ -69,20 +75,21 @@
             <label class="layui-form-label">支付方式</label>
             <div class="layui-input-block">
                 <input type="hidden" name="orderId" value="">
-                <input  type="radio" name="payStyle" value="余额" title="余额">
+                <input type="radio" name="payStyle" value="余额" title="余额">
                 <input type="radio" name="payStyle" value="白条" title="白条" checked>
             </div>
         </div>
-<%--        <div class="layui-form-item layui-form-text">--%>
-<%--            <label class="layui-form-label jia-order-note">备注</label>--%>
-<%--            <div class="layui-input-block">--%>
-<%--                <textarea name="note" placeholder="请输入备注" class="layui-textarea"></textarea>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+        <%--        <div class="layui-form-item layui-form-text">--%>
+        <%--            <label class="layui-form-label jia-order-note">备注</label>--%>
+        <%--            <div class="layui-input-block">--%>
+        <%--                <textarea name="note" placeholder="请输入备注" class="layui-textarea"></textarea>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
         <div class="layui-form-item">
             <label class="layui-form-label">支付密码</label>
             <div class="layui-input-inline">
-                <input style="margin-left: 10px;    width: 200px;" type="password" name="paypassword" required lay-verify="required" placeholder="请输入支付密码" autocomplete="off" class="layui-input">
+                <input style="margin-left: 10px;    width: 200px;" type="password" name="paypassword" required
+                       lay-verify="required" placeholder="请输入支付密码" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -99,7 +106,7 @@
 
         $(function () {
             $(".jia-id-myorder-pay").click(function () {
-                var orderId =  $(this).parent().parent().siblings(".word.clearfix").children("ul").children(".order-num").children("span").text();
+                var orderId = $(this).parent().parent().siblings(".word.clearfix").children("ul").children(".order-num").children("span").text();
                 $("input[name='orderId']").val(orderId);
                 $(".bj-order-pay").show();
                 $(".mask-order-pay").show();
@@ -122,8 +129,8 @@
                 var locations;
                 var orderId;
                 var payMoney;
-                if(${requestScope.total.SUM_COMMODITY_PAY_PRICE == null}) {
-                    locations ="订单页";
+                if (${requestScope.total.SUM_COMMODITY_PAY_PRICE == null}) {
+                    locations = "订单页";
                     orderId = data.field.orderId;
 
                 } else {
@@ -139,30 +146,30 @@
                     url: "${path}/pay",
                     type: "get",
                     data: {
-                        payStyle:data.field.payStyle,
-                        payMoney:payMoney,
+                        payStyle: data.field.payStyle,
+                        payMoney: payMoney,
                         // note:data.field.note,
-                        orderId:orderId,
-                        location:locations,
-                        paypassword:data.field.paypassword,
+                        orderId: orderId,
+                        location: locations,
+                        paypassword: data.field.paypassword,
 
 
                     },
                     success: function (res) {
                         console.log(res)
-                        if (res.error ==='未设置密码') {
+                        if (res.error === '未设置密码') {
 
                             layer.msg('未设置支付密码', {
 
                                 time: 2000 //2秒关闭（如果不配置，默认是3秒）
-                            }, function(){
-                               location = "${path}/personalInformation";
+                            }, function () {
+                                location = "${path}/personalInformation";
                             });
                             return;
                         }
 
-                        if (res.error ==='支付密码不正确') {
-                            layer.msg("支付密码不正确",{
+                        if (res.error === '支付密码不正确') {
+                            layer.msg("支付密码不正确", {
 
                                 time: 1000 //2秒关闭（如果不配置，默认是3秒）
                             });
@@ -170,24 +177,24 @@
 
                         }
 
-                        console.log(res.success ==="支付成功")
+                        console.log(res.success === "支付成功")
                         console.log(res.haha)
-                        if (res.success ==='支付成功') {
-                            layer.msg("支付成功",{
-                                time:1000
-                            },function () {
+                        if (res.success === '支付成功') {
+                            layer.msg("支付成功", {
+                                time: 1000
+                            }, function () {
                                 location = "${path}/myorder";
                             });
 
 
-                        } else if(res.error ==='余额不足') {
-                            layer.msg("余额不足",{
-                                time:1000
-                            },function () {
+                        } else if (res.error === '余额不足') {
+                            layer.msg("余额不足", {
+                                time: 1000
+                            }, function () {
                                 location = "${path}/wallet";
                             });
 
-                        } else if(res.error === '额度不足'){
+                        } else if (res.error === '额度不足') {
                             layer.msg("额度不足");
 
                         } else {

@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InsertImg extends CommonDao {
-    public int insertCommodityImg(String url,int id, int order){
-       String sql = " INSERT INTO img VALUES(seq_img.nextval,?,?,?,'商品图',1)";
-       return executeUpdate(sql,url,id,order);
+    public int insertCommodityImg(String url, int id, int order) {
+        String sql = " INSERT INTO img VALUES(seq_img.nextval,?,?,?,'商品图',1)";
+        return executeUpdate(sql, url, id, order);
     }
 
-    public int insertCommodityDetailImg(String url,int id, int order){
+    public int insertCommodityDetailImg(String url, int id, int order) {
         String sql = " INSERT INTO img VALUES(seq_img.nextval,?,?,?,'商品详情图',1)";
-        return executeUpdate(sql,url,id,order);
+        return executeUpdate(sql, url, id, order);
     }
 
     public static void main(String[] args) {
@@ -26,6 +26,6 @@ public class InsertImg extends CommonDao {
         System.out.println("请输入顺序");
         int order = input.nextInt();
 //        System.out.println("插入结果：" + new InsertImg().insertCommodityImg(url,id,order));
-        System.out.println("插入结果：" + new InsertImg().insertCommodityDetailImg(url,id,order));
+        System.out.println("插入结果：" + new InsertImg().insertCommodityDetailImg(url, id, order));
     }
 }

@@ -16,6 +16,7 @@ import java.util.*;
 @WebServlet("/addCommodity")
 public class AddCommodityServlet extends HttpServlet {
     AddCommodityService addCommodityService = new AddCommodityServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Object> list = new ArrayList<>();
@@ -28,13 +29,13 @@ public class AddCommodityServlet extends HttpServlet {
         String jsonAttr = req.getParameter("jsonAttr");
         String skuRecords = req.getParameter("skuRecords");
         Map<String, Object> maps = new HashMap<>();
-        maps.put("firstMenuId",firstMenuId);
-        maps.put("sectMenuId",sectMenuId);
-        maps.put("commodityName",commodityName);
-        maps.put("spt",req.getParameter("spt"));
-        maps.put("spxqt",req.getParameter("spxqt"));
-        maps.put("jsonAttr",jsonAttr);
-        maps.put("skuRecords",skuRecords);
+        maps.put("firstMenuId", firstMenuId);
+        maps.put("sectMenuId", sectMenuId);
+        maps.put("commodityName", commodityName);
+        maps.put("spt", req.getParameter("spt"));
+        maps.put("spxqt", req.getParameter("spxqt"));
+        maps.put("jsonAttr", jsonAttr);
+        maps.put("skuRecords", skuRecords);
 
         list.add(firstMenuId);
         list.add(commodityName);
@@ -50,8 +51,8 @@ public class AddCommodityServlet extends HttpServlet {
 
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
-        
-        
+
+
         writer.println(JSON.toJSONString(list));
         System.out.println(list);
         writer.close();

@@ -1,12 +1,10 @@
 package io.zhangjia.mall.utils;
 
 
-
 import java.sql.*;
 
 /**
  * JDBC的工具类，负责：加载驱动，建立连接，释放资源
- *
  */
 public class JDBCUtils {
 
@@ -27,12 +25,9 @@ public class JDBCUtils {
     /**
      * 释放资源
      *
-     * @param rs
-     *            结果集
-     * @param stm
-     *            语句对象
-     * @param conn
-     *            连接
+     * @param rs   结果集
+     * @param stm  语句对象
+     * @param conn 连接
      */
     public void close(ResultSet rs, Statement stm, Connection conn) {
         try {
@@ -66,10 +61,8 @@ public class JDBCUtils {
     /**
      * 释放资源
      *
-     * @param stm
-     *            语句对象
-     * @param conn
-     *            连接
+     * @param stm  语句对象
+     * @param conn 连接
      */
     public void close(Statement stm, Connection conn) {
         close(null, stm, conn);

@@ -9,10 +9,10 @@ import java.util.Map;
 public class AttributeKeyDaoImpl extends CommonDao implements AttributeKeyDao {
     @Override
     public int doInsert(List<String> lists) {
-        for (String list: lists ) {
-            if(queryAttributeKey(list)) {
+        for (String list : lists) {
+            if (queryAttributeKey(list)) {
                 String sql = "INSERT INTO attribute_key VALUES(seq_attribute_key.nextval,?,1,sysdate,sysdate,1)";
-                int i = executeUpdate(sql,list);
+                int i = executeUpdate(sql, list);
                 return i;
             } else {
                 return 1;

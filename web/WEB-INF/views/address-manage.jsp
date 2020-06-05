@@ -4,21 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>最家</title>
-    <jsp:include page="public-static-file.jsp" />
-    <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css" />
-    <link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css" />
+    <jsp:include page="public-static-file.jsp"/>
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/proList.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/mygxin.css"/>
     <script src="${path}/static/js/pro.js" type="text/javascript" charset="utf-8"></script>
     <script src="${path}/static/js/user.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
+    <script type="text/javascript"
+            src="https://webapi.amap.com/maps?v=1.4.8&key=b03bbaf1ff4c80e018561e5eb1210906"></script>
     <script src="${path}/static/js/city.js" type="text/javascript" charset="utf-8"></script>
 
 
 </head>
 <body>
-<jsp:include page="head.jsp" />
+<jsp:include page="head.jsp"/>
 
 <!------------------------------idea------------------------------>
 <div class="address mt">
@@ -71,7 +72,7 @@
             </div>
         </div>
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br />
+    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
         违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
 </div>
 </body>

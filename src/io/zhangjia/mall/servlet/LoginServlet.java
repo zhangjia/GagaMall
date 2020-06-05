@@ -28,19 +28,19 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("userPassword");
         String uri = req.getParameter("uri");
         Map<String, Object> map = userService.login(username, password);
-        Map<String,Object> json = new HashMap<>();
-        if(map.containsKey("user")){
+        Map<String, Object> json = new HashMap<>();
+        if (map.containsKey("user")) {
             //登录成功，将用户信息存入session
-            req.getSession().setAttribute("user",map.get("user"));
-            json.put("result",true);
+            req.getSession().setAttribute("user", map.get("user"));
+            json.put("result", true);
             //不过不是直接登录，将原地址存入uri
-            if(uri != null){
-                json.put("uri",uri);
+            if (uri != null) {
+                json.put("uri", uri);
             }
-        }else{
+        } else {
             Object error = map.get("error");
-            json.put("result",false);
-            json.put("error",error);
+            json.put("result", false);
+            json.put("error", error);
         }
         resp.setContentType("application/json;charset=utf-8");
         PrintWriter writer = resp.getWriter();
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
 //        req.getRequestDispatcher("/WEB-INF/views/zhangjia.jsp").forward(req,resp);
     }
 }

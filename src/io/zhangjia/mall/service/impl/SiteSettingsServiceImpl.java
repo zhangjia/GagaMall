@@ -6,6 +6,7 @@ import io.zhangjia.mall.service.SiteSettingsService;
 
 public class SiteSettingsServiceImpl implements SiteSettingsService {
     private SiteSettingsDao siteSettingsDao = new SiteSettingsDaoImpl();
+
     @Override
     public String getValue(String key) {
         return siteSettingsDao.queryByKey(key);
@@ -13,7 +14,7 @@ public class SiteSettingsServiceImpl implements SiteSettingsService {
 
     @Override
     public int editValue(String key, String value) {
-        System.out.println("key + \"---\"+ value = " + key + "---"+ value);
-        return siteSettingsDao.doUpdate(key,value);
+        System.out.println("key + \"---\"+ value = " + key + "---" + value);
+        return siteSettingsDao.doUpdate(key, value);
     }
 }

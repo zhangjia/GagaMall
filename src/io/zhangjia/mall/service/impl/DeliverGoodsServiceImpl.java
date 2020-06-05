@@ -11,18 +11,19 @@ import java.util.List;
 import java.util.Map;
 
 public class DeliverGoodsServiceImpl implements DeliverGoodsService {
-    private OrderServiceImpl  orderService = new OrderServiceImpl();
+    private OrderServiceImpl orderService = new OrderServiceImpl();
     private UserServiceImpl userService = new UserServiceImpl();
     private OrderDao orderDao = new OrderDaoImpl();
+
     @Override
     public List<Map<String, Object>> GetUnshippedOrders() {
         List<User> users = userService.queryUserAll();
         List<Map<String, Object>> unshippedOrders = new ArrayList<>();
-        for (User user: users  ) {
+        for (User user : users) {
             List<Map<String, Object>> orders = orderService.getOrders(user.getUserId() + "");
-            for (Map<String,Object> order: orders ) {
-                int orderStatus = ((BigDecimal)order.get("ORDER_STATUS")).intValue();
-                if((orderStatus) == 1){
+            for (Map<String, Object> order : orders) {
+                int orderStatus = ((BigDecimal) order.get("ORDER_STATUS")).intValue();
+                if ((orderStatus) == 1) {
                     unshippedOrders.add(order);
                 }
             }
@@ -37,6 +38,6 @@ public class DeliverGoodsServiceImpl implements DeliverGoodsService {
         System.out.println("123orderId = " + logistic);
         int i = orderDao.doUpdateByDeliverGoods(Integer.parseInt(orderId), logistic);
         System.out.println("i = " + i);
-        return  i;
+        return i;
     }
 }

@@ -20,6 +20,7 @@ import java.util.List;
 public class ListServlet extends HttpServlet {
     private CommodityService commodityService = new CommodityServiceImpl();
     private NavService navService = new NavServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        List<FirstMenu> nav = navService.getNav();
@@ -36,15 +37,15 @@ public class ListServlet extends HttpServlet {
 
         String orders = req.getParameter("order");
 
-        List<Commodity> commodities = commodityService.getCommodities(name,page,firstMenuId,secMenuId,orders);
+        List<Commodity> commodities = commodityService.getCommodities(name, page, firstMenuId, secMenuId, orders);
 
 
-        req.setAttribute("commodities",commodities);
-        req.setAttribute("firstMenuChineseName",navService.getFirstMenuChineseName(secMenuId));
+        req.setAttribute("commodities", commodities);
+        req.setAttribute("firstMenuChineseName", navService.getFirstMenuChineseName(secMenuId));
 
-        req.setAttribute("commoditiesCount",commodityService.getPagesCount(firstMenuId,secMenuId,name));
+        req.setAttribute("commoditiesCount", commodityService.getPagesCount(firstMenuId, secMenuId, name));
 //
-        req.getRequestDispatcher("/WEB-INF/views/proList.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/proList.jsp").forward(req, resp);
 //        req.getRequestDispatcher("proList.jsp").forward(req,resp);
     }
 
